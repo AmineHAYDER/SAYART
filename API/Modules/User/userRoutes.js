@@ -11,7 +11,7 @@ router.post( '/:id',  (req, res)=> {
         .status(200)
         .json({
             success: "True",
-            data: `updateD user :${id}`
+            data: `updated user :${id}`
         })
 });
 router.delete( '/:id',  (req, res)=> {
