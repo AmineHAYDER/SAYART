@@ -2,26 +2,28 @@ const express = require('express');
 const router = express.Router();
 const userController = require('./userController');
 
-router.get( '/', userController.all );
-router.get( '/create', userController.store );
-router.get( '/:id',  );
-router.post( '/:id',  (req, res)=> {
 
-    res
-        .status(200)
-        .json({
-            success: "True",
-            data: `updated user :${id}`
-        })
-});
-router.delete( '/:id',  (req, res)=> {
+router.use(express.json());
 
-    res
-        .status(200)
-        .json({
-            success: "True",
-            data: `delete user :${id}`
-        })
-});
+router.get(
+    '/' ,
+    userController.all
+);
+router.post(
+    '/create' ,
+    userController.store
+);
+router.get(
+    '/:id' ,
+    userController.get );
+router.put(
+    '/:id' ,
+    userController.put
+);
+router.delete(
+    '/:id',
+    userController.delete
+);
+
 
 module.exports = router ;

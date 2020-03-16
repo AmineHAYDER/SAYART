@@ -4,50 +4,94 @@ const userModel = require('./userModel');
 class UserController {
 
 
-     all ( req, res ) {
+     all ( req , res ) {
 
-         res.status(200)
-            .json({
-                        success: "True",
-                        data: "show all users"
-            })
+         userModel.find()
+                  .then(  (users) =>  {
+                      res.status(200)
+                          .json({
+                              success: "True",
+                              data: users
+                          })
+                  }).catch( () => {
+                      res.status(400)
+                          .json({
+                              success: false
+                          })
+                  })
      }
-     get ( req, res, id  ){
 
-             let user = userModel.get(z)
-             res
-                 .status(200)
-                 .json({
-                     success: "True",
-                     data: `show user : ${req.params.id}`
+     get ( req , res) {
+
+         userModel.findById(req.params.id)
+             .then(  (user) =>  {
+                 res.status(200)
+                     .json({
+                         success: "True",
+                         data: user
+                     })
+             }).catch( () => {
+                 res.status(400)
+                     .json({
+                     success: false
                  })
+         })
 
 
 
      }
-     store ( req, res ) {
 
-             let user = {
-                             login:'test',
-                             name:'test',
-                             lastName:'test',
-                             address:'test',
-                             image:'test',
-                             number:'test',
-                             email:'test',
-                             password:'test',
-                             isGarage:'test',
-                             rib:'test'
-                         }
-             userModel.create(user)
-                      .then((createdUser) => {
-                                                 res
-                                                     .status(200)
-                                                     .json({
-                                                         msg: "user added",
-                                                         data: createdUser
-                                              })
-             })  ;
+     store ( req , res ) {
+
+         userModel.create(req.body)
+                  .then((createdUser) => {
+                                             res.status(201)
+                                                 .json({
+                                                     success: "True",
+                                                     data: createdUser,
+                                                 })
+                  }).catch( () => {
+                             res.status(400)
+                                 .json({
+                                     success: false
+                                 })
+
+                  })
+     }
+
+     put ( req , res ) {
+
+         userModel.findByIdAndUpdate(req.params.id, req.body , {
+                                                                         new : true ,
+                                                                         runValidators: true
+                  })
+                  .then((updatedUser) => {
+                      res.status(201)
+                          .json({
+                                    success: "True",
+                                    data: updatedUser,
+                                 })
+                  }).catch( () => {
+                             res.status(400)
+                                 .json({
+                                     success: false
+                                 })
+                  })
+     }
+     delete ( req, res ) {
+         userModel.findByIdAndRemove(req.params.id)
+                  .then((updatedUser) => {
+                         res.status(201)
+                             .json({
+                                 success: "True",
+                                 data: updatedUser,
+                             })
+                  }).catch( () => {
+                     res.status(400)
+                         .json({
+                             success: false
+                         })
+                  })
      }
 
 
