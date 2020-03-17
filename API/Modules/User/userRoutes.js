@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const userController = require('./userController');
 
-
 router.use(express.json());
 
 router.get(
@@ -15,7 +14,8 @@ router.post(
 );
 router.get(
     '/:id' ,
-    userController.get );
+    userController.get
+);
 router.put(
     '/:id' ,
     userController.put

@@ -1,5 +1,5 @@
 const userModel = require('./userModel');
-
+const ErrorResponse = require('../../utils/errorResponse')
 
 class UserController {
 
@@ -21,20 +21,20 @@ class UserController {
                   })
      }
 
-     get ( req , res) {
+     get ( req , res, next) {
 
          userModel.findById(req.params.id)
              .then(  (user) =>  {
+                 if (!user){
+                     return next(new ErrorResponse(`can\'t find a user with id :${req.params.id}`,404))
+                 }
                  res.status(200)
                      .json({
                          success: "True",
                          data: user
                      })
-             }).catch( () => {
-                 res.status(400)
-                     .json({
-                     success: false
-                 })
+             }).catch( (err) => {
+                 next(err)
          })
 
 
@@ -78,16 +78,17 @@ class UserController {
                                  })
                   })
      }
-     delete ( req, res ) {
-         userModel.findByIdAndRemove(req.params.id)
+     delete ( req, res , next ) {
+         userModel.findByIdAndDelete(req.params.id)
                   .then((updatedUser) => {
                          res.status(201)
                              .json({
                                  success: "True",
                                  data: updatedUser,
                              })
-                  }).catch( () => {
-                     res.status(400)
+                  }).catch( (err) => {
+                      next(err)
+                      res.status(400)
                          .json({
                              success: false
                          })
