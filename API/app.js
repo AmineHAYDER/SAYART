@@ -1,7 +1,14 @@
 var dbConnection = require('./dbConnection.js');
+
+//routes
 var users = require('./Modules/User/userRoutes');
+var garages = require('./Modules/Garage/garageRoute');
+
+
 const express = require('express');
+//middlewares
 const errorHandler = require('./middelware/errorHandler');
+
 const colors = require('colors');
 const app = express();
 
