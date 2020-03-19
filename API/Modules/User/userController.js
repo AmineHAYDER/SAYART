@@ -1,24 +1,79 @@
 const userModel = require('./userModel');
 const ErrorResponse = require('../../utils/errorResponse')
-
 class UserController {
 
 
-     all ( req , res ) {
+     async all ( req , res , next ) {
+         let query
+         const reqQuery = { ...req.query};
 
-         userModel.find()
-                  .then(  (users) =>  {
-                      res.status(200)
-                          .json({
-                              success: "True",
-                              data: users
-                          })
-                  }).catch( () => {
-                      res.status(400)
-                          .json({
-                              success: false
-                          })
-                  })
+         const removeFields = ['select','sort','page','limit'];
+
+         removeFields.forEach(param => delete reqQuery[param])
+
+
+         let queryStr = JSON.stringify(reqQuery)
+         queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match =>`$${match}`)
+
+
+         query = userModel.find(JSON.parse(queryStr))
+
+         //select fields
+         if (req.query.select){
+             const fields = req.query.select.split(',').join(' ')
+             query = query.select(fields)
+         }
+
+         //sort
+         if (req.query.sort){
+             const sortBy = req.query.sort.split(',').join(' ')
+             query = query.sort(sortBy)
+         }else {
+             query = query.sort('-createdAt')
+
+         }
+          //Pagination
+
+         const page = parseInt(req.query.page,10)||1
+         const limit = parseInt(req.query.limit,10)||1
+         const startIndex = ( page - 1 ) * limit
+         const endIndex =  page * limit
+         const total = await userModel.countDocuments()
+
+
+         query = query.skip(startIndex).limit(limit)
+
+
+         const users= await query
+
+         //Pagination results
+
+         const pagination = {}
+
+         if (endIndex < total){
+             pagination.next = {
+
+                 page : page +1 ,
+                 limit
+             } }
+             if (startIndex > 0) {
+                 pagination.prev = {
+
+                     page: page - 1,
+                     limit
+                 }
+             }
+
+
+
+
+         res.status(200)
+             .json({
+                 success: "True",
+                 count: users.length,
+                 pagination :pagination,
+                 data: users
+             })
      }
 
      get ( req , res, next) {
@@ -41,7 +96,7 @@ class UserController {
 
      }
 
-     store ( req , res ) {
+     store ( req , res ,next) {
 
          userModel.create(req.body)
                   .then((createdUser) => {
@@ -50,16 +105,12 @@ class UserController {
                                                      success: "True",
                                                      data: createdUser,
                                                  })
-                  }).catch( () => {
-                             res.status(400)
-                                 .json({
-                                     success: false
-                                 })
-
+                  }).catch( (err) => {
+                      next(err)
                   })
      }
 
-     put ( req , res ) {
+     put ( req , res ,next ) {
 
          userModel.findByIdAndUpdate(req.params.id, req.body , {
                                                                          new : true ,
@@ -71,11 +122,8 @@ class UserController {
                                     success: "True",
                                     data: updatedUser,
                                  })
-                  }).catch( () => {
-                             res.status(400)
-                                 .json({
-                                     success: false
-                                 })
+                  }).catch( (err) => {
+                             next(err)
                   })
      }
      delete ( req, res , next ) {
@@ -88,10 +136,6 @@ class UserController {
                              })
                   }).catch( (err) => {
                       next(err)
-                      res.status(400)
-                         .json({
-                             success: false
-                         })
                   })
      }
 

@@ -1,19 +1,22 @@
-var dbConnection = require('./dbConnection.js');
-
+const connectDB = require('./config/db');
+const express = require('express');
+const dotenv = require('dotenv');
+const colors = require('colors');
+const errorHandler = require('./middelware/errorHandler');
 //routes
 var users = require('./Modules/User/userRoutes');
 var garages = require('./Modules/Garage/garageRoute');
 
+// Load env vars
+dotenv.config({ path: './config/config.env' });
 
-const express = require('express');
-//middlewares
-const errorHandler = require('./middelware/errorHandler');
 
-const colors = require('colors');
+
+
 const app = express();
 
 
-dbConnection.connect();
+connectDB();
 app.listen(5000 , () => console.log('Server started and listening on port :'.blue,5000) );
 
 

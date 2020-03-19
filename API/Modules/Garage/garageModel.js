@@ -43,7 +43,7 @@ const garageSchema = new mongoose.Schema({
         street: String,
         city: String,
         state: String,
-        zipcode: String
+        zipCode: String
     },
     services: {
         type: [String],
