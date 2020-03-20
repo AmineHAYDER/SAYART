@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const slugify = require('slugify');
 const geocoder = require('../../utils/geocoder');
 
-const userSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
     login: {
                type: String,
                required: [true,'please add a login'],
@@ -80,17 +80,21 @@ const userSchema = mongoose.Schema({
         type:Date ,
         default: Date.now ,
     }
+},{
+    toJSON:{virtuals : true},
+    toObject:{virtuals : true}
+
 });
 
 //Create Users slug from name
-userSchema.pre('save',function(){
+UserSchema.pre('save',function(){
 
         this.slug = slugify( this.name,{lower:true})
         next();
 
 });
 // Geocode Create location field
-userSchema.pre('save',async function (next){
+UserSchema.pre('save',async function (next){
     const loc = await geocoder.geocode(this.address);
     this.location = {
         type: 'Point',
@@ -108,4 +112,13 @@ userSchema.pre('save',async function (next){
     next();
 });
 
-module.exports = mongoose.model('user', userSchema);
+UserSchema.virtual('garages',{
+    ref:'Garage',
+    localField: '_id',
+    foreignField: 'user',
+    justOne: false
+
+});
+
+
+module.exports = mongoose.model('User', UserSchema);

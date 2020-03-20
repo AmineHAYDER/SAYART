@@ -1,0 +1,29 @@
+[
+  {
+  "name": "Garage Ali",
+  "phone":"22659874",
+  "address": "11 rue balhwen,ariana, ariana ",
+  "services":["oilChange","washing"],
+  "status": "Down",
+  "photo":"no-photo.jpg",
+  "user": "5e742fb64542bb39c0edd8d5"
+},
+  {
+  "name": "Garage MedAmine",
+  "phone":"22659874",
+  "address": "11 rue balhwen,ariana, ariana ",
+  "services":["oilChange","washing"],
+  "status": "Down",
+  "photo":"no-photo.jpg",
+  "user": "5e742fb64542bb39c0edd8d4"
+},
+  {
+  "name": "Garage jawzel",
+  "phone":"22659874",
+  "address": "11 rue balhwen,ariana, ariana ",
+  "services": ["oilChange","washing"],
+  "status": "Up",
+  "photo":"no-photo.jpg",
+  "user": "5e742fb64542bb39c0edd8d4"
+}
+]

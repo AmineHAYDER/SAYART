@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('./userController');
+const garageRouter = require('../Garage/garageRoute');
+
 
 router.use(express.json());
 
-router.get(
-    '/' ,
-    userController.all
-);
+router.use('/:userId/garage', garageRouter);
+
+router.route('/')
+      .get(userController.all);
+
 router.post(
     '/create' ,
     userController.store

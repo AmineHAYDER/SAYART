@@ -1,4 +1,5 @@
-[{
+[
+  {
 "login":"AmineHayder",
 "name":"amine",
 "lastName":"hayder",
@@ -9,7 +10,8 @@
 "password":"hashed",
 "isGarage": true,
 "rib":"98413219516"
-},{
+},
+  {
   "image": "aziej6545.jpg",
   "login": "HichemHayder",
   "name": "Hichem ibra",
@@ -32,4 +34,29 @@
 "password": "hashed",
 "isGarage": true,
 "rib": "98413219516"
+},
+  {"_id": "5e742fb64542bb39c0edd8d4",
+  "image": "no-photo.jpg",
+  "login": "MedAmineNacer",
+  "name": "MedAmine",
+  "lastName": "Nacer",
+    "address": "3 Rue Ahmed Amine, Ariana, Ariana",
+  "number": "22987874",
+  "email": "MedAmineNacer@gmail.com",
+  "password": "hashed",
+  "isGarage": true,
+  "rib": "984132195654616"
+},
+  {
+  "_id": "5e742fb64542bb39c0edd8d5",
+  "image": "no-photo.jpg",
+  "login": "AliYahaoui",
+  "name": "ali",
+  "lastName": "yahyaoui",
+    "address": "3 Rue Ahmed Amine, Ariana, Ariana",
+    "number": "22659874",
+  "email": "aliyahyaoui@gmail.com",
+  "password": "hashed",
+  "isGarage": true,
+  "rib": "984132195654616"
 }]

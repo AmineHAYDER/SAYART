@@ -22,5 +22,7 @@ app.listen(5000 , () => console.log('Server started and listening on port :'.blu
 
 app.use('/user',users);
 
+app.use('/garage',garages);
+
 app.use(errorHandler);
 app.use('/',(req,res)=>{res.send('home page')});

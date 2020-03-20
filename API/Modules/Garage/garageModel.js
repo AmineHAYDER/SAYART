@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const garageSchema = new mongoose.Schema({
+const GarageSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'please add a name'],
@@ -10,19 +10,9 @@ const garageSchema = new mongoose.Schema({
         maxlength: [50, 'name can not be more than 50 characters']
     },
     slug: String,
-    description: {
-        type: String,
-        required: [true, 'please add a name'],
-        trim: true,
-    },
     phone: {
         type: String,
         maxlength: 8
-    },
-    email: {
-        type: String,
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-            "please verify your email"]
     },
     address: {
         type: String,
@@ -32,11 +22,9 @@ const garageSchema = new mongoose.Schema({
         type: {
             type: String,
             enum: ['Point'],
-
         },
         coordinates: {
             type: [Number],
-
             index: '2dsphere'
         },
         formattedAddress: String,
@@ -49,13 +37,31 @@ const garageSchema = new mongoose.Schema({
         type: [String],
         required: true,
         enum: [
-            'vidange', 'lavage', '3jeli', 'repair', 'other'
+            'oilChange', 'washing', 'wheels', 'electronic', 'lights'
         ]
     },
-    averageRating: {
-        type: Number,
-        min: 0,
-        max: 5
+    status:{
+         type: String,
+         enum : [
+             'Up', 'Down'
+         ]
+    },
+    Ratings: {
+        service: {
+            type: Number,
+            min: 0,
+            max: 5
+        },
+        greeting: {
+            type: Number,
+            min: 0,
+            max: 5
+        },
+        timing: {
+            type: Number,
+            min: 0,
+            max: 5
+        },
     },
     photo: {
         type: String,
@@ -64,7 +70,11 @@ const garageSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    user:{
+        type : mongoose.Schema.ObjectId,
+        ref : 'User',
     }
 });
 
-module.exports = mongoose.model('garage', garageSchema);
+module.exports = mongoose.model('Garage', GarageSchema);

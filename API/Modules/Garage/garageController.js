@@ -1,80 +1,145 @@
-const Garage = require('./garageModel')
-
-// @desc get all garages
-// @route get /garages
-// @access signed in
-exports.getGarages = async (req, res, next) => {
-
-    try {
-        const g = await Garage.find();
-        res.status(200).json({ success: true, data: g });
-    } catch{
-        res.status(400).json({ success: false, data: null });
-    }
-
-};
+const garageModel = require('./garageModel');
+const ErrorResponse = require('../../utils/errorResponse')
+class garageController {
 
 
-// @desc create new bootcamp
-// @route post /garages
-// @access signed in
-exports.createGarage = async (req, res, next) => {
-    const g = await Garage.create(req.body);
-    res.status(201).json({
-        success: true, data: g
-    })
-};
+    async all ( req , res , next ) {
+        let fields
+        let sortBy
+        const reqQuery = { ...req.query};
 
+        // gt|gte|lt|lte|in query
 
-// @desc update
-// @route put /garages
-// @access signed in
-exports.updateGarage = async (req, res, next) => {
+        const removeFields = ['select','sort','page','limit'];
+        removeFields.forEach(param => delete reqQuery[param])
+        let queryStr = JSON.stringify(reqQuery)
+        queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match =>`$${match}`)
 
-    const g = await Garage.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-        runValidators: true
-    })
-
-    if (!g) {
-        return res.status(400).json({ success: false });
-    }
-
-    res.status(200).json({ success: true, msg: `update garage ${req.params.id}` });
-};
-
-
-exports.getGarage = async (req, res, next) => {
-    try {
-        const g = await Garage.findById(req.params.id)
-
-        if (!g) {
-            return res.status(400).json({ success: false, data: null });
+        //select fields
+        if (req.query.select){
+            fields = req.query.select.split(',').join(' ')
         }
+        //sort
 
-        res.status(200).json({ success: true, data: g });
-    } catch (err) {
-        res.status(400).json({ success: false, data: null });
-    }
-};
+        if (req.query.sort){
+            sortBy = req.query.sort.split(',').join(' ')
+        }else {
 
-// @desc create new bootcamp
-// @route put /garages
-// @access signed in
-exports.deleteGarage = async (req, res, next) => {
-    try {
-        const g = await Garage.findByIdAndDelete(req.params.id, req.body);
-
-        if (!g) {
-            return res.status(400).json({ success: false, data: null });
         }
+        //Pagination
 
-    } catch (err) {
-        res.status(400).json({ success: false, data: null });
+        const page = parseInt(req.query.page,10)||1
+        const limit = parseInt(req.query.limit,10)||1
+        const startIndex = ( page - 1 ) * limit
+        const endIndex =  page * limit
+        const total = await garageModel.countDocuments()
+
+
+        //Pagination results
+
+        const pagination = {}
+
+        if (endIndex < total){
+            pagination.next = {
+
+                page : page +1 ,
+                limit
+            } }
+        if (startIndex > 0) {
+            pagination.prev = {
+
+                page: page - 1,
+                limit
+            }
+        }
+        //get user's garages populated
+        console.log(req.params.userId)
+        garageModel.find({user: req.params.userId})
+            .populate({
+                path:'user',
+                select :'name'
+            })
+            .select(fields)
+            .sort(sortBy)
+            .skip(startIndex)
+            .limit(limit)
+            .then( (garages)=> {
+                res.status(200)
+                    .json({
+                        success: "True",
+                        count: garages.length,
+                        pagination :pagination,
+                        data: garages
+                    })
+            }).catch((err)=>{
+            next(err)
+        })
+
     }
-};
+
+    get ( req , res, next) {
+
+        garageModel.findById(req.params.id)
+            .then(  (garage) =>  {
+                if (!garage){
+                    return next(new ErrorResponse(`can\'t find a garage with id :${req.params.id}`,404))
+                }
+                res.status(200)
+                    .json({
+                        success: "True",
+                        data: garage
+                    })
+            }).catch( (err) => {
+            next(err)
+        })
 
 
 
+    }
+
+    store ( req , res ,next) {
+
+        garageModel.create(req.body)
+            .then((createdGarage) => {
+                res.status(201)
+                    .json({
+                        success: "True",
+                        data: createdGarage,
+                    })
+            }).catch( (err) => {
+            next(err)
+        })
+    }
+
+    put ( req , res ,next ) {
+
+        garageModel.findByIdAndUpdate(req.params.id, req.body , {
+            new : true ,
+            runValidators: true
+        })
+            .then((updatedGarage) => {
+                res.status(201)
+                    .json({
+                        success: "True",
+                        data: updatedGarage,
+                    })
+            }).catch( (err) => {
+            next(err)
+        })
+    }
+    delete ( req, res , next ) {
+        garageModel.findByIdAndDelete(req.params.id)
+            .then((updatedGarage) => {
+                res.status(201)
+                    .json({
+                        success: "True",
+                        data: updatedGarage,
+                    })
+            }).catch( (err) => {
+            next(err)
+        })
+    }
 
 
+}
+module.exports = new garageController();

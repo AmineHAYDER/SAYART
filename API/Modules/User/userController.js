@@ -4,32 +4,26 @@ class UserController {
 
 
      async all ( req , res , next ) {
-         let query
+         let fields
+         let sortBy
          const reqQuery = { ...req.query};
 
+         // gt|gte|lt|lte|in query
+
          const removeFields = ['select','sort','page','limit'];
-
          removeFields.forEach(param => delete reqQuery[param])
-
-
          let queryStr = JSON.stringify(reqQuery)
          queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match =>`$${match}`)
 
-
-         query = userModel.find(JSON.parse(queryStr))
-
          //select fields
-         if (req.query.select){
-             const fields = req.query.select.split(',').join(' ')
-             query = query.select(fields)
-         }
-
+          if (req.query.select){
+               fields = req.query.select.split(',').join(' ')
+          }
          //sort
+
          if (req.query.sort){
-             const sortBy = req.query.sort.split(',').join(' ')
-             query = query.sort(sortBy)
+             sortBy = req.query.sort.split(',').join(' ')
          }else {
-             query = query.sort('-createdAt')
 
          }
           //Pagination
@@ -40,11 +34,6 @@ class UserController {
          const endIndex =  page * limit
          const total = await userModel.countDocuments()
 
-
-         query = query.skip(startIndex).limit(limit)
-
-
-         const users= await query
 
          //Pagination results
 
@@ -65,15 +54,27 @@ class UserController {
              }
 
 
+         userModel.find(JSON.parse(queryStr))
+                  .populate({
+                      path:'garages',
+                      select:'name'
+                  })
+                  .select(fields)
+                  .sort(sortBy)
+                  .skip(startIndex)
+                  .limit(limit)
+                  .then( (users)=> {
+                     res.status(200)
+                         .json({
+                             success: "True",
+                             count: users.length,
+                             pagination :pagination,
+                             data: users
+                         })
+                  }).catch((err)=>{
+                  next(err)
+                  })
 
-
-         res.status(200)
-             .json({
-                 success: "True",
-                 count: users.length,
-                 pagination :pagination,
-                 data: users
-             })
      }
 
      get ( req , res, next) {
