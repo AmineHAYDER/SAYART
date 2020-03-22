@@ -1,79 +1,41 @@
 const userModel = require('./userModel');
 const ErrorResponse = require('../../utils/errorResponse')
+const sendTokenResponse = require('../../utils/sendTokenResponse')
 class UserController {
 
 
-     async all ( req , res , next ) {
-         let fields
-         let sortBy
-         const reqQuery = { ...req.query};
+     async login ( req , res , next ){
 
-         // gt|gte|lt|lte|in query
+         const { email, password } = req.body;
 
-         const removeFields = ['select','sort','page','limit'];
-         removeFields.forEach(param => delete reqQuery[param])
-         let queryStr = JSON.stringify(reqQuery)
-         queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match =>`$${match}`)
-
-         //select fields
-          if (req.query.select){
-               fields = req.query.select.split(',').join(' ')
-          }
-         //sort
-
-         if (req.query.sort){
-             sortBy = req.query.sort.split(',').join(' ')
-         }else {
-
+         // Validate emil & password
+         if (!email || !password) {
+             return next(new ErrorResponse('Please provide an email and password', 400));
          }
-          //Pagination
 
-         const page = parseInt(req.query.page,10)||1
-         const limit = parseInt(req.query.limit,10)||1
-         const startIndex = ( page - 1 ) * limit
-         const endIndex =  page * limit
-         const total = await userModel.countDocuments()
+         // Check for user
+         const user = await userModel.findOne({ email }).select('+password');
 
+         if (!user) {
+             return next(new ErrorResponse('Invalid credentials', 401));
+         }
 
-         //Pagination results
+         // Check if password matches
+         const isMatch = await user.matchPassword(password);
 
-         const pagination = {}
+         if (!isMatch) {
+             return next(new ErrorResponse('Invalid credentials', 401));
+         }
 
-         if (endIndex < total){
-             pagination.next = {
+         console.log('done cookie')
+         sendTokenResponse(user,200,res)
 
-                 page : page +1 ,
-                 limit
-             } }
-             if (startIndex > 0) {
-                 pagination.prev = {
-
-                     page: page - 1,
-                     limit
-                 }
-             }
+     }
 
 
-         userModel.find(JSON.parse(queryStr))
-                  .populate({
-                      path:'garages',
-                      select:'name'
-                  })
-                  .select(fields)
-                  .sort(sortBy)
-                  .skip(startIndex)
-                  .limit(limit)
-                  .then( (users)=> {
-                     res.status(200)
-                         .json({
-                             success: "True",
-                             count: users.length,
-                             pagination :pagination,
-                             data: users
-                         })
-                  }).catch((err)=>{
-                  next(err)
-                  })
+     all ( req , res , next ) {
+          res.status(200)
+             .json(res.advancedResults)
 
      }
 
@@ -97,14 +59,20 @@ class UserController {
 
      }
 
-     store ( req , res ,next) {
+     register ( req , res ,next) {
+         const {name,login,email,password,role,lastName,address,image,number,
+             isGarage,
+             rib} = req.body
 
-         userModel.create(req.body)
-                  .then((createdUser) => {
+
+
+         userModel
+             .create({name, login, password, role,lastName,address,image,number, isGarage, rib,email})
+             .then((createdUser) => {   const token = createdUser.getSignedJwtToken()
                                              res.status(201)
                                                  .json({
                                                      success: "True",
-                                                     data: createdUser,
+                                                     token,
                                                  })
                   }).catch( (err) => {
                       next(err)
@@ -127,17 +95,20 @@ class UserController {
                              next(err)
                   })
      }
-     delete ( req, res , next ) {
-         userModel.findByIdAndDelete(req.params.id)
-                  .then((updatedUser) => {
-                         res.status(201)
-                             .json({
-                                 success: "True",
-                                 data: updatedUser,
-                             })
-                  }).catch( (err) => {
-                      next(err)
-                  })
+    async delete ( req, res , next ) {
+
+         const user = await userModel.findById(req.params.id)
+
+         user.remove()
+             .then((updatedUser) => {
+                 res.status(201)
+                     .json({
+                         success: "True",
+                         data: updatedUser,
+                     })
+             }).catch( (err) => {
+                 next(err)
+             })
      }
 
 

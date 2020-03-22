@@ -52,9 +52,22 @@ const deleteData = async () => {
     console.error(err);
   }
 };
-
+const refreshData = async () => {
+  try {
+    await user.deleteMany();
+    await garage.deleteMany();
+    await user.create(users);
+    await garage.create(garages);
+    console.log('Data Refreshed...'.blue.inverse);
+    process.exit();
+  } catch (err) {
+    console.error(err);
+  }
+};
 if (process.argv[2] === '-i') {
   importData();
 } else if (process.argv[2] === '-d') {
   deleteData();
+} else if (process.argv[2] === '-r') {
+  refreshData();
 }

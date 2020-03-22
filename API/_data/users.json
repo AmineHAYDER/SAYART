@@ -7,7 +7,7 @@
 "image":"aziej6545.jpg",
 "number":"9495611",
 "email":"aminehayder@gmail.com",
-"password":"hashed",
+"password":"amine12*aa",
 "isGarage": true,
 "rib":"98413219516"
 },
@@ -19,9 +19,9 @@
   "address": "3 Rue Ahmed Amine, Ariana, Ariana",
   "number": "9495611",
   "email": "Hichemhayder@gmail.com",
-  "password": "hashed",
   "isGarage": true,
-  "rib": "98413219516"
+  "rib": "98413219516",
+  "password":"hichem1526"
 },
 {
 "image": "aziej6545.jpg",
@@ -31,9 +31,9 @@
 "address": "3 Rue Ahmed Amine, Ariana, Ariana",
 "number": "9495611",
 "email": "mariemhayder@gmail.com",
-"password": "hashed",
 "isGarage": true,
-"rib": "98413219516"
+"rib": "98413219516",
+ "password":"mariem1526"
 },
   {"_id": "5e742fb64542bb39c0edd8d4",
   "image": "no-photo.jpg",
@@ -43,9 +43,9 @@
     "address": "3 Rue Ahmed Amine, Ariana, Ariana",
   "number": "22987874",
   "email": "MedAmineNacer@gmail.com",
-  "password": "hashed",
   "isGarage": true,
-  "rib": "984132195654616"
+  "rib": "984132195654616",
+    "password":"medamine1526"
 },
   {
   "_id": "5e742fb64542bb39c0edd8d5",
@@ -56,7 +56,9 @@
     "address": "3 Rue Ahmed Amine, Ariana, Ariana",
     "number": "22659874",
   "email": "aliyahyaoui@gmail.com",
-  "password": "hashed",
   "isGarage": true,
-  "rib": "984132195654616"
-}]
+  "rib": "984132195654616",
+    "password":"aliyah1526"
+
+
+  }]

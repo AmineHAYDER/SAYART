@@ -46,7 +46,7 @@ const GarageSchema = new mongoose.Schema({
              'Up', 'Down'
          ]
     },
-    Ratings: {
+    ratings: {
         service: {
             type: Number,
             min: 0,
