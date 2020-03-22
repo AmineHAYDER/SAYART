@@ -1,0 +1,77 @@
+.links {
+    margin-right: 100px;
+}
+
+.links-items {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: color 0.5s;
+    color: black !important;
+    font-weight: bold;
+}
+
+.links-items:hover {
+    color: rgb(20, 47, 120) !important;
+}
+
+.NoUnder:hover {
+    text-decoration: none !important;
+}
+
+ul li .underline {
+    height: 3px;
+    background-color: transparent;
+    width: 0%;
+    transition: width 0.2s, background-color 0.5s;
+    margin: 0 auto;
+}
+
+ul li.active-link .underline {
+    width: 90%;
+    background-color: rgb(20, 47, 120);
+}
+
+
+
+ul li:hover .underline {
+    background-color: rgb(20, 47, 120);
+    width: 80%;
+}
+
+
+
+
+ul li:active a {
+    transition: none;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+ul li:active .underline {
+    transition: none;
+    background-color: rgba(255, 255, 255, 0.76);
+}
+
+
+.logo {
+    margin-left: 40%;
+}
+
+.button-container {
+    padding-left: 50px;
+}
+
+.cnxButton {
+    background-color: black !important;
+    color: white !important;
+    font-weight: bold !important;
+    border: none !important;
+
+}
+
+.cnxButton:hover {
+    background-color: rgb(20, 47, 120) !important;
+}
+
+.navbarc {
+    background-color: white;
+}
