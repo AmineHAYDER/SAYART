@@ -1,0 +1,41 @@
+.blueColor {
+    color: royalblue;
+}
+
+.greenColor {
+    color: mediumaquamarine;
+}
+
+.colMarg {
+    float: left;
+    align-content: flex-start;
+
+}
+
+.col-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.links-div {
+    display: flex;
+
+    font-size: 16px;
+    margin-left: auto;
+}
+
+
+.icons {
+    padding: 5px;
+    background-color: white;
+    display: inline-block;
+}
+
+.icons img:hover {
+    opacity: .5;
+}
+
+.copyright-text {
+    height: 75px;
+
+}
