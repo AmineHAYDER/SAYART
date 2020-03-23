@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const colors = require('colors');
 const errorHandler = require('./middelware/errorHandler');
 const cookieParser = require('cookie-parser')
+
 //routes
 var users = require('./Modules/User/userRoutes');
 var garages = require('./Modules/Garage/garageRoute');
@@ -25,6 +26,9 @@ app.listen(5000 , () => console.log('Server started and listening on port :'.blu
 app.use('/user',users);
 
 app.use('/garage',garages);
+
+
+
 
 app.use(errorHandler);
 app.use('/',(req,res)=>{res.send('home page')});
