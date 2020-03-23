@@ -10,7 +10,7 @@ class Register extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            email : '',
+            email: '',
             password: ''
         };
     }
@@ -32,16 +32,30 @@ class Register extends React.Component {
                 'Content-Type': 'application/json'
             }
         })
-            .then((res ) => {
+            /*.then((res) => {
                 console.log(res);
                 if (res.status === 200) {
-                    this.props.history.push('/');
+                    this.props.history.push('/account');
                 } else if (res.status === 401) {
                     alert('invalid credentials')
                 }
-            }).catch((err)=>{
+            }).catch((err) => {
                 alert(err)
-        })
+            }) */
+
+            .then(res => res.json())
+            .then(data => {
+
+                console.log(data.data);
+                if (data.success === true) {
+                    this.props.history.push('/account');
+                } else if (data.success === false) {
+                    alert('invalid credentials');
+                }
+            })
+
+
+
     }
 
     render() {
@@ -72,19 +86,19 @@ class Register extends React.Component {
                                     value={this.state.email}
                                     onChange={this.handleInputChange}
                                     required
-                                 />
+                                />
                             </Form.Group>
 
 
 
                             <Form.Group controlId="formBasicPassword">
                                 <input
-                                type="password"
-                                name="password"
-                                placeholder="Enter password"
-                                value={this.state.password}
-                                onChange={this.handleInputChange}
-                                required
+                                    type="password"
+                                    name="password"
+                                    placeholder="Enter password"
+                                    value={this.state.password}
+                                    onChange={this.handleInputChange}
+                                    required
                                 />
                             </Form.Group>
 
@@ -95,8 +109,8 @@ class Register extends React.Component {
 
 
 
-                            <Button variant="primary" type="submit"  block>
-                                <input type="submit" value="Submit"/>
+                            <Button variant="primary" type="submit" block>
+                                <input type="submit" value="Submit" />
                             </Button>
                         </Form>
                     </Col>

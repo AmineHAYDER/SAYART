@@ -18,8 +18,10 @@ const sendTokenResponse = (user, statusCode, res) => {
         .cookie('token', token, options)
         .json({
             success: true,
-            token
+            data: token
         });
+
+    console.log(token);
 };
 
 module.exports = sendTokenResponse
