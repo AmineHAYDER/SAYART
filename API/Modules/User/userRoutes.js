@@ -4,7 +4,6 @@ const userController = require('./userController');
 const garageRouter = require('../Garage/garageRoute');
 const advancedResults = require('../../middelware/advancedResults')
 const user= require('./userModel');
-
 const cors = require('cors');
 const { protect, authorize } = require('../../middelware/auth');
 
@@ -15,8 +14,12 @@ router.use(cors());
 
 router.use('/:userId/garage', garageRouter);
 
-router.route('/')
-      .get(advancedResults(user, 'garages'),userController.all);
+router
+    .route('/')
+    .get(
+       advancedResults(user, 'garages'),
+       userController.all
+    );
 
 router.post('/login',
     userController.login )
@@ -33,9 +36,11 @@ router.put(
     '/:id' ,
     userController.put
 );
-router.route('/:id')
+router
+    .route('/:id')
     .delete(
-        protect   ,
+        protect,
+        authorize('admin'),
     userController.delete
 );
 
