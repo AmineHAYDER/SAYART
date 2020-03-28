@@ -6,6 +6,9 @@ const mongoSanitize = require('express-mongo-sanitize')
 const helmet = require('helmet')
 const xssClean = require('xss-clean')
 
+//file upload
+const fileUpload = require('express-fileupload')
+const path = require('path');
 
 const userController = require('./userController');
 
@@ -27,9 +30,10 @@ router.use(cors(corsOptions));
 router.use(mongoSanitize());
 router.use(helmet());
 router.use(xssClean());
+router.use(fileUpload());
 
 
-
+router.use(express.static(path.join(__dirname, 'public')));
 
 router.use('/auth', authRouter);
 router.use('/:userId/garage', protect, authorize('garage','admin'), garageRouter);
@@ -38,6 +42,10 @@ router.use('/:userId/garage', protect, authorize('garage','admin'), garageRouter
 router
     .route('/')
     .get(advancedResults(user, 'garages'), protect, authorize('garage','admin'), userController.all);
+
+router
+    .route('/:id/photo')
+    .post(userController.photoUpload)
 
 router
     .route('/:id')
