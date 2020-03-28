@@ -8,6 +8,9 @@ import { Route, Switch } from "react-router-dom";
 import Landingpage from './components/landingpage/Landingpage';
 import Account from './components/Account';
 
+import AuthState from './contexts/Auth/authState';
+
+
 class App extends React.Component {
 
   constructor(props) {
@@ -35,9 +38,10 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <AuthState>
 
-        {page}
-
+          {page}
+        </AuthState>
       </div>);
   }
 

@@ -17,7 +17,7 @@ const garageRouter = require('../Garage/garageRoute');
 
 
 const advancedResults = require('../../middelware/advancedResults')
-const user= require('./userModel');
+const user = require('./userModel.js');
 const cors = require('cors');
 const { protect, authorize } = require('../../middelware/auth');
 const corsOptions = {
@@ -36,12 +36,12 @@ router.use(fileUpload());
 router.use(express.static(path.join(__dirname, 'public')));
 
 router.use('/auth', authRouter);
-router.use('/:userId/garage', protect, authorize('garage','admin'), garageRouter);
+router.use('/:userId/garage', protect, authorize('garage', 'admin'), garageRouter);
 
 
 router
     .route('/')
-    .get(advancedResults(user, 'garages'), protect, authorize('garage','admin'), userController.all);
+    .get(advancedResults(user, 'garages'), protect, authorize('garage', 'admin'), userController.all);
 
 router
     .route('/:id/photo')
@@ -55,4 +55,4 @@ router
 
 
 
-module.exports = router ;
+module.exports = router;
