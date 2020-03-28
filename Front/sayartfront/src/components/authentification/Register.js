@@ -40,7 +40,8 @@ const Register = () => {
             "email": email,
             "password": phone,
             "isGarage": false,
-            "rib": "98413219516"
+            "rib": "98413219516",
+            "role": "user"
         })
         console.log('called');
 

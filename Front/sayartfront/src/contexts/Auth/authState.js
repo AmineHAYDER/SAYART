@@ -41,7 +41,7 @@ const AuthState = props => {
         } catch (err) {
             dispatch({
                 type: REGISTER_FAIL,
-                payload: data
+                payload: 'fail'
             });
         }
     }
