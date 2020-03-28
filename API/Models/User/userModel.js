@@ -133,9 +133,7 @@ UserSchema.pre('save',function(next){
 });
 
 //cascade delete garages owned by this user
-UserSchema.pre('remove', async function(next) {
-    console.log(this)
-    console.log('here')
+UserSchema.pre('deleteOne', async function(next) {
     await this.model('Garage').deleteMany({ user: this._id });
     next()
 

@@ -1,4 +1,4 @@
-const userModel = require('./userModel');
+const User = require('./userModel');
 const ErrorResponse = require('../../utils/errorResponse')
 const sendTokenResponse = require('../../utils/sendTokenResponse')
 class UserController {
@@ -11,7 +11,7 @@ class UserController {
 
      get ( req , res, next) {
 
-         userModel.findById(req.params.id)
+         User.findById(req.params.id)
              .then(  (user) =>  {
                  if (!user){
                      return next(new ErrorResponse(`can\'t find a user with id :${req.params.id}`,404))
@@ -31,34 +31,35 @@ class UserController {
 
      put ( req , res ,next ) {
 
-         userModel.findByIdAndUpdate(req.params.id, req.body , {
-                                                                         new : true ,
-                                                                         runValidators: true
-                  })
-                  .then((updatedUser) => {
+         User
+             .findByIdAndUpdate(req.params.id, req.body , {
+                 new : true ,
+                 runValidators: true
+             })
+             .then((updatedUser) => {
                       res.status(201)
                           .json({
                                     success: "True",
                                     data: updatedUser,
-                                 })
-                  }).catch( (err) => {
+                          })
+             }).catch( (err) => {
                              next(err)
-                  })
+             })
      }
+
+     // We got a problem in delete method can't execute the userschema.pre method in userModel
     async delete ( req, res , next ) {
 
-         const user = await userModel.findById(req.params.id)
+         const user = await User.findById(req.params.id)
 
-         user.remove()
-             .then((updatedUser) => {
-                 res.status(201)
-                     .json({
-                         success: "True",
-                         data: updatedUser,
-                     })
-             }).catch( (err) => {
-                 next(err)
-             })
+         const deletedUser = await User.deleteOne(user)
+
+        res
+            .status(201)
+            .json({
+                success: "True",
+                data: deletedUser,
+            })
      }
 
 }

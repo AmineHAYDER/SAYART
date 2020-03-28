@@ -5,7 +5,7 @@ const garageController = require('./garageController');
 router.use(express.json());
 
 router.route('/')
-    .get(garageController.all);
+      .get(garageController.all);
 
 router.post(
     '/create',

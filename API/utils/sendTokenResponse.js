@@ -1,7 +1,6 @@
 const sendTokenResponse = (user, statusCode, res) => {
 
 
-    // Create token
     const token = user.getSignedJwtToken();
 
     const options = {
@@ -18,14 +17,11 @@ const sendTokenResponse = (user, statusCode, res) => {
     res
         .status(statusCode)
         .cookie('token', token, options)
-        .cookie('amine', 'amine', options)
         .json({
             success: true,
             token
 
         });
-
-    console.log(token);
 };
 
 module.exports = sendTokenResponse

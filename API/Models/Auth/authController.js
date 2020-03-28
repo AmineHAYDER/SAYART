@@ -1,4 +1,4 @@
-const userModel = require('../User/userModel');
+const User = require('../User/userModel');
 const ErrorResponse = require('../../utils/errorResponse')
 const sendTokenResponse = require('../../utils/sendTokenResponse')
 class UserController {
@@ -8,15 +8,13 @@ class UserController {
 
         const { email, password } = req.body;
 
-
         // Validate emil & password
         if (!email || !password) {
             return next(new ErrorResponse('Please provide an email and a password', 400));
         }
 
         // Check for user
-        const user = await userModel.findOne({ email }).select('+password');
-
+        const user = await User.findOne({ email }).select('+password');
         if (!user) {
             return next(new ErrorResponse('User Not Found ! ', 401));
         }
@@ -32,13 +30,24 @@ class UserController {
 
     }
 
+    async logout  (req, res, next) {
+        res.cookie('token', 'none', {
+            expires: new Date(Date.now() + 10 * 1000),
+            httpOnly: true
+        });
+
+        res.status(200).json({
+            success: true,
+            data: {}
+        });
+    }
 
     register ( req , res ,next) {
         const {name,login,email,password,role,lastName,address,image,number,
             isGarage,
             rib} = req.body ;
 
-        userModel
+        User
             .create({name, login, password, role,lastName,address,image,number, isGarage, rib,email})
             .then((createdUser) => {   const token = createdUser.getSignedJwtToken()
                 res.status(201)
@@ -50,17 +59,19 @@ class UserController {
             next(err)
         })
     }
+     me ( req , res ,next) {
 
-    async logout  (req, res, next) {
-        res.cookie('token', 'none', {
-            expires: new Date(Date.now() + 10 * 1000),
-            httpOnly: true
-        });
-
-        res.status(200).json({
-            success: true,
-            data: {}
-        });
+        User
+            .findById(req.user.id)
+            .then((User) => {
+                res.status(201)
+                    .json({
+                        success: "True",
+                        data: User
+                    })
+            }).catch( (err) => {
+            next(err)
+        })
     }
 }
 module.exports = new UserController();
