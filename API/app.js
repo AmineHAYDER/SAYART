@@ -6,8 +6,8 @@ const errorHandler = require('./middelware/errorHandler');
 const cookieParser = require('cookie-parser')
 
 //routes
-var users = require('./Modules/User/userRoutes');
-var garages = require('./Modules/Garage/garageRoute');
+var users = require('./Models/User/userRoutes');
+var garages = require('./Models/Garage/garageRoute');
 
 // Load env vars
 dotenv.config({ path: './config/config.env' });

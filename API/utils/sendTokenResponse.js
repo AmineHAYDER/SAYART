@@ -18,9 +18,11 @@ const sendTokenResponse = (user, statusCode, res) => {
     res
         .status(statusCode)
         .cookie('token', token, options)
+        .cookie('amine', 'amine', options)
         .json({
             success: true,
             token
+
         });
 
     console.log(token);
