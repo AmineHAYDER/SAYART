@@ -1,6 +1,7 @@
 [
   {
 "login":"AmineHayder",
+ "role": "admin",
 "name":"amine",
 "lastName":"hayder",
 "address":"aoizjeâzke",
@@ -8,10 +9,11 @@
 "number":"9495611",
 "email":"aminehayder@gmail.com",
 "password":"amine12*aa",
-"isGarage": true,
+"isGarage": false,
 "rib":"98413219516"
 },{
   "login":"waeElEchi",
+  "role": "admin",
   "name":"wael",
   "lastName":"elechi",
   "address":"aoizjeâzke",
@@ -19,7 +21,7 @@
   "number":"9495611",
   "email":"waelelechi@gmail.com",
   "password":"wael12*aa",
-  "isGarage": true,
+  "isGarage": false,
   "rib":"98413219516"
 },
   {
@@ -30,7 +32,7 @@
   "address": "3 Rue Ahmed Amine, Ariana, Ariana",
   "number": "9495611",
   "email": "Hichemhayder@gmail.com",
-  "isGarage": true,
+  "isGarage": false,
   "rib": "98413219516",
   "password":"hichem1526"
 },
@@ -42,12 +44,13 @@
 "address": "3 Rue Ahmed Amine, Ariana, Ariana",
 "number": "9495611",
 "email": "mariemhayder@gmail.com",
-"isGarage": true,
+"isGarage": false,
 "rib": "98413219516",
  "password":"mariem1526"
 },
   {"_id": "5e742fb64542bb39c0edd8d4",
-  "image": "no-photo.jpg",
+    "role": "garage",
+    "image": "no-photo.jpg",
   "login": "MedAmineNacer",
   "name": "MedAmine",
   "lastName": "Nacer",
@@ -60,7 +63,8 @@
 },
   {
   "_id": "5e742fb64542bb39c0edd8d5",
-  "image": "no-photo.jpg",
+    "role": "garage",
+    "image": "no-photo.jpg",
   "login": "AliYahaoui",
   "name": "ali",
   "lastName": "yahyaoui",
@@ -70,6 +74,4 @@
   "isGarage": true,
   "rib": "984132195654616",
     "password":"aliyah1526"
-
-
   }]

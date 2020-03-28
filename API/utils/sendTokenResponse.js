@@ -1,5 +1,6 @@
 const sendTokenResponse = (user, statusCode, res) => {
-    // Create token
+
+
     const token = user.getSignedJwtToken();
 
     const options = {
@@ -18,10 +19,9 @@ const sendTokenResponse = (user, statusCode, res) => {
         .cookie('token', token, options)
         .json({
             success: true,
-            data: token
-        });
+            token
 
-    console.log(token);
+        });
 };
 
 module.exports = sendTokenResponse

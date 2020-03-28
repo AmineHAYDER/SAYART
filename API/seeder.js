@@ -7,8 +7,8 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './config/config.env' });
 
 // Load models
-const user = require('./Modules/User/userModel');
-const garage = require('./Modules/Garage/garageModel');
+const user = require('./Models/User/userModel');
+const garage = require('./Models/Garage/garageModel');
 
 
 
