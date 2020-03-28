@@ -137,7 +137,7 @@ UserSchema.pre('deleteOne', async function(next) {
     await this.model('Garage').deleteMany({ user: this._id });
     next()
 
-})
+});
 // Geocode Create location field
 UserSchema.pre('save',async function (next){
     const loc = await geocoder.geocode(this.address);
