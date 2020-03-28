@@ -26,6 +26,8 @@ class Account extends React.Component {
                     </Nav.Item>
 
                 </Nav>
+
+                <div style={{height: "300px",background:"red"}}></div>
                 <Switch>
                     <Route exact path="/" component={testAcc} />
                     <Route exact path="/dashboard" component={testDash} />

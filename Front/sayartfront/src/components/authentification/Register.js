@@ -1,69 +1,108 @@
-import React from 'react'
-import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap'
-
+import React, { useState, useContext } from 'react'
+import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 import fbLogo from '../../img/landingpage/facebookIcon.png';
+import AuthContext from '../../contexts/Auth/authContext';
 
 import '../../css/authentification/Register.css';
 
-class Register extends React.Component {
-    render() {
-        return (
-            <Container >
+const Register = () => {
 
-                <Row className="justify-content-md-center">
-                    <Col lg={5} md={6} xs={12}>
-                        <h2 className="blue">
-                            Créez un compte
-                        </h2>
-                        <div className="emptyDiv50px"></div>
-                        <Form>
-                            <Button variant="outline-dark" type="submit" className="buttonWithIcon" block>
+    const authContext = useContext(AuthContext);
 
-                                Facebook sign up
-                            </Button>
-                            <hr></hr>
+    const { register } = authContext;
 
-                            <h5>Entrez vos coordonnées ci-dessous</h5>
+    const [user, setUser] = useState({
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: '',
+        password: ''
+    })
 
-                            <Form.Group controlId="formNom">
-                                <Form.Control type="text" placeholder="Nom" />
-                            </Form.Group>
-                            <Form.Group controlId="formPrenom">
-                                <Form.Control type="text" placeholder="Prénom" />
-                            </Form.Group>
+    const { firstname, lastname, email, phone, password } = user;
 
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Control type="email" placeholder="Email" />
+    const onChange = e => {
 
-                            </Form.Group>
-                            <Form.Group controlId="formTel">
-                                <Form.Control type="text" placeholder="Num téléphone" />
-                            </Form.Group>
+        setUser({ ...user, [e.target.name]: e.target.value })
+    };
 
+    const onSubmit = e => {
+        e.preventDefault();
+        register({
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control type="password" placeholder="Mot de passe" />
-                            </Form.Group>
+            "login": firstname,
+            "name": firstname,
+            "lastName": lastname,
+            "address": "aoizjeâzke",
+            "image": "aziej6545.jpg",
+            "number": phone,
+            "email": email,
+            "password": phone,
+            "isGarage": false,
+            "rib": "98413219516"
+        })
+        console.log('called');
 
-
-                            <Form.Group controlId="formConditionUt">
-                                <Form.Check type="checkbox" label="En cochant cette case, vous indiquez que vous avez lu et accepté nos conditions et notre politique de confidentialité." />
-                            </Form.Group>
-
-                            <Form.Group controlId="formNewLetter">
-                                <Form.Check type="checkbox" label="Cochez cette case si vous souhaitez recevoir des offres exclusives et des notifications concernant votre voiture par e-mail." />
-                            </Form.Group>
-
-                            <Button variant="primary" type="submit" block>
-                                S'INSCRIRE
-                            </Button>
-                        </Form>
-                    </Col>
-                </Row>
-            </Container>
-
-        );
     }
+    return (
+        <Container >
+
+            <Row className="justify-content-md-center">
+                <Col lg={5} md={6} xs={12}>
+                    <h2 className="blue">
+                        Créez un compte
+                        </h2>
+                    <div className="emptyDiv50px"></div>
+                    <Form onSubmit={onSubmit}>
+                        <Button variant="outline-dark" type="submit" className="buttonWithIcon" block>
+
+                            Facebook sign up
+                            </Button>
+                        <hr></hr>
+
+                        <h5>Entrez vos coordonnées ci-dessous</h5>
+
+                        <Form.Group controlId="formNom">
+                            <Form.Control type="text" placeholder="Nom" name='firstname' value={firstname} onChange={onChange} />
+
+                        </Form.Group>
+                        <Form.Group controlId="formPrenom">
+                            <Form.Control type="text" placeholder="Prénom" name='lastname' value={lastname} onChange={onChange} />
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Control type="email" placeholder="Email" name='email' value={email} onChange={onChange} />
+
+                        </Form.Group>
+                        <Form.Group controlId="formTel">
+                            <Form.Control type="text" placeholder="Num téléphone" name='phone' value={phone} onChange={onChange} />
+                        </Form.Group>
+
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Control type="password" placeholder="Mot de passe" name='password' value={password} onChange={onChange} />
+                        </Form.Group>
+
+
+                        <Form.Group controlId="formConditionUt">
+                            <Form.Check type="checkbox" label="En cochant cette case, vous indiquez que vous avez lu et accepté nos conditions et notre politique de confidentialité." />
+                        </Form.Group>
+
+                        <Form.Group controlId="formNewLetter">
+                            <Form.Check type="checkbox" label="Cochez cette case si vous souhaitez recevoir des offres exclusives et des notifications concernant votre voiture par e-mail." />
+                        </Form.Group>
+
+                        <Button variant="primary" type="submit" block>
+                            S'INSCRIRE
+                            </Button>
+                    </Form>
+                </Col>
+            </Row>
+        </Container>
+
+    );
+
 
 }
 

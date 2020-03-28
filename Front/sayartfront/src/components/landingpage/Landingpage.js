@@ -14,6 +14,7 @@ import Footer from './Footer';
 import Register from '../authentification/Register';
 import Login from '../authentification/Login'
 import Acceuil from './Acceuil';
+import Account from '../Account';
 
 class Landingpage extends React.Component {
     render() {
@@ -27,6 +28,7 @@ class Landingpage extends React.Component {
                     <Route exact path="/" component={Acceuil} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
+                    <Route exact path="/account" component={Account} />
                 </Switch>
 
 
