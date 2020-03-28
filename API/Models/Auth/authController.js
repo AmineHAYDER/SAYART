@@ -1,10 +1,10 @@
-const User = require('../User/userModel');
+const User = require('../User/userModel.js');
 const ErrorResponse = require('../../utils/errorResponse')
 const sendTokenResponse = require('../../utils/sendTokenResponse')
 class UserController {
 
 
-    async login ( req , res , next ){
+    async login(req, res, next) {
 
         const { email, password } = req.body;
 
@@ -26,11 +26,11 @@ class UserController {
             return next(new ErrorResponse('Invalid password', 401));
         }
 
-        sendTokenResponse(user,200,res)
+        sendTokenResponse(user, 200, res)
 
     }
 
-    async logout  (req, res, next) {
+    async logout(req, res, next) {
         res.cookie('token', 'none', {
             expires: new Date(Date.now() + 10 * 1000),
             httpOnly: true
@@ -42,24 +42,25 @@ class UserController {
         });
     }
 
-    register ( req , res ,next) {
-        const {name,login,email,password,role,lastName,address,image,number,
+    register(req, res, next) {
+        const { name, login, email, password, role, lastName, address, image, number,
             isGarage,
-            rib} = req.body ;
+            rib } = req.body;
 
         User
-            .create({name, login, password, role,lastName,address,image,number, isGarage, rib,email})
-            .then((createdUser) => {   const token = createdUser.getSignedJwtToken()
+            .create({ name, login, password, role, lastName, address, image, number, isGarage, rib, email })
+            .then((createdUser) => {
+                const token = createdUser.getSignedJwtToken()
                 res.status(201)
                     .json({
                         success: "True",
                         token,
                     })
-            }).catch( (err) => {
-            next(err)
-        })
+            }).catch((err) => {
+                next(err)
+            })
     }
-     me ( req , res ,next) {
+    me(req, res, next) {
 
         User
             .findById(req.user.id)
@@ -69,9 +70,9 @@ class UserController {
                         success: "True",
                         data: User
                     })
-            }).catch( (err) => {
-            next(err)
-        })
+            }).catch((err) => {
+                next(err)
+            })
     }
 }
 module.exports = new UserController();
