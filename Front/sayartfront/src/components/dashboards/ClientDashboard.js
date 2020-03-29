@@ -1,40 +1,54 @@
-import React from 'react';
-import { Nav } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Nav, Button } from 'react-bootstrap';
 import { Route, Switch, Link } from "react-router-dom";
+import AuthContext from '../../contexts/Auth/authContext';
+
+const ClientDashboard = () => {
 
 
-class ClientDashboard extends React.Component {
+    const authContext = useContext(AuthContext);
 
-    
+    const { isAuthenticated } = authContext;
+
+    const testState = e => {
+        e.preventDefault();
+        console.log(isAuthenticated);
+        console.log(authContext.user);
+    }
 
 
-    render() {
 
 
+    return (
+        <div>
 
-        return (
-            <div>
+            <Nav>
+                <Nav.Item as="li">
+                    <Link exact to="/"><Nav.Link as="a" >account</Nav.Link> </Link>
+                </Nav.Item>
+                <Nav.Item as="li">
+                    <Link exact to="/dashboard"><Nav.Link as="a" >dash</Nav.Link> </Link>
+                </Nav.Item>
+                <Nav.Item as="li">
+                    <Link exact to="/history"><Nav.Link as="a" >history</Nav.Link> </Link>
+                </Nav.Item>
 
-                <Nav>
-                    <Nav.Item as="li">
-                        <Link exact to="/"><Nav.Link as="a" >account</Nav.Link> </Link>
-                    </Nav.Item>
-                    <Nav.Item as="li">
-                        <Link exact to="/dashboard"><Nav.Link as="a" >dash</Nav.Link> </Link>
-                    </Nav.Item>
-                    <Nav.Item as="li">
-                        <Link exact to="/history"><Nav.Link as="a" >history</Nav.Link> </Link>
-                    </Nav.Item>
+            </Nav>
 
-                </Nav>
+            <div style={{ height: "300px", background: "blue" }}>
 
-                <div style={{height: "300px",background:"blue"}}></div>
-                <Switch>
-                </Switch>
 
             </div>
-        );
-    }
+
+            <Button variant="primary" onClick={testState} block>
+                TEST STATE
+                            </Button>
+            <Switch>
+            </Switch>
+
+        </div>
+    );
+
 }
 
 export default ClientDashboard;

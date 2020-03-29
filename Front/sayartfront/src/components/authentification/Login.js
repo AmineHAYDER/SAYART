@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
 
@@ -17,7 +17,7 @@ const Login = () => {
         email: '',
         password: ''
     })
-    const {  email,  password } = user;
+    const { email, password } = user;
 
     const onChange = e => {
 
@@ -33,7 +33,7 @@ const Login = () => {
         })
         history.push('/dashboard/client');
 
-        console.log('called login');
+
     }
 
 

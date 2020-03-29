@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import fbLogo from '../../img/landingpage/facebookIcon.png';
@@ -6,11 +6,11 @@ import AuthContext from '../../contexts/Auth/authContext';
 
 import '../../css/authentification/Register.css';
 
-const Register = () => {
+const Register = (props) => {
 
     const authContext = useContext(AuthContext);
 
-    const { register } = authContext;
+    const { register, isAuthenticated } = authContext;
 
     const [user, setUser] = useState({
         firstname: '',
@@ -18,9 +18,16 @@ const Register = () => {
         email: '',
         phone: '',
         password: ''
-    })
+    }, [isAuthenticated, props.history]);
 
     const { firstname, lastname, email, phone, password } = user;
+
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            props.history.push('/dashboard/client');
+        }
+    })
 
     const onChange = e => {
 
@@ -46,6 +53,14 @@ const Register = () => {
 
         })
         console.log('called register');
+
+
+    }
+
+    const testState = e => {
+        e.preventDefault();
+        console.log(isAuthenticated);
+        console.log(authContext.user);
 
     }
     return (
@@ -101,6 +116,10 @@ const Register = () => {
 
                         <Button variant="primary" type="submit" block>
                             S'INSCRIRE
+                            </Button>
+
+                        <Button variant="primary" onClick={testState} block>
+                            TEST STATE
                             </Button>
                     </Form>
                 </Col>

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Route, Switch } from "react-router-dom";
+
 
 import Landingpage from './components/landingpage/Landingpage';
 import Account from './components/Account';
 
 import AuthState from './contexts/Auth/authState';
+
+
 
 
 class App extends React.Component {
@@ -20,6 +22,8 @@ class App extends React.Component {
       logged: false
     }
     this.isLogged = this.isLogged.bind(this);
+
+
   }
 
   isLogged() {
@@ -27,6 +31,9 @@ class App extends React.Component {
   }
 
   render() {
+
+
+
     const loggedIn = this.state.logged;
     let page;
 
@@ -35,14 +42,16 @@ class App extends React.Component {
     } else {
       page = <Account />
     }
-
+    console.log(AuthState.props);
     return (
-      <div className="App">
-        <AuthState>
 
+      <div className="App">
+
+        <AuthState>
           {page}
         </AuthState>
-      </div>);
+      </div>
+    );
   }
 
 }

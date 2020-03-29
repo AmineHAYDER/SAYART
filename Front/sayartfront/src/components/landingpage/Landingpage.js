@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import '../../App.css';
 
@@ -9,6 +9,8 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from './TopNav';
 import Footer from './Footer';
 
+import PrivateRoute from '../../routes/PrivateRoute';
+import AuthContext from '../../contexts/Auth/authContext'
 
 //page components
 import Register from '../authentification/Register';
@@ -17,26 +19,32 @@ import Acceuil from './Acceuil';
 import ClientDashboard from '../dashboards/ClientDashboard';
 
 
-class Landingpage extends React.Component {
-    render() {
+const Landingpage = () => {
 
 
-        return (
-            <div className="App">
-                <Navbar />
+    const authContext = useContext(AuthContext);
+    const { isAuthenticated, loadUser } = authContext
 
-                <Switch>
-                    <Route exact path="/" component={Acceuil} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/register" component={Register} />
-                    <Route exact path="/dashboard/client" component={ClientDashboard} />
-                </Switch>
+    useEffect(() => {
+        loadUser();
+    }, [])
+
+    return (
+        <div className="App">
+            <Navbar />
+
+            <Switch>
+                <Route exact path="/" component={Acceuil} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
+            </Switch>
 
 
-                <Footer />
-            </div>
-        );
-    }
+            <Footer />
+        </div>
+    );
+
 }
 
 export default Landingpage;

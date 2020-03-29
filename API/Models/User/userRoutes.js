@@ -23,7 +23,7 @@ const { protect, authorize } = require('../../middelware/auth');
 const corsOptions = {
     origin: 'http://127.0.0.1:3000',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+};
 
 router.use(express.json());
 router.use(cors(corsOptions));

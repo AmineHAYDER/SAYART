@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const {protect} = require('../../middelware/auth')
+const { protect } = require('../../middelware/auth')
 const authController = require('../Auth/authController')
 
 router.use(express.json());
 
 router
-    .route('/create' )
+    .route('/create')
     .post(authController.register);
 
 router
@@ -22,4 +22,4 @@ router
     .get(protect, authController.me);
 
 
-module.exports = router ;
+module.exports = router;
