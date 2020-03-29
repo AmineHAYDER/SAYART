@@ -65,7 +65,7 @@ class UserController {
 
     async photoUpload(req, res, next) {
         const user = await User.findById(req.params.id);
-
+        console.log(req.body)
         if (!user) {
             return next(
                 new ErrorResponse(`User not found with id of ${req.params.id}`, 404)

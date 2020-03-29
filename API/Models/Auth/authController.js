@@ -28,7 +28,7 @@ class UserController {
         }
 
         sendTokenResponse(user, 200, res)
-
+       console.log('user Logged : '+ user.name)
     }
 
     async logout(req, res, next) {

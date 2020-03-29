@@ -5,14 +5,16 @@ import authReducer from './authReducer';
 
 import {
     REGISTER_SUCCESS,
-    REGISTER_FAIL
+    REGISTER_FAIL,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL
 
 } from '../types';
 
 const AuthState = props => {
     const initialState = {
         token: localStorage.getItem('token'),
-        isAuthenticated: null,
+        isAuthenticated: false,
         loading: true,
         user: null,
         error: null
@@ -23,6 +25,7 @@ const AuthState = props => {
 
 
     //register user 
+
     const register = async data => {
 
         const config = {
@@ -51,8 +54,33 @@ const AuthState = props => {
 
         }
     }
+    const login = async data => {
 
+        const config = {
+            headers: {
+                'content-type': 'application/json',
+            }
+        }
 
+        try {
+            var res = await axios.post('http://localhost:5000/user/auth/login', data, config);
+
+            dispatch({
+                type: LOGIN_SUCCESS,
+                payload: res.data.token
+            });
+
+        } catch (err) {
+
+            console.log(err.message);
+            dispatch({
+                type: LOGIN_FAIL,
+                payload: res.data.error
+            });
+
+        }
+        console.log(state.isAuthenticated)
+    }
     return (
         <AuthContext.Provider
             value={{
@@ -61,7 +89,8 @@ const AuthState = props => {
                 loading: state.loading,
                 user: state.user,
                 error: state.error,
-                register
+                register,
+                login
 
             }}
         >

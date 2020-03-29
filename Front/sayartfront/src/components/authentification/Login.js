@@ -1,51 +1,39 @@
-import React, { useState } from 'react'
+import React, {useContext, useState} from 'react'
+import { useHistory } from 'react-router-dom';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
 
 
-
 import '../../css/authentification/Register.css';
+import AuthContext from "../../contexts/Auth/authContext";
 
-const Register = () => {
+const Login = () => {
+    const authContext = useContext(AuthContext);
+
+    let history = useHistory();
+
+    const { login } = authContext;
 
     const [user, setUser] = useState({
-
         email: '',
-
         password: ''
     })
+    const {  email,  password } = user;
 
-    const { email, password } = user;
+    const onChange = e => {
 
-    const onChange = (event) => {
-
-        setUser({ ...user, [event.target.name]: event.target.value });
-
+        setUser({ ...user, [e.target.name]: e.target.value })
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        /* fetch('http://localhost:5000/user/login', {
-             method: 'POST',
-             body: JSON.stringify(this.state),
-             headers: {
-                 'Content-Type': 'application/json'
-             }
-         })
-             
- 
-             .then(res => res.json())
-             .then(data => {
- 
-                 console.log(data.data);
-                 if (data.success === true) {
-                     this.props.history.push('/');
-                 } else if (data.success === false) {
-                     alert('invalid credentials');
-                 }
-             }) */
+    const onSubmit = async e => {
+        e.preventDefault();
 
-        console.log(user.password + " " + user.email);
+        await login({
+            "email": email,
+            "password": password
+        })
+        history.push('/dashboard/client');
 
+        console.log('called login');
     }
 
 
@@ -59,7 +47,7 @@ const Register = () => {
                         Se Connecter <span className="green">A Sayart.tn</span>
                     </h3>
                     <div className="emptyDiv50px"></div>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={onSubmit}>
                         <Button variant="outline-dark" type="submit" className="buttonWithIcon" block>
 
                             CONNEXION FACEBOOK
@@ -98,4 +86,4 @@ const Register = () => {
 
 }
 
-export default Register;
+export default Login;

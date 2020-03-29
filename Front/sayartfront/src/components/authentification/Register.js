@@ -45,7 +45,7 @@ const Register = () => {
             "rib": "98413219516"
 
         })
-        console.log('called');
+        console.log('called register');
 
     }
     return (
@@ -86,7 +86,10 @@ const Register = () => {
                         <Form.Group controlId="formBasicPassword">
                             <Form.Control type="password" placeholder="Mot de passe" name='password' value={password} onChange={onChange} />
                         </Form.Group>
-
+                        {/*
+                        <Form.Group controlId="formFile">
+                            <Form.Control type="file" placeholder="upload a photo" name='photo'  />
+                        </Form.Group>*/}
 
                         <Form.Group controlId="formConditionUt">
                             <Form.Check type="checkbox" label="En cochant cette case, vous indiquez que vous avez lu et accepté nos conditions et notre politique de confidentialité." />
