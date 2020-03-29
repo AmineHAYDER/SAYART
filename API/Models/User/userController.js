@@ -1,4 +1,4 @@
-const User = require('./userModel.js');
+const User = require('./userModel');
 const ErrorResponse = require('../../utils/errorResponse')
 const sendTokenResponse = require('../../utils/sendTokenResponse')
 const path = require('path');
@@ -63,7 +63,7 @@ class UserController {
             })
     }
 
-    async photoUpload  (req, res, next)  {
+    async photoUpload(req, res, next) {
         const user = await User.findById(req.params.id);
 
         if (!user) {
@@ -85,7 +85,7 @@ class UserController {
         if (!req.files) {
             return next(new ErrorResponse(`Please upload a file`, 400));
         }
- 
+
         const file = req.files.file;
         // Make sure the image is a photo
         if (!file.mimetype.startsWith('image')) {

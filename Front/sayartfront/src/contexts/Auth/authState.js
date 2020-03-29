@@ -27,22 +27,28 @@ const AuthState = props => {
 
         const config = {
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:3000'
             }
         }
 
         try {
-            const res = await axios.post('http://localhost:5000/user/create', data, config);
+            var res = await axios.post('http://localhost:5000/user/auth/create', data, config);
+
+            console.log(res.data)
             dispatch({
                 type: REGISTER_SUCCESS,
-                payload: res.data
+                payload: res.data.token
             });
 
         } catch (err) {
+
+            console.log(err.message);
             dispatch({
                 type: REGISTER_FAIL,
-                payload: 'fail'
+                payload: res.data.error
             });
+
         }
     }
 

@@ -71,7 +71,7 @@ const UserSchema = mongoose.Schema({
     },
     rib: {
         type: String,
-        required: true
+        //  required: true
     },
     location: {
         type: {

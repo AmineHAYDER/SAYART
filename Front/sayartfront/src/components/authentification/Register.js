@@ -29,19 +29,21 @@ const Register = () => {
 
     const onSubmit = e => {
         e.preventDefault();
-        register({
 
-            "login": firstname,
+        let x = Math.floor(Math.random() * 100);
+        register({
+            "login": firstname + lastname + x,
+            "role": "user",
             "name": firstname,
             "lastName": lastname,
             "address": "aoizjeâzke",
             "image": "aziej6545.jpg",
             "number": phone,
             "email": email,
-            "password": phone,
+            "password": password,
             "isGarage": false,
-            "rib": "98413219516",
-            "role": "user"
+            "rib": "98413219516"
+
         })
         console.log('called');
 

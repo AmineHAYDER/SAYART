@@ -1,4 +1,5 @@
-const User = require('../User/userModel.js');
+
+const User = require('../User/userModel');
 const ErrorResponse = require('../../utils/errorResponse')
 const sendTokenResponse = require('../../utils/sendTokenResponse')
 class UserController {

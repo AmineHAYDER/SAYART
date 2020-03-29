@@ -17,7 +17,7 @@ const garageRouter = require('../Garage/garageRoute');
 
 
 const advancedResults = require('../../middelware/advancedResults')
-const user = require('./userModel.js');
+const user = require('./userModel');
 const cors = require('cors');
 const { protect, authorize } = require('../../middelware/auth');
 const corsOptions = {
