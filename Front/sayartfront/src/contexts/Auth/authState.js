@@ -30,8 +30,8 @@ const AuthState = props => {
     //load user 
     const loadUser = async () => {
 
-        if (localStorage.token)
-            setAuthToken(localStorage.token);
+
+        setAuthToken(localStorage.token);
 
         const config = {
             headers: {

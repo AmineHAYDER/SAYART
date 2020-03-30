@@ -22,12 +22,9 @@ import ClientDashboard from '../dashboards/ClientDashboard';
 const Landingpage = () => {
 
 
-    const authContext = useContext(AuthContext);
-    const { isAuthenticated, loadUser } = authContext
 
-    useEffect(() => {
-        loadUser();
-    }, [])
+
+
 
     return (
         <div className="App">

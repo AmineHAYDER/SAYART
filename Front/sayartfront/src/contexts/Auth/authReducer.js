@@ -4,7 +4,8 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     USER_LOADED,
-    AUTH_ERROR
+    AUTH_ERROR,
+    LOGOUT
 
 } from '../types';
 
@@ -22,7 +23,7 @@ export default (state, action) => {
         case AUTH_ERROR:
         case REGISTER_FAIL:
             localStorage.removeItem('token');
-            console.log('register fail')
+
             return {
                 ...state,
                 token: null,
@@ -41,7 +42,7 @@ export default (state, action) => {
                 loading: false,
             }
 
-
+        case LOGOUT:
         case LOGIN_FAIL:
             localStorage.removeItem('token');
             console.log('login fail');
