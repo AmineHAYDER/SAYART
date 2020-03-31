@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -7,37 +7,35 @@ import logo from '../../img/landingpage/SayartlogoMini.png';
 import '../../css/landingpage/Topnav.css'
 
 import AuthContext from '../../contexts/Auth/authContext';
-import setAuthToken from '../../contexts/Auth/setAuthToken';
+
 
 const TopNav = (props) => {
 
+
+
+
+
     const authContext = useContext(AuthContext);
-    const { isAuthenticated, loadUser, logout, user } = authContext
-
-    useEffect(() => {
-        setAuthToken(localStorage.token);
-        loadUser();
-
-    }, [])
-
+    const { isAuthenticated, logout } = authContext;
 
 
     const onLogout = () => {
         logout();
     }
 
+
     const NavLoggedElements = (
-        <Nav className="ml-auto links" as="ul">
 
-
-
+        < Nav className="ml-auto links" as="ul" >
+            <Nav.Item as="li">
+                <Link className="NoUnder" to="/"><Nav.Link className="links-items" as="a" >{props.context.user.name}</Nav.Link>
+                    <div className="underline"></div></Link>
+            </Nav.Item>
             <Nav.Item as="li">
                 <Link className="NoUnder" to="/"><Nav.Link className="links-items" onClick={onLogout} as="a" >LOUGOUT</Nav.Link>
                     <div className="underline"></div></Link>
             </Nav.Item>
-
-
-        </Nav>
+        </Nav >
     )
 
     const NavNotLoggedElements = (

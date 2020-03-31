@@ -1,58 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-import Landingpage from './components/landingpage/Landingpage';
-import Account from './components/Account';
-
 import AuthState from './contexts/Auth/authState';
 
+import PageContainer from './components/PageContainer';
 
 
 
-class App extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      logged: false
-    }
-    this.isLogged = this.isLogged.bind(this);
 
 
-  }
-
-  isLogged() {
-    return this.state.logged ? <h1>Logged</h1> : <h1>not logged</h1>;
-  }
-
-  render() {
+const App = () => {
 
 
 
-    const loggedIn = this.state.logged;
-    let page;
+  return (
 
-    if (!loggedIn) {
-      page = <Landingpage />
-    } else {
-      page = <Account />
-    }
-    console.log(AuthState.props);
-    return (
+    <div className="App">
 
-      <div className="App">
+      <AuthState>
+        <PageContainer />
+      </AuthState>
+    </div>
+  );
 
-        <AuthState>
-          {page}
-        </AuthState>
-      </div>
-    );
-  }
 
 }
 

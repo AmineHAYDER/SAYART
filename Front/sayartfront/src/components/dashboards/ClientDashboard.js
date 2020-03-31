@@ -6,14 +6,17 @@ import AuthContext from '../../contexts/Auth/authContext';
 const ClientDashboard = () => {
 
 
+
+
     const authContext = useContext(AuthContext);
 
-    const { isAuthenticated } = authContext;
+    const { isAuthenticated, user } = authContext;
+
 
     const testState = e => {
         e.preventDefault();
-        console.log(isAuthenticated);
-        console.log(authContext.user);
+
+
     }
 
 
@@ -42,7 +45,8 @@ const ClientDashboard = () => {
 
             <Button variant="primary" onClick={testState} block>
                 TEST STATE
-                            </Button>
+               {isAuthenticated}
+            </Button>
             <Switch>
             </Switch>
 
