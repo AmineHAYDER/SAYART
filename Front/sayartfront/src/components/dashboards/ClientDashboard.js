@@ -1,7 +1,16 @@
 import React, { useContext } from 'react';
-import { Nav, Button } from 'react-bootstrap';
-import { Route, Switch, Link } from "react-router-dom";
+import {Nav, Button, NavLink, Row, Container} from 'react-bootstrap';
+import Menu from './Menu'
+import Profile from './Profile'
+import {Route, Switch, Link } from "react-router-dom";
+
 import AuthContext from '../../contexts/Auth/authContext';
+
+import '../../css/landingpage/Topnav.css'
+import PrivateRoute from "../../routes/PrivateRoute";
+import Acceuil from "../landingpage/Acceuil";
+import Login from "../authentification/Login";
+import Register from "../authentification/Register";
 
 const ClientDashboard = () => {
 
@@ -22,36 +31,17 @@ const ClientDashboard = () => {
 
 
 
-    return (
-        <div>
-
-            <Nav>
-                <Nav.Item as="li">
-                    <Link exact to="/"><Nav.Link as="a" >account</Nav.Link> </Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                    <Link exact to="/dashboard"><Nav.Link as="a" >dash</Nav.Link> </Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                    <Link exact to="/history"><Nav.Link as="a" >history</Nav.Link> </Link>
-                </Nav.Item>
-
-            </Nav>
-
-            <div style={{ height: "300px", background: "blue" }}>
+    return (<div>
 
 
-            </div>
+                         <Menu/>
 
-            <Button variant="primary" onClick={testState} block>
-                TEST STATE
-               {isAuthenticated}
-            </Button>
-            <Switch>
-            </Switch>
+                         <Profile/>
 
-        </div>
-    );
+                <Switch>
+                    <PrivateRoute exact path="/dashboard/client/profile" component={Profile} />
+                </Switch>
+            </div>);
 
 }
 
