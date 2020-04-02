@@ -20,7 +20,6 @@ const Login = () => {
     const { email, password } = user;
 
     const onChange = e => {
-
         setUser({ ...user, [e.target.name]: e.target.value })
     };
 

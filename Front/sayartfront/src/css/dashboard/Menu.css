@@ -8,7 +8,6 @@
     transition: color 0.5s;
     color: black !important;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .links-items:hover {
@@ -29,7 +28,7 @@ ul li .underline {
 
 ul li.active-link .underline {
     width: 90%;
-    background-color: rgb(20, 47, 120);
+    background-color: rgb(120, 0, 79);
 }
 
 

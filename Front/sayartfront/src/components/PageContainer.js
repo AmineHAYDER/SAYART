@@ -34,8 +34,8 @@ const PageContainer = () => {
     return (
         <div className="App">
 
-            <Navbar context={authContext} />
-
+           {!authContext.isAuthenticated ? <Navbar context={authContext} /> : <Navbar context={authContext} />}
+            
             <Switch>
                 <Route exact path="/" component={Acceuil} />
                 <Route exact path="/login" component={Login} />

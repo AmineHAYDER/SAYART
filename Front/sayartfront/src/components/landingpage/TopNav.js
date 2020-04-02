@@ -28,8 +28,10 @@ const TopNav = (props) => {
 
         < Nav className="ml-auto links" as="ul" >
             <Nav.Item as="li">
-                <Link className="NoUnder" to="/"><Nav.Link className="links-items" as="a" >{props.context.user.name}</Nav.Link>
-                    <div className="underline"></div></Link>
+                <Link className="NoUnder" to="/dashboard/client">
+                    <Nav.Link className="links-items" as="a" >{props.context.user.name}</Nav.Link>
+                    <div className="underline"></div>
+                </Link>
             </Nav.Item>
             <Nav.Item as="li">
                 <Link className="NoUnder" to="/"><Nav.Link className="links-items" onClick={onLogout} as="a" >LOUGOUT</Nav.Link>
@@ -87,6 +89,24 @@ const TopNav = (props) => {
                 </Navbar.Collapse>
 
             </Navbar>
+            <Navbar expand="lg" className="navbarc" >
+                <Navbar.Brand href="#home">
+                    <img
+                        src={logo}
+
+                        className="d-inline-block align-top logo"
+                        alt="React Bootstrap logo"
+                    />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+
+                    {isAuthenticated ? NavLoggedElements : NavNotLoggedElements}
+
+                </Navbar.Collapse>
+
+            </Navbar>
+
         </div>
     )
 

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import {Nav, Button, NavLink, Row, Container} from 'react-bootstrap';
-import {Route, Switch, Link, useHistory} from "react-router-dom";
+import {Nav, Button, Row, Container} from 'react-bootstrap';
+import {useHistory} from "react-router-dom";
 import AuthContext from '../../contexts/Auth/authContext';
 
-import '../../css/landingpage/Topnav.css'
+import '../../css/dashboard/Menu.css'
 
-const Menu = () => {
+const Menu = (props) => {
 
     let history = useHistory();
 
@@ -19,36 +19,38 @@ const Menu = () => {
     const testState = e => {
         e.preventDefault();
 
-        history.push(`/dashboard/client/${e.target.name}`);
-
     }
 
 
 
 
     return (<Container >
-            <Row>
-                <div>
-                    <div style={{ height: "100px", background: "white" }}>
-                    </div>
-
-                    <Button variant="primary" onClick={testState} block>
-                        Appointments
-                    </Button>
-                    <Button variant="primary" onClick={testState} name="profile" block>
-                        My Profile
-                    </Button>
-                    <Button variant="primary" onClick={testState} block>
-                        Stock
-                    </Button>
-                    <Button variant="primary" onClick={testState} block>
+                    <ul>
+                        <Button  onClick={props.onChange} name="onLineGarage" block>
+                            OnLineGarage
+                        </Button>
+                    </ul>
+                   <ul>
+                        <Button  onClick={props.onChange} name="appointments" block>
+                            Appointments
+                        </Button>
+                   </ul>
+                   <ul>
+                        <Button onClick={props.onChange} name="profile" block>
+                            My Profile
+                        </Button>
+                   </ul>
+                   <ul >
+                       <Button   onClick={props.onChange} name="stock" block>
+                            Stock
+                       </Button>
+                   </ul>
+                   <ul>
+                       <Button onClick={props.onChange}  name="analytics"block>
                         Analytics
-                    </Button>
-                    <Switch>
-                    </Switch>
+                       </Button>
+                   </ul>
 
-                </div>
-            </Row>
         </Container>
     );
 

@@ -24,14 +24,21 @@ const Profile = () => {
 
 
     return (
-        <div>
-            <div style={{ height: "100px", background: "white" }}>
-            </div>
-                    <a>
-                    {user.name}
-                    </a>
+        <Container>
+            <p>
+                {user.name}
+            </p>
+            <p>
+                {user.lastName}
+            </p>
+            <p>
+                {user.email}
+            </p>
+            <p>
+                {user.login}
+            </p>
 
-        </div>
+        </Container>
 
     );
 

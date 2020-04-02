@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
-import {Nav, Button, NavLink, Row, Container} from 'react-bootstrap';
+import React, { useContext ,useState} from 'react';
+import {Nav, Button, NavLink, Row, Container,Col} from 'react-bootstrap';
 import Menu from './Menu'
 import Profile from './Profile'
+import OnLineGarage from './OnLineGarage'
 import {Route, Switch, Link } from "react-router-dom";
 
 import AuthContext from '../../contexts/Auth/authContext';
@@ -14,7 +15,7 @@ import Register from "../authentification/Register";
 
 const ClientDashboard = () => {
 
-
+    const [page,setPage] = useState("appointments");
 
 
     const authContext = useContext(AuthContext);
@@ -22,25 +23,33 @@ const ClientDashboard = () => {
     const { isAuthenticated, user } = authContext;
 
 
-    const testState = e => {
+    const onChangePage = e => {
         e.preventDefault();
-
-
+        setPage(e.target.name)
     }
 
-
+    const renderSwitch = (page) => {
+        switch(page) {
+            case 'profile':
+                return <Profile/>;
+            case 'onLineGarage':
+                return <OnLineGarage/>;
+            default:
+                return page;
+        }
+    }
 
 
     return (<div>
 
-
-                         <Menu/>
-
-                         <Profile/>
-
-                <Switch>
-                    <PrivateRoute exact path="/dashboard/client/profile" component={Profile} />
-                </Switch>
+               <Row>
+                   <Col xs lg={2}  >
+                         <Menu onChange={onChangePage}/>
+                   </Col>
+                   <Col >
+                       { renderSwitch(page)}
+                   </Col>
+               </Row>
             </div>);
 
 }

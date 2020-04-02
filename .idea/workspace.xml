@@ -26,9 +26,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/css/dashboard" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\public" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Auth" />
@@ -46,7 +49,7 @@
       <updated>1585272260735</updated>
       <workItem from="1585272263366" duration="897000" />
       <workItem from="1585340180349" duration="14195000" />
-      <workItem from="1585778270083" duration="1965000" />
+      <workItem from="1585778270083" duration="12809000" />
     </task>
     <servers />
   </component>
