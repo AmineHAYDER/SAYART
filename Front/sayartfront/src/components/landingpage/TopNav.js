@@ -73,13 +73,14 @@ const TopNav = (props) => {
     return (
         <div>
             <Navbar expand="lg" className="navbarc" fixed="top">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/takeAppointment">
                     <img
                         src={logo}
 
                         className="d-inline-block align-top logo"
                         alt="React Bootstrap logo"
                     />
+
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

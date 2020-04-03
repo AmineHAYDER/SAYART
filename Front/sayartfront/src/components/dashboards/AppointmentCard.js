@@ -7,18 +7,6 @@ import '../../css/dashboard/Menu.css'
 
 const AppointmentCard = (props) => {
 
-    const authContext = useContext(AuthContext);
-
-    const { isAuthenticated, user } = authContext;
-
-
-    const testState = e => {
-        e.preventDefault();
-
-    }
-
-
-
 
     return (<Container >
             <Card style={{ width: '18rem' }}>

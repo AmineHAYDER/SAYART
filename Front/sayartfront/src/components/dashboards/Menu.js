@@ -1,26 +1,9 @@
 import React, { useContext } from 'react';
 import {Nav, Button, Row, Container} from 'react-bootstrap';
-import {useHistory} from "react-router-dom";
-import AuthContext from '../../contexts/Auth/authContext';
 
 import '../../css/dashboard/Menu.css'
 
 const Menu = (props) => {
-
-    let history = useHistory();
-
-
-
-    const authContext = useContext(AuthContext);
-
-    const { isAuthenticated, user } = authContext;
-
-
-    const testState = e => {
-        e.preventDefault();
-
-    }
-
 
 
 

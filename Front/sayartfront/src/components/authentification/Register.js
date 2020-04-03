@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap';
+import {Container, Form, Button, Image, Row, Col, Nav} from 'react-bootstrap';
 import axios from 'axios';
 import fbLogo from '../../img/landingpage/facebookIcon.png';
 import AuthContext from '../../contexts/Auth/authContext';
 
 import '../../css/authentification/Register.css';
+import {Link} from "react-router-dom";
 
 const Register = (props) => {
 
@@ -114,13 +115,15 @@ const Register = (props) => {
                             <Form.Check type="checkbox" label="Cochez cette case si vous souhaitez recevoir des offres exclusives et des notifications concernant votre voiture par e-mail." />
                         </Form.Group>
 
+
+                            <Link className="NoUnder" to="/login"><Nav.Link className="links-items" as="a" >LOUGOUT</Nav.Link>
+                                <div className="underline"></div></Link>
+
+
                         <Button variant="primary" type="submit" block>
                             S'INSCRIRE
                             </Button>
-
-                        <Button variant="primary" onClick={testState} block>
-                            TEST STATE
-                            </Button>
+                        
                     </Form>
                 </Col>
             </Row>

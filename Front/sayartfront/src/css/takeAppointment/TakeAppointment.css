@@ -1,0 +1,39 @@
+.buttonWithIcon {
+    background-color: #410034;
+    color: white;
+    font-weight: bold;
+}
+.buttonWithIcon:hover {
+    background-color: #49002f;
+    color: #fac300;
+    font-weight: bold;
+}
+.buttonWithIcon:active {
+     background-color: #410034;
+     color: #fac300;
+     font-weight: bold;
+ }
+.icon {
+    padding-right: 10px;
+}
+
+.blue {
+    margin-top: 30px;
+    color: royalblue
+}
+
+.yellow {
+    margin-top: 30px;
+    color: #fac300;
+}
+.purple {
+    margin-top: 30px;
+    color: #49002f;
+}
+.form-container {
+    align-content: center;
+}
+
+.emptyDiv50px {
+    height: 35px;
+}

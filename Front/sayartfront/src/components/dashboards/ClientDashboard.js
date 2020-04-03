@@ -3,15 +3,8 @@ import {Nav, Button, NavLink, Row, Container,Col} from 'react-bootstrap';
 import Menu from './Menu'
 import Profile from './Profile'
 import OnLineGarage from './OnLineGarage'
-import {Route, Switch, Link } from "react-router-dom";
-
 import AuthContext from '../../contexts/Auth/authContext';
-
 import '../../css/landingpage/Topnav.css'
-import PrivateRoute from "../../routes/PrivateRoute";
-import Acceuil from "../landingpage/Acceuil";
-import Login from "../authentification/Login";
-import Register from "../authentification/Register";
 
 const ClientDashboard = () => {
 

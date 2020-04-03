@@ -4,12 +4,15 @@ import React, { useContext, useEffect, memo } from 'react';
 import Navbar from './landingpage/TopNav';
 import Footer from './landingpage/Footer';
 
+//appointment state
+import AppointmentState from '../contexts/Appointment/appointmentState';
 
 //pages
 import Acceuil from './landingpage/Acceuil';
 import Login from './authentification/Login';
 import Register from './authentification/Register';
 import ClientDashboard from './dashboards/ClientDashboard';
+import TakeAppointment from "./appointment/TakeAppointment";
 
 //routes
 import { Switch, Route } from 'react-router-dom';
@@ -41,6 +44,10 @@ const PageContainer = () => {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
                 <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
+
+                <AppointmentState>
+                   <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
+                </AppointmentState>
             </Switch>
 
             <Footer />

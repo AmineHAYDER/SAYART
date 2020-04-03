@@ -71,7 +71,6 @@ const Login = () => {
                         </Form.Group>
 
 
-
                         <Button variant="primary" type="submit" block>
                             Connecter
                             </Button>
