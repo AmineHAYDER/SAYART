@@ -11,11 +11,6 @@ const ClientDashboard = () => {
     const [page,setPage] = useState("appointments");
 
 
-    const authContext = useContext(AuthContext);
-
-    const { isAuthenticated, user } = authContext;
-
-
     const onChangePage = e => {
         e.preventDefault();
         setPage(e.target.name)

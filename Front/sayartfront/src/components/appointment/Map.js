@@ -12,8 +12,9 @@ import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 const  Map= (props) => {
 
     const appointmentContext = useContext(AppointmentContext);
-
-    console.log(appointmentContext.lat)
+    const setLocation = ()=>{
+        appointmentContext.setLocation(viewport.longitude, viewport.latitude)
+    }
     const [viewport, setViewport] = useState({
         width:"100%",
         height: 400,
@@ -26,25 +27,27 @@ const  Map= (props) => {
         return <circle cx={cx} cy={cy} r={2} fill="blue" />;
     }
 
+
     return (<div>
-        <ReactMapGL
-            mapboxApiAccessToken={"pk.eyJ1IjoiYW1pbmVoYXlkZXIiLCJhIjoiY2s4anRob2FmMGRleDNsbjZzYXZiajU1aiJ9.0NOu-HQ2-9ug0JP7N3t2hw"}
-            {...viewport}
-            onViewportChange={setViewport}
-        >
-            <GeolocateControl
-            positionOptions={{enableHighAccuracy: true}}
-            trackUserLocation={true}
-            />
-            {/*<Marker latitude={36.845834476598064} longitude={10.219001770019531} offsetLeft={-20} offsetTop={-10}>
-                <div>You are here </div>
-            </Marker>
-            <SVGOverlay redraw={redraw} />*/}
-            <div style={{position: 'absolute', right: 0}}>
-                <NavigationControl />
+                <Button onClick={setLocation}>get current location on console</Button>
+                <ReactMapGL
+                    mapboxApiAccessToken={"pk.eyJ1IjoiYW1pbmVoYXlkZXIiLCJhIjoiY2s4anRob2FmMGRleDNsbjZzYXZiajU1aiJ9.0NOu-HQ2-9ug0JP7N3t2hw"}
+                    {...viewport}
+                    onViewportChange={setViewport}
+                >
+                            <GeolocateControl
+                            positionOptions={{enableHighAccuracy: true}}
+                            trackUserLocation={true}
+                            />
+                            {/*<Marker latitude={36.845834476598064} longitude={10.219001770019531} offsetLeft={-20} offsetTop={-10}>
+                                <div>You are here </div>
+                            </Marker>
+                            <SVGOverlay redraw={redraw} />*/}
+                            <div style={{position: 'absolute', right: 0}}>
+                                <NavigationControl />
+                            </div>
+                </ReactMapGL>
             </div>
-        </ReactMapGL>
-    </div>
     );
 }
 setRTLTextPlugin(

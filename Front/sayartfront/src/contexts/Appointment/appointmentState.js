@@ -11,7 +11,7 @@ import {
 const AppointmentState = props => {
     const initialState = {
         lat:'10',
-        lng:'',
+        lng:'10',
         loading: true,
         error: null
     };
