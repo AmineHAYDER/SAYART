@@ -11,8 +11,7 @@ export default (state, action) => {
             console.log('location sucess');
             return {
                 ...state,
-                lat:action.payload.lat,
-                lng:action.payload.lng,
+                address: action.payload,
                 loading: false
             };
         default: return state;

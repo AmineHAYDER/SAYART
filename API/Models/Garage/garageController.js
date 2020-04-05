@@ -1,15 +1,19 @@
 const garageModel = require('./garageModel');
 const ErrorResponse = require('../../utils/errorResponse')
+
+const reverser = require('../../fastDecode/reverser')
+
 class garageController {
 
+    async decode ( req , res , next ) {
 
+        console.log(req.body)
+        const data = await reverser(req,res)
+    }
     async all ( req , res , next ) {
 
         res.status(200)
             .json(res.advancedResults)
-            .catch( (err) => {
-                next(err)
-            })
     }
 
     get ( req , res, next) {

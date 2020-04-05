@@ -116,7 +116,7 @@ const Register = (props) => {
                         </Form.Group>
 
 
-                            <Link className="NoUnder" to="/login"><Nav.Link className="links-items" as="a" >LOUGOUT</Nav.Link>
+                            <Link className="NoUnder" to="/login"><Nav.Link className="links-items" as="a" >Sign In</Nav.Link>
                                 <div className="underline"></div></Link>
 
 

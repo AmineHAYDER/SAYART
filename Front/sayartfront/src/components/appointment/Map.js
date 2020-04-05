@@ -9,12 +9,8 @@ import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 
 
 
-const  Map= (props) => {
 
-    const appointmentContext = useContext(AppointmentContext);
-    const setLocation = ()=>{
-        appointmentContext.setLocation(viewport.longitude, viewport.latitude)
-    }
+const  Map= (props) => {
     const [viewport, setViewport] = useState({
         width:"100%",
         height: 400,
@@ -22,6 +18,12 @@ const  Map= (props) => {
         longitude: 10.219001770019531,
         zoom: 8
     });
+    const appointmentContext = useContext(AppointmentContext);
+
+    if (props.clicked ){
+        appointmentContext.setLocation({lng:viewport.longitude,lat: viewport.latitude})}
+
+
     const redraw = ({project}) => {
         const [cx, cy] = project([ viewport.longitude,viewport.latitude]);
         return <circle cx={cx} cy={cy} r={2} fill="blue" />;
@@ -29,12 +31,12 @@ const  Map= (props) => {
 
 
     return (<div>
-                <Button onClick={setLocation}>get current location on console</Button>
                 <ReactMapGL
                     mapboxApiAccessToken={"pk.eyJ1IjoiYW1pbmVoYXlkZXIiLCJhIjoiY2s4anRob2FmMGRleDNsbjZzYXZiajU1aiJ9.0NOu-HQ2-9ug0JP7N3t2hw"}
                     {...viewport}
                     onViewportChange={setViewport}
                 >
+
                             <GeolocateControl
                             positionOptions={{enableHighAccuracy: true}}
                             trackUserLocation={true}

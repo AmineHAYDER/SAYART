@@ -27,7 +27,7 @@ const TakeAppointment = () => {
     const renderSwitch = (page) => {
         switch(page) {
             case 'address':
-                return <Address/>;
+                return <Address />;
             case 'service':
                 return <Service/>;
             case 'confirmation':
@@ -39,7 +39,7 @@ const TakeAppointment = () => {
 
     return (
         <Container >
-            <Form onSubmit={onSubmit}>
+
                     <Row className="justify-content-md-center">
                         <Col lg={5} md={6} xs={12}>
 
@@ -73,7 +73,7 @@ const TakeAppointment = () => {
 */}
 
 
-            </Form>
+
 
         </Container>
 

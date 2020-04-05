@@ -11,7 +11,7 @@ const FormItem = (props) => {
             type={props.type}
             placeholder={props.placeholder}
             name={props.name}
-            value={props.date}
+            value={props.value}
             onChange={props.onChange}
         />
     </Form.Group> );
