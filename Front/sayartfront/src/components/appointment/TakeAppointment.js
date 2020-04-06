@@ -3,16 +3,16 @@ import { Container, Form, Button, Row, Col, ButtonGroup } from 'react-bootstrap'
 
 
 import '../../css/takeAppointment/TakeAppointment.css';
-
-import AuthContext from "../../contexts/Auth/authContext";
+import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 import FormItem from "./FormItem";
-import Address from "./Address";
+import Address from "./Address/Address";
 import Service from "./Service";
 import Confirmation from "./Confirmation"
 
 
 const TakeAppointment = () => {
 
+    const appointmentContext = useContext(AppointmentContext);
     const [page, setPage] = useState("address")
 
 
@@ -50,7 +50,7 @@ const TakeAppointment = () => {
                             <hr></hr>
 
                             <ButtonGroup  >
-                                <Button className="buttonWithIcon" variant="warning" name="address" size="lg" onClick={onChange}>
+                                <Button className="buttonWithIcon" variant="warning" name="address" size="lg" onClick={onChange} active={appointmentContext.pages.address.state ? true : false}>
                                     وين تسكن
                                 </Button>
                                 <Button className="buttonWithIcon" variant="warning" name="service"  size="lg" onClick={onChange} >

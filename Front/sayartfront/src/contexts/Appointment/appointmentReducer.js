@@ -12,7 +12,14 @@ export default (state, action) => {
             return {
                 ...state,
                 address: action.payload,
-                loading: false
+                pages:{
+                    address:{
+                        state:false,
+                        step:{
+                            localisationStep:true
+                        }
+                    }
+                }
             };
         default: return state;
     }

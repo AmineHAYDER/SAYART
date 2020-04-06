@@ -1,38 +1,48 @@
 import React, {useContext, useState} from 'react';
 import Map from './Map'
-import AppointmentContext from '../../contexts/Appointment/appointmentContext';
-import FormItem from "./FormItem";
-import {Button, Col, Container, Form, Nav, Row} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
+import FormItem from "../FormItem";
+import {Button, Col, Form, Row, Alert} from "react-bootstrap";
+
+
 const Address = () => {
         const appointmentContext = useContext(AppointmentContext);
 
         const [address,setAddress] = useState('')
-        const [clicked,setClicked] = useState(false)
-        const [loading,setLoading] = useState(false)
 
-        const loadData = async ()=>{
-                setLoading(true)
-                setClicked(true)
-
-                await setAddress(appointmentContext.address)
-                setTimeout(function() {
-                         setLoading(false)
-                         setClicked(false)
-
-                }, 2000)
+        const loadData =()=>{
+            setAddress(appointmentContext.address)
+            appointmentContext.pages.address.step.loadingStep = true
         }
+        const validateData =()=>{
+            if (appointmentContext.pages.address.step.localisationStep && appointmentContext.pages.address.step.loadingStep )
+                {
+                    appointmentContext.pages.address.step.validationStep = true
+                    appointmentContext.pages.address.state = true
+                }
+            console.log(appointmentContext.pages.address)
+            console.log(appointmentContext.address)
+        }
+
 
         return (
             <div>
-                    <Map clicked={clicked}/>
+
+                    <Alert  variant={!appointmentContext.pages.address.step.localisationStep ? "danger" : "success"}>
+                            Clicker sur le bouton de localisation
+                    </Alert>
+
+                    <Map/>
 
                     <hr></hr>
 
                     <Row className="justify-content-md-center"  >
+                            <Alert  variant={!appointmentContext.pages.address.step.loadingStep ? "danger" : "success"} >
+                                Clicker sur le bouton
+                            </Alert>
                             <Col lg={4} md={6} xs={12}>
-                                    <Button  onClick={loadData} variant="warning" block>
-                                            {loading ? "loading" : "Load data" }
+                                    <Button  onClick={loadData} disabled={appointmentContext.pages.address.step.localisationStep ?  false: true} variant="warning" block>
+                                            Load data
                                     </Button>
                             </Col>
                     </Row>
@@ -65,7 +75,9 @@ const Address = () => {
                                     </Row>
 
                                     <hr></hr>
-                                    <Button variant="outline-warning" onClick={loadData} block>
+
+                                    <h5>Valider vos données </h5>
+                                    <Button variant="outline-warning" onClick={validateData} disabled={appointmentContext.pages.address.step.loadingStep ?  false: true} block>
                                             Validate
                                     </Button>
 

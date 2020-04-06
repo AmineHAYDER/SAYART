@@ -11,7 +11,23 @@ import {
 const AppointmentState = props => {
     const initialState = {
         address:'',
-        loading: true,
+        pages:{
+              address:{
+                  state:false,
+                  step:{
+                      localisationStep:false,
+                      loadingStep:false,
+                      validationStep:false
+                  }},
+              service:{
+                   state:false,
+                   step:{
+                       stepService:false,
+                       state:false
+                   }},
+              active:false,
+              },
+        loading: false,
         error: null
     };
 
@@ -26,19 +42,11 @@ const AppointmentState = props => {
     const setLocation = async data => {
         try {
             var res = await axios.post('http://localhost:5000/garage/decode/reverser', data,config);
-            console.log(res.data.results[0])
             dispatch({
                 type:  LOCATION_SET,
                 payload: res.data.results[0]
             });
-
-
         } catch (err) {
-
-            dispatch({
-                type: REGISTER_FAIL,
-                payload: 'res.data.error'
-            });
 
         }
         }
@@ -48,7 +56,9 @@ const AppointmentState = props => {
             value={{
                 address: state.address,
                 loading: state.loading,
+                pages: state.pages,
                 error: state.error,
+
                 setLocation,
 
             }}
