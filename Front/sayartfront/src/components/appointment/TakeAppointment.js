@@ -6,14 +6,14 @@ import '../../css/takeAppointment/TakeAppointment.css';
 import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 import FormItem from "./FormItem";
 import Address from "./Address/Address";
-import Service from "./Service";
+import Service from "./service/Service";
 import Confirmation from "./Confirmation"
 
 
 const TakeAppointment = () => {
 
     const appointmentContext = useContext(AppointmentContext);
-    const [page, setPage] = useState("address")
+    const [page, setPage] = useState("service")
 
 
     const onChange = e => {

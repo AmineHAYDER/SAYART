@@ -20,13 +20,13 @@ const AppointmentState = props => {
                       validationStep:false
                   }},
               service:{
-                   state:false,
-                   step:{
-                       stepService:false,
-                       state:false
-                   }},
-              active:false,
-              },
+                  name:'none',
+                  states:{
+                      wash:false,
+                      mechanic:false,
+                      wheel:false,
+                      oilChange:false,}
+              }},
         loading: false,
         error: null
     };

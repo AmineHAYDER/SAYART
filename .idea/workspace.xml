@@ -12,6 +12,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -29,16 +31,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/contexts/Appointment" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts\Appointment" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\service\data" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\service" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\Address" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\public" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Auth" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts\Appointment" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard" />
     </key>
   </component>
   <component name="RunManager">
@@ -65,7 +70,9 @@
       <workItem from="1585340180349" duration="14195000" />
       <workItem from="1585778270083" duration="13406000" />
       <workItem from="1585881785018" duration="21652000" />
-      <workItem from="1585919217706" duration="32755000" />
+      <workItem from="1585919217706" duration="32971000" />
+      <workItem from="1586233230666" duration="3705000" />
+      <workItem from="1586323887194" duration="17427000" />
     </task>
     <servers />
   </component>

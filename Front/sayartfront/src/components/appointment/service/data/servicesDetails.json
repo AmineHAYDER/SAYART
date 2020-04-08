@@ -1,0 +1,17 @@
+{
+  "washServices" : [
+            {
+              "name": "Lavage Extérieur",
+              "prix": "11"
+            },
+            {
+              "name": "Lavage Complet",
+              "prix": "14"
+            }
+  ],
+
+  "mechanicServices":[{
+
+
+  }]
+}

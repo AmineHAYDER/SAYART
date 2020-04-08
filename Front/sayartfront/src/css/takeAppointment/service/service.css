@@ -1,0 +1,23 @@
+h4{
+    color: #090700;
+
+
+}
+
+li{
+
+   color: #49002f;
+}
+.ImageSelect:hover, .ImageSelect:active{
+    background-color: rgba(115, 115, 115, 0.19);
+border-bottom-style: groove;
+    border-color: #fac300;
+    box-shadow: -5px -5px 30px 5px #d2b500, 5px 5px 30px 5px #f9f9f9;
+
+    border-radius: 2px;
+}
+.ImageSelect-active {
+    background-color: rgba(255, 214, 18, 0.58);
+    box-shadow: 0 10px 10px -5px;
+    border-radius: 2px;
+}
