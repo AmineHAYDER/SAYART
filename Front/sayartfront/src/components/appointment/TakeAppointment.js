@@ -8,15 +8,15 @@ import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 //pages
 import Address from "./address/Address";
 import Service from "./service/Service";
-import Confirmation from "./Confirmation/Confirmation"
+import Confirmation from "./confirmation/Confirmation"
 import Timing from './timing/Timing'
 
 
 const TakeAppointment = () => {
 
-
     const appointmentContext = useContext(AppointmentContext);
     const [page,setPage] = useState("")
+
 
     const onChange = e => {
         appointmentContext.pages.active = e.target.name
