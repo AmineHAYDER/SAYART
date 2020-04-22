@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, memo } from 'react';
-
+import React, { useContext, useEffect } from 'react';
+import { Container} from "react-bootstrap";
 
 import Navbar from './landingpage/TopNav';
 import Footer from './landingpage/Footer';
@@ -8,12 +8,13 @@ import Footer from './landingpage/Footer';
 import AppointmentState from '../contexts/Appointment/appointmentState';
 
 //pages
-import Acceuil from './landingpage/Acceuil';
+import Home from './landingpage/Home';
 import Login from './authentification/Login';
 import Register from './authentification/Register';
 import ClientDashboard from './dashboards/ClientDashboard';
 import TakeAppointment from "./appointment/TakeAppointment";
-
+import CCM from './landingpage/Carousel';
+import Car from './carIdentification/carIdentfication'
 //routes
 import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from '../routes/PrivateRoute';
@@ -21,6 +22,9 @@ import PrivateRoute from '../routes/PrivateRoute';
 //auth
 import AuthContext from '../contexts/Auth/authContext';
 import setAuthToken from '../contexts/Auth/setAuthToken';
+
+//css
+import '../css/PageContainer.css'
 
 const PageContainer = () => {
 
@@ -37,18 +41,22 @@ const PageContainer = () => {
     return (
         <div className="App">
 
-           {!authContext.isAuthenticated ? <Navbar context={authContext} /> : <Navbar context={authContext} />}
-            
-            <Switch>
-                <Route exact path="/" component={Acceuil} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
-                <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
+           <Navbar context={authContext} />
 
-                <AppointmentState>
-                   <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
-                </AppointmentState>
-            </Switch>
+                <Switch>
+                    <div className="content">
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/CCM" component={CCM} />
+                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/register" component={Register} />
+                        <Route exact path="/car" component={Car} />
+                        <AppointmentState>
+                            <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
+                            <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
+                        </AppointmentState>
+
+                   </div>
+                </Switch>
 
             <Footer />
 

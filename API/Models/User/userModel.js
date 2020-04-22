@@ -164,6 +164,13 @@ UserSchema.virtual('garages', {
     justOne: false
 
 });
+UserSchema.virtual('car', {
+    ref: 'Car',
+    localField: '_id',
+    foreignField: 'user',
+    justOne: true
+
+});
 
 
 module.exports = mongoose.model('User', UserSchema);

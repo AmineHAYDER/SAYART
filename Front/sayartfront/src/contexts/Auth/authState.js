@@ -2,7 +2,6 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
-import setAuthToken from './setAuthToken';
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
@@ -101,21 +100,21 @@ const AuthState = props => {
         }
 
         try {
-            var res = await axios.post('http://localhost:5000/user/auth/login', data, config);
+            await axios.post('http://localhost:5000/user/auth/login', data, config).then((res)=>{
 
             dispatch({
                 type: LOGIN_SUCCESS,
                 payload: res.data.token
             });
 
-            loadUser();
-
+            loadUser();}
+        )
         } catch (err) {
 
             console.log(err.message);
             dispatch({
                 type: LOGIN_FAIL,
-                payload: res.data.error
+                payload: err
             });
 
         }

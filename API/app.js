@@ -9,6 +9,8 @@ const mongoSanitize = require('express-mongo-sanitize')
 //routes
 var users = require('./Models/User/userRoutes');
 var garages = require('./Models/Garage/garageRoute');
+var services = require('./Models/Service/serviceRoute')
+var appointments = require('./Models/Appointment/appointmentRoute')
 
 // Load env vars
 dotenv.config({ path: './config/config.env' });
@@ -28,8 +30,9 @@ app.use('/user',users);
 
 app.use('/garage',garages);
 
+app.use('/service',services)
 
-
+app.use('/appointment',appointments)
 
 app.use(errorHandler);
 app.use('/',(req,res)=>{res.send('home page')});

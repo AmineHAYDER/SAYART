@@ -10,8 +10,56 @@
             }
   ],
 
-  "mechanicServices":[{
+  "mechanicServices":[
+        {
+          "name":"Allumage et gestion moteur"
+        },
+        {
+          "name":"Entretien Auto - Révision Vidange"
+        },
+        {
+          "name":"Freinage - Disques et Plaquettes"
+        },
+        {
+          "name":"Amortisseurs"
+        },
+        {
+          "name":"Échappement"
+        },
+        {
+          "name":"Embrayage"
+        },
+        {
+          "name":"Courroie de Distribution"
+        },
+        {
+          "name":"Batterie - Alternateur - Démarreur"
+        },
+        {
+          "name":"Diagnostic Electronique"
+        },
+        {
+          "name":"Pré-contrôle technique"
+        },
+        {
+          "name":"Vanne egr"
+        },
+        {
+          "name":"Diagnostic sécurité"
+        },
+        {
+          "name":"Remplacement et purge liquide de frein"
+        },
+        {
+          "name":"Remplacement et purge liquide de refroidissement"
+        },
+        {
+          "name":"Rendez-vous sans devis"
+        },
+        {
+          "name":"Géométrie / parallélisme"
+        }
 
 
-  }]
+  ]
 }

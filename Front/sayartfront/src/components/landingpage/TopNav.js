@@ -1,100 +1,59 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import React, { useContext } from 'react'
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
 import logo from '../../img/landingpage/SayartlogoMini.png';
-
 import '../../css/landingpage/Topnav.css'
-
 import AuthContext from '../../contexts/Auth/authContext';
+import logo2 from '../../img/landingpage/SayartlogoMini2.png';
+
 
 
 const TopNav = (props) => {
 
-
-
-
-
     const authContext = useContext(AuthContext);
     const { isAuthenticated, logout } = authContext;
-
 
     const onLogout = () => {
         logout();
     }
 
+    const NavItem = (props)=>{
+
+        return <Nav.Item as="li">
+                    <Link className="NoUnder" to={props.path} >
+                        <Nav.Link className="links-items" as="a" onClick={props.onClick} >{props.value}</Nav.Link>
+                        <div className="underline"></div>
+                    </Link>
+               </Nav.Item>
+
+    }
 
     const NavLoggedElements = (
 
         < Nav className="ml-auto links" as="ul" >
-            <Nav.Item as="li">
-                <Link className="NoUnder" to="/dashboard/client">
-                    <Nav.Link className="links-items" as="a" >{props.context.user.name}</Nav.Link>
-                    <div className="underline"></div>
-                </Link>
-            </Nav.Item>
-            <Nav.Item as="li">
-                <Link className="NoUnder" to="/"><Nav.Link className="links-items" onClick={onLogout} as="a" >LOUGOUT</Nav.Link>
-                    <div className="underline"></div></Link>
-            </Nav.Item>
+            <NavItem path={"/dashboard/client"} value={props.context.user.name} />
+            <NavItem path={"/"} value={"LOGOUT"} onClick={onLogout} />
         </Nav >
     )
 
     const NavNotLoggedElements = (
         <Nav className="ml-auto links" as="ul">
-
-
-
-            <Nav.Item as="li">
-                <Link className="NoUnder" to="/"><Nav.Link className="links-items" as="a" >ACCEUIL</Nav.Link>
-                    <div className="underline"></div></Link>
-            </Nav.Item>
-            <Nav.Item as="li">
-                <Nav.Link className="links-items" as="a" >CÇM</Nav.Link>
-                <div className="underline"></div>
-            </Nav.Item>
-
-            <Nav.Item as="li">
-                <Nav.Link className="links-items" as="a"  >CONTACT</Nav.Link>
-                <div className="underline"></div>
-            </Nav.Item>
-            <Nav.Item as="li">
-                <Link className="NoUnder" to="/register"> <Nav.Link className="links-items" as="a"  >INSCRIPTION</Nav.Link>
-                    <div className="underline"></div></Link>
-            </Nav.Item>
-            <Nav.Item as="li">
-                <Link className="NoUnder" to="/login"><Nav.Link className="links-items" as="a"  >CONNECTER</Nav.Link>
-                    <div className="underline"></div></Link>
-            </Nav.Item>
+            <NavItem path={"/"} value={"HOME"} />
+            <NavItem path={"/CCM"} value={"CÇM"} />
+            <NavItem path={"/"} value={"CONTACT"} />
+            <NavItem path={"/register"} value={"INSCRIPTION"} />
+            <NavItem path={"/login"} value={"CONNECTER"} />
         </Nav>
 
     )
 
     return (
-        <div>
-            <Navbar expand="lg" className="navbarc" fixed="top">
-                <Navbar.Brand href="/takeAppointment">
+        <div className="navbar-shadow">
+            <Navbar expand="lg" className="navbar-shadow" variant="dark" fixed="top">
+                <Navbar.Brand href="/takeAppointment" >
+
                     <img
                         src={logo}
-
-                        className="d-inline-block align-top logo"
-                        alt="React Bootstrap logo"
-                    />
-
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-
-                    {isAuthenticated ? NavLoggedElements : NavNotLoggedElements}
-
-                </Navbar.Collapse>
-
-            </Navbar>
-            <Navbar expand="lg" className="navbarc" >
-                <Navbar.Brand href="#home">
-                    <img
-                        src={logo}
-
                         className="d-inline-block align-top logo"
                         alt="React Bootstrap logo"
                     />
@@ -107,13 +66,8 @@ const TopNav = (props) => {
                 </Navbar.Collapse>
 
             </Navbar>
-
         </div>
     )
-
-
-
-
 }
 
 export default TopNav;

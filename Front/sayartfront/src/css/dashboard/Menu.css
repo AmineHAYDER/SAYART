@@ -1,77 +1,58 @@
-.links {
-    margin-right: 100px;
+.menu-container{
+    box-shadow: 4px 5px 10px #250120;background: rgb(28,4,19);
+    background: linear-gradient(14deg, rgba(28,4,19,1) 0%, rgba(73,8,40,1) 42%, rgba(37,1,23,1) 42%, rgba(64,4,36,1) 69%, rgba(33,2,29,1) 100%);
+    border-radius: 20px;
+}
+.button-menu{
+    border:none;
+    color: transparent;
+    background: rgb(248,157,13);
+    background: linear-gradient(45deg, rgba(248,157,13,1) 3%, rgba(230,153,23,1) 39%, rgba(250,199,0,1) 80%, rgba(251,175,0,1) 98%);
+    box-shadow: 4px 5px 1px #400024;
+    border-radius: 20%;
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    padding-left: 0;
+    margin-right: 30%;
+    transition: width 0.2s ,color 100ms,background-color 0.2s ,border-radius 0.2s;
+}
+@media (max-width: 1100px) {
+
+    .button-menu{
+        margin-right: 0;
+    }
+    .menu-container{
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .button-menu:hover{
+         border-color: #1b0016;
+         color: #53022b;
+         box-shadow: 4px 5px 10px #1e0025;
+         margin-left: 0 ;
+
+        border-radius: 2px;
+     }
+}
+@media (min-width: 1100px) {
+
+    .button-menu:hover{
+
+        box-shadow: 4px 5px 5px #400024;
+        border-color: #1b0016;
+        color: #53022b;
+        width :100%;
+        border-radius: 2px;
+    }
 }
 
-.links-items {
-    margin-left: 10px;
-    margin-right: 10px;
-    transition: color 0.5s;
-    color: black !important;
-    font-weight: bold;
-}
-
-.links-items:hover {
-    color: rgb(20, 47, 120) !important;
-}
-
-.NoUnder:hover {
-    text-decoration: none !important;
-}
-
-ul li .underline {
-    height: 3px;
-    background-color: transparent;
-    width: 0%;
-    transition: width 0.2s, background-color 0.5s;
-    margin: 0 auto;
-}
-
-ul li.active-link .underline {
-    width: 90%;
-    background-color: rgb(120, 0, 79);
-}
-
-
-
-ul li:hover .underline {
-    background-color: rgb(20, 47, 120);
-    width: 80%;
-}
-
-
-
-
-ul li:active a {
-    transition: none;
-    color: rgba(255, 255, 255, 0.76);
-}
-
-ul li:active .underline {
-    transition: none;
-    background-color: rgba(255, 255, 255, 0.76);
-}
-
-
-.logo {
-    margin-left: 40%;
-}
-
-.button-container {
-    padding-left: 50px;
-}
-
-.cnxButton {
-    background-color: black !important;
-    color: white !important;
-    font-weight: bold !important;
-    border: none !important;
-
-}
-
-.cnxButton:hover {
-    background-color: rgb(20, 47, 120) !important;
-}
-
-.navbarc {
-    background-color: white;
+.button-menu-active,.button-menu-active:active {
+    background: linear-gradient(45deg, rgba(248,157,13,1) 3%, rgba(230,153,23,1) 39%, rgba(250,199,0,1) 80%, rgba(251,175,0,1) 98%);
+    border:none;
+    border-radius: 5px;
+    margin: 2px;
+    color: #ffffff;
+    height: 40px;
+    width :100%;
 }

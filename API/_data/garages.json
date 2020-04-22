@@ -1,29 +1,41 @@
 [
   {
-  "name": "Garage Ali",
-  "phone":"22659874",
-  "address": "11 rue balhwen,ariana, ariana ",
-  "services":["oilChange","washing"],
-  "status": "Down",
-  "photo":"no-photo.jpg",
-  "user": "5e742fb64542bb39c0edd8d5"
+    "_id": "5e7a8adfdf14bc31c86b8485",
+    "name": "Garage Ali",
+    "phone":"22659874",
+    "address": {
+      "formattedAddress":"Rue Ali Ayari, ariana, ariana, TN ",
+      "lat": "36.849299",
+      "lng": "10.140021"
+    },
+    "status": "Down",
+    "photo":"no-photo.jpg",
+    "user": "5e742fb64542bb39c0edd8d5"
 },
   {
-  "name": "Garage MedAmine",
-  "phone":"22659874",
-  "address": "11 rue balhwen,ariana, ariana ",
-  "services":["oilChange","washing"],
-  "status": "Down",
-  "photo":"no-photo.jpg",
-  "user": "5e742fb64542bb39c0edd8d4"
+    "_id": "5e7a8adfdf14bc31c86b8484",
+    "name": "Garage MedAmine",
+    "phone":"22659874",
+    "address": {
+    "formattedAddress":"Rue des Pommes, ariana, ariana, TN ",
+    "lat": "36.853699",
+    "lng": "10.185648"
+  },
+    "status": "Down",
+    "photo":"no-photo.jpg",
+    "user": "5e742fb64542bb39c0edd8d4"
 },
   {
-  "name": "Garage jawzel",
-  "phone":"22659874",
-  "address": "11 rue balhwen,ariana, ariana ",
-  "services": ["oilChange","washing"],
-  "status": "Up",
-  "photo":"no-photo.jpg",
-  "user": "5e742fb64542bb39c0edd8d4"
+    "_id": "5e7a8adfdf14bc31c86b8483",
+    "name": "Garage 7ay enozha",
+    "phone":"22659874",
+    "address": {
+      "formattedAddress":"Rue Ahmed Khabthani, ariana, ariana, TN ",
+      "lat": "36.862858",
+      "lng": "10.196755"
+    },
+    "status": "Up",
+    "photo":"no-photo.jpg",
+    "user": "5e742fb64542bb39c0edd8d4"
 }
 ]

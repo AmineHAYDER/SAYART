@@ -1,0 +1,207 @@
+{
+  "cars": [
+    {
+      "mark": "alfa romeo",
+      "models": [
+            {
+              "model":"Giulia",
+              "versions": ["no version available"]
+            },
+            {
+              "model":"Giulietta",
+              "versions":[
+                  "T-Jet",
+                  "T-Jet Plus",
+                  "T MultiAir BVA "
+            ]},
+            {
+              "model":"Stelvio",
+              "versions": ["no version available"]
+            }
+      ]},
+    {
+      "mark": "Audi",
+      "models": [
+        {
+          "model":"AUDI A3 SPORTBACK",
+          "versions":["no version available"]},
+        {
+          "model":"AUDI A3 BERLINE",
+          "versions":[
+          "1.2 L TFSI Business Line",
+          "1.2 L TFSI Design Line BVA"
+        ]},
+        {
+          "model":"Audi Q2",
+          "versions":[
+          "1.0 TFSI Design",
+          "1.0 TFSI Sport"
+        ]},
+        {
+          "model":"Audi A4",
+          "versions":[
+          "1.4 L TFSI Design BVA",
+          "1.4 L TFSI Design Plus",
+          "1.4 L TFSI Design Luxe"
+        ]},
+        {
+          "model":"Audi Q3",
+          "versions":[
+          "35 TFSI Advanced",
+          "35 TFSI Sport"
+        ]},
+        {
+          "model":"AUDI A5 SPORTBACK",
+          "versions":[
+          "1.4 L TFSI Design Luxe",
+          "1.4 L TFSI Design Luxe Plus"
+        ]},
+        {
+          "model":"Audi A6",
+          "versions":[
+          "40 TFSI Avus",
+          "55 TFSI Quattro Design Luxe"
+        ]},
+        {
+          "model":"AUDI A7 SPORTBACK",
+          "versions":["no version available"]},
+        {
+          "model":"Audi Q5",
+          "versions":[
+          "2.0 L TDI Quattro Design Limited",
+          "2.0 L TFSI Design Luxe"
+        ]},
+        {
+          "model":"Audi Q8",
+          "versions":["no version available"]},
+        {
+          "model":"Audi A8 L",
+          "versions":["no version available"]}
+      ]},
+    {
+      "mark": "BAIC YX",
+      "models": [
+            {
+              "model":"BAIC YX KENBO S2",
+              "versions": ["no version available"]},
+            {
+              "model":"BAIC YX KENBO S3",
+              "versions": ["no version available"]}
+      ]},
+    {
+      "mark": "BMW",
+      "models": [
+            {
+              "model":"BMW SÉRIE 1",
+              "versions": [
+                    "118i Business Line",
+                    "118i Pack M"
+            ]},
+            {
+              "model":"BMW SÉRIE 2 GRAN COUPÉ",
+              "versions": [
+                    "218i Business Line",
+                    "218i Sport Line",
+                    "218i Pack Sport M"
+            ]},
+            {
+              "model":"BMW SÉRIE 3",
+              "versions": [
+                    "320i Business Line",
+                    "320i Business Line Plus",
+                    "320i Pack M Sport",
+                    "320i Luxury Line"
+            ]},
+            {
+              "model":"BMW SÉRIE 4 GRAN COUPÉ",
+              "versions": [
+              "418i Business Line Plus"	,
+              "418i Luxury Line BVA",
+              "418i Pack M Sport BVA"
+            ]},
+            {
+              "model":"BMW SÉRIE 4 COUPÉ",
+              "versions": [
+              "418i Business Line Plus",
+              "418i Luxury Line BVA",
+              "418i Pack M Sport BVA"
+            ]},
+            {
+              "model":"BMW SÉRIE 5",
+              "versions": [
+              "520i Business Line BVA ",
+              "520i Luxury Line BVA ",
+              "520i Pack M BVA"
+            ]},
+            {
+              "model":"BMW X1",
+              "versions": [
+              "18i Business Line",
+              "18i X-Line",
+              "18i Kit M"
+            ]},
+            {
+              "model":"BMW X2",
+              "versions": [
+              "18i Business Line",
+              "18i Pack M Sport X",
+              "20i Pack M Sport X"
+            ]},
+            {
+              "model":"BMW X3",
+              "versions": [
+                  "20i Business Line",
+                  "18d Business Line"
+            ]}
+      ]},
+    {"Aston Martin": ""},
+    {"Bmw Alpina": ""},
+    {"Cadillac": ""},
+    {"Caterham": ""},
+    {"Chevrolet": ""},
+    {"Chrysler": ""},
+    {"Citroën": ""},
+    {"Dacia": ""},
+    {"Dodge": ""},
+    {"DS": ""},
+    {"Ferrari": ""},
+    {"Fiat": ""},
+    {"Ford": ""},
+    {"Genesis": ""},
+    {"Honda": ""},
+    {"Hummer": ""},
+    {"Hyundai": ""},
+        {"Infiniti": ""},
+        {"Isuzu": ""},
+        {"Jaguar": ""},
+        {"Jeep": ""},
+        {"KIA": ""},
+        {"Lamborghini": ""},
+        {"Land Rover": ""},
+        {"Lexus": ""},
+        {"Lotus": ""},
+        {"Maserati": ""},
+        {"Mazda": ""},
+        {"Mercedes-Benz": ""},
+        {"MG": ""},
+        {"Mia Electric": ""},
+        {"MINI": ""},
+        {"Mitsubishi": ""},
+        {"Nissan": ""},
+        {"Opel": ""},
+        {"Peugeot": ""},
+        {"Polestar": ""},
+        {"Porsche": ""},
+        {"Renault": ""},
+        {"Rolls-Royce": ""},
+        {"Seat": ""},
+        {"Skoda": ""},
+        {"Smart": ""},
+        {"Subaru": ""},
+        {"Suzuki": ""},
+        {"Tesla": ""},
+        {"Toyota": ""},
+        {"Volkswagen": ""},
+        {"Volvo": ""}
+      ]
+    }

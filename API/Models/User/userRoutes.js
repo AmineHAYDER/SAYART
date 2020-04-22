@@ -14,6 +14,9 @@ const userController = require('./userController');
 
 const authRouter = require('../Auth/authRoutes');
 const garageRouter = require('../Garage/garageRoute');
+const carRouter = require('../Car/carRoute');
+const appointmentRouter = require('../Appointment/appointmentRoute');
+
 
 
 const advancedResults = require('../../middelware/advancedResults')
@@ -38,6 +41,9 @@ router.use(express.static(path.join(__dirname, 'public')));
 router.use('/auth', authRouter);
 router.use('/:userId/garage', protect, authorize('garage', 'admin'), garageRouter);
 
+router.use('/car', carRouter);
+
+router.use('/appointment', appointmentRouter);
 
 router
     .route('/')

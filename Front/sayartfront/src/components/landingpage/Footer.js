@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Row, Col, Image } from 'react-bootstrap';
+import {  Container, Row, Col, Image } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,8 @@ import logo from '../../img/landingpage/SayartlogoMini.png';
 class Footer extends React.Component {
     render() {
         return (
-            <Container>
+            <Container className="footer">
+                <hr/>
                 <Row >
                     <Col sm={12} lg={4}>
                         <div className="colMarg ">
@@ -23,15 +24,11 @@ class Footer extends React.Component {
                                 src={logo}
                                 alt="logo"
                             />
-
-                            <br />
-                            <br />
+                            <br/><br/>
                             <p>
                                 Le premier platforme indépendant de réservation et de suivie des services d'entretien automobile en tunisie
                             </p>
-
                         </div>
-
                     </Col>
                     <Col lg={4}></Col>
                     <Col lg={4} sm={12} xs={12} >
@@ -61,39 +58,35 @@ class Footer extends React.Component {
                                     alt="instagram"
                                 >
                                 </Image></a>
-
                         </Row>
-
-
                         <Row className="col-text justify-content-center">
-
                             <div>
-                                <span className="blueColor">Tel: (+216) </span> <span className="greenColor"> 54 303 551</span>
+                                <span className="purpleColor">Tel: (+216) </span> <span className="purpleColor"> 54 303 551</span>
                             </div>
-
-
                         </Row>
-                        <Row className="col-text justify-content-center"> <div>
-                            <span className="blueColor">Email: contact@ </span> <span className="greenColor">sayart.tn</span>
-                        </div>
+                        <Row className="col-text justify-content-center">
+                            <div>
+                               <span className="purpleColor">Email: contact@ </span> <span className="purpleColor">sayart.tn</span>
+                            </div>
                         </Row>
-                        <Row className="justify-content-center"><div >
-                            <div> <Link> Comment ça marche </Link></div>
-                            <div><Link> Contact </Link></div>
-                            <div><Link> Termes et conditions </Link></div>
-                        </div></Row>
-
+                        <Row className="justify-content-center">
+                            <div>
+                                <div> Comment ça marche </div>
+                                <div> Contact </div>
+                                <div> Termes et conditions </div>
+                            </div>
+                        </Row>
                     </Col >
-
                 </Row >
-                <hr />
+                <hr/>
                 <Row className="justify-content-center">
                     <div className="copyright-text">
                         COPYRIGHT © 2020. SAYART.
                     </div>
                 </Row>
 
-            </Container >);
+            </Container >
+        );
     }
 }
 

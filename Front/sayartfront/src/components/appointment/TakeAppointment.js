@@ -1,47 +1,48 @@
 import React, { useContext, useState } from 'react'
-import { Container, Form, Button, Row, Col, ButtonGroup } from 'react-bootstrap'
+import { Container, Button, Row, Col, ButtonGroup } from 'react-bootstrap'
 
 
 import '../../css/takeAppointment/TakeAppointment.css';
 import AppointmentContext from '../../contexts/Appointment/appointmentContext';
-import FormItem from "./FormItem";
-import Address from "./Address/Address";
+
+//pages
+import Address from "./address/Address";
 import Service from "./service/Service";
-import Confirmation from "./Confirmation"
+import Confirmation from "./Confirmation/Confirmation"
+import Timing from './timing/Timing'
 
 
 const TakeAppointment = () => {
 
     const appointmentContext = useContext(AppointmentContext);
-    const [page, setPage] = useState("service")
-
+    const [page,setPage] = useState("")
 
     const onChange = e => {
+        appointmentContext.pages.active = e.target.name
         setPage(e.target.name)
+        console.log(appointmentContext.pages.active)
     };
-
-    const onSubmit = async e => {
-        e.preventDefault();
-    }
 
     const renderSwitch = (page) => {
         switch(page) {
             case 'address':
-                return <Address />;
+                return <Address setPage={setPage} />;
             case 'service':
-                return <Service/>;
+                return <Service setPage={setPage} />;
             case 'confirmation':
-                return <Confirmation/>;
+                return <Confirmation setPage={setPage} />;
+            case 'timing':
+                return <Timing setPage={setPage} />;
             default:
                 return page;
         }
     }
 
     return (
-        <Container >
+        <Container className="appointment">
 
                     <Row className="justify-content-md-center">
-                        <Col lg={5} md={6} xs={12}>
+                        <Col>
 
                             <h3 className="purple">
                                  <span className="yellow">  Rendez-Vous</span><span >  خوذ</span>
@@ -50,13 +51,43 @@ const TakeAppointment = () => {
                             <hr></hr>
 
                             <ButtonGroup  >
-                                <Button className="buttonWithIcon" variant="warning" name="address" size="lg" onClick={onChange} active={appointmentContext.pages.address.state ? true : false}>
+                                <Button
+                                    className="buttonWithIcon"
+                                    variant="warning"
+                                    name="address"
+                                    size="xs"
+                                    onClick={onChange}
+                                    active={appointmentContext.pages.address.state}
+                                >
                                     وين تسكن
                                 </Button>
-                                <Button className="buttonWithIcon" variant="warning" name="service"  size="lg" onClick={onChange} >
+                                <Button
+                                    className="buttonWithIcon"
+                                    variant="warning"
+                                    name="service"
+                                    size="xs"
+                                    onClick={onChange}
+                                    active={appointmentContext.pages.service.state}
+                                >
                                     شنوة مستحق
                                 </Button>
-                                <Button className="buttonWithIcon" variant="warning" name="confirmation" size="lg" onClick={onChange}>
+                                <Button
+                                    className="buttonWithIcon"
+                                    variant="warning"
+                                    name="timing"
+                                    size="xs"
+                                    onClick={onChange}
+                                    active={appointmentContext.pages.timing.state}
+                                >
+                                    وقتاش تنجم
+                                </Button>
+                                <Button
+                                    className="buttonWithIcon"
+                                    variant="warning"
+                                    name="confirmation"
+                                    size="xs"
+                                    onClick={onChange}
+                                >
                                     Confirmi
                                 </Button>
                             </ButtonGroup>
@@ -64,16 +95,8 @@ const TakeAppointment = () => {
                             <hr></hr>
                         </Col>
                     </Row>
-                        {renderSwitch(page)}
 
-
-                        {/*
-                        <FormItem type={"date"} placeholder={"date"} name={'date'} value={"none"} onChange={onChange}/>
-                        <FormItem type={"password"}  name={'password'} onChange={onChange}/>
-*/}
-
-
-
+                        {renderSwitch(appointmentContext.pages.active)}
 
         </Container>
 

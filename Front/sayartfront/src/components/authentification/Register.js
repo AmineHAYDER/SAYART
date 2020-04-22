@@ -1,7 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
-import {Container, Form, Button, Image, Row, Col, Nav} from 'react-bootstrap';
-import axios from 'axios';
-import fbLogo from '../../img/landingpage/facebookIcon.png';
+import {Container, Form, Button, Row, Col, Nav} from 'react-bootstrap';
 import AuthContext from '../../contexts/Auth/authContext';
 
 import '../../css/authentification/Register.css';
@@ -58,12 +56,6 @@ const Register = (props) => {
 
     }
 
-    const testState = e => {
-        e.preventDefault();
-        console.log(isAuthenticated);
-        console.log(authContext.user);
-
-    }
     return (
         <Container >
 

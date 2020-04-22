@@ -1,8 +1,7 @@
 .jumbo {
-    background-color: mediumspringgreen;
+    margin-top: 100px;
+    background-color: #50316a;
     height: 500px;
-
-
 }
 
 .spaceDiv {
@@ -12,7 +11,6 @@
 .spaceDiv2 {
     height: 50px;
 }
-
 
 .text {
     color: white

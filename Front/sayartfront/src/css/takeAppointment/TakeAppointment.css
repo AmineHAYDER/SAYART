@@ -1,3 +1,9 @@
+.appointment {
+    padding-bottom: 50px;
+    border-radius: 12px;
+    box-shadow: -5px -5px 30px 5px #928f91, 5px 5px 30px 5px #3a001e;
+    background-color: rgb(250, 231, 255);
+}
 .buttonWithIcon {
     background-color: #410034;
     color: white;
@@ -13,6 +19,13 @@
      color: #fac300;
      font-weight: bold;
  }
+.object{
+    box-shadow: -5px -5px 30px 5px #928f91, 5px 5px 30px 5px #3a001e;
+
+}
+.header{
+    background-color: rgb(243, 236, 241);
+}
 .icon {
     padding-right: 10px;
 }

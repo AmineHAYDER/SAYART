@@ -10,4 +10,12 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 //Appoinmtents types
-export const LOCATION_SET= 'LOCATION_SET';
+export const APPOINTMENTS_LOADED = 'APPOINTMENTS_LOADED';
+export const CAR_LOADED = 'CAR_LOADED';
+export const LOCATION_SET = 'LOCATION_SET';
+export const LOADING= 'LOADING';
+export const NOT_LOADING= 'NOT_LOADING';
+export const APPOINTMENTS_GARAGES_LOADED= 'APPOINTMENTS_GARAGES_LOADED';
+
+
+

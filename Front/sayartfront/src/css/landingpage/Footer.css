@@ -1,11 +1,13 @@
-.blueColor {
-    color: royalblue;
+.purpleColor {
+    color: #2b0030;
 }
 
-.greenColor {
-    color: mediumaquamarine;
+.yellowColor {
+    color: #cd9c00;
 }
-
+.footer {
+    padding-top:  100px;
+}
 .colMarg {
     float: left;
     align-content: flex-start;
@@ -19,7 +21,6 @@
 
 .links-div {
     display: flex;
-
     font-size: 16px;
     margin-left: auto;
 }

@@ -10,10 +10,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="tsconfig.json" />
         <option value="package.json" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,19 +29,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/contexts/Appointment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/map" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\service\data" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\service" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\Address" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\public" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Auth" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\Confirmation" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\takeAppointment" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\appointments" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard\MyCar" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\MyCar" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\map" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\timing" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts\Appointment" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard" />
     </key>
@@ -73,6 +76,21 @@
       <workItem from="1585919217706" duration="32971000" />
       <workItem from="1586233230666" duration="3705000" />
       <workItem from="1586323887194" duration="17427000" />
+      <workItem from="1586420669545" duration="9269000" />
+      <workItem from="1586502785786" duration="28110000" />
+      <workItem from="1586602610987" duration="1886000" />
+      <workItem from="1586623836602" duration="16892000" />
+      <workItem from="1586691374529" duration="9395000" />
+      <workItem from="1586787208222" duration="16625000" />
+      <workItem from="1586876019651" duration="27548000" />
+      <workItem from="1587045828625" duration="28333000" />
+      <workItem from="1587142250081" duration="10109000" />
+      <workItem from="1587164868535" duration="7674000" />
+      <workItem from="1587222269004" duration="12748000" />
+      <workItem from="1587259824593" duration="11050000" />
+      <workItem from="1587308181626" duration="16895000" />
+      <workItem from="1587406660350" duration="19243000" />
+      <workItem from="1587501222517" duration="13944000" />
     </task>
     <servers />
   </component>
@@ -80,6 +98,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="441" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586965527804">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="441" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738@0.0.1366.738" timestamp="1586965527804" />
     <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1585890325869">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -96,9 +118,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1585890325869" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1585971868890">
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1587268219168">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1585971868890" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1587268219168" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1587245466394">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1587245466394" />
   </component>
 </project>

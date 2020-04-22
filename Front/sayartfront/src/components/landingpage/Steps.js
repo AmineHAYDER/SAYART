@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Container, Image, Row, Col } from 'react-bootstrap';
+import { Container, Image, Row, Col } from 'react-bootstrap';
 
 import '../../css/landingpage/Steps.css';
 

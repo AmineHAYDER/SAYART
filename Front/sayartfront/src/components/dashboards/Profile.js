@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {Nav, Button, NavLink, Row, Container} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import AuthContext from '../../contexts/Auth/authContext';
 
 import '../../css/landingpage/Topnav.css'
@@ -9,7 +9,7 @@ const Profile = () => {
     const authContext = useContext(AuthContext);
 
     const { user } = authContext;
-
+console.log(authContext.loading)
     return (
         <Container>
             <p>

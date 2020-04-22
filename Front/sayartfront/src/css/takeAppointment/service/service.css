@@ -1,23 +1,36 @@
-h4{
-    color: #090700;
-
-
+.label-pages{
+    color: rgb(38, 0, 33);
+    text-shadow: 1px 1px #e2d6ff;
 }
 
-li{
-
-   color: #49002f;
+.label-button{
+    color: rgb(255, 245, 253);
 }
+
 .ImageSelect:hover, .ImageSelect:active{
-    background-color: rgba(115, 115, 115, 0.19);
-border-bottom-style: groove;
-    border-color: #fac300;
-    box-shadow: -5px -5px 30px 5px #d2b500, 5px 5px 30px 5px #f9f9f9;
+    background-color: rgb(190, 186, 194);
+    height: 160px;
+    box-shadow: 2px  2px 30px 3px #6e0063,0px  2px 10px -5px #1b0016;
+    border-radius: 15px;
 
-    border-radius: 2px;
+    transition:  background-color 0.5s;
 }
 .ImageSelect-active {
-    background-color: rgba(255, 214, 18, 0.58);
-    box-shadow: 0 10px 10px -5px;
-    border-radius: 2px;
+    height: 160px;
+    background-color: rgb(255, 230, 0);
+    box-shadow: 5px 10px 10px -5px #d29800;
+    border-radius: 15px;
+}
+.ImageSelect{
+    height: 160px;
+    background-color: rgb(240, 232, 255);
+    box-shadow: 2px  2px 30px 3px #6e0063, 0 2px 10px -5px #1b0016;
+    border-radius:15px;
+}
+.toggleButtons{
+    padding-bottom: 50px;
+    box-shadow: 5px  10px 10px -5px #c060ff, 0 -10px 10px -5px #29001e;
+    background: rgb(64,1,40);
+    background: radial-gradient(circle, rgba(64,1,40,1) 11%, rgba(33,0,16,1) 29%, rgba(59,2,36,1) 41%, rgba(28,0,6,1) 85%);
+    border-radius: 30px;
 }
