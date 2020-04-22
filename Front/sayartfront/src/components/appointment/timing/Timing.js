@@ -9,16 +9,16 @@ import '../../../css/takeAppointment/timing/timing.css' ;
 import timingsData from './data/_times'
 
 
-const  morningTimings = timingsData.morningTimings
-const  eveningTimings = timingsData.eveningTimings
+const  morningTimings = timingsData.morningTimings;
+const  eveningTimings = timingsData.eveningTimings;
 
 
 const Timing = (props) => {
 
     const appointmentContext = useContext(AppointmentContext);
 
-    const [ date, setDate] =  useState(new Date())
-    const [ hour, setHour] = useState("8:00")
+    const [ date, setDate] =  useState(new Date());
+    const [ hour, setHour] = useState("8:00");
 
     const selectDate = (date)=> {
         setDate(date);
@@ -28,10 +28,22 @@ const Timing = (props) => {
     }
     const selectHour = (e) =>{
         setHour(e.target.name)
-        date.setHours(e.target.name.split(":")[0])
-        date.setMinutes(e.target.name.split(":")[1])
+        date.setHours(e.target.name.split(":")[0]);
+        date.setMinutes(e.target.name.split(":")[1]);
         appointmentContext.pages.timing.states.hour = true
+
         setDate(date);
+    }
+    const validate = () => {
+        console.log((date - Date.now())/1000/60/60 > 6);
+        if ((date - Date.now())/1000/60/60 > 6 )
+       { appointmentContext.pages.timing.date = date;
+        appointmentContext.pages.timing.state = true;
+        appointmentContext.pages.active = "confirmation"
+        props.setPage("confirmation")
+        setDate(date)} else {
+            alert("entrer un temps apres 6 heures ")
+        }
     }
     return (
         <Container>
@@ -73,15 +85,7 @@ const Timing = (props) => {
             <Row>
                 <Button
                     variant="warning"
-                    onClick={(e)=> {
-
-                        appointmentContext.pages.timing.date = date
-                        appointmentContext.pages.active = "confirmation"
-                        props.setPage("confirmation")
-                        setDate(date)
-                        console.log(appointmentContext.pages.timing.date)
-
-                    }}
+                    onClick={validate}
                     disabled={!appointmentContext.pages.timing.states.date || !appointmentContext.pages.timing.states.hour }
                     block
                 >

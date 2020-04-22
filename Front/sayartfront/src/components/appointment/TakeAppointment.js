@@ -14,6 +14,7 @@ import Timing from './timing/Timing'
 
 const TakeAppointment = () => {
 
+
     const appointmentContext = useContext(AppointmentContext);
     const [page,setPage] = useState("")
 
@@ -87,6 +88,8 @@ const TakeAppointment = () => {
                                     name="confirmation"
                                     size="xs"
                                     onClick={onChange}
+
+                                    active={appointmentContext.pages.timing.state}
                                 >
                                     Confirmi
                                 </Button>

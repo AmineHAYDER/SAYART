@@ -28,7 +28,6 @@ class serviceController {
             await serviceModel.findOne({garage:garage._id,name:"oilChange"}).populate('garage').then((service)=>
                 {if (service) services.push(service)}
             )
-            console.log(services)
         }) })
 
 
