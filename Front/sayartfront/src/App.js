@@ -8,10 +8,6 @@ import AuthState from './contexts/Auth/authState';
 
 import PageContainer from './components/PageContainer';
 
-
-
-
-
 const App = () => {
 
 

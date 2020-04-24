@@ -1,8 +1,11 @@
-import React, {useContext, useState} from 'react';
-import {Col, Row, Image, Container, Button} from "react-bootstrap";
+import React, { useContext, useState } from 'react';
+import { Col, Row, Image, Container, Button } from "react-bootstrap";
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
 
-import '../../../css/takeAppointment/service/Service.css'
+
+
+import '../../../css/takeAppointment/service/service.css';
+
 import ServiceDetails from "./ServiceDetails";
 
 //images
@@ -15,11 +18,11 @@ import oilChangeImage from '../../../img/takeAppointment/oilChange.png';
 const Service = (props) => {
 
     const appointmentContext = useContext(AppointmentContext);
-    const {pages} = appointmentContext
-    const [service, selectService]=useState(pages.service.name);
-    const [detail, selectDetail]=useState("");
+    const { pages } = appointmentContext
+    const [service, selectService] = useState(pages.service.name);
+    const [detail, selectDetail] = useState("");
 
-    const setService = (e) =>{
+    const setService = (e) => {
         e.preventDefault()
         selectService(e.target.name);
         pages.service.name = e.target.name
@@ -27,9 +30,9 @@ const Service = (props) => {
     }
     console.log(pages.service)
     const Clicked = (e) => {
-        if ( service === e ){
-          return  "ImageSelect-active"
-        }else {return  "ImageSelect"}
+        if (service === e) {
+            return "ImageSelect-active"
+        } else { return "ImageSelect" }
 
 
     }
@@ -41,64 +44,64 @@ const Service = (props) => {
             <Container className={"toggleButtons"} >
                 <Row lg={4} md={6} xs={12} >
                     <Col >
-                            <hr></hr>
-                            <h4 className="label-button"> Pneu </h4>
-                            <hr></hr>
-                            <Image
-                                className={Clicked("wheel")}
-                                onClick={setService}
-                                name="wheel"
-                                src={wheelImage}
-                                fluid
-                            />
-                        </Col>
+                        <hr></hr>
+                        <h4 className="label-button"> Pneu </h4>
+                        <hr></hr>
+                        <Image
+                            className={Clicked("wheel")}
+                            onClick={setService}
+                            name="wheel"
+                            src={wheelImage}
+                            fluid
+                        />
+                    </Col>
                     <Col></Col>
                     <Col  >
-                            <hr></hr>
-                            <h4 className="label-button" > mechanic </h4>
-                            <hr></hr>
-                            <Image
-                                className={Clicked("mechanic")}
-                                onClick={setService}
-                                name="mechanic"
-                                src={mechanicImage}
-                                fluid
-                            />
-                        </Col>
+                        <hr></hr>
+                        <h4 className="label-button" > mechanic </h4>
+                        <hr></hr>
+                        <Image
+                            className={Clicked("mechanic")}
+                            onClick={setService}
+                            name="mechanic"
+                            src={mechanicImage}
+                            fluid
+                        />
+                    </Col>
                     <Col></Col>
                     <Col >
-                            <hr></hr>
-                            <h4 className="label-button"> oilchange </h4>
-                            <hr></hr>
-                            <Image
-                                className={Clicked("oilChange")}
-                                onClick={setService}
-                                name="oilChange"
-                                src={oilChangeImage}
-                                fluid
-                            />
-                        </Col>
+                        <hr></hr>
+                        <h4 className="label-button"> oilchange </h4>
+                        <hr></hr>
+                        <Image
+                            className={Clicked("oilChange")}
+                            onClick={setService}
+                            name="oilChange"
+                            src={oilChangeImage}
+                            fluid
+                        />
+                    </Col>
                     <Col></Col>
                     <Col >
-                            <hr></hr>
-                            <h4 className="label-button"> wash </h4>
-                            <hr></hr>
-                            <Image
-                                className={Clicked("wash")}
-                                onClick={setService}
-                                name="wash"
-                                src={washImage}
-                                fluid
-                            />
-                        </Col>
+                        <hr></hr>
+                        <h4 className="label-button"> wash </h4>
+                        <hr></hr>
+                        <Image
+                            className={Clicked("wash")}
+                            onClick={setService}
+                            name="wash"
+                            src={washImage}
+                            fluid
+                        />
+                    </Col>
                 </Row>
             </Container>
             <Row>
-                <ServiceDetails service={service} selectDetail={selectDetail}/>
+                <ServiceDetails service={service} selectDetail={selectDetail} />
             </Row>
             <Row>
                 <Button
-                    onClick={(e)=>{
+                    onClick={(e) => {
                         pages.service.state = true
                         pages.active = "timing"
                         props.setPage("timing")

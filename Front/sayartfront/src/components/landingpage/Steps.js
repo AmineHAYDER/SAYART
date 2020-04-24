@@ -33,8 +33,8 @@ class Steps extends React.Component {
                             </Row>
 
                             <Row>
-                                <Col className="center"> <div ><h3>Identifiez vous!</h3>
-                                    <p>
+                                <Col className="center"> <div ><h3 className="purpleText">Identifiez vous!</h3>
+                                    <p className="underText">
                                         Connectez vous pour un meilleur expérience! Vous pouvez sauvegarder les détails de votre voiture et suivre son état
                                     </p> </div> </Col>
                                 <Col>
@@ -52,15 +52,15 @@ class Steps extends React.Component {
                             </Row>
                             <Row>
                                 <Col><Image
-                                    src={pickImg}
+                                    src={searchImg}
                                     alt="step1"
                                     fluid
                                 /> </Col>
                                 <Col className="center">
 
                                     <div >
-                                        <h3>Tapez Vos Besoins</h3>
-                                        <p>
+                                        <h3 className="purpleText">Tapez Vos Besoins</h3>
+                                        <p className="underText">
                                             Dites-nous ce que vous recherchez ou ce qui doit être réparé sur votre voiture et nous trouverons les meilleurs garages à proximité et vous donnerons le meilleur prix approximative.
                                     </p> </div>
                                 </Col>
@@ -73,14 +73,14 @@ class Steps extends React.Component {
                             </Row>
                             <Row>
 
-                                <Col className="center"> <div><p>
-                                    <h3>Choisissez un garage</h3>
-
+                                <Col className="center"> <div>
+                                    <h3 className="purpleText">Choisissez un garage</h3>
+                                    <p className="underText">
                                         vous aurez une liste des meilleurs garages de votre région et leurs détails pour choisir ce qui vous convient le meiux.
                                     </p> </div></Col>
                                 <Col>
                                     <Image
-                                        src={searchImg}
+                                        src={pickImg}
                                         alt="step1"
                                         fluid
                                     /></Col>
@@ -99,8 +99,8 @@ class Steps extends React.Component {
                                 /></Col>
                                 <Col className="center">
                                     <div className="text-adjust">
-                                        <h3>Laissez un review!</h3>
-                                        <p>
+                                        <h3 className="purpleText">Laissez un review!</h3>
+                                        <p className="underText">
                                             Pour montrer que vous êtes heureux, laissez un avis sur le garage et recommandez le garage à des amis et à d'autres
                                     </p>
                                     </div>

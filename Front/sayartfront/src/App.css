@@ -47,7 +47,28 @@
   height: 25px;
 }
 
+.purpleDiv {
+  background-color: rgb(100, 71, 91);
+
+}
+
 .div50pxColored {
   background-color: royalblue;
   height: 50px;
+}
+
+
+.purpleText {
+  color: rgb(110, 14, 79)
+}
+
+.yellowText {
+  color: rgb(255, 205, 51)
+}
+
+
+.purpleBtn {
+  background-color: rgb(110, 14, 79) !important;
+  color: white !important;
+  border-color: rgb(255, 205, 51) !important;
 }

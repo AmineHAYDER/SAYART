@@ -1,0 +1,54 @@
+.container_service {
+    background-color: rgb(255, 219, 156) !important;
+
+}
+
+.services {
+    padding: 60px 30px 40px 30px;
+    background-color: rgb(255, 228, 181) !important;
+}
+
+.box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 10px 40px 10px;
+    background: #fff;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.icon {
+    margin: 0 auto 15px auto;
+    padding-top: 12px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.card_image {
+    height: 80px !important;
+    width: 80px !important;
+    margin-top: 20px;
+    margin-left: 38%;
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.servicesTitle {
+    padding-bottom: 40px;
+    font-weight: bold;
+    color: rgb(110, 14, 79)
+}

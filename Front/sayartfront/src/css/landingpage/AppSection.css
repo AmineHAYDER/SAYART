@@ -1,0 +1,30 @@
+.background {
+    background-color: rgb(221, 141, 201);
+
+}
+
+.app-buttons {
+    padding: 8px 50px 10px 46px !important;
+}
+
+.downloadText {
+    color: white;
+    padding-top: 8px;
+}
+
+.download-btn+.download-btn {
+    margin-left: 30px
+}
+
+.download-btn {
+
+    font-weight: 500;
+
+    display: inline-block !important;
+    padding: 8px 24px 8px 20px !important;
+    border-radius: 3px;
+    transition: 0.5s;
+    color: #fff;
+    background: #74255c;
+
+}

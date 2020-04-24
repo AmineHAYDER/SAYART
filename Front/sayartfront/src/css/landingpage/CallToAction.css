@@ -1,7 +1,10 @@
 .jumbo {
-    margin-top: 100px;
-    background-color: #50316a;
+
+
     height: 500px;
+
+
+
 }
 
 .spaceDiv {
@@ -13,5 +16,9 @@
 }
 
 .text {
-    color: white
+    color: black
+}
+
+.btnText:hover {
+    color: rgb(255, 205, 51)
 }

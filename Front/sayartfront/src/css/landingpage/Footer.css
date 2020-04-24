@@ -5,9 +5,9 @@
 .yellowColor {
     color: #cd9c00;
 }
-.footer {
-    padding-top:  100px;
-}
+
+.footer {}
+
 .colMarg {
     float: left;
     align-content: flex-start;

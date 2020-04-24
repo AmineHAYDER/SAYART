@@ -6,16 +6,16 @@ import '../../css/takeAppointment/TakeAppointment.css';
 import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 
 //pages
-import Address from "./address/Address";
+import Address from "./Address/Address";
 import Service from "./service/Service";
-import Confirmation from "./confirmation/Confirmation"
+import Confirmation from "./Confirmation/Confirmation"
 import Timing from './timing/Timing'
 
 
 const TakeAppointment = () => {
 
     const appointmentContext = useContext(AppointmentContext);
-    const [page,setPage] = useState("")
+    const [page, setPage] = useState("")
 
 
     const onChange = e => {
@@ -25,7 +25,7 @@ const TakeAppointment = () => {
     };
 
     const renderSwitch = (page) => {
-        switch(page) {
+        switch (page) {
             case 'address':
                 return <Address setPage={setPage} />;
             case 'service':
@@ -42,64 +42,64 @@ const TakeAppointment = () => {
     return (
         <Container className="appointment">
 
-                    <Row className="justify-content-md-center">
-                        <Col>
+            <Row className="justify-content-md-center">
+                <Col>
 
-                            <h3 className="purple">
-                                 <span className="yellow">  Rendez-Vous</span><span >  خوذ</span>
-                            </h3>
+                    <h3 className="purple">
+                        <span className="yellow">  Rendez-Vous</span><span >  خوذ</span>
+                    </h3>
 
-                            <hr></hr>
+                    <hr></hr>
 
-                            <ButtonGroup  >
-                                <Button
-                                    className="buttonWithIcon"
-                                    variant="warning"
-                                    name="address"
-                                    size="xs"
-                                    onClick={onChange}
-                                    active={appointmentContext.pages.address.state}
-                                >
-                                    وين تسكن
+                    <ButtonGroup  >
+                        <Button
+                            className="buttonWithIcon"
+                            variant="warning"
+                            name="address"
+                            size="xs"
+                            onClick={onChange}
+                            active={appointmentContext.pages.address.state}
+                        >
+                            وين تسكن
                                 </Button>
-                                <Button
-                                    className="buttonWithIcon"
-                                    variant="warning"
-                                    name="service"
-                                    size="xs"
-                                    onClick={onChange}
-                                    active={appointmentContext.pages.service.state}
-                                >
-                                    شنوة مستحق
+                        <Button
+                            className="buttonWithIcon"
+                            variant="warning"
+                            name="service"
+                            size="xs"
+                            onClick={onChange}
+                            active={appointmentContext.pages.service.state}
+                        >
+                            شنوة مستحق
                                 </Button>
-                                <Button
-                                    className="buttonWithIcon"
-                                    variant="warning"
-                                    name="timing"
-                                    size="xs"
-                                    onClick={onChange}
-                                    active={appointmentContext.pages.timing.state}
-                                >
-                                    وقتاش تنجم
+                        <Button
+                            className="buttonWithIcon"
+                            variant="warning"
+                            name="timing"
+                            size="xs"
+                            onClick={onChange}
+                            active={appointmentContext.pages.timing.state}
+                        >
+                            وقتاش تنجم
                                 </Button>
-                                <Button
-                                    className="buttonWithIcon"
-                                    variant="warning"
-                                    name="confirmation"
-                                    size="xs"
-                                    onClick={onChange}
+                        <Button
+                            className="buttonWithIcon"
+                            variant="warning"
+                            name="confirmation"
+                            size="xs"
+                            onClick={onChange}
 
-                                    active={appointmentContext.pages.timing.state}
-                                >
-                                    Confirmi
+                            active={appointmentContext.pages.timing.state}
+                        >
+                            Confirmi
                                 </Button>
-                            </ButtonGroup>
+                    </ButtonGroup>
 
-                            <hr></hr>
-                        </Col>
-                    </Row>
+                    <hr></hr>
+                </Col>
+            </Row>
 
-                        {renderSwitch(appointmentContext.pages.active)}
+            {renderSwitch(appointmentContext.pages.active)}
 
         </Container>
 
