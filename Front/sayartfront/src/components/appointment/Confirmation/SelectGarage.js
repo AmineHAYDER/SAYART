@@ -6,7 +6,9 @@ import AppointmentContext from '../../../contexts/Appointment/appointmentContext
 import AuthContext from '../../../contexts/Auth/authContext'
 import washImage from '../../../img/dashboard/was.png';
 import Map from '../../map/Map'
-const SelectGarage = () => {
+
+
+const SelectGarage = (props) => {
 
     const appointmentContext = useContext(AppointmentContext);
     const authContext = useContext(AuthContext);
@@ -14,7 +16,7 @@ const SelectGarage = () => {
     const [active,setActive] = useState("")
     const [label,setlabel] = useState(false)
 
-
+   console.log(appointmentContext.garage)
     let onMap = []
 
     const loadAppointmentGarages = (e) =>{
@@ -29,7 +31,7 @@ const SelectGarage = () => {
     const garages =()=>{
         if ( appointmentContext.appointmentGarages){
             return appointmentContext.appointmentGarages.map((service , i) =>{
-                onMap.push({coordinates:service.garage.location.coordinates})
+                onMap.push({coordinates:service.garage.location.coordinates,name:service.garage.name})
              return <Row className={"appointment-garage"} key={i} lg={2} md={4} xs={6}>
                        <Col >
                            <img src={washImage}/>
@@ -38,7 +40,11 @@ const SelectGarage = () => {
                            <h1>garage : {service.garage.name}</h1>
                            <h4>address : {service.garage.address}</h4>
                            <h4>soum : {service.price}</h4>
-                           <button  onClick={()=>{setActive(service)}} > select this </button>
+                           <button  onClick={()=> {
+                               setActive(service)
+                               appointmentContext.garage = service
+                               props.choose(service.garage)
+                           }} > select this </button>
                        </Col>
                     </Row>
             })

@@ -17,16 +17,18 @@ const  Map= (props) => {
         zoom: 8
     });
     const appointmentContext = useContext(AppointmentContext);
-    const marker = (coordinates,i)=>{
+    const marker = (coordinates,i,name)=>{
 
         return <Marker
             latitude={coordinates[1]}
             longitude={coordinates[0]}
             key={i}
         >
-
+            {name}
             <svg width="100" height="100">
-                <circle cx="15" cy="15" r="10" stroke="yellow" stroke-width="4" fill="red" />
+                <circle cx="10" cy="10" r="10" stroke="yellow" stroke-width="1" fill="red" >
+
+                </circle>
             </svg>
         </Marker>
 
@@ -52,7 +54,7 @@ const  Map= (props) => {
                         />
                     </div>
                     <div>
-                        {props.garages ? props.garages.map((item,i) => {return marker(item.coordinates,i)}):null}
+                        {props.garages ? props.garages.map((item,i) => {return marker(item.coordinates,i,item.name)}):null}
                     </div>
                     <div>
                         {props.garage ? marker(props.garage,0):null}

@@ -66,30 +66,25 @@ class appointmentController {
     }
 
     async store ( req , res ,next) {
+        await carModel.find({user:req.body.user}).then((car)=>{
 
-        userModel
-            .findById(req.params.userId)
-            .then((user)=> {
-                if (user){
-                    req.body.user = req.params.userId
-                    serviceModel.create(req.body).then ((service)=>{
-                        res.status(200)
-                            .json({
-                                success: "True",
-                                data: service,
-                            })
-                    })}
-                else {
-                    res
-                        .status(200)
-                        .json({
-                            success: "True",
-                            data: "fammesh menou ",
+            console.log(car)
+            req.body
+            console.log(req.body)
+            appointmentModel
+                .create(req.body)
+                .then((service)=> {
+                            res.status(200)
+                                .json({
+                                    success: "True",
+                                    data: service,
+                                })
                         })
-                }})
-            .catch ((err) => {
-            next(err)
-            })
+
+                .catch ((err) => {
+                next(err)
+                })
+        })
     }
 
     put ( req , res ,next ) {

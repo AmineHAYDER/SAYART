@@ -40,6 +40,7 @@ const AppointmentState = props => {
         car:'',
         mileage:'',
         loading: false,
+        garage:'',
         appointmentGarages:'',
         error: null
     };
@@ -163,6 +164,24 @@ const AppointmentState = props => {
             console.log(err + ' load user error');
         }
     }
+    const takeAppointment = async (data) => {
+
+        const config = {
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.token
+            }
+        }
+
+        try {
+            const res = await axios.post('http://localhost:5000/user/appointment/',data, config);
+            console.log(res.data)
+
+        } catch (err) {
+            console.log(err + ' load user error');
+        }
+    }
+
     return (
         <AppointmentContext.Provider
             value={{
@@ -174,11 +193,13 @@ const AppointmentState = props => {
                 mileage :state.mileage,
                 appointments: state.appointments,
                 appointmentGarages: state.appointmentGarages,
+                garage:state.garage,
                 loadAppointments,
                 setLocation,
                 loadCar,
                 updateCar,
                 loadAppointmentGarages,
+                takeAppointment
 
             }}
         >
