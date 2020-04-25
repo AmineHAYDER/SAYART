@@ -26,10 +26,10 @@ const  Map= (props) => {
             >
                 <div
                     onClick={async ()=>{
-                    setTimeout(function() {
-                        setClicked(true)
-                        appointmentContext.pages.address.step.localisationStep = true
-                    }, 2000)}}
+                        setTimeout(function() {
+                            setClicked(true)
+                            appointmentContext.pages.address.step.localisationStep = true
+                        }, 2000)}}
                 >
                     <GeolocateControl
                         positionOptions={{enableHighAccuracy: true}}

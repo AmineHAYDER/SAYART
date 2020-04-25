@@ -75,7 +75,6 @@ const Appointments = (props) => {
     })
 
     return (<Container >
-
             <Row >
                 <button onClick={takApp}> prendre un rendez vous </button>
             </Row>
