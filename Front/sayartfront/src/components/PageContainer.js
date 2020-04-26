@@ -14,7 +14,7 @@ import Register from './authentification/Register';
 import ClientDashboard from './dashboards/ClientDashboard';
 import TakeAppointment from "./appointment/TakeAppointment";
 import CCM from './landingpage/Carousel';
-import Car from './carIdentification/carIdentfication'
+import Car from './carIdentification/CarIdentfication'
 //routes
 import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from '../routes/PrivateRoute';
