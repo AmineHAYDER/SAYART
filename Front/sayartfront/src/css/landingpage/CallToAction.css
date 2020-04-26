@@ -1,0 +1,24 @@
+.jumbo {
+
+
+    height: 500px;
+
+
+
+}
+
+.spaceDiv {
+    height: 100px;
+}
+
+.spaceDiv2 {
+    height: 50px;
+}
+
+.text {
+    color: black
+}
+
+.btnText:hover {
+    color: rgb(255, 205, 51)
+}

@@ -1,0 +1,22 @@
+.bigTextReliable {
+    font-weight: bold;
+
+    color: rgb(239, 180, 54)
+}
+
+.bigTextEasy {
+    font-weight: bold;
+
+    color: rgb(110, 14, 79)
+}
+
+.bigTextTrusted {
+    font-weight: bold;
+    color: rgb(179, 103, 66)
+}
+
+
+
+.background {
+    background-color: rgb(100, 71, 91);
+}

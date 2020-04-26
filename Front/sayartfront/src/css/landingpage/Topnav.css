@@ -1,0 +1,73 @@
+.links {
+    margin-right: 100px;
+}
+.navbar-shadow{
+    background: rgb(64,1,40);
+    background: linear-gradient(90deg, rgba(64,1,40,1) 11%, rgba(33,0,16,1) 29%, rgba(59,2,36,1) 45%, rgba(28,0,6,1) 85%);
+    box-shadow: 0 3px 1px #6e0063;
+}
+.links-items {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: color 0.5s;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.links-items:hover {
+    color: rgb(251, 180, 0) !important;
+}
+
+.NoUnder:hover {
+    text-decoration: none !important;
+}
+
+ul li .underline   {
+    height: 3px;
+    background-color: transparent;
+    width: 0%;
+    transition: width 0.2s, background-color 0.5s;
+    margin: 0 auto;
+}
+
+ul li.active-link .underline {
+    width: 90%;
+    background-color: rgb(251, 180, 0);
+}
+
+ul li:hover .underline {
+    background-color: rgb(251, 180, 0);
+    width: 80%;
+}
+
+ul li:active a {
+    transition: none;
+    color: rgb(255, 255, 255);
+}
+
+ul li:active .underline {
+    transition: none;
+    background-color: rgba(251, 180, 0, 0.5);
+}
+
+.logo {
+    margin-left: 40%;
+    height: 40px;
+}
+
+.button-container {
+    padding-left: 50px;
+}
+
+.cnxButton {
+    background-color: rgba(196, 148, 255, 0.35) !important;
+    color: white !important;
+    font-weight: bold !important;
+    border: none !important;
+}
+
+.cnxButton:hover {
+    background-color: rgb(255, 251, 206) !important;
+}
+

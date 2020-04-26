@@ -1,0 +1,12 @@
+.car-identification-container{
+    padding-top: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 5px 30px grey;
+    background: rgb(64,1,40);
+    background: radial-gradient(circle, rgba(64,1,40,1) 0%, rgba(33,0,16,1) 14%, rgba(59,2,36,1) 17%, rgba(28,0,6,1) 21%, rgba(64,4,36,1) 33%);padding-bottom: 20px ;
+}
+.label-mark{
+
+    color: #fffdf8;
+    text-shadow: 2px 2px 10px #636262;
+}
