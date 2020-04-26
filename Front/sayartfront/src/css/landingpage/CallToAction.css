@@ -1,10 +1,6 @@
 .jumbo {
-
-
-    height: 500px;
-
-
-
+    position: relative;
+    overflow: hidden;
 }
 
 .spaceDiv {
@@ -21,4 +17,10 @@
 
 .btnText:hover {
     color: rgb(255, 205, 51)
+}
+
+.typewriter {
+    color: rgb(255, 205, 51);
+    font-size: 70px;
+    font-weight: 500;
 }
