@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Row, Col, Spinner} from 'react-bootstrap';
 
-import Menu from './Menu'
-import Profile from './Profile'
+import Menu from '../Menu'
+import Profile from '../Profile'
 import MyCar from './myCar/MyCar'
 import Appointments from './appointments/Appointments'
 
-import '../../css/dashboard/ClientDashboard.css'
+import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
+import '../../../css/dashboard/Dashboard.css'
 
-import AppointmentContext from "../../contexts/Appointment/appointmentContext";
 
 const ClientDashboard = () => {
 

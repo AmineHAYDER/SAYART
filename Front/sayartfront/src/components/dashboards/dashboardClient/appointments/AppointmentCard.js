@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button, Card} from 'react-bootstrap'
-import remaining from "../../../utils/RemainingTime";
+import remaining from "../../../../utils/RemainingTime";
 
 
 const AppointmentCard = (props) => {

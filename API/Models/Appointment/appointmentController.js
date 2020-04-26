@@ -15,6 +15,7 @@ class appointmentController {
             .json(res.advancedResults)
     }
 
+
     async myAppointments( req , res , next ) {
 
         if (!req.user.isGarage) {
@@ -31,9 +32,16 @@ class appointmentController {
                     data: appointments,
                 })
         }else {
-            const garage = await garageModel.findById(req.user._id)
-            res.status(200)
-                .json(garage)
+            const garage = await garageModel.findOne({user:req.user._id})
+            const appointments = await appointmentModel.find({garage:garage._id})
+                .populate('garage')
+                .populate('service')
+            res
+                .status(200)
+                .json({
+                    success: "True",
+                    data: appointments,
+                })
 
         }
         }

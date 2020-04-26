@@ -4,22 +4,25 @@ import { Container} from "react-bootstrap";
 import Navbar from './landingpage/TopNav';
 import Footer from './landingpage/Footer';
 
-//appointment state
+//states
 import AppointmentState from '../contexts/Appointment/appointmentState';
+import GarageState from '../contexts/Garage/garageState';
 
 //pages
 import Home from './landingpage/Home';
 import Login from './authentification/Login';
 import Register from './authentification/Register';
-import ClientDashboard from './dashboards/ClientDashboard';
-import TakeAppointment from "./appointment/TakeAppointment";
 import CCM from './landingpage/Carousel';
+import GarageDashboard from './dashboards/dashboardGarage/GarageDashboard';
+import ClientDashboard from './dashboards/dashboardClient/ClientDashboard';
+import TakeAppointment from "./appointment/TakeAppointment";
 import Car from './carIdentification/CarIdentfication'
 //routes
 import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from '../routes/PrivateRoute';
+import GarageRoute from '../routes/GarageRoute';
 
-//auth
+//states
 import AuthContext from '../contexts/Auth/authContext';
 import setAuthToken from '../contexts/Auth/setAuthToken';
 
@@ -54,6 +57,9 @@ const PageContainer = () => {
                             <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
                             <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
                         </AppointmentState>
+                        <GarageState>
+                            <GarageRoute exact path="/dashboard/mechanic" component={GarageDashboard} />
+                        </GarageState>
 
                    </div>
                 </Switch>

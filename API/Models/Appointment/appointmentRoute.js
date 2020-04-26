@@ -21,6 +21,8 @@ router.use(cors(corsOptions));
 router.route('/all')
        .get(protect,authorize('admin'),advancedResults(Appointment),AppointmentController.all);
 
+
+
 router
     .route('/:id')
     .get(AppointmentController.get)

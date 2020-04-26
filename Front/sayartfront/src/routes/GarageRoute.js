@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import AuthContext from '../contexts/Auth/authContext'
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const GarageRoute = ({ component: Component, ...rest }) => {
     const authContext = useContext(AuthContext);
     const { isAuthenticated, loading } = authContext;
 
@@ -10,14 +10,14 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         <Route
             {...rest}
             render={props =>
-                !isAuthenticated && !loading || authContext.user.isGarage? (
+                (!isAuthenticated && !loading  && !authContext.user.isGarage) ? (
                     <Redirect to='/login' />
                 ) : (
-                        <Component {...props} />
-                    )
+                    <Component {...props} />
+                )
             }
         />
     );
 };
 
-export default PrivateRoute;
+export default GarageRoute;

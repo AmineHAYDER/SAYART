@@ -1,11 +1,11 @@
 import React, {useContext, useState} from 'react';
 import {Row, Col, Button, Form} from 'react-bootstrap';
 
-import '../../../css/dashboard/myCar/Mileage.css'
+import '../../../../css/dashboard/clienDashboard/myCar/Mileage.css'
 
-import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
+import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
 
-import RemainingTime from '../../../utils/RemainingTime'
+import RemainingTime from '../../../../utils/RemainingTime'
 const Mileage = () => {
 
     const appointmentContext = useContext(AppointmentContext);

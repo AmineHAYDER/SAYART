@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import {Row, Col, Container} from 'react-bootstrap';
 
-import '../../../css/dashboard/myCar/CarSection.css'
+import '../../../../css/dashboard/clienDashboard/myCar/CarSection.css'
 
-import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
-import img from '../../../img/cars/audi-A8.png'
+import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
+import img from '../../../../img/cars/audi-A8.png'
 
 
 const CarSection = () => {

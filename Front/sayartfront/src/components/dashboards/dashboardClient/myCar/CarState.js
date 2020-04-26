@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import {Row, Col, Container} from 'react-bootstrap';
 
-import '../../../css/dashboard/myCar/CarState.css'
+import '../../../../css/dashboard/clienDashboard/myCar/CarState.css'
 
-import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
+import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
 
 
 

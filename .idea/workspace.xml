@@ -29,24 +29,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/map" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\map" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\timing" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts\Appointment" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard\clienDashboard" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\Confirmation" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\takeAppointment" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\appointments" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard\MyCar" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\map" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\timing" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts\Appointment" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,6 +94,7 @@
       <workItem from="1587501222517" duration="13944000" />
       <workItem from="1587580884044" duration="3327000" />
       <workItem from="1587771363704" duration="5932000" />
+      <workItem from="1587859941093" duration="5375000" />
     </task>
     <servers />
   </component>

@@ -1,21 +1,21 @@
 import React, { useContext,  useState} from 'react';
 import { Container, Row, Col} from 'react-bootstrap';
-import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
+import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
 import { useHistory } from 'react-router-dom';
 
 
 
-import Map from '../../map/Map'
+import Map from '../../../map/Map'
 import CardApp from './AppointmentCard'
-import remaining from '../../../utils/RemainingTime'
+import remaining from '../../../../utils/RemainingTime'
 
 
-import mechanic from '../../../img/dashboard/mech.png';
-import wheel from '../../../img/dashboard/whee.png';
-import oilChange from '../../../img/dashboard/oil.png';
-import wash from '../../../img/dashboard/was.png';
+import mechanic from '../../../../img/dashboard/mech.png';
+import wheel from '../../../../img/dashboard/whee.png';
+import oilChange from '../../../../img/dashboard/oil.png';
+import wash from '../../../../img/dashboard/was.png';
 
-import '../../../css/dashboard/appointments/Appointments.css'
+import '../../../../css/dashboard/clienDashboard/appointments/Appointments.css'
 
 
 

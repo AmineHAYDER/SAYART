@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import { Row, Container, Col, ProgressBar} from 'react-bootstrap';
 
-import '../../../css/dashboard/myCar/Counters.css'
+import '../../../../css/dashboard/clienDashboard/myCar/Counters.css'
 
 import Mileage from "./Mileage";
 import FuelType from "./FuelType"
@@ -9,7 +9,7 @@ import CarState from "./CarState"
 
 import CarSection from "./CarSection"
 
-import AppointmentContext from '../../../contexts/Appointment/appointmentContext'
+import AppointmentContext from '../../../../contexts/Appointment/appointmentContext'
 
 
 const MyCar = () => {
