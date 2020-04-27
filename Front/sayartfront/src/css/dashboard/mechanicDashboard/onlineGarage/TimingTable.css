@@ -1,0 +1,66 @@
+.box-table{
+    color: #49002f;
+    height: 50px;
+    width:80px;
+    background: rgb(242,242,242);
+}
+.box-table:hover{
+    color: #49002f;
+    height: 50px;
+    background: rgb(203, 203, 203);
+}
+.box-appointment-1hour {
+    position: relative;
+    margin: 2px;
+    margin-left: -15px;
+    z-index: 2;
+    width: 150px;
+    height: 10px;
+    border-radius: 15px;
+    border-color: #fac300;
+    background: rgb(242, 49, 27);
+    box-shadow: 5px 5px 5px black;
+}
+.box-appointment-30mn {
+    position: relative;
+    margin: 2px;
+    margin-left: -15px;
+    z-index: auto;
+    width: 50px;
+    height: 10px;
+    border-radius: 15px;
+    border-color: #fac300;
+    background: rgb(73, 0, 44);
+    box-shadow: 5px 5px 5px black;
+}
+.box-appointment-content{
+    margin-top: -50px;
+    margin-left:50px ;
+    display:none;
+    background: rgb(218, 0, 133);
+    height: 150px;
+    width : 200px;
+}
+.box-appointment-30mn:hover .box-appointment-content{
+    display:block;
+    position: absolute;
+    z-index: 3;
+}
+
+.box-appointment-1hour:hover .box-appointment-content{
+    display:block;
+    position: absolute;
+    z-index: 3;
+
+    background: rgb(7, 0, 218);
+}
+
+
+/*
+.box-table:hover .box-appointment{
+    display:block;
+    z-index: 1;
+    width: 200px;
+    margin-left: 0;
+    background: rgb(242, 49, 27);
+}*/

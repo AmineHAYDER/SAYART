@@ -5,7 +5,7 @@ import garageReducer from './garageReducer';
 
 import {
     APPOINTMENTS_LOADED,
-    CAR_LOADED,
+    GARAGE_LOADED,
     LOADING,
     NOT_LOADING,
 } from '../types';
@@ -23,6 +23,28 @@ const GarageState = props => {
         headers: {
             'content-type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.token
+        }
+    }
+
+    //load garage information
+    const loadGarage = async () => {
+
+        const config = {
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.token
+            }
+        }
+
+        try {
+            const res = await axios.get('http://localhost:5000/user/garage/myGarage', config);
+
+            dispatch({
+                type: GARAGE_LOADED,
+                payload: res.data.data
+            })
+        } catch (err) {
+            console.log(err + ' load user error');
         }
     }
 
@@ -62,10 +84,10 @@ const GarageState = props => {
             type: LOADING
         })
         try {
-            var res = await axios.put('http://localhost:5000/user/car', data,config);
+            var res = await axios.put('http://localhost:5000/user/garage/myGarage', data,config);
             console.log(res.data.results[0])
             dispatch({
-                type: CAR_LOADED,
+                type: GARAGE_LOADED,
                 payload: res.data.data
             })
 
@@ -78,27 +100,6 @@ const GarageState = props => {
         })
     }
 
-    //load car information
-    const loadCar = async () => {
-
-        const config = {
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.token
-            }
-        }
-
-        try {
-            const res = await axios.get('http://localhost:5000/user/car/', config);
-            console.log(res.data.data)
-            dispatch({
-                type: CAR_LOADED,
-                payload: res.data.data
-            })
-        } catch (err) {
-            console.log(err + ' load user error');
-        }
-    }
 
     //get appointment garages
 
@@ -110,7 +111,7 @@ const GarageState = props => {
                 appointments: state.appointments,
                 garage:state.garage,
                 loadAppointments,
-                loadCar,
+                loadGarage,
                 updateCar,
 
             }}

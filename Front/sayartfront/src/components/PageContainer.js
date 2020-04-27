@@ -13,14 +13,13 @@ import Home from './landingpage/Home';
 import Login from './authentification/Login';
 import Register from './authentification/Register';
 import CCM from './landingpage/Carousel';
-import GarageDashboard from './dashboards/dashboardGarage/GarageDashboard';
 import ClientDashboard from './dashboards/dashboardClient/ClientDashboard';
+import Dashboard from './dashboards/Dashboard';
 import TakeAppointment from "./appointment/TakeAppointment";
 import Car from './carIdentification/CarIdentfication'
 //routes
 import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from '../routes/PrivateRoute';
-import GarageRoute from '../routes/GarageRoute';
 
 //states
 import AuthContext from '../contexts/Auth/authContext';
@@ -56,10 +55,10 @@ const PageContainer = () => {
                         <AppointmentState>
                             <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
                             <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
+                            <GarageState>
+                               <PrivateRoute exact path="/dashboard/" component={Dashboard} />
+                            </GarageState>
                         </AppointmentState>
-                        <GarageState>
-                            <GarageRoute exact path="/dashboard/mechanic" component={GarageDashboard} />
-                        </GarageState>
 
                    </div>
                 </Switch>

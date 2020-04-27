@@ -59,6 +59,20 @@ const Appointments = (props) => {
                                 </Col>} else return  null
 
     })
+    const waitingConfirmationAppointments = garageContext.appointments.map(appointment => {
+        if (remaining(appointment.date).startsWith("dans") && appointment.state === "AppointmentRequest" ){
+            return <Col lg={3} >
+                <CardApp
+                    id={appointment._id}
+                    serviceName={appointment.service.name}
+                    garageName={appointment.garage.name}
+                    img={img(appointment.service.name)}
+                    date={appointment.date}
+                    onClick={setSectionDetail}
+                />
+            </Col>} else return  null
+
+    })
     const doneAppointments = garageContext.appointments.map(appointment => {
        if (remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui") ){
            return <Col lg={3} >
@@ -83,6 +97,12 @@ const Appointments = (props) => {
             </Row>
             <Row className={"waiting-appointments-container"}>
                 {waitingAppointments}
+            </Row>
+            <Row className={"title-appointment"}>
+                <h4>En attente de confirmation </h4>
+            </Row>
+            <Row className={"waiting-appointments-container"}>
+                {waitingConfirmationAppointments}
             </Row>
             <Row  className={"title-appointment"}>
                 <h4>Rendez vous passés </h4>

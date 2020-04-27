@@ -1,5 +1,6 @@
 import {
     APPOINTMENTS_LOADED,
+    GARAGE_LOADED,
     LOADING,
     NOT_LOADING
 
@@ -11,6 +12,11 @@ export default (state, action) => {
             return {
                 ...state,
                 appointments: action.payload,
+            };
+        case  GARAGE_LOADED :
+            return {
+                ...state,
+                garage: action.payload,
             };
         case LOADING :
             return {

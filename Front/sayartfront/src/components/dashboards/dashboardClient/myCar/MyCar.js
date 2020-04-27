@@ -39,7 +39,7 @@ const appointmentContext = useContext(AppointmentContext)
                         <h6>Vidange</h6>
                         <ProgressBar now={37.5} striped variant="secondary" label={`3500 KM`} />
                         <hr></hr>
-                        <h>dernier vidange :<a> 3 mois </a></h>
+                        <h6>dernier vidange :<a> 3 mois </a></h6>
                     </Col>
                 </Row>
 

@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router({mergeParams:true});
 const garageController = require('./garageController');
-const garage = require('./garageModel')
-const advancedResults = require('../../middelware/advancedResults')
+const { protect, authorize } = require('../../middelware/auth');
 //cors
 const cors = require('cors');
 
@@ -20,8 +19,6 @@ router.use(cors(corsOptions));
 router.route('/decode/reverser')
     .post(garageController.decode);
 
-router.route('/')
-      .get(advancedResults(garage) ,garageController.all);
 
 
 router.post(
@@ -29,8 +26,8 @@ router.post(
     garageController.store
 );
 router.get(
-    '/:id' ,
-    garageController.get
+    '/myGarage' ,protect,
+    garageController.myGarage
 );
 router.put(
     '/:id' ,

@@ -39,7 +39,7 @@ router.use(fileUpload());
 router.use(express.static(path.join(__dirname, 'public')));
 
 router.use('/auth', authRouter);
-router.use('/:userId/garage', protect, authorize('garage', 'admin'), garageRouter);
+router.use('/garage', protect, authorize('garage', 'admin'), garageRouter);
 
 router.use('/car', carRouter);
 

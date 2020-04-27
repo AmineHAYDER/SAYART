@@ -25,7 +25,6 @@ class appointmentController {
                                                        .populate('garage')
                                                        .populate('service')
 
-            console.log(appointments)
             res.status(200)
                 .json({
                     success: "True",
@@ -76,9 +75,6 @@ class appointmentController {
     async store ( req , res ,next) {
         await carModel.find({user:req.body.user}).then((car)=>{
 
-            console.log(car)
-            req.body
-            console.log(req.body)
             appointmentModel
                 .create(req.body)
                 .then((service)=> {

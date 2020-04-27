@@ -24,7 +24,10 @@ class carController {
                                 data: car,
                                 mileage:car.mileage.value,
                             })
-                    })}
+                    }).catch ((err) => {
+                            next(err)
+                        })
+                }
                 else {
                     res
                         .status(200)

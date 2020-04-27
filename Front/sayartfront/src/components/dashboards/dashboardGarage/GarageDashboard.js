@@ -2,8 +2,9 @@ import React, {useContext, useEffect, useState} from 'react';
 import {Col, Container, Row} from 'react-bootstrap';
 import AuthContext from '../../../contexts/Auth/authContext';
 import Menu from "../Menu";
-import Profile from "../Profile";
+import OnlineGarage from "./onlineGarage/OnlineGarage";
 import Appointments from "./appointments/Appointments";
+import Profile from "../Profile";
 
 
 import GarageContext from "../../../contexts/Garage/garageContext";
@@ -16,6 +17,7 @@ const GarageDashboard = () => {
     const [ page, setPage ] = useState("MyCar");
     useEffect(() => {
         garageContext.loadAppointments();
+        garageContext.loadGarage();
     }, [])
     const onChangePage = e => {
         e.preventDefault();
@@ -23,12 +25,12 @@ const GarageDashboard = () => {
     }
     const renderSwitch = (page) => {
         switch(page) {
-            case 'profile':
-                return <Profile/>;
             case 'MyCar':
-                return 'MyCar';
+                return <OnlineGarage/>;
             case 'appointments':
                 return <Appointments/>;
+            case 'profile':
+                return <Profile/>;
             default:
                 return page;
         }

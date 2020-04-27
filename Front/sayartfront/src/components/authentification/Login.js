@@ -30,8 +30,9 @@ const Login = () => {
             "email": email,
             "password": password
         })
+        if (!authContext.user.isGarage){
         history.push('/dashboard/client');
-
+}else {history.push('/dashboard/mechanic');}
 
     }
 

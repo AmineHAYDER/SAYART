@@ -15,9 +15,9 @@ class garageController {
             .json(res.advancedResults)
     }
 
-    get ( req , res, next) {
+    myGarage ( req , res, next) {
 
-        garageModel.findById(req.params.id)
+        garageModel.findOne({user:req.user._id})
             .then(  (garage) =>  {
                 if (!garage){
                     return next(new ErrorResponse(`can\'t find a garage with id :${req.params.id}`,404))
