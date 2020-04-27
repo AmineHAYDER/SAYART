@@ -20,7 +20,7 @@ class Services extends React.Component {
 
                     <h1 className="servicesTitle">Services</h1>
 
-                    <Row>
+                    <Row data-aos="fade-up">
                         <Col md={6} lg={4}>
                             <div className="box">
                                 <div className="Icon"><Image src={entretienIcon}></Image></div>

@@ -29,15 +29,15 @@ class Steps extends React.Component {
                     <Container >
                         <Row className="justify-content-lg-center">
                             <Row>
-                                <Col className="center"><div className="steps-count"> <h1>1</h1> </div></Col>
+                                <Col className="center" data-aos="fade-up"><div className="steps-count" > <h1>1</h1> </div></Col>
                             </Row>
 
                             <Row>
-                                <Col className="center"> <div ><h3 className="purpleText">Identifiez vous!</h3>
+                                <Col className="center" data-aos="fade-right"> <div ><h3 className="purpleText">Identifiez vous!</h3>
                                     <p className="underText">
                                         Connectez vous pour un meilleur expérience! Vous pouvez sauvegarder les détails de votre voiture et suivre son état
                                     </p> </div> </Col>
-                                <Col>
+                                <Col data-aos="fade-left">
                                     <Image
                                         src={loginImg}
                                         alt="step1"
@@ -48,15 +48,15 @@ class Steps extends React.Component {
                         <div className="div50px"></div>
                         <Row className="justify-content-lg-center ">
                             <Row>
-                                <Col><div className="steps-count"> <h1>2</h1> </div></Col>
+                                <Col><div className="steps-count" data-aos="fade-up"> <h1>2</h1> </div></Col>
                             </Row>
                             <Row>
-                                <Col><Image
+                                <Col data-aos="fade-right"><Image
                                     src={searchImg}
                                     alt="step1"
                                     fluid
                                 /> </Col>
-                                <Col className="center">
+                                <Col className="center" data-aos="fade-left">
 
                                     <div >
                                         <h3 className="purpleText">Tapez Vos Besoins</h3>
@@ -69,16 +69,16 @@ class Steps extends React.Component {
                         <div className="div50px"></div>
                         <Row className="justify-content-lg-center">
                             <Row>
-                                <Col className="center"><div className="steps-count"> <h1>3</h1> </div></Col>
+                                <Col className="center" data-aos="fade-up"><div className="steps-count"> <h1>3</h1> </div></Col>
                             </Row>
                             <Row>
 
-                                <Col className="center"> <div>
+                                <Col className="center" data-aos="fade-right"> <div>
                                     <h3 className="purpleText">Choisissez un garage</h3>
                                     <p className="underText">
                                         vous aurez une liste des meilleurs garages de votre région et leurs détails pour choisir ce qui vous convient le meiux.
                                     </p> </div></Col>
-                                <Col>
+                                <Col data-aos="fade-left">
                                     <Image
                                         src={pickImg}
                                         alt="step1"
@@ -89,15 +89,15 @@ class Steps extends React.Component {
                         <div className="div50px"></div>
                         <Row className="justify-content-lg-center justify-content-md-center justify-content-sm-center">
                             <Row >
-                                <Col><div className="steps-count"> <h1>4</h1> </div></Col>
+                                <Col data-aos="fade-up"> <div className="steps-count"> <h1>4</h1> </div></Col>
                             </Row>
                             <Row>
-                                <Col >  <Image
+                                <Col data-aos="fade-right">  <Image
                                     src={reviewImg}
                                     alt="step1"
                                     fluid
                                 /></Col>
-                                <Col className="center">
+                                <Col className="center" data-aos="fade-left">
                                     <div className="text-adjust">
                                         <h3 className="purpleText">Laissez un review!</h3>
                                         <p className="underText">

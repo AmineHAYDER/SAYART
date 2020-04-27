@@ -4,7 +4,7 @@ import AppointmentContext from '../../../contexts/Appointment/appointmentContext
 
 
 
-import '../../../css/takeAppointment/service/Service.css';
+import '../../../css/takeAppointment/service/service.css';
 
 import ServiceDetails from "./ServiceDetails";
 

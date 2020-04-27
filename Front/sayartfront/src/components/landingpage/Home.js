@@ -7,11 +7,13 @@ import Services from './Services';
 import Steps from './Steps';
 import AppSection from './AppSection';
 
+
 class Home extends React.Component {
     render() {
         return (
             <div>
-                <CallToAction />
+                <CallToAction></CallToAction>
+
                 <div className="div50px"></div>
                 <Qualities />
                 <div className="div50px"></div>

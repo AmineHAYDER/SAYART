@@ -22,7 +22,8 @@
     "react-horizontal-scrolling-menu": "^0.7.7",
     "react-map-gl": "^5.2.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "typewriter-effect": "^2.13.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -13,7 +13,7 @@ class Qualities extends React.Component {
         return (
             <Container>
                 <Row>
-                    <Col>
+                    <Col data-aos="fade-right">
                         <Image
                             src={easyImg}
                             alt="easy"
@@ -25,7 +25,7 @@ class Qualities extends React.Component {
                             Réservez votre service en quelques clics
                         </p>
                     </Col>
-                    <Col>
+                    <Col data-aos="fade-up">
                         <Image
                             src={trustedImg}
                             alt="trusted"
@@ -37,7 +37,7 @@ class Qualities extends React.Component {
                             Fournisseurs de services largement contrôlés, pour une expérience sans tracas.
                         </p>
                     </Col>
-                    <Col>
+                    <Col data-aos="fade-left">
                         <Image
                             src={reliableImg}
                             alt="reliable"
