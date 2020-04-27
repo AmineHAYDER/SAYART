@@ -31,7 +31,7 @@ const TopNav = (props) => {
     const NavLoggedElements = (
 
         < Nav className="ml-auto links" as="ul" >
-            <NavItem path={"/dashboard/client"} value={props.context.user.name} />
+            <NavItem path={"/dashboard"} value={props.context.user.name} />
             <NavItem path={"/"} value={"LOGOUT"} onClick={onLogout} />
         </Nav >
     )
