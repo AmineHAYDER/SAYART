@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
+import {Col, Container, Row, Spinner} from 'react-bootstrap';
 import AuthContext from '../../../contexts/Auth/authContext';
 import Menu from "../Menu";
 import OnlineGarage from "./onlineGarage/OnlineGarage";
@@ -14,7 +14,7 @@ const GarageDashboard = () => {
     const garageContext = useContext(GarageContext);
     const authContext = useContext(AuthContext);
 
-    const [ page, setPage ] = useState("MyCar");
+    const [ page, setPage ] = useState("profile");
     useEffect(() => {
         garageContext.loadAppointments();
         garageContext.loadGarage();
@@ -39,7 +39,7 @@ const GarageDashboard = () => {
     return (
 
             <div className="dashboard">
-                  <Row>
+                {garageContext.loading ?<Spinner animation="border" /> :  <Row>
 
                       <Col className="" lg={2}>
                           <Menu onChange={onChangePage} page={page}/>
@@ -49,7 +49,7 @@ const GarageDashboard = () => {
                       </Col>
 
 
-                  </Row>
+                  </Row>}
             </div>
 
 

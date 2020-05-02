@@ -21,7 +21,6 @@ const TakeAppointment = () => {
     const onChange = e => {
         appointmentContext.pages.active = e.target.name
         setPage(e.target.name)
-        console.log(appointmentContext.pages.active)
     };
 
     const renderSwitch = (page) => {

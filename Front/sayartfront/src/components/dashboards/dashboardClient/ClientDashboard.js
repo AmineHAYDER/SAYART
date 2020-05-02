@@ -7,16 +7,19 @@ import MyCar from './myCar/MyCar'
 import Appointments from './appointments/Appointments'
 
 import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
+import UserContext from "../../../contexts/User/userContext";
 import '../../../css/dashboard/Dashboard.css'
 
 
 const ClientDashboard = () => {
 
     const appointmentContext = useContext(AppointmentContext);
+    const userContext = useContext(UserContext)
     const [ page, setPage ] = useState("MyCar");
 
     useEffect(() => {
         appointmentContext.loadAppointments();
+        userContext.loadCar();
     }, [])
     const onChangePage = e => {
         e.preventDefault();
@@ -35,7 +38,6 @@ const ClientDashboard = () => {
         }
     }
 
-console.log(appointmentContext.loading )
     return (
         <div className="dashboard">
 

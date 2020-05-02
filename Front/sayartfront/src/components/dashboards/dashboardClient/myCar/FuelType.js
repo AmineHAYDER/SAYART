@@ -1,20 +1,18 @@
 import React, {useContext, useState} from 'react';
 import {Row, Col, Container, Form} from 'react-bootstrap';
 
+import UserContext from "../../../../contexts/User/userContext";
+
 import '../../../../css/dashboard/clienDashboard/myCar/FuelType.css'
-
-import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
-
-
 
 const FuelType = () => {
 
-    const appointmentContext = useContext(AppointmentContext);
-    const {car} = appointmentContext
+    const userContext = useContext(UserContext);
+    const {car} = userContext
     const [price,setPrice] = useState("aze")
 
     const handelClick = (e)=>{
-        appointmentContext.updateCar({fuel:e.target.name})
+        userContext.updateCar({fuel:e.target.name})
         car.fuel  = e.target.name
         setPrice(e.target.name)
     }

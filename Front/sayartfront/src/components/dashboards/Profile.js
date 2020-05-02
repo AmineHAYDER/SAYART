@@ -9,7 +9,6 @@ const Profile = () => {
     const authContext = useContext(AuthContext);
 
     const { user } = authContext;
-console.log(authContext.loading)
     return (
         <Container>
             <p>

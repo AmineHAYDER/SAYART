@@ -7,6 +7,7 @@ import Footer from './landingpage/Footer';
 //states
 import AppointmentState from '../contexts/Appointment/appointmentState';
 import GarageState from '../contexts/Garage/garageState';
+import UserState from '../contexts/User/userState';
 
 //pages
 import Home from './landingpage/Home';
@@ -53,11 +54,13 @@ const PageContainer = () => {
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/car" component={Car} />
                         <AppointmentState>
-                            <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
-                            <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
-                            <GarageState>
+
+                                <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
+                                <PrivateRoute exact path="/dashboard/client" component={ClientDashboard} />
+
+                            <GarageState><UserState>
                                <PrivateRoute exact path="/dashboard/" component={Dashboard} />
-                            </GarageState>
+                            </UserState></GarageState>
                         </AppointmentState>
 
                    </div>

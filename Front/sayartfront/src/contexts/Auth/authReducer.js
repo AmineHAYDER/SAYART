@@ -13,7 +13,6 @@ export default (state, action) => {
     switch (action.type) {
         case REGISTER_SUCCESS:
             localStorage.setItem('token', action.payload);
-            console.log('register sucess');
             return {
                 ...state,
                 ...action.payload,
@@ -34,7 +33,6 @@ export default (state, action) => {
             }
         case LOGIN_SUCCESS:
             localStorage.setItem('token', action.payload);
-            console.log('login sucess');
             return {
                 ...state,
                 ...action.payload,
@@ -45,7 +43,6 @@ export default (state, action) => {
         case LOGOUT:
         case LOGIN_FAIL:
             localStorage.removeItem('token');
-            console.log('login fail');
             return {
                 ...state,
                 token: null,
@@ -56,7 +53,6 @@ export default (state, action) => {
             }
 
         case USER_LOADED:
-            console.log('user loaded');
             return {
                 ...state,
                 isAuthenticated: true,

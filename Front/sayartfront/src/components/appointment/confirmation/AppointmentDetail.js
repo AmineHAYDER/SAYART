@@ -8,7 +8,7 @@ const AppointmentDetail = (props) => {
     const appointmentContext = useContext(AppointmentContext);
     const authContext = useContext(AuthContext);
     const {pages,garage,address,car} = appointmentContext
-
+  console.log(garage)
     const takeAppointment = () =>{
 console.log(car)
         appointmentContext.takeAppointment({

@@ -41,7 +41,6 @@ const AuthState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/auth/me', config);
-            await console.log(res.data);
             dispatch({
                 type: USER_LOADED,
                 payload: res.data
@@ -71,7 +70,6 @@ const AuthState = props => {
         try {
             var res = await axios.post('http://localhost:5000/user/auth/create', data, config);
 
-            console.log(res.data)
             dispatch({
                 type: REGISTER_SUCCESS,
                 payload: res.data.token

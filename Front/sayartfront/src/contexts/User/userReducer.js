@@ -1,22 +1,17 @@
 import {
-    APPOINTMENTS_LOADED,
-    GARAGE_LOADED,
+    CAR_LOADED,
     LOADING,
-    NOT_LOADING
+    NOT_LOADING,
 
 } from '../types';
 
 export default (state, action) => {
     switch (action.type) {
-        case APPOINTMENTS_LOADED :
+        case CAR_LOADED :
             return {
                 ...state,
-                appointments: action.payload,
-            };
-        case  GARAGE_LOADED :
-            return {
-                ...state,
-                garage: action.payload,
+                car: action.payload,
+                mileage:action.payload.mileage,
             };
         case LOADING :
             return {
@@ -28,6 +23,8 @@ export default (state, action) => {
                 ...state,
                 loading: false,
             };
+
+
         default: return state;
     }
 }

@@ -1,15 +1,15 @@
 import React, {useContext, useState} from 'react';
 import {Row, Col, Button, Form} from 'react-bootstrap';
 
+import RemainingTime from '../../../../utils/RemainingTime'
+import UserContext from "../../../../contexts/User/userContext";
+
 import '../../../../css/dashboard/clienDashboard/myCar/Mileage.css'
 
-import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
-
-import RemainingTime from '../../../../utils/RemainingTime'
 const Mileage = () => {
 
-    const appointmentContext = useContext(AppointmentContext);
-    const {mileage} = appointmentContext
+    const userContext = useContext(UserContext);
+    const {mileage} = userContext
 
     const [Mileage,setMileage] = useState(mileage.value)
 
@@ -21,7 +21,7 @@ const Mileage = () => {
     const handelClick = ()=>{
         if ( Mileage.match(/^[0-9]{1,6}$/) ){
 
-            appointmentContext.updateCar({mileage:{value:Mileage,date:Date.now()}})
+            userContext.updateCar({mileage:{value:Mileage,date:Date.now()}})
             setMileage(Mileage)
         }else {
             alert("must be number between : 0-500000")

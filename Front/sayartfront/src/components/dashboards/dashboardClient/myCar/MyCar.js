@@ -9,16 +9,10 @@ import CarState from "./CarState"
 
 import CarSection from "./CarSection"
 
-import AppointmentContext from '../../../../contexts/Appointment/appointmentContext'
 
 
 const MyCar = () => {
-const appointmentContext = useContext(AppointmentContext)
-    useEffect(() => {
 
-        appointmentContext.loadCar();
-
-    }, [])
     return (<Container >
                 <Row>
                     <Col lg={3}><Mileage/></Col>

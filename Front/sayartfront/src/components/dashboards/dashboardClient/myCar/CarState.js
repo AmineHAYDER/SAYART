@@ -3,14 +3,13 @@ import {Row, Col, Container} from 'react-bootstrap';
 
 import '../../../../css/dashboard/clienDashboard/myCar/CarState.css'
 
-import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
-
+import UserContext from "../../../../contexts/User/userContext";
 
 
 const CarState = () => {
 
-    const appointmentContext = useContext(AppointmentContext);
-    const {car} = appointmentContext
+    const userContext = useContext(UserContext);
+    const {car} = userContext
 
 
     const State = ()=>{

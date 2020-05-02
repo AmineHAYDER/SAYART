@@ -63,16 +63,16 @@ const GarageState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/appointment/', config);
-            console.log(res.data)
-            setTimeout(function() {
-                dispatch({
-                type: NOT_LOADING
-            })
-            }, 500)
+
             dispatch({
                 type: APPOINTMENTS_LOADED,
                 payload: res.data.data,
             })
+            setTimeout(function() {
+                dispatch({
+                    type: NOT_LOADING
+                })
+            }, 1000)
         } catch (err) {
             console.log(err + ' load user error');
         }

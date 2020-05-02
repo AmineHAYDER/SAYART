@@ -13,12 +13,12 @@ const SelectGarage = (props) => {
     const appointmentContext = useContext(AppointmentContext);
     const authContext = useContext(AuthContext);
     const {user} = authContext
+    const {pages} = appointmentContext
     const [active,setActive] = useState("")
     const [label,setlabel] = useState(false)
 
-   console.log(appointmentContext.garage)
     let onMap = []
-
+console.log(appointmentContext.pages.service.name)
     const loadAppointmentGarages = (e) =>{
         appointmentContext.loadAppointmentGarages({
             name:appointmentContext.pages.service.name,
@@ -32,6 +32,7 @@ const SelectGarage = (props) => {
         if ( appointmentContext.appointmentGarages){
             return appointmentContext.appointmentGarages.map((service , i) =>{
                 onMap.push({coordinates:service.garage.location.coordinates,name:service.garage.name})
+                console.log(service)
              return <Row className={"appointment-garage"} key={i} lg={2} md={4} xs={6}>
                        <Col >
                            <img src={washImage}/>

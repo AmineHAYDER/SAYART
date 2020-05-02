@@ -68,15 +68,16 @@ const AppointmentState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/appointment/', config);
-            setTimeout(function() {
-                dispatch({
-                type: NOT_LOADING
-            })
-            }, 500)
+
             dispatch({
                 type: APPOINTMENTS_LOADED,
                 payload: res.data.data,
             })
+            setTimeout(function() {
+                dispatch({
+                    type: NOT_LOADING
+                })
+            }, 500)
         } catch (err) {
             console.log(err + ' load user error');
         }
@@ -99,53 +100,11 @@ const AppointmentState = props => {
         }
     }
 
-    //update car information
-    const updateCar = async data => {
+    //get appointment garages
+    const loadAppointmentGarages = async (data,distance) => {
         dispatch({
             type: LOADING
         })
-        try {
-            var res = await axios.put('http://localhost:5000/user/car', data,config);
-            console.log(res.data.results[0])
-            dispatch({
-                type: CAR_LOADED,
-                payload: res.data.data
-            })
-
-        } catch (err) {
-
-
-        }
-        dispatch({
-            type: NOT_LOADING
-        })
-    }
-
-    //load car information
-    const loadCar = async () => {
-
-        const config = {
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.token
-            }
-        }
-
-        try {
-            const res = await axios.get('http://localhost:5000/user/car/', config);
-            console.log(res.data.data)
-            dispatch({
-                type: CAR_LOADED,
-                payload: res.data.data
-            })
-        } catch (err) {
-            console.log(err + ' load user error');
-        }
-    }
-
-    //get appointment garages
-    const loadAppointmentGarages = async (data,distance) => {
-
         const config = {
             headers: {
                 'content-type': 'application/json',
@@ -163,7 +122,13 @@ const AppointmentState = props => {
         } catch (err) {
             console.log(err + ' load user error');
         }
+
+        dispatch({
+            type: NOT_LOADING
+        })
     }
+
+    //take appointment request
     const takeAppointment = async (data) => {
 
         const config = {
@@ -196,8 +161,6 @@ const AppointmentState = props => {
                 garage:state.garage,
                 loadAppointments,
                 setLocation,
-                loadCar,
-                updateCar,
                 loadAppointmentGarages,
                 takeAppointment
 

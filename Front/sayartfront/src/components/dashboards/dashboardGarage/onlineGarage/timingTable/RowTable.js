@@ -2,74 +2,35 @@ import React, {useContext, useEffect} from 'react';
 import { ProgressBar, Col, Row } from 'react-bootstrap';
 import AuthContext from '../../../../../contexts/Auth/authContext';
 import GarageContext from '../../../../../contexts/Garage/garageContext';
+import BoxAppointment from "./BoxAppointment";
 
+import '../../../../../css/dashboard/mechanicDashboard/onlineGarage/timingTable/TimingTable.css'
 
 const RowTable = (props) => {
-    console.log(props.hours)
+
+    const garageContext = useContext(GarageContext)
+    const {appointments} = garageContext
+    const days = ['Ahad','thnin','tleth','irb3a','khmis','jemaa','sebt']
+    let date = new Date();
+    date = date.setDate(props.day)
+    date = new Date(date)
     return (
             <Row className="row-table" >
                 <Col className="box-table">
-                    {props.day}
+                    {days[date.getDay()]}
                 </Col>
-                <Col className="box-table">
-                    <div className="box-appointment-30mn">
-                        <div className="box-appointment-content">
-                        </div>
-                    </div>
-                    <div className="box-appointment-1hour">
-                        <div className="box-appointment-content">
-                        </div>
-                    </div>
-                    <div className="box-appointment-30mn">
-                        <div className="box-appointment-content">
-                        </div>
-                    </div>
-                </Col>
-                <Col className="box-table">
-                    <div className="box-appointment-30mn">
-                        <div className="box-appointment-content">
-                        </div>
-                    </div>
-                    <div className="box-appointment-30mn">
-                        <div className="box-appointment-content">
-                        </div>
-                    </div>
-                </Col>
-                <Col className="box-table">
-                </Col>
-                <Col className="box-table">
-                </Col>
-                <Col className="box-table">
-                    <div className="box-appointment-30mn">
-                        <div className="box-appointment-content">
-                        </div>
-                    </div>
-                    <div className="box-appointment-30mn">
-                        <div className="box-appointment-content">
-                        </div>
-                    </div>
-                </Col>
-                <Col className="box-table">
-                    {"..."}
-                </Col>
-                <Col className="box-table">
-                    {"..."}
-                </Col>
-                <Col className="box-table">
-                    {"..."}
-                </Col>
-                <Col className="box-table">
-                    {"..."}
-                </Col>
-                <Col className="box-table">
-                    {"..."}
-                </Col>
-                <Col className="box-table">
-                    {"..."}
-                </Col>
-                <Col className="box-table">
-                    {"..."}
-                </Col>
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"8"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"9"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"10"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"11"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"12"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"13"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"14"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"15"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"16"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"17"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"18"} />
+                <BoxAppointment date={date.toLocaleDateString()}  hour={"19"} />
 
             </Row>
 

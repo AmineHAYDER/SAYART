@@ -14,7 +14,7 @@ class serviceController {
 
     async getGaragesInRadius ( req , res , next ) {
         const { distance } = req.params;
-        const { lat, lng } = req.body
+        const { lat, lng, name } = req.body
         // Get lat/lng from geocoder
         let services =  []
         // Calc radius using radians
@@ -25,7 +25,7 @@ class serviceController {
              location: { $geoWithin: { $centerSphere: [[lng, lat], radius] } }
         }).then(garage => {  garage.map(async garage =>{
 
-            await serviceModel.findOne({garage:garage._id,name:"oilChange"}).populate('garage').then((service)=>
+            await serviceModel.findOne({garage:garage._id,name:name}).populate('garage').then((service)=>
                 {if (service) services.push(service)}
             )
         }) })
