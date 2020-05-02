@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import GarageContext from "../../../../contexts/Garage/garageContext";
 
-import Map from '../../../map/Map'
+import AppointmentsClosed from './appointmentsClosed/AppointmentsClosed'
+import AppointmentDetail from './AppointmentDetail'
 import CardApp from './AppointmentCard'
 import remaining from '../../../../utils/RemainingTime'
 
@@ -24,6 +25,8 @@ const Appointments = (props) => {
 
     const garageContext = useContext(GarageContext)
     const [Appointment,setAppointment] = useState("")
+
+    const [display,setDisplay] = useState("Cards")
     let history = useHistory();
 
     const setSectionDetail = (e)=>{
@@ -106,47 +109,16 @@ const Appointments = (props) => {
             </Row>
             <Row  className={"title-appointment"}>
                 <h4>Rendez vous passés </h4>
+                <button onClick={()=>setDisplay("Lines")}>All Lines</button>
+                <button onClick={()=>setDisplay("Cards")}>Last 4</button>
             </Row>
-            <Row className={"waiting-appointments-container"}>
-                {doneAppointments}
-            </Row>
+                <AppointmentsClosed
+                    onClick={setSectionDetail}
+                    display={display}
+                />
             <Row>
-               {garageContext.appointments.map(appointment => {
-
-                   if (appointment._id === Appointment) {
-                       console.log(appointment)
-                       return (
-                           <Container className="detail-container">
-                               <Row className="detail-Service" >
-                                   <Col>
-                                       <h1> Service </h1>
-                                       <h6>Name :{appointment.service.name}  </h6>
-                                       <h6>Price :{appointment.service.price}  </h6>
-                                       <h6>Duration :{appointment.service.duration}  </h6>
-                                   </Col>
-                               </Row>
-                               <Row className="detail-Service">
-                                   <Col>
-                                       <h1> Garage </h1>
-                                       <h4>Name :{appointment.garage.name} </h4>
-                                       <h4>Location :{appointment.garage.address}  </h4>
-                                       <h4>Duration :{appointment.service.duration}  </h4>
-                                   </Col>
-                                   <Col>
-                                       <Map garage={appointment.garage.location.coordinates}/>
-                                   </Col>
-                               </Row>
-                               <Row className="detail-Service">
-                                   <Col>
-                                       <h1> Timing </h1>
-                                       <h4>Date : {appointment.date} </h4>
-                                   </Col>
-                               </Row>
-                           </Container>)
-
-                   }
-               })}
-             </Row>
+                <AppointmentDetail Appointment={Appointment}/>
+            </Row>
         </Container>
     );
 

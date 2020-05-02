@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Row, Col, Spinner} from 'react-bootstrap';
 
 import Menu from '../Menu'
-import Profile from '../Profile'
+import Profile from './profile/Profile'
 import MyCar from './myCar/MyCar'
 import Appointments from './appointments/Appointments'
 

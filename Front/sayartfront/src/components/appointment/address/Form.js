@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Col, Container, Row} from 'react-bootstrap'
-import FormItem from "../FormItem";
+import FormItem from "../../utils/FormItem";
 import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
 
 const Form = (props) => {

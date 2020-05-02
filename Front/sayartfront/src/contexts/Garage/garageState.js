@@ -63,7 +63,7 @@ const GarageState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/appointment/', config);
-
+            console.log(res.data)
             dispatch({
                 type: APPOINTMENTS_LOADED,
                 payload: res.data.data,

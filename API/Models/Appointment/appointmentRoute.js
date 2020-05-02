@@ -25,8 +25,6 @@ router.route('/all')
 
 router
     .route('/:id')
-    .get(AppointmentController.get)
-    .put(AppointmentController.put)
     .delete(AppointmentController.delete)
 
 router

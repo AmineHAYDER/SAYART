@@ -23,7 +23,6 @@ export default (state, action) => {
                     }
                 }
             },
-
         };
         case APPOINTMENTS_LOADED :
             return {

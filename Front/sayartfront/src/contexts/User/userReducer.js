@@ -1,12 +1,17 @@
 import {
     CAR_LOADED,
-    LOADING,
+    LOADING, LOCATION_SET,
     NOT_LOADING,
 
 } from '../types';
 
 export default (state, action) => {
     switch (action.type) {
+        case LOCATION_SET :
+            return {
+                ...state,
+                address: action.payload,
+            };
         case CAR_LOADED :
             return {
                 ...state,

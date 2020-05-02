@@ -1,0 +1,18 @@
+.appointment-line{
+    border-radius: 100px;
+    box-shadow: 4px 4px 15px #292727;
+    background: rgb(28,4,19);
+    background: linear-gradient(14deg, rgb(25, 24, 28) 0%, rgb(73, 68, 70) 42%, rgb(37, 33, 35) 42%, rgb(64, 58, 63) 69%,
+    rgb(32, 17, 33) 100%);
+    color:white;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.img-appointment-Line{
+    height:80px;
+    border-radius: 150px;
+    margin: 5px;
+    padding: 0;
+}

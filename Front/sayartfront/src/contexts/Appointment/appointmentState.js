@@ -5,7 +5,6 @@ import appointmentReducer from './appointmentReducer';
 
 import {
     APPOINTMENTS_LOADED,
-    CAR_LOADED,
     LOCATION_SET,
     LOADING,
     NOT_LOADING,

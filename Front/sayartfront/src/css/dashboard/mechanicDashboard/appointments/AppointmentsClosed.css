@@ -1,0 +1,29 @@
+
+.closed-appointments-container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 4px 4px 15px #290e21;
+    background: rgb(129,129,129);
+    background: linear-gradient(63deg, rgb(126, 127, 129) 0%, rgb(82, 80, 81) 24%, rgb(64, 66, 64) 24%, rgba(75,75,75,1) 50%, rgba(93,93,93,1) 85%, rgba(56,56,55,1) 85%);
+    height: 320px;
+    overflow:auto;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #656665;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

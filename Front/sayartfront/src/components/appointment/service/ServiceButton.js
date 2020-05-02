@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Col, Container, Image, Row} from 'react-bootstrap'
-import FormItem from "../FormItem";
+import FormItem from "../../utils/FormItem";
 import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
 import oilChangeImage from "../../../img/takeAppointment/oilChange.png";
 

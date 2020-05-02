@@ -6,12 +6,13 @@ import userReducer from './userReducer';
 import {
     CAR_LOADED,
     LOADING,
+    LOCATION_SET,
     NOT_LOADING,
 } from '../types';
 
 const UserState = props => {
     const initialState = {
-
+        address:'',
         car:'',
         mileage:'',
         loading: false,
@@ -49,7 +50,22 @@ const UserState = props => {
             type: NOT_LOADING
         })
     }
+    //decode back
+    const setLocation = async data => {
+        try {
+            var res = await axios.post('http://localhost:5000/garage/decode/reverser', data,config);
+            console.log(res.data.results[0])
+            dispatch({
+                type:  LOCATION_SET,
+                payload: res.data.results[0]
+            });
 
+
+        } catch (err) {
+
+
+        }
+    }
     //load car information
     const loadCar = async () => {
 
@@ -80,8 +96,10 @@ const UserState = props => {
                 mileage :state.mileage,
                 loading: state.loading,
                 error: state.error,
+                address: state.address,
                 loadCar,
                 updateCar,
+                setLocation,
 
             }}
         >

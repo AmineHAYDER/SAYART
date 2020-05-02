@@ -12,8 +12,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="package.json" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,25 +29,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/contexts/User" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardClient/profile" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\utils" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard\mechanicDashboard\onlineGarage\timingTable" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage\onlineGarage\timingTable" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard\clienDashboard" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\profile" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage\appointments" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts\User" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\map" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\appointment\timing" />
     </key>
   </component>
   <component name="RunManager">
@@ -96,7 +96,7 @@
       <workItem from="1587771363704" duration="5932000" />
       <workItem from="1587859941093" duration="12095000" />
       <workItem from="1587939719305" duration="20688000" />
-      <workItem from="1588106388249" duration="16834000" />
+      <workItem from="1588106388249" duration="26774000" />
     </task>
     <servers />
   </component>
@@ -104,10 +104,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587882858193">
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588391916403">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1587882858193" />
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1588391916403" />
     <state x="441" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586965527804">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

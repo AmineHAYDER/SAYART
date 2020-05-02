@@ -39,6 +39,12 @@ AppointmentSchema.virtual('garages', {
     justOne: true
 
 });
+AppointmentSchema.virtual('cars', {
+    ref: 'Car',
+    localField: 'Car',
+    foreignField: '_id',
+    justOne: true
+});
 AppointmentSchema.virtual('services', {
     ref: 'Service',
     localField: 'service',

@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react';
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
+import UserContext from '../../../contexts/User/userContext';
 import ReactMapGL, {GeolocateControl,NavigationControl} from 'react-map-gl';
 
 //enable arabic writing
@@ -11,11 +12,19 @@ const  Map= (props) => {
     const [viewport, setViewport] = useState({ width:"100%", height:400, latitude:36.845834476598064, longitude:10.219001770019531, zoom:8});
     const [clicked,setClicked] = useState(false)
     const appointmentContext = useContext(AppointmentContext);
+    const userContext = useContext(UserContext);
 
     if ( clicked ){
-        appointmentContext.setLocation({lng:viewport.longitude,lat: viewport.latitude})
+        if (!props.user)
+        {
+            appointmentContext.setLocation({lng:viewport.longitude,lat: viewport.latitude})
+        }
+        else {
+            userContext.setLocation({lng:viewport.longitude,lat: viewport.latitude})
+        }
         setClicked(false)
     }
+
 
     return (
         <div>
