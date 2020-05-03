@@ -1,26 +1,25 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
 import UserContext from '../../../contexts/User/userContext';
-import ReactMapGL, {GeolocateControl,NavigationControl} from 'react-map-gl';
+import ReactMapGL, { GeolocateControl, NavigationControl } from 'react-map-gl';
 
 //enable arabic writing
-import {setRTLTextPlugin} from 'react-map-gl';
+import { setRTLTextPlugin } from 'react-map-gl';
 
 
 
-const  Map= (props) => {
-    const [viewport, setViewport] = useState({ width:"100%", height:400, latitude:36.845834476598064, longitude:10.219001770019531, zoom:8});
-    const [clicked,setClicked] = useState(false)
+const Map = (props) => {
+    const [viewport, setViewport] = useState({ width: "100%", height: 400, latitude: 36.845834476598064, longitude: 10.219001770019531, zoom: 8 });
+    const [clicked, setClicked] = useState(false)
     const appointmentContext = useContext(AppointmentContext);
     const userContext = useContext(UserContext);
 
-    if ( clicked ){
-        if (!props.user)
-        {
-            appointmentContext.setLocation({lng:viewport.longitude,lat: viewport.latitude})
+    if (clicked) {
+        if (!props.user) {
+            appointmentContext.setLocation({ lng: viewport.longitude, lat: viewport.latitude })
         }
         else {
-            userContext.setLocation({lng:viewport.longitude,lat: viewport.latitude})
+            userContext.setLocation({ lng: viewport.longitude, lat: viewport.latitude })
         }
         setClicked(false)
     }
@@ -34,18 +33,19 @@ const  Map= (props) => {
                 onViewportChange={setViewport}
             >
                 <div
-                    onClick={async ()=>{
-                        setTimeout(function() {
+                    onClick={async () => {
+                        setTimeout(function () {
                             setClicked(true)
                             appointmentContext.pages.address.step.localisationStep = true
-                        }, 2000)}}
+                        }, 2000)
+                    }}
                 >
                     <GeolocateControl
-                        positionOptions={{enableHighAccuracy: true}}
+                        positionOptions={{ enableHighAccuracy: true }}
                         trackUserLocation={true}
                     />
                 </div>
-                <div style={{position: 'absolute', right: 0}}>
+                <div style={{ position: 'absolute', right: 0 }}>
                     <NavigationControl />
                 </div>
             </ReactMapGL>
@@ -58,4 +58,4 @@ setRTLTextPlugin(
     null,
     true
 );
-export default Map ;
+export default Map;

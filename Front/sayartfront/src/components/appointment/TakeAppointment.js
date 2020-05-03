@@ -6,7 +6,7 @@ import '../../css/takeAppointment/TakeAppointment.css';
 import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 
 //pages
-import Address from "./Address/Address";
+import Address from "./address/Address";
 import Service from "./service/Service";
 import Confirmation from "./Confirmation/Confirmation"
 import Timing from './timing/Timing'

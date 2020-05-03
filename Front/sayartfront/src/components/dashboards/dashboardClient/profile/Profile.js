@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import FormItem from "../../../utils/FormItem";
-import Map from '../../../appointment/Address/Map'
+import Map from '../../../appointment/address/Map'
 import Address from "./Address";
 import UserContext from '../../../../contexts/User/userContext';
 
