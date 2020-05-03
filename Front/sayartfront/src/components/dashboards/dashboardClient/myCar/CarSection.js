@@ -1,29 +1,29 @@
 import React, { useContext } from 'react';
-import {Row, Col, Container} from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 
 import '../../../../css/dashboard/clienDashboard/myCar/CarSection.css'
 
-import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
+import UserContext from "../../../../contexts/User/userContext";
 import img from '../../../../img/cars/audi-A8.png'
 
 
 const CarSection = () => {
 
-    const appointmentContext = useContext(AppointmentContext);
-    const {car} = appointmentContext
+    const userContext = useContext(UserContext);
+    const { car } = userContext
 
 
 
     return (
         <Row className="car-informations">
-            <Col  lg={4}>
+            <Col lg={4}>
                 <h1>Ma Voiture </h1>
                 <hr></hr>
-                <h6>Mark : {appointmentContext.car.mark}</h6>
-                <h6>Model : {appointmentContext.car.model}</h6>
+                <h6>Mark : {car.mark}</h6>
+                <h6>Model : {car.model}</h6>
             </Col>
             <Col lg={8}>
-                <img src={img}/>
+                <img src={img} />
             </Col>
         </Row>
     );

@@ -12,9 +12,9 @@ import {
 
 const UserState = props => {
     const initialState = {
-        address:'',
-        car:'',
-        mileage:'',
+        address: '',
+        car: '',
+        mileage: '',
         loading: false,
         error: null
     };
@@ -35,7 +35,7 @@ const UserState = props => {
             type: LOADING
         })
         try {
-            var res = await axios.put('http://localhost:5000/user/car', data,config);
+            var res = await axios.put('http://localhost:5000/user/car', data, config);
             console.log(res.data.results[0])
             dispatch({
                 type: CAR_LOADED,
@@ -53,10 +53,10 @@ const UserState = props => {
     //decode back
     const setLocation = async data => {
         try {
-            var res = await axios.post('http://localhost:5000/garage/decode/reverser', data,config);
+            var res = await axios.post('http://localhost:5000/garage/decode/reverser', data, config);
             console.log(res.data.results[0])
             dispatch({
-                type:  LOCATION_SET,
+                type: LOCATION_SET,
                 payload: res.data.results[0]
             });
 
@@ -78,6 +78,7 @@ const UserState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/car/', config);
+            console.log(res.data.data)
             dispatch({
                 type: CAR_LOADED,
                 payload: res.data.data
@@ -93,7 +94,7 @@ const UserState = props => {
         <UserContext.Provider
             value={{
                 car: state.car,
-                mileage :state.mileage,
+                mileage: state.mileage,
                 loading: state.loading,
                 error: state.error,
                 address: state.address,

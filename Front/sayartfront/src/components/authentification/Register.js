@@ -1,9 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
-import {Container, Form, Button, Row, Col, Nav} from 'react-bootstrap';
+import { Container, Form, Button, Row, Col, Nav } from 'react-bootstrap';
 import AuthContext from '../../contexts/Auth/authContext';
 
 import '../../css/authentification/Register.css';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { AUTH_ERROR } from '../../contexts/types';
 
 const Register = (props) => {
 
@@ -33,11 +34,11 @@ const Register = (props) => {
         setUser({ ...user, [e.target.name]: e.target.value })
     };
 
-    const onSubmit = e => {
+    const onSubmit = async e => {
         e.preventDefault();
 
         let x = Math.floor(Math.random() * 100);
-        register({
+        await register({
             "login": firstname + lastname + x,
             "role": "user",
             "name": firstname,
@@ -51,7 +52,7 @@ const Register = (props) => {
             "rib": "98413219516"
 
         })
-        console.log('called register');
+
 
 
     }
@@ -108,14 +109,14 @@ const Register = (props) => {
                         </Form.Group>
 
 
-                            <Link className="NoUnder" to="/login"><Nav.Link className="links-items" as="a" >Sign In</Nav.Link>
-                                <div className="underline"></div></Link>
+                        <Link className="NoUnder" to="/login"><Nav.Link className="links-items" as="a" >Sign In</Nav.Link>
+                            <div className="underline"></div></Link>
 
 
                         <Button variant="primary" type="submit" block>
                             S'INSCRIRE
                             </Button>
-                        
+
                     </Form>
                 </Col>
             </Row>

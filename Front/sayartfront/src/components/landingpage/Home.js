@@ -6,7 +6,7 @@ import Qualities from './Qualities';
 import Services from './Services';
 import Steps from './Steps';
 import AppSection from './AppSection';
-
+import Footer from './Footer';
 
 class Home extends React.Component {
     render() {
@@ -26,7 +26,7 @@ class Home extends React.Component {
                 <div className="div25px"></div>
                 <CallForGarage />
                 <AppSection />
-
+                <Footer />
             </div>
         )
     }

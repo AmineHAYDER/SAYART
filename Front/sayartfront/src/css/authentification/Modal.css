@@ -1,0 +1,52 @@
+.modal-header {
+    border-bottom: none;
+
+}
+
+.modaltitle {
+    padding-top: 1.5rem;
+    color: black
+}
+
+.modalz {
+    text-align: center !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+
+.alertz {
+    text-align: left;
+    margin-top: 10px !important;
+    padding-left: 0.1;
+    font-size: 0.75rem;
+}
+
+.ou-div {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.modal-width {
+    width: 35%;
+}
+
+.mdp-oublie {
+    font-size: small;
+    padding-top: 20px;
+}
+
+.noaccount {
+    font-size: small;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.inscription {
+    color: royalblue;
+}
+
+.inscription:hover {
+    color: rgb(110, 14, 79)
+}

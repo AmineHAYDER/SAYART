@@ -1,6 +1,6 @@
-import React, {useContext, useState} from 'react';
-import { Col, Row, Container} from "react-bootstrap";
-import '../../../css/takeAppointment/selectGarage/SelectGarege.css'
+import React, { useContext, useState } from 'react';
+import { Col, Row, Container } from "react-bootstrap";
+import '../../../css/takeAppointment/SelectGarage/SelectGarege.css'
 
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
 import AuthContext from '../../../contexts/Auth/authContext'
@@ -12,42 +12,42 @@ const SelectGarage = (props) => {
 
     const appointmentContext = useContext(AppointmentContext);
     const authContext = useContext(AuthContext);
-    const {user} = authContext
-    const {pages} = appointmentContext
-    const [active,setActive] = useState("")
-    const [label,setlabel] = useState(false)
+    const { user } = authContext
+    const { pages } = appointmentContext
+    const [active, setActive] = useState("")
+    const [label, setlabel] = useState(false)
 
     let onMap = []
-console.log(appointmentContext.pages.service.name)
-    const loadAppointmentGarages = (e) =>{
+    console.log(appointmentContext.pages.service.name)
+    const loadAppointmentGarages = (e) => {
         appointmentContext.loadAppointmentGarages({
-            name:appointmentContext.pages.service.name,
-            lat:user.location.coordinates[1],
-            lng:user.location.coordinates[0]
-        },e.target.name)
+            name: appointmentContext.pages.service.name,
+            lat: user.location.coordinates[1],
+            lng: user.location.coordinates[0]
+        }, e.target.name)
 
     }
 
-    const garages =()=>{
-        if ( appointmentContext.appointmentGarages){
-            return appointmentContext.appointmentGarages.map((service , i) =>{
-                onMap.push({coordinates:service.garage.location.coordinates,name:service.garage.name})
+    const garages = () => {
+        if (appointmentContext.appointmentGarages) {
+            return appointmentContext.appointmentGarages.map((service, i) => {
+                onMap.push({ coordinates: service.garage.location.coordinates, name: service.garage.name })
                 console.log(service)
-             return <Row className={"appointment-garage"} key={i} lg={2} md={4} xs={6}>
-                       <Col >
-                           <img src={washImage}/>
-                       </Col>
-                       <Col >
-                           <h1>garage : {service.garage.name}</h1>
-                           <h4>address : {service.garage.address}</h4>
-                           <h4>soum : {service.price}</h4>
-                           <button  onClick={()=> {
-                               setActive(service)
-                               appointmentContext.garage = service
-                               props.choose(service.garage)
-                           }} > select this </button>
-                       </Col>
-                    </Row>
+                return <Row className={"appointment-garage"} key={i} lg={2} md={4} xs={6}>
+                    <Col >
+                        <img src={washImage} />
+                    </Col>
+                    <Col >
+                        <h1>garage : {service.garage.name}</h1>
+                        <h4>address : {service.garage.address}</h4>
+                        <h4>soum : {service.price}</h4>
+                        <button onClick={() => {
+                            setActive(service)
+                            appointmentContext.garage = service
+                            props.choose(service.garage)
+                        }} > select this </button>
+                    </Col>
+                </Row>
             })
         }
     }
@@ -61,11 +61,11 @@ console.log(appointmentContext.pages.service.name)
             </Row>
 
             <Row>
-               { garages()}
+                {garages()}
             </Row>
 
-            <button className="button-select-garage" name="10" onClick={()=>{setlabel(!label)}} >show On Map</button>
-           <Map garages={onMap}/>
+            <button className="button-select-garage" name="10" onClick={() => { setlabel(!label) }} >show On Map</button>
+            <Map garages={onMap} />
         </Container>
     )
 

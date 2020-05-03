@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Nav, Image } from "react-bootstrap";
 
-import "../../css/dashboard/DashboardMenu.css";
+import "./Menu.css"
 
-import profilePic from "../../img/profile/manpic.png"
-import AuthContext from "../../contexts/Auth/authContext";
+import profilePic from "../../../../img/profile/manpic.png"
+import AuthContext from "../../../../contexts/Auth/authContext";
 
 const Menu = (props) => {
 
@@ -38,7 +38,7 @@ const Menu = (props) => {
                     <Nav.Link className={(props.page === "analytics") ? "active-link" : "non-active-link"} onClick={props.onChange} name="analytics"><i class="uil uil-chart-line zicon"></i>   Analytique</Nav.Link>
                 </Nav>
             </aside>
-        </div>
+        </div >
     )
 }
 

@@ -1,30 +1,42 @@
-import React, { useContext } from 'react'
-import { Navbar, Nav } from 'react-bootstrap';
+import React, { useContext, useState } from 'react'
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../img/landingpage/SayartlogoMini.png';
 import '../../css/landingpage/Topnav.css'
 import AuthContext from '../../contexts/Auth/authContext';
-import logo2 from '../../img/landingpage/SayartlogoMini2.png';
 
 
+import LoginModal from '../authentification/LoginModal';
+import RegisterModal from '../authentification/RegisterModal';
 
 const TopNav = (props) => {
 
     const authContext = useContext(AuthContext);
     const { isAuthenticated, logout } = authContext;
 
+
+
+    const [showLogin, setShowLogin] = useState(false);
+    const handleCloseLogin = () => setShowLogin(false);
+    const handleShowLogin = () => setShowLogin(true);
+
+
+    const [showRegister, setShowRegister] = useState(false);
+    const handleCloseRegister = () => setShowRegister(false);
+    const handleShowRegister = () => setShowRegister(true);
+
     const onLogout = () => {
         logout();
     }
 
-    const NavItem = (props)=>{
+    const NavItem = (props) => {
 
         return <Nav.Item as="li">
-                    <Link className="NoUnder" to={props.path} >
-                        <Nav.Link className="links-items" as="a" onClick={props.onClick} >{props.value}</Nav.Link>
-                        <div className="underline"></div>
-                    </Link>
-               </Nav.Item>
+            <Link className="NoUnder" to={props.path} >
+                <Nav.Link className="links-items" as="a" onClick={props.onClick} >{props.value}</Nav.Link>
+                <div className="underline"></div>
+            </Link>
+        </Nav.Item>
 
     }
 
@@ -32,7 +44,8 @@ const TopNav = (props) => {
 
         < Nav className="ml-auto links" as="ul" >
             <NavItem path={"/dashboard"} value={props.context.user.name} />
-            <NavItem path={"/"} value={"LOGOUT"} onClick={onLogout} />
+            <Nav.Link className="links-items" as="a" onClick={onLogout} >LOGOUT</Nav.Link>
+            <div className="underline"></div>
         </Nav >
     )
 
@@ -41,8 +54,9 @@ const TopNav = (props) => {
             <NavItem path={"/"} value={"HOME"} />
             <NavItem path={"/CCM"} value={"CÇM"} />
             <NavItem path={"/"} value={"CONTACT"} />
-            <NavItem path={"/register"} value={"INSCRIPTION"} />
-            <NavItem path={"/login"} value={"CONNECTER"} />
+
+            <Nav.Item><Button variant='info' onClick={handleShowLogin}>CONNECTER</Button></Nav.Item>
+            <Nav.Item><Button variant='info' onClick={handleShowRegister}>INSCRIPTION</Button></Nav.Item>
         </Nav>
 
     )
@@ -66,6 +80,9 @@ const TopNav = (props) => {
                 </Navbar.Collapse>
 
             </Navbar>
+
+            <LoginModal show={showLogin} onHide={handleCloseLogin} showRegister={handleShowRegister} />
+            <RegisterModal show={showRegister} onHide={handleCloseRegister} showLogin={handleShowLogin} />
         </div>
     )
 }
