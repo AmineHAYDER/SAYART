@@ -8,7 +8,7 @@ import AppointmentContext from '../../contexts/Appointment/appointmentContext';
 //pages
 import Address from "./address/Address";
 import Service from "./service/Service";
-import Confirmation from "./Confirmation/Confirmation"
+import Confirmation from "./confirmation/Confirmation"
 import Timing from './timing/Timing'
 
 

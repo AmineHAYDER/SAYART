@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Col, Row, Container } from "react-bootstrap";
-import '../../../css/takeAppointment/SelectGarage/SelectGarege.css'
+import '../../../css/takeAppointment/selectGarage/SelectGarege.css'
 
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
 import AuthContext from '../../../contexts/Auth/authContext'
