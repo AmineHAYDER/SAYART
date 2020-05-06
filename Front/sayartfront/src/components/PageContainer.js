@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Container } from "react-bootstrap";
 
 import Navbar from './landingpage/TopNav';
-import Footer from './landingpage/Footer';
+
 
 //states
 import AppointmentState from '../contexts/Appointment/appointmentState';
@@ -66,7 +66,7 @@ const PageContainer = () => {
                 </div>
             </Switch>
 
-            <Footer />
+
 
         </div>
     );

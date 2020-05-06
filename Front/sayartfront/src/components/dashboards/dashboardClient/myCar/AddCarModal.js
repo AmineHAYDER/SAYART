@@ -1,103 +1,126 @@
 import React, { useContext, useState, useEffect } from "react";
 
-import { Form, Button, Modal, Alert } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
-import AuthContext from "../../contexts/Auth/authContext";
+import { Container, DropdownButton, ButtonGroup, Dropdown, Row, Col, Form, Button, Modal } from 'react-bootstrap';
+
+import '../../../../css/authentification/Modal.css';
+import data from "../../../carIdentification/data/_cars"
+
+const carsData = data.cars;
 
 
-
-import '../../css/authentification/Modal.css';
 
 const AddCarModal = (props) => {
 
-    const authContext = useContext(AuthContext);
-    let history = useHistory();
+    const [mark, setMark] = useState('het mark');
+    const [model, setModel] = useState('het model');
+    const [version, setVersion] = useState('het version');
 
-
-    const onChange = e => {
-
-    };
-
-
-    const onSubmit = async e => {
-        e.preventDefault();
+    const clickMark = (e) => {
+        setMark(e.target.name)
+    }
+    const clickModel = (e) => {
+        setModel(e.target.name)
     }
 
-    const [selects, setSelects] = useState({
-        mark: true,
-        model: false,
-        year: false
-    });
+    const clickVersion = (e) => {
+        setVersion(e.target.name)
+    }
 
-
-    const mark = (
-        <Fragment>
-            <option>Audi</option>
-            <option>Audi</option>
-            <option>Mercedes</option>
-            <option>Peugot</option>
-            <option>Opel</option>
-        </Fragment>
-    )
-
-    const model = (
-        <Fragment>
-            <option>Y8</option>
-            <option>XZ</option>
-            <option>EZ</option>
-            <option>AZ</option>
-            <option>RZ</option>
-        </Fragment>
-    )
-
-    const year = (
-        <Fragment>
-            <option>year</option>
-            <option>1996</option>
-            <option>1997</option>
-            <option>1998</option>
-            <option>1999</option>
-        </Fragment>
-    )
-
-
-
-
-
+    const addCar = () => {
+        if (mark != 'het mark' && model != 'het model') {
+            console.log("add car");
+        }
+    }
 
     return (
         <div>
 
             <Modal show={props.show} onHide={props.onHide} className="modalz" dialogClassName="modal-width">
                 <Modal.Header closeButton className="modal-header">
-                    <Modal.Title className="text-center w-100"> <h2 className="font-weight-bolder modaltitle">AJOUTER UNE VOITURE </h2></Modal.Title>
-
+                    <Modal.Title className="text-center w-100">
+                        <h2 className="font-weight-bolder modaltitle">نوع كرهبتك </h2>
+                    </Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
-                    <Form onSubmit={onSubmit}>
 
-                        <Form.Control as="select">
-                            {mark}
-                        </Form.Control>
-                        <Form.Control as="select">
-                            {year}
-                        </Form.Control>
-                        <Form.Control as="select">
-                            {model}
-                        </Form.Control>
+                    <Container id="modal-container">
+                        <h1 className="label-mark"> </h1>
 
+                        <Row>
+                            <Col>
+                                <DropdownButton
+                                    className="drop-down-color"
+                                    as={ButtonGroup}
+                                    id={`dropdown-button-drop-down`}
+                                    drop={"down"}
+                                    variant="secondary"
+                                    title={` Mark `}
+                                >
+                                    {carsData.map((item, i) => {
+                                        if (item.mark) {
+                                            return <Dropdown.Item name={item.mark} onClick={clickMark} eventKey={i}>{item.mark}</Dropdown.Item>
+                                        }
+                                    })}
+                                </DropdownButton>
+                            </Col>
+                            <Col>
+                                <h4 className="car-modal-label">  {mark} </h4>
+                            </Col>
+                        </Row>
 
+                        <Row>
+                            <Col>
+                                <DropdownButton
+                                    as={ButtonGroup}
+                                    id={`dropdown-button-drop-down`}
+                                    drop={"down"}
+                                    variant="secondary"
+                                    title={` Model `}
+                                >
+                                    {carsData.map((item) => {
+                                        if (item.mark === mark) {
+                                            return item.models.map((model, i) => { return <Dropdown.Item name={model.model} onClick={clickModel} eventKey={i}>{model.model}</Dropdown.Item> })
+                                        }
+                                    })}
+                                </DropdownButton>
+                            </Col>
 
+                            <Col>
+                                <h4 className="car-modal-label">  {model} </h4>
+                            </Col>
+                        </Row>
 
-                        <Button variant="warning" type="submit" block>
-                            AJOUTER
-                        </Button>
-                    </Form>
-
-
-
-
+                        <Row>
+                            <Col>
+                                <DropdownButton
+                                    as={ButtonGroup}
+                                    id={`dropdown-button-drop-down`}
+                                    drop={"down"}
+                                    variant="secondary"
+                                    title={` Version `}
+                                >
+                                    {carsData.map((item, i) => {
+                                        if (item.mark === mark) {
+                                            return item.models.map((models) => {
+                                                if (models.model === model) {
+                                                    console.log('oui')
+                                                    return models.versions.map((version, i) => {
+                                                        console.log(version)
+                                                        return <Dropdown.Item name={version} onClick={clickVersion} eventKey={i}>{version}</Dropdown.Item>
+                                                    })
+                                                }
+                                            })
+                                        }
+                                    })}
+                                </DropdownButton>
+                            </Col>
+                            <Col>
+                                <h4 className="car-modal-label">  {version} </h4>
+                            </Col>
+                        </Row>
+                    </Container>
+                    <Button className="add-car-button" onClick={addCar}> Ajouter </Button>
                 </Modal.Body>
 
             </Modal>
@@ -109,4 +132,4 @@ const AddCarModal = (props) => {
 
 }
 
-export default AddCar;
+export default AddCarModal;

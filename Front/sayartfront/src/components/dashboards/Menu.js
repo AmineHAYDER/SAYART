@@ -37,6 +37,7 @@ const Menu = (props) => {
 
                     <Nav.Link className={(props.page === "analytics") ? "active-link" : "non-active-link"} onClick={props.onChange} name="analytics"><i class="uil uil-chart-line zicon"></i>   Analytique</Nav.Link>
                 </Nav>
+
             </aside>
         </div>
     )

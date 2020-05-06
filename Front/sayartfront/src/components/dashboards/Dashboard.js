@@ -11,13 +11,13 @@ const Dashboard = () => {
 
     const { user } = authContext;
 
-    const renderSwitch = ()=>{
+    const renderSwitch = () => {
         switch (user.role) {
-                case 'garage' :
-                    return <GarageDashboard/>
-                case 'admin' :
-                    return <ClientDashboard/>
-                default :
+            case 'garage':
+                return <GarageDashboard />
+            case 'admin':
+                return <ClientDashboard />
+            default:
                 return null
         }
     }

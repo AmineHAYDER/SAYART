@@ -27,10 +27,26 @@
     margin-bottom: 25px;
 }
 
-.modal-width {
-    width: 35%;
+
+/*
+@media only screen and (min-device-width : 1200px) {
+    .modal-width {
+        width: 35%;
+    }
 }
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .modal-width {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-device-width : 480px) {
+    .modal-width {
+        width: 100%;
+    }
+}
+*/
 .mdp-oublie {
     font-size: small;
     padding-top: 20px;
@@ -49,4 +65,23 @@
 
 .inscription:hover {
     color: rgb(110, 14, 79)
+}
+
+#dropdown-button-drop-down {
+    background-color: rgb(168, 74, 142);
+    width: 150px !important;
+}
+
+.car-modal-label {
+    color: black;
+}
+
+.car-drop-down {
+    padding-bottom: 20px;
+
+}
+
+
+#modal-container .row {
+    padding-bottom: 20px;
 }

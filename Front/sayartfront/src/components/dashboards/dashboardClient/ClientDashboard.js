@@ -5,10 +5,12 @@ import Menu from '../Menu'
 import Profile from './profile/Profile'
 import MyCar from './myCar/MyCar'
 import Appointments from './appointments/Appointments'
+import Dashboard from './Test/Dashboard';
 
 import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
 import UserContext from "../../../contexts/User/userContext";
 import '../../../css/dashboard/Dashboard.css'
+
 
 
 const ClientDashboard = () => {
@@ -16,6 +18,10 @@ const ClientDashboard = () => {
     const appointmentContext = useContext(AppointmentContext);
     const userContext = useContext(UserContext)
     const [page, setPage] = useState("MyCar");
+
+
+
+
 
     useEffect(() => {
         appointmentContext.loadAppointments();
@@ -30,7 +36,7 @@ const ClientDashboard = () => {
             case 'profile':
                 return <Profile />;
             case 'dashboard':
-                return <MyCar />;
+                return <Dashboard />;
             case 'appointments':
                 return <Appointments />;
             default:
@@ -39,14 +45,14 @@ const ClientDashboard = () => {
     }
 
     return (
-        <div className="dashboard">
+        <div className="">
 
             {appointmentContext.loading ? <Spinner animation="border" /> :
                 <Row>
                     <Col className="" lg={2}>
                         <Menu onChange={onChangePage} page={page} />
                     </Col>
-                    <Col className="content-dashboard">
+                    <Col className="">
 
                         {renderSwitch(page)}
 

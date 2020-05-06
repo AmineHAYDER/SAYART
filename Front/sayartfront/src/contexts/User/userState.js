@@ -8,6 +8,7 @@ import {
     LOADING,
     LOCATION_SET,
     NOT_LOADING,
+    ADD_CAR
 } from '../types';
 
 const UserState = props => {
@@ -50,6 +51,28 @@ const UserState = props => {
             type: NOT_LOADING
         })
     }
+
+    const addCar = async data => {
+        dispatch({
+            type: LOADING
+        })
+        try {
+            await axios.post('http://localhost:5000/user/car', data);
+            console.log(data);
+            dispatch({
+                type: ADD_CAR
+            })
+
+        } catch (err) {
+            console.log("post doesn't work");
+        }
+        dispatch({
+            type: NOT_LOADING
+        })
+    }
+
+
+
     //decode back
     const setLocation = async data => {
         try {

@@ -1,0 +1,47 @@
+.car-section {
+    background-color: #fff;
+    border: 0 solid rgba(0, 0, 0, .125);
+    box-shadow: 0 0 2px 0 rgba(22, 26, 33, .1), 0 2px 4px 0 rgba(22, 26, 33, .1);
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 30px;
+    margin-top: 25px
+}
+
+.add-car-button {
+    padding: .5rem 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    border-color: transparent;
+    color: white;
+    position: relative;
+    background-color: rgb(168, 74, 142);
+    margin-top: 30px
+}
+
+.car-table {
+    text-align: center !important;
+}
+
+.table-title-text {
+    font-size: 1.125rem;
+    color: rgba(142, 14, 79)
+}
+
+.table-shalta {
+
+    border-right: rgb(142, 14, 79, 0.5);
+    border-right: 2px solid rgb(142, 14, 79, 0.5);
+}
+
+.table-line {
+    background-color: rgb(168, 74, 142);
+    color: white;
+}

@@ -5,17 +5,29 @@ import './Dashboard.css';
 
 import AuthContext from "../../../../contexts/Auth/authContext";
 import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
+import UserContext from "../../../../contexts/User/userContext";
+
+import TopSection from "../../../dashboards/dashboardClient/Acceuil/TopSection";
+import AppointmentSection from "../../../dashboards/dashboardClient/Acceuil/AppointmentSection";
+import CarSection from "../../../dashboards/dashboardClient/Acceuil/CarSection";
+import ActiveAppointmentSection from "../../../dashboards/dashboardClient/Acceuil/ActiveAppointmentSection"
+
 import CarCard from './carCard';
 import { Link } from "react-router-dom";
+import userContext from "../../../../contexts/User/userContext";
 
+import AddCarModal from "../myCar/AddCarModal";
 
 const Dashboard = (props) => {
 
     const authContext = useContext(AuthContext);
 
-    const appointmentContext = useContext(AppointmentContext);
-    const { car, loadCar } = appointmentContext;
+    const userContext = useContext(UserContext);
+    const { car, loadCar } = userContext;
 
+    const [showAddCar, setShowAddCar] = useState(false);
+    const handleCloseAddCar = () => setShowAddCar(false);
+    const handleShowAddCar = () => setShowAddCar(true);
 
     useEffect(() => {
         loadCar();
@@ -41,8 +53,12 @@ const Dashboard = (props) => {
 
     return (
         <div>
-
-            <Row className="mb-5">
+            <TopSection />
+            <AppointmentSection content="diagnostic" />
+            <CarSection car={car} showmodal={handleShowAddCar} />
+            <AddCarModal show={showAddCar} onHide={handleCloseAddCar} mileageModal='{}' />
+            <ActiveAppointmentSection></ActiveAppointmentSection>
+            { /* <Row className="mb-5">
                 <Col className="dashboard-title">
                     <h1 className="h4 mb-0">Bienvenu {authContext.user.name}!</h1>
                     <p className="h6 font-weight-normal text-secondary mt-2 mb-0">
@@ -80,8 +96,10 @@ const Dashboard = (props) => {
                             </Row>
                         </Col></Row>
                 </Col>
-            </Row>
-        </div >
+            </Row> */}
+
+
+        </div>
     )
 }
 

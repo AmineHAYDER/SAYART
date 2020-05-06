@@ -1,0 +1,26 @@
+.top-section {
+    background-color: #fff;
+    border: 0 solid rgba(0, 0, 0, .125);
+    box-shadow: 0 0 2px 0 rgba(22, 26, 33, .1), 0 2px 4px 0 rgba(22, 26, 33, .1);
+    border-radius: 3px;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 30px;
+}
+
+.recommended-garage {
+    background-color: mediumpurple;
+    color: white
+}
+
+.right-border-s {
+    border-right: 2px solid purple;
+}
+
+.recommended-service {
+    margin-left: 10px;
+}
