@@ -73,9 +73,11 @@ const CarSection = (props) => {
     )
 
     return (
-        <div>
-
-            <div className="car-section">
+        <div className="car-section">
+            <div style={{ "text-align": "left" }}>
+                <h3>Ma voiture</h3>
+            </div>
+            <div >
                 {props.car != '' ? HasCar : HasNoCar}
             </div>
         </div>

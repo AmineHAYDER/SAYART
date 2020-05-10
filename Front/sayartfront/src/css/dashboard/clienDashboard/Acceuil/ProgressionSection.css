@@ -1,0 +1,24 @@
+.progression-section {
+    background-color: rgb(168, 74, 142);
+    border: 0 solid rgba(0, 0, 0, .125);
+    box-shadow: 0 0 2px 0 rgba(22, 26, 33, .1), 0 2px 4px 0 rgba(22, 26, 33, .1);
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 30px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    color: white
+}
+
+.progress-bar-section {
+    margin-top: 20px;
+}
+
+Row>ProgressBar {
+    background-color: yellow;
+}

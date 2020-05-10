@@ -29,9 +29,11 @@ const CarSection = (props) => {
     )
 
     return (
-        <div>
-
-            <div className="car-section">
+        <div className="car-section">
+            <div>
+                <h3>Mes rendez-vous</h3>
+            </div>
+            <div >
                 {props.appointment != '' ? HasNoAppointment : HasAppointment}
             </div>
         </div>

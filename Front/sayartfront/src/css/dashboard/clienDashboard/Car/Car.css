@@ -1,0 +1,61 @@
+.top-section-text {
+    margin-top: 40px;
+    margin-left: 50px;
+
+    text-align: left;
+
+}
+
+.car-top-section {
+    border-bottom: gray 3px solid;
+    padding-bottom: 30px;
+}
+
+.car-body-section {
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+
+}
+
+.nav-tabs .nav-link.active,
+
+.nav-tabs .nav-item.show .nav-link {
+    color: #FFFFFF;
+    background-color: rgb(168, 74, 142);
+
+}
+
+
+.car-health-vidange {
+    border: 0 solid rgba(0, 0, 0, .125);
+    box-shadow: 0 0 2px 0 rgba(22, 26, 33, .1), 0 2px 4px 0 rgba(22, 26, 33, .1);
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.car-health-box-text {
+    padding-bottom: 40px;
+    font-size: large;
+}
+
+.car-card {
+    margin-right: 30px;
+    margin-left: 30px;
+    min-width: 0;
+
+    background-color: #fff;
+    background-clip: initial;
+    border: 0 solid rgba(0, 0, 0, .125);
+    box-shadow: 0 0 2px 0 rgba(22, 26, 33, .1), 0 2px 4px 0 rgba(22, 26, 33, .1);
+    border-radius: 3px;
+}

@@ -29,6 +29,8 @@ const AddCarModal = (props) => {
     const addCar = () => {
         if (mark != 'het mark' && model != 'het model') {
             console.log("add car");
+            props.onHide();
+            props.mileageModal();
         }
     }
 

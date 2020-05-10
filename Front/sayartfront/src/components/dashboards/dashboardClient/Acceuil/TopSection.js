@@ -8,6 +8,7 @@ import Welcome from "../Acceuil/TopSection/Welcome";
 import RecommendedService from "../Acceuil/TopSection/RecommendedServices";
 import RecommendedGarage from "../Acceuil/TopSection/RecommendedGarage";
 
+
 const TopSection = () => {
     return (
         <div className="top-section">

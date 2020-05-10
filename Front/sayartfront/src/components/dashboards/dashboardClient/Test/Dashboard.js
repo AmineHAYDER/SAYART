@@ -11,28 +11,27 @@ import TopSection from "../../../dashboards/dashboardClient/Acceuil/TopSection";
 import AppointmentSection from "../../../dashboards/dashboardClient/Acceuil/AppointmentSection";
 import CarSection from "../../../dashboards/dashboardClient/Acceuil/CarSection";
 import ActiveAppointmentSection from "../../../dashboards/dashboardClient/Acceuil/ActiveAppointmentSection"
+import ProgressionSection from "../../../dashboards/dashboardClient/Acceuil/ProgressionSection"
 
-import CarCard from './carCard';
-import { Link } from "react-router-dom";
-import userContext from "../../../../contexts/User/userContext";
 
 import AddCarModal from "../myCar/AddCarModal";
+import MileageModal from "../myCar/MileageModal";
 
 const Dashboard = (props) => {
 
-    const authContext = useContext(AuthContext);
 
-    const userContext = useContext(UserContext);
-    const { car, loadCar } = userContext;
+
+
+
 
     const [showAddCar, setShowAddCar] = useState(false);
     const handleCloseAddCar = () => setShowAddCar(false);
     const handleShowAddCar = () => setShowAddCar(true);
 
-    useEffect(() => {
-        loadCar();
-    }, [])
 
+    const [showMileage, setShowMileage] = useState(false);
+    const handleCloseMileage = () => setShowMileage(false);
+    const handleShowMileage = () => setShowMileage(true);
 
 
 
@@ -55,9 +54,15 @@ const Dashboard = (props) => {
         <div>
             <TopSection />
             <AppointmentSection content="diagnostic" />
-            <CarSection car={car} showmodal={handleShowAddCar} />
-            <AddCarModal show={showAddCar} onHide={handleCloseAddCar} mileageModal='{}' />
-            <ActiveAppointmentSection></ActiveAppointmentSection>
+            <CarSection car={props.car} showmodal={handleShowAddCar} />
+            <AddCarModal show={showAddCar} onHide={handleCloseAddCar} mileageModal={handleShowMileage} />
+
+            <MileageModal show={showMileage} onHide={handleCloseMileage} />
+
+            <ActiveAppointmentSection />
+            <ProgressionSection />
+
+
             { /* <Row className="mb-5">
                 <Col className="dashboard-title">
                     <h1 className="h4 mb-0">Bienvenu {authContext.user.name}!</h1>
