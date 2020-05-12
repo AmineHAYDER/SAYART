@@ -95,7 +95,7 @@ const Dashboard = (props) => {
                             </Row>
                         </Col>
                         <Col lg={7}>
-                            <Row>Dérnier Service</Row>
+                            <Row>Dérnier service</Row>
                             <Row>
                                 2020-5-2
                             </Row>

@@ -11,7 +11,7 @@ var users = require('./Models/User/userRoutes');
 var garages = require('./Models/Garage/garageRoute');
 var services = require('./Models/Service/serviceRoute')
 var appointments = require('./Models/Appointment/appointmentRoute')
-
+var articles = require('./Models/Article/articleRoute')
 // Load env vars
 dotenv.config({ path: './config/config.env' });
 
@@ -33,6 +33,8 @@ app.use('/garage',garages);
 app.use('/service',services)
 
 app.use('/appointment',appointments)
+
+app.use('/article',articles)
 
 app.use(errorHandler);
 app.use('/',(req,res)=>{res.send('home page')});

@@ -1,29 +1,22 @@
-import React, {useContext} from 'react'
-import {Col, Container, Image, Row} from 'react-bootstrap'
-import FormItem from "../../utils/FormItem";
-import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
-import oilChangeImage from "../../../img/takeAppointment/oilChange.png";
+import React from 'react'
+import {Col, Image } from 'react-bootstrap'
 
-const Form = (props) => {
-    const appointmentContext = useContext(AppointmentContext)
-    const {address} =  appointmentContext
+const ServiceButton = (props) => {
 
     return(
-        <Container>
                 <Col >
                     <hr></hr>
-                    <h4 className="label-button"> oilchange </h4>
+                    <h4 className="label-button"> {props.name} </h4>
                     <hr></hr>
                     <Image
-                        className={appointmentContext.pages.service.states.oilChange ?"ImageSelect-active":"ImageSelect"}
-                        onClick={setService}
-                        name="oilChange"
-                        src={oilChangeImage}
+                        className={props.state}
+                        onClick={props.onClick}
+                        name={props.name}
+                        src={props.image}
                         fluid
                     />
                 </Col>
-        </Container>
     )
 }
 
-export default Form;
+export default ServiceButton;

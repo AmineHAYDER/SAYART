@@ -32,7 +32,7 @@ const LoginModal = (props) => {
         if (isAuthenticated) {
             if (!authContext.user.isGarage) {
 
-                history.push('/dashboard');
+               /* history.push('/dashboard');*/
             }
             props.onHide();
         }

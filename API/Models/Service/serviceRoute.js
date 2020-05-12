@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router({mergeParams:true});
 const advancedResults = require('../../middelware/advancedResults')
+const { protect, authorize } = require('../../middelware/auth');
 
 const service =require('./serviceModel')
 const ServiceController = require('./ServiceController');
@@ -16,8 +17,9 @@ router.use(cors(corsOptions));
 
 
 
-router.route('/all')
-       .get(advancedResults(service,'garage'),ServiceController.all);
+router
+    .route('/all')
+    .get(advancedResults(service), protect, authorize('admin'), ServiceController.all);
 
 router.route('/garage/:distance')
     .post(ServiceController.getGaragesInRadius);
@@ -29,7 +31,7 @@ router
     .delete(ServiceController.delete)
 
 router
-    .route('/')
+    .route('/create')
     .post(ServiceController.store)
 
 

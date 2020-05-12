@@ -67,7 +67,6 @@ const RegisterModal = (props) => {
 
         if (error != "AUTH_ERROR" && error != "REGISTER_FAIL") {
             props.onHide();
-            history.push('/dashboard/client');
             console.log("pass");
         }
 

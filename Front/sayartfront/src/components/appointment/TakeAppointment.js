@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react'
-import { Container, Button, Row, Col, ButtonGroup } from 'react-bootstrap'
+import React, {useContext, useEffect, useState} from 'react'
+import { Container, Button, Row, Col, ButtonGroup, Alert } from 'react-bootstrap'
 
 
 import '../../css/takeAppointment/TakeAppointment.css';
 import AppointmentContext from '../../contexts/Appointment/appointmentContext';
-
+import UserContext from '../../contexts/User/userContext'
 //pages
 import Address from "./address/Address";
 import Service from "./service/Service";
@@ -15,9 +15,12 @@ import Timing from './timing/Timing'
 const TakeAppointment = () => {
 
     const appointmentContext = useContext(AppointmentContext);
+    const userContext = useContext(UserContext);
+    const {car} = userContext
     const [page, setPage] = useState("")
-
-
+    useEffect(() => {
+        userContext.loadCar();
+    }, [])
     const onChange = e => {
         appointmentContext.pages.active = e.target.name
         setPage(e.target.name)
@@ -98,7 +101,7 @@ const TakeAppointment = () => {
                 </Col>
             </Row>
 
-            {renderSwitch(appointmentContext.pages.active)}
+            {car ? renderSwitch(appointmentContext.pages.active):<Alert>vous devez entrer les informations de votre voiture</Alert>}
 
         </Container>
 

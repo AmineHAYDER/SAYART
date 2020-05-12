@@ -21,4 +21,16 @@ export const ADD_CAR = 'ADD_CAR';
 //garage
 export const GARAGE_LOADED = 'GARAGE_LOADED';
 
+//dashboard admin
+export const GARAGES_LOADED = 'GARAGES_LOADED';
+export const SERVICES_LOADED = 'SERVICES_LOADED';
+export const ARTICLES_LOADED = 'ARTICLES_LOADED';
+
+
+
+
+
+
+
+
 

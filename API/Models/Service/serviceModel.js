@@ -25,4 +25,11 @@ const ServiceSchema = new mongoose.Schema({
     },
 });
 
+ServiceSchema.virtual('articles', {
+    ref: 'Article',
+    localField: '_id',
+    foreignField: 'service',
+
+});
+
 module.exports = mongoose.model('Service', ServiceSchema);

@@ -9,12 +9,14 @@ import AppointmentState from '../contexts/Appointment/appointmentState';
 import GarageState from '../contexts/Garage/garageState';
 import UserState from '../contexts/User/userState';
 
+import AdminState from '../contexts/Admin/adminState';
+
 //pages
 import Home from './landingpage/Home';
 import Login from './authentification/Login';
 import Register from './authentification/Register';
 import CCM from './landingpage/Carousel';
-import ClientDashboard from './dashboards/dashboardClient/ClientDashboard';
+import AdminDashboard from './dashboards/dashboardAdmin/AdminDashboard';
 import Dashboard from './dashboards/Dashboard';
 import TakeAppointment from "./appointment/TakeAppointment";
 import Car from './carIdentification/CarIdentfication'
@@ -54,13 +56,15 @@ const PageContainer = () => {
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/car" component={Car} />
                     <AppointmentState>
-
-
                         <GarageState>
                             <UserState>
                                 <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
                                 <PrivateRoute exact path="/dashboard/" component={Dashboard} />
-                            </UserState></GarageState>
+                                 <AdminState>
+                                    <PrivateRoute exact path="/dashboard/admin" component={AdminDashboard} />
+                                 </AdminState>
+                            </UserState>
+                        </GarageState>
                     </AppointmentState>
 
                 </div>

@@ -68,30 +68,16 @@ class serviceController {
     }
 
     async store ( req , res ,next) {
-
-        userModel
-            .findById(req.params.userId)
-            .then((user)=> {
-                if (user){
-                    req.body.user = req.params.userId
-                    serviceModel.create(req.body).then ((service)=>{
-                        res.status(200)
-                            .json({
-                                success: "True",
-                                data: service,
-                            })
-                    })}
-                else {
-                    res
-                        .status(200)
-                        .json({
-                            success: "True",
-                            data: "fammesh menou ",
-                        })
-                }})
-            .catch ((err) => {
+        serviceModel.create(req.body)
+            .then((createdGarage) => {
+                res.status(201)
+                    .json({
+                        success: "True",
+                        data: createdGarage,
+                    })
+            }).catch( (err) => {
             next(err)
-            })
+        })
     }
 
     put ( req , res ,next ) {

@@ -34,7 +34,7 @@ const AppointmentState = props => {
                       hour:false,},
                   date:''
               },
-              active:"address"
+              active:"service"
               },
         car:'',
         mileage:'',

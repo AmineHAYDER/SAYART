@@ -9,8 +9,8 @@ class garageController {
         console.log(req.body)
         const data = await reverser(req,res)
     }
+
     async all ( req , res , next ) {
- console.log('here')
         res.status(200)
             .json(res.advancedResults)
     }

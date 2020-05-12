@@ -1,45 +1,24 @@
-import React, {useContext, useState} from 'react';
-import { Col,  Row, Button, Container,ListGroup,Accordion,Card} from "react-bootstrap";
-import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
+import React from 'react';
+import {  Row, Container,ListGroup} from "react-bootstrap";
+import Wash from "./Wash";
+import OilChangeService from './OilChange'
+import Mechanic from './Mechanic'
+import Wheel from './Wheel'
 
 import '../../../css/takeAppointment/service/ServiceDetails.css'
 
-import servicesDetails from './data/servicesDetails'
-
-const  washServices = servicesDetails.washServices
-const  mechanicServices = servicesDetails.mechanicServices
-
 const ServiceDetails = (props) => {
-    const appointmentContext = useContext(AppointmentContext);
-    const {pages} = appointmentContext
-    const [selectedDetail,setSelectedDetail] = useState(pages.service.detail)
-
-    const setServiceDetails = (e)=>{
-        setSelectedDetail(e.target.name)
-        pages.service.detail = e.target.name ;
-        props.selectDetail(e.target.name)
-    }
-
-    const OptionList = (props)=> { return props.data.map( (item,i) => { return (
-        <Col key={i} >
-        <ListGroup.Item action className="button-detail"  name={item.name} onClick={props.onClick}>
-            {item.name}
-        </ListGroup.Item>
-        </Col>
-        ); })
-    }
-
 
     const renderOptions = ()=>{
         switch(props.service) {
             case 'wheel':
-                return <OptionList className="OptionList" onClick={setServiceDetails} data={mechanicServices}/>
+                return <Wheel/>
             case 'mechanic':
-                return <OptionList className="OptionList" onClick={setServiceDetails} data={mechanicServices}/>
+                return <Mechanic/>
             case 'wash':
-                return  <OptionList className="OptionList" onClick={setServiceDetails} data={washServices}/>
+                return  <Wash/>
             case 'oilChange':
-                return <OptionList className="OptionList" onClick={setServiceDetails} data={mechanicServices}/>
+                return <OilChangeService/>
             default:
                 return "";
         }}
@@ -49,9 +28,6 @@ const ServiceDetails = (props) => {
     return (
         <Container>
             <Row className="justify-content-md-center">
-                <Col  >
-                    <hr></hr>
-                    <h5>Choose one </h5>
 
                         <ListGroup className="OptionList"  defaultActiveKey="1">
                             <Row  lg={1} xs={2}>
@@ -59,40 +35,6 @@ const ServiceDetails = (props) => {
                             </Row>
                         </ListGroup>
 
-                </Col>
-                <Col>
-                    <hr></hr>
-                    <h5> Description </h5>
-                        <Accordion defaultActiveKey="0">
-                        <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                   Prices
-                                </Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="0">
-                                <Card.Body>1DT</Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-                        <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                                    {selectedDetail}
-                                </Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="1">
-                                <Card.Body>{mechanicServices.map( (item,i) => {
-                                    if (item.name === selectedDetail) return (item.name); })
-                                } </Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-                    </Accordion>
-
-                    <hr></hr>
-
-
-
-                </Col>
             </Row>
         </Container>
     )

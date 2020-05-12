@@ -8,7 +8,7 @@ const FormItem = (props) => {
     return(
     <Form.Group controlId="formBasic">
         <Form.Control
-            readOnly
+
             type={props.type}
             placeholder={props.placeholder}
             name={props.name}

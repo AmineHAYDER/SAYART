@@ -101,7 +101,6 @@ const UserState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/car/', config);
-            console.log(res.data.data)
             dispatch({
                 type: CAR_LOADED,
                 payload: res.data.data

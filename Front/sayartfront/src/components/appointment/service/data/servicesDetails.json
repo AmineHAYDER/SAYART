@@ -1,12 +1,10 @@
 {
   "washServices" : [
             {
-              "name": "Lavage Extérieur",
-              "prix": "11"
+              "name": "Lavage Extérieur"
             },
             {
-              "name": "Lavage Complet",
-              "prix": "14"
+              "name": "Lavage Complet"
             }
   ],
 
@@ -61,5 +59,24 @@
         }
 
 
+  ],
+  "oilChangeArticles":[
+    {
+      "name": "huile"
+    },
+    {
+      "name": "filtre a huile"
+    },
+    {
+      "name": "filtre a air"
+    }
+  ],
+  "wheelServices":[
+    {
+      "name": "fix"
+    },
+    {
+      "name": "new"
+    }
   ]
 }

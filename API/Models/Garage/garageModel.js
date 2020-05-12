@@ -42,14 +42,6 @@ const GarageSchema = new mongoose.Schema({
         zipcode: String,
         country: String,
     },
-
-    services: {
-        type: [String],
-        required: true,
-        enum: [
-            'oilChange', 'washing', 'wheels', 'electronic', 'lights'
-        ]
-    },
     status:{
          type: String,
          enum : [
@@ -85,6 +77,13 @@ const GarageSchema = new mongoose.Schema({
         type : mongoose.Schema.ObjectId,
         ref : 'User',
     }
+});
+
+GarageSchema.virtual('articles', {
+    ref: 'Article',
+    localField: '_id',
+    foreignField: 'garage',
+
 });
 GarageSchema.pre('save', async function (next) {
     const loc = await geocoder.geocode(this.address.formattedAddress);
