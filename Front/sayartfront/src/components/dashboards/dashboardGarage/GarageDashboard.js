@@ -4,7 +4,6 @@ import AuthContext from '../../../contexts/Auth/authContext';
 import Menu from "../Menu";
 import OnlineGarage from "./onlineGarage/OnlineGarage";
 import Appointments from "./appointments/Appointments";
-import Profile from "../Profile";
 
 
 import GarageContext from "../../../contexts/Garage/garageContext";
@@ -29,8 +28,6 @@ const GarageDashboard = () => {
                 return <OnlineGarage/>;
             case 'appointments':
                 return <Appointments/>;
-            case 'profile':
-                return <Profile/>;
             default:
                 return page;
         }

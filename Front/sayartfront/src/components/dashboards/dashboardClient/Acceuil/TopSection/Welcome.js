@@ -4,7 +4,6 @@ import AuthContext from "../../../../../contexts/Auth/authContext";
 
 import "../../../../../css/dashboard/clienDashboard/Acceuil/TopSection.css"
 
-import { Col, Row } from "react-bootstrap";
 
 const Welcome = () => {
 

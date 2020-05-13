@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { Nav, Image } from "react-bootstrap";
 
 import "../../css/dashboard/DashboardMenu.css";
-
-import profilePic from "../../img/profile/manpic.png"
+import PhotoUpload from'./PhotoUpload'
 import AuthContext from "../../contexts/Auth/authContext";
 
 const Menu = (props) => {
@@ -17,10 +16,8 @@ const Menu = (props) => {
             <aside >
                 <Nav className="flex-column card menu">
                     <div className="profile-div">
-                        <div><Image rounded
-                            src={profilePic}
+                        <PhotoUpload/>
 
-                        /></div>
                         <div className="name">
                             {user.name + " " + user.lastName}
                         </div>

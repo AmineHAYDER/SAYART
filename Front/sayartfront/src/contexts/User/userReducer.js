@@ -2,7 +2,8 @@ import {
     CAR_LOADED,
     LOADING, LOCATION_SET,
     NOT_LOADING,
-    ADD_CAR
+    ADD_CAR,
+    IMAGE_LOADED
 
 } from '../types';
 
@@ -33,6 +34,11 @@ export default (state, action) => {
             return {
                 ...state,
                 car: action.payload
+            }
+        case IMAGE_LOADED:
+            return {
+                ...state,
+                image: action.payload
             }
 
 

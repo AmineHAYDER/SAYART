@@ -18,13 +18,12 @@ const carRouter = require('../Car/carRoute');
 const appointmentRouter = require('../Appointment/appointmentRoute');
 
 
-
 const advancedResults = require('../../middelware/advancedResults')
 const user = require('./userModel');
 const cors = require('cors');
-const { protect, authorize } = require('../../middelware/auth');
+const {protect, authorize} = require('../../middelware/auth');
 const corsOptions = {
-    origin: ['http://127.0.0.1:3000','http://localhost:3000'],
+    origin: ['http://127.0.0.1:3000', 'http://localhost:3000'],
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -50,15 +49,14 @@ router
     .get(advancedResults(user, 'garages'), protect, authorize('garage', 'admin'), userController.all);
 
 router
-    .route('/:id/photo')
-    .post(userController.photoUpload)
+    .route('/photo')
+    .post(protect, authorize('garage', 'admin', 'user'), userController.photoUpload)
 
 router
     .route('/:id')
     .get(userController.get)
     .put(userController.put)
     .delete(userController.delete);
-
 
 
 module.exports = router;

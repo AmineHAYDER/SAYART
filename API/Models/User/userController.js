@@ -64,8 +64,7 @@ class UserController {
     }
 
     async photoUpload(req, res, next) {
-        const user = await User.findById(req.params.id);
-        console.log(req.body)
+        const user = await User.findById(req.user.id);
         if (!user) {
             return next(
                 new ErrorResponse(`User not found with id of ${req.params.id}`, 404)
@@ -86,7 +85,7 @@ class UserController {
             return next(new ErrorResponse(`Please upload a file`, 400));
         }
 
-        const file = req.files.file;
+        const file = req.files.image;
         // Make sure the image is a photo
         if (!file.mimetype.startsWith('image')) {
             return next(new ErrorResponse(`Please upload an image file`, 400));
@@ -105,13 +104,13 @@ class UserController {
         // Create custom filename
         file.name = `photo_${user._id}${path.parse(file.name).ext}`;
 
-        file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
+        file.mv(`${process.env.FILE_UPLOAD_PATH}/users/${file.name}`, async err => {
             if (err) {
                 console.error(err);
                 return next(new ErrorResponse(`Problem with file upload`, 500));
             }
 
-            await User.findByIdAndUpdate(req.params.id, { photo: file.name });
+            await User.findByIdAndUpdate(req.user.id, { image: file.name });
 
             res.status(200).json({
                 success: true,
