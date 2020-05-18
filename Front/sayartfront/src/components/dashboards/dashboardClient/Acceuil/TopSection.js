@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row} from "react-bootstrap";
 
 import "../../../../css/dashboard/clienDashboard/Acceuil/TopSection.css"
 

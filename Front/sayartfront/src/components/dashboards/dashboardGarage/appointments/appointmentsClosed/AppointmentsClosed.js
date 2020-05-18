@@ -1,6 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import { Row, Container, Col, ProgressBar} from 'react-bootstrap';
-
+import React, {useContext} from 'react';
+import {Row, Col} from 'react-bootstrap';
 
 
 import GarageContext from "../../../../../contexts/Garage/garageContext";
@@ -20,20 +19,24 @@ const AppointmentsClosed = (props) => {
 
     const garageContext = useContext(GarageContext)
     let NbCards = 4
-    const img =(name) => {switch(name){
-        case"wheel":
-            return wheel
-        case"wash":
-            return wash
-        case"oilChange":
-            return oilChange
-        case"mechanic":
-            return mechanic
-    }}
+    const img = (name) => {
+        switch (name) {
+            case"wheel":
+                return wheel
+            case"wash":
+                return wash
+            case"oilChange":
+                return oilChange
+            case"mechanic":
+                return mechanic
+            default:
+                return ''
+        }
+    }
     const doneAppointmentsCards = garageContext.appointments.map(appointment => {
-        if ((remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui")) && (NbCards !== 0)){
+        if ((remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui")) && (NbCards !== 0)) {
             NbCards--
-            return <Col lg={3} >
+            return <Col lg={3}>
                 <CardApp
                     id={appointment._id}
                     serviceName={appointment.service.name}
@@ -41,11 +44,12 @@ const AppointmentsClosed = (props) => {
                     img={img(appointment.service.name)}
                     date={appointment.date}
                 />
-            </Col>} else return  null
+            </Col>
+        } else return null
 
     })
     const doneAppointmentsLines = garageContext.appointments.map(appointment => {
-        if (remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui") ){
+        if (remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui")) {
             return (
                 <LineApp
                     id={appointment._id}
@@ -55,14 +59,16 @@ const AppointmentsClosed = (props) => {
                     date={appointment.date}
                     onClick={props.onClick}
                 />)
-           } else return  null
+        } else return null
 
     })
-    switch(props.display){
+    switch (props.display) {
         case 'Lines' :
             return <Row className={"closed-appointments-container"}>{doneAppointmentsLines}</Row>
         case 'Cards' :
             return <Row className={"waiting-appointments-container"}>{doneAppointmentsCards}</Row>
+        default:
+            return ''
 
     }
 

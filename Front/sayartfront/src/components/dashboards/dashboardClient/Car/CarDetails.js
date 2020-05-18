@@ -1,7 +1,6 @@
 import React from "react"
 
 import { Col, Row, Form, Alert, Button } from "react-bootstrap";
-import DatePicker from "react-datepicker"
 
 const CarDetails = () => {
 

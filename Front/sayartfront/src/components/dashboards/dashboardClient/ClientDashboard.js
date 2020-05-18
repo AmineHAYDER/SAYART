@@ -3,7 +3,6 @@ import { Row, Col, Spinner } from 'react-bootstrap';
 
 import Menu from '../Menu'
 import Profile from './profile/Profile'
-import MyCar from './myCar/MyCar'
 import Appointments from './appointments/Appointments'
 import Dashboard from './Test/Dashboard';
 

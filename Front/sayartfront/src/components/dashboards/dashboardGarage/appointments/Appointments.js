@@ -46,6 +46,7 @@ const Appointments = (props) => {
             return oilChange
         case"mechanic":
             return mechanic
+        default:return ''
     }}
 
     const waitingAppointments = garageContext.appointments.map(appointment => {
@@ -75,7 +76,7 @@ const Appointments = (props) => {
                 />
             </Col>} else return  null
 
-    })
+    })/*
     const doneAppointments = garageContext.appointments.map(appointment => {
        if (remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui") ){
            return <Col lg={3} >
@@ -90,7 +91,7 @@ const Appointments = (props) => {
            </Col>} else return  null
 
     })
-
+*/
     return (<Container >
             <Row >
                 <button onClick={takApp}> prendre un rendez vous </button>

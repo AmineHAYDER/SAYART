@@ -1,7 +1,6 @@
 import React from 'react';
 import {  Container, Row, Col, Image } from 'react-bootstrap';
 
-import { Link } from 'react-router-dom';
 
 import '../../css/landingpage/Footer.css'
 

@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, {useState} from "react";
 
-import { Container, DropdownButton, ButtonGroup, Dropdown, Row, Col, Form, Button, Modal } from 'react-bootstrap';
+import {Container, DropdownButton, ButtonGroup, Dropdown, Row, Col, Button, Modal} from 'react-bootstrap';
 
 import '../../../../css/authentification/Modal.css';
 import data from "../../../carIdentification/data/_cars"
@@ -8,26 +8,21 @@ import data from "../../../carIdentification/data/_cars"
 const carsData = data.cars;
 
 
-
 const AddCarModal = (props) => {
 
-    const [mark, setMark] = useState('het mark');
-    const [model, setModel] = useState('het model');
-    const [version, setVersion] = useState('het version');
+    const [car, setCar] = useState(
+        {
+            mark: 'het mark',
+            model: 'het model',
+            version: 'het version'
+        });
 
-    const clickMark = (e) => {
-        setMark(e.target.name)
-    }
-    const clickModel = (e) => {
-        setModel(e.target.name)
-    }
-
-    const clickVersion = (e) => {
-        setVersion(e.target.name)
+    const click = (e) => {
+        setCar({...car, [e.target.name]: e.target.name})
     }
 
     const addCar = () => {
-        if (mark != 'het mark' && model != 'het model') {
+        if (car.mark !== 'het mark' && car.model !== 'het model') {
             console.log("add car");
             props.onHide();
             props.mileageModal();
@@ -47,7 +42,7 @@ const AddCarModal = (props) => {
                 <Modal.Body>
 
                     <Container id="modal-container">
-                        <h1 className="label-mark"> </h1>
+                        <h1 className="label-mark">a</h1>
 
                         <Row>
                             <Col>
@@ -61,13 +56,14 @@ const AddCarModal = (props) => {
                                 >
                                     {carsData.map((item, i) => {
                                         if (item.mark) {
-                                            return <Dropdown.Item name={item.mark} onClick={clickMark} eventKey={i}>{item.mark}</Dropdown.Item>
-                                        }
+                                            return <Dropdown.Item name={item.mark} onClick={click}
+                                                                  eventKey={i}>{item.mark}</Dropdown.Item>
+                                        } else return null
                                     })}
                                 </DropdownButton>
                             </Col>
                             <Col>
-                                <h4 className="car-modal-label">  {mark} </h4>
+                                <h4 className="car-modal-label">  {car.mark} </h4>
                             </Col>
                         </Row>
 
@@ -81,15 +77,18 @@ const AddCarModal = (props) => {
                                     title={` Model `}
                                 >
                                     {carsData.map((item) => {
-                                        if (item.mark === mark) {
-                                            return item.models.map((model, i) => { return <Dropdown.Item name={model.model} onClick={clickModel} eventKey={i}>{model.model}</Dropdown.Item> })
-                                        }
+                                        if (item.mark === car.mark) {
+                                            return item.models.map((model, i) => {
+                                                return <Dropdown.Item name={model.model} onClick={click}
+                                                                      eventKey={i}>{model.model}</Dropdown.Item>
+                                            })
+                                        } else return null
                                     })}
                                 </DropdownButton>
                             </Col>
 
                             <Col>
-                                <h4 className="car-modal-label">  {model} </h4>
+                                <h4 className="car-modal-label">  {car.model} </h4>
                             </Col>
                         </Row>
 
@@ -103,22 +102,23 @@ const AddCarModal = (props) => {
                                     title={` Version `}
                                 >
                                     {carsData.map((item, i) => {
-                                        if (item.mark === mark) {
+                                        if (item.mark === car.mark) {
                                             return item.models.map((models) => {
-                                                if (models.model === model) {
+                                                if (models.model === car.model) {
                                                     console.log('oui')
                                                     return models.versions.map((version, i) => {
                                                         console.log(version)
-                                                        return <Dropdown.Item name={version} onClick={clickVersion} eventKey={i}>{version}</Dropdown.Item>
+                                                        return <Dropdown.Item name={version} onClick={()=>click(version)}
+                                                                              eventKey={i}>{version}</Dropdown.Item>
                                                     })
-                                                }
+                                                } else return null
                                             })
-                                        }
+                                        } else return null
                                     })}
                                 </DropdownButton>
                             </Col>
                             <Col>
-                                <h4 className="car-modal-label">  {version} </h4>
+                                <h4 className="car-modal-label">  {car.version} </h4>
                             </Col>
                         </Row>
                     </Container>
@@ -129,7 +129,6 @@ const AddCarModal = (props) => {
 
         </div>
     );
-
 
 
 }

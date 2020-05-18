@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Container, Button, Row} from 'react-bootstrap';
 import GetAllGarages from "./GetAllGarages";
 import AddGarage from "./AddGarage";

@@ -1,21 +1,17 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 
 import "../../../../css/dashboard/clienDashboard/Acceuil/CarSection.css"
 
-import { Col, Row, Image, Button } from "react-bootstrap";
-
-import img from '../../../../img/cars/audi-A8.png'
-
-import { Link } from "react-router-dom"
+import {Button} from "react-bootstrap";
 
 const CarSection = (props) => {
 
     const HasNoAppointment = (
-        <div >
+        <div>
             <h3 className="text-secondary">
                 Vous n'avez pris aucun rendez-vous
             </h3>
-            <Button className="add-car-button" >
+            <Button className="add-car-button">
                 Prenez un rendez-vous
             </Button>
         </div>
@@ -33,8 +29,8 @@ const CarSection = (props) => {
             <div>
                 <h3>Mes rendez-vous</h3>
             </div>
-            <div >
-                {props.appointment != '' ? HasNoAppointment : HasAppointment}
+            <div>
+                {props.appointment !== '' ? HasNoAppointment : HasAppointment}
             </div>
         </div>
     );

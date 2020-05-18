@@ -30,11 +30,11 @@ app.use('/user',users);
 
 app.use('/garage',garages);
 
-app.use('/service',services)
+app.use('/service',services);
 
-app.use('/appointment',appointments)
+app.use('/appointment',appointments);
 
-app.use('/article',articles)
+app.use('/article',articles);
 
 app.use(errorHandler);
 app.use('/',(req,res)=>{res.send('home page')});

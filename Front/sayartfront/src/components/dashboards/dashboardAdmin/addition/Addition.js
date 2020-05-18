@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {Container, Button, Row} from 'react-bootstrap';
 
 import Article from './article/Article'

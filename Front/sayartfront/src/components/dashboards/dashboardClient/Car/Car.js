@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Image, Col, Row, Container, Button } from "react-bootstrap";
+import {Button} from "react-bootstrap";
 
 import TopSection from "../Car/TopSection"
 import BodySection from "../Car/BodySection"
@@ -10,23 +10,23 @@ import "../../../../css/dashboard/clienDashboard/Car/Car.css"
 const Car = (props) => {
 
     const hasCar = (
-        <div>  <TopSection car={props.car} />
-            <BodySection /></div>
+        <div><TopSection car={props.car}/>
+            <BodySection/></div>
     );
 
     const hasNoCar = (
         <div>
             <h3 className="text-secondary">
                 Vous n'avez pas encore une voiture associé à votre compte
-        </h3>
+            </h3>
             <Button className="add-car-button">
                 Ajoutez une voiture
-       </Button></div>
+            </Button></div>
     );
 
     return (
         <div>
-            {props.car != '' ? hasCar : hasNoCar}
+            {props.car !== '' ? hasCar : hasNoCar}
         </div>
     )
 }

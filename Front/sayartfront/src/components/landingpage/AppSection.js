@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 
 import '../../css/landingpage/AppSection.css'
 
@@ -12,7 +12,7 @@ class AppSection extends React.Component {
             <div className="background">
                 <Container class="align-content-center">
 
-                    <Row >
+                    <Row>
 
                         <Col>
                             <h3 className="downloadText">Application coming soon!</h3>
@@ -22,15 +22,14 @@ class AppSection extends React.Component {
                             <Col>
                                 <a href="http://www.google.com" className="download-btn">
                                     <i>
-                                        <img src={googleIcon} /> </i>
-                                   Google Play</a>
-
+                                        <img alt='' src={googleIcon}/> </i>
+                                    Google Play</a>
 
 
                                 <a href="http://www.google.com" className="download-btn">
                                     <i>
-                                        <img src={appleIcon} /> </i>
-                                App Store</a>
+                                        <img alt='' src={appleIcon}/> </i>
+                                    App Store</a>
                             </Col>
 
                         </div>

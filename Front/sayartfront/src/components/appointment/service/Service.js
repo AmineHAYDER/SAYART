@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react';
-import { Col, Row, Image, Container, Button } from "react-bootstrap";
+import React, {useContext, useState} from 'react';
+import {Col, Row, Container, Button} from "react-bootstrap";
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
-
 
 
 import '../../../css/takeAppointment/service/Service.css';
@@ -18,7 +17,7 @@ import oilChangeImage from '../../../img/takeAppointment/oilChange.png';
 const Service = (props) => {
 
     const appointmentContext = useContext(AppointmentContext);
-    const { pages } = appointmentContext
+    const {pages} = appointmentContext
     const [service, selectService] = useState(pages.service.name);
     const [detail, selectDetail] = useState("");
 
@@ -28,11 +27,13 @@ const Service = (props) => {
         pages.service.name = e.target.name
 
     }
-    console.log(pages.service)
+    console.log(detail)
     const Clicked = (name) => {
         if (service === name) {
             return "ImageSelect-active"
-        } else { return "ImageSelect" }
+        } else {
+            return "ImageSelect"
+        }
 
 
     }
@@ -41,25 +42,27 @@ const Service = (props) => {
         <Container>
             <h3 className="label-pages"> Choisir le service </h3>
             <hr></hr>
-            <Container className={"toggleButtons"} >
-                <Row lg={4} md={6} xs={12} >
+            <Container className={"toggleButtons"}>
+                <Row lg={4} md={6} xs={12}>
 
-                    <ServiceButton  name={"wheel"} state={Clicked("wheel")} image={wheelImage} onClick={setService}/>
-
-                    <Col></Col>
-
-                    <ServiceButton  name={"mechanic"} state={Clicked("mechanic")} image={mechanicImage} onClick={setService}/>
+                    <ServiceButton name={"wheel"} state={Clicked("wheel")} image={wheelImage} onClick={setService}/>
 
                     <Col></Col>
-                    <ServiceButton  name={"oilChange"} state={Clicked("oilChange")} image={oilChangeImage} onClick={setService}/>
+
+                    <ServiceButton name={"mechanic"} state={Clicked("mechanic")} image={mechanicImage}
+                                   onClick={setService}/>
 
                     <Col></Col>
-                    <ServiceButton  name={"wash"} state={Clicked("wash")} image={washImage} onClick={setService}/>
+                    <ServiceButton name={"oilChange"} state={Clicked("oilChange")} image={oilChangeImage}
+                                   onClick={setService}/>
+
+                    <Col></Col>
+                    <ServiceButton name={"wash"} state={Clicked("wash")} image={washImage} onClick={setService}/>
 
                 </Row>
             </Container>
             <Row>
-                <ServiceDetails service={service} selectDetail={selectDetail} />
+                <ServiceDetails service={service} selectDetail={selectDetail}/>
             </Row>
             <Row>
                 <Button

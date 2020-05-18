@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
-import { useHistory } from 'react-router-dom';
-import { Container, Form, Button, Row, Col } from 'react-bootstrap'
+import React, {useContext, useState} from 'react'
+import {useHistory} from 'react-router-dom';
+import {Container, Form, Button, Row, Col} from 'react-bootstrap'
 
 
 import '../../css/authentification/Register.css';
@@ -11,16 +11,16 @@ const Login = () => {
 
     let history = useHistory();
 
-    const { login } = authContext;
+    const {login} = authContext;
 
     const [user, setUser] = useState({
         email: '',
         password: ''
     })
-    const { email, password } = user;
+    const {email, password} = user;
 
     const onChange = e => {
-        setUser({ ...user, [e.target.name]: e.target.value })
+        setUser({...user, [e.target.name]: e.target.value})
     };
 
     const onSubmit = async e => {
@@ -38,7 +38,7 @@ const Login = () => {
 
 
     return (
-        <Container >
+        <Container>
 
             <Row className="justify-content-md-center">
                 <Col lg={5} md={6} xs={12}>
@@ -51,30 +51,31 @@ const Login = () => {
                         <Button variant="outline-dark" type="submit" className="buttonWithIcon" block>
 
                             CONNEXION FACEBOOK
-                            </Button>
+                        </Button>
                         <hr></hr>
 
                         <h6>Se connecter en utilisant votre email et votre mot de passe</h6>
 
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Control type="text" placeholder="Email" name='email' required value={email} onChange={onChange} />
+                            <Form.Control type="text" placeholder="Email" name='email' required value={email}
+                                          onChange={onChange}/>
                         </Form.Group>
 
 
-
                         <Form.Group controlId="formBasicPassword">
-                            <Form.Control type="password" placeholder="Password" name='password' required value={password} onChange={onChange} />
+                            <Form.Control type="password" placeholder="Password" name='password' required
+                                          value={password} onChange={onChange}/>
                         </Form.Group>
 
 
                         <Form.Group controlId="formRemember">
-                            <Form.Check type="checkbox" label="Restez connecté" />
+                            <Form.Check type="checkbox" label="Restez connecté"/>
                         </Form.Group>
 
 
                         <Button variant="warning" type="submit" block>
                             Connecter
-                            </Button>
+                        </Button>
                     </Form>
                 </Col>
             </Row>

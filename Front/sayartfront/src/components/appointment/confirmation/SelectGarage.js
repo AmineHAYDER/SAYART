@@ -13,7 +13,6 @@ const SelectGarage = (props) => {
     const appointmentContext = useContext(AppointmentContext);
     const authContext = useContext(AuthContext);
     const { user } = authContext
-    const { pages } = appointmentContext
     const [active, setActive] = useState("")
     const [label, setlabel] = useState(false)
 
@@ -27,7 +26,7 @@ const SelectGarage = (props) => {
         }, e.target.name)
 
     }
-
+console.log(active)
     const garages = () => {
         if (appointmentContext.appointmentGarages) {
             return appointmentContext.appointmentGarages.map((service, i) => {
@@ -35,7 +34,7 @@ const SelectGarage = (props) => {
                 console.log(service)
                 return <Row className={"appointment-garage"} key={i} lg={2} md={4} xs={6}>
                     <Col >
-                        <img src={washImage} />
+                        <img alt={''} src={washImage} />
                     </Col>
                     <Col >
                         <h1>garage : {service.garage.name}</h1>

@@ -1,17 +1,16 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 
 import "../../../../css/dashboard/clienDashboard/Acceuil/CarSection.css"
 
-import { Col, Row, Image, Button } from "react-bootstrap";
+import {Col, Row, Image, Button} from "react-bootstrap";
 
 import img from '../../../../img/cars/audi-A8.png'
 
-import { Link } from "react-router-dom"
 
 const CarSection = (props) => {
 
     const HasNoCar = (
-        <div >
+        <div>
             <h3 className="text-secondary">
                 Vous n'avez pas encore une voiture associé à votre compte
             </h3>
@@ -32,8 +31,8 @@ const CarSection = (props) => {
                 <Col lg={4}>
                     <Row>
                         <Image fluid
-                            src={img}
-                            alt="car img"
+                               src={img}
+                               alt="car img"
                         />
                     </Row>
 
@@ -74,11 +73,11 @@ const CarSection = (props) => {
 
     return (
         <div className="car-section">
-            <div style={{ "text-align": "left" }}>
+            <div style={{"text-align": "left"}}>
                 <h3>Ma voiture</h3>
             </div>
-            <div >
-                {props.car != '' ? HasCar : HasNoCar}
+            <div>
+                {props.car !== '' ? HasCar : HasNoCar}
             </div>
         </div>
     );

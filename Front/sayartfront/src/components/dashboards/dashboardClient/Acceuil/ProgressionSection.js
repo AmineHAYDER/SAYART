@@ -1,21 +1,17 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 
 import "../../../../css/dashboard/clienDashboard/Acceuil/ProgressionSection.css"
 
-import { Col, Row, Image, Button, ProgressBar } from "react-bootstrap";
+import {Col, Row, ProgressBar} from "react-bootstrap";
 
 
-
-import { Link } from "react-router-dom"
-
-const ProgressionSection = (props) => {
-
+const ProgressionSection = () => {
 
 
     return (
         <div className="progression-section">
             <div>
-                <div style={{ "text-align": "left" }}>
+                <div style={{"text-align": "left"}}>
                     <h2 className="mb-0">Ma progression</h2>
                     <p className="h6 font-weight-normal mt-2 mb-0">
                         Terminer ces défis vous permet de gagner des cadeaux

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Image, Col, Row, Container } from "react-bootstrap";
+import { Image, Col, Row} from "react-bootstrap";
 
 import carImage from "../../../../img/cars/audi-A8.png"
 

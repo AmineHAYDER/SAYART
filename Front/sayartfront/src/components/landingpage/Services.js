@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Image, Row, Col, Card } from 'react-bootstrap';
+import {Container, Image, Row, Col} from 'react-bootstrap';
 
 import '../../css/landingpage/Services.css';
 
@@ -27,7 +27,7 @@ class Services extends React.Component {
                                 <h4 class="title">Entretien</h4>
                                 <p>
                                     Vous trouvez n'importe quelle service relative à l'entretien de votre voiture
-                            </p>
+                                </p>
                             </div>
                         </Col>
                         <Col md={6} lg={4}>
@@ -67,7 +67,7 @@ class Services extends React.Component {
                                 <h4 class="title">Contrôle</h4>
                                 <p>
                                     Ca fait longtemps sans faire le contrôle de votre voiture?
-                            </p>
+                                </p>
                             </div>
                         </Col>
                     </Row>

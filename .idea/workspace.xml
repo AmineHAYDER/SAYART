@@ -29,25 +29,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/API/Models/Article/Filter" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Oil" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\Service" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\Service" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\garage" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\utils" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\css\dashboard\mechanicDashboard\onlineGarage\timingTable" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\Service" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\contexts\Admin" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin" />
     </key>
   </component>
   <component name="RunManager">
@@ -100,7 +100,11 @@
       <workItem from="1589098797363" duration="8652000" />
       <workItem from="1589194414433" duration="9160000" />
       <workItem from="1589280789872" duration="11806000" />
-      <workItem from="1589365999575" duration="715000" />
+      <workItem from="1589365999575" duration="1312000" />
+      <workItem from="1589458874972" duration="1446000" />
+      <workItem from="1589612584271" duration="2251000" />
+      <workItem from="1589662063413" duration="3458000" />
+      <workItem from="1589795879376" duration="4860000" />
     </task>
     <servers />
   </component>
@@ -148,16 +152,5 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1589347400682" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage/onlineGarage/timingTable/BoxAppointment.js</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

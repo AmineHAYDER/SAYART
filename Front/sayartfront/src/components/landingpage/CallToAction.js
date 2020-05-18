@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, Col, Row, Container, Image } from 'react-bootstrap';
+import {Button, Col, Row, Container, Image} from 'react-bootstrap';
 import Typewriter from 'typewriter-effect';
 
 
@@ -24,28 +24,30 @@ class CallToAction extends React.Component {
                                         autoStart: true,
                                         loop: true,
                                     }}
-                                /> </div>
+                                /></div>
                             <br></br>
-                            <h5 >
-                                Choisissez parmi une variété de services automobiles qualifiés et fiables pour vos entretien automobiles
+                            <h5>
+                                Choisissez parmi une variété de services automobiles qualifiés et fiables pour vos
+                                entretien automobiles
                             </h5>
 
 
                             <div className="spaceDiv2"></div>
-                            <Button size="lg" className="purpleBtn"> <span className="btnText">Commençez! </span></Button>
+                            <Button size="lg" className="purpleBtn"> <span
+                                className="btnText">Commençez! </span></Button>
 
                         </Col>
                         <Col lg={7} md={12} className="order-1 order-lg-2" data-aos="fade-up">
                             <Image fluid
-                                src={heroImage}
-                                alt="Call to Action Image"
+                                   src={heroImage}
+                                   alt="Call to Action Image"
                             />
                         </Col>
                     </Row>
                 </Container>
 
 
-            </div >);
+            </div>);
     }
 }
 

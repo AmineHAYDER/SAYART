@@ -1,6 +1,5 @@
 import React, {useContext, useState} from "react";
 import {Alert, Image, Modal} from "react-bootstrap";
-import profilePic from "../../img/profile/manpic.png";
 import AuthContext from "../../contexts/Auth/authContext";
 import UserContext from "../../contexts/User/userContext";
 
@@ -13,7 +12,7 @@ const PhotoUpload = (props) => {
     const [file, setFile] = useState("")
     const [model, setModel] = useState(false)
     const [alert, setAlert] = useState(false)
-
+       console.log(user.image)
     const handel = (e) => {
         setFile(e.target.files[0]);
         setModel(true)

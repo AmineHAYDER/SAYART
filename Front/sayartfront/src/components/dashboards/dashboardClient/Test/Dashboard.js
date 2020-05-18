@@ -1,11 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Row, Col, Button, Container, Card } from "react-bootstrap";
+import React, {useState} from "react";
 
 import './Dashboard.css';
 
-import AuthContext from "../../../../contexts/Auth/authContext";
-import AppointmentContext from "../../../../contexts/Appointment/appointmentContext";
-import UserContext from "../../../../contexts/User/userContext";
 
 import TopSection from "../../../dashboards/dashboardClient/Acceuil/TopSection";
 import AppointmentSection from "../../../dashboards/dashboardClient/Acceuil/AppointmentSection";
@@ -20,10 +16,6 @@ import MileageModal from "../myCar/MileageModal";
 const Dashboard = (props) => {
 
 
-
-
-
-
     const [showAddCar, setShowAddCar] = useState(false);
     const handleCloseAddCar = () => setShowAddCar(false);
     const handleShowAddCar = () => setShowAddCar(true);
@@ -34,13 +26,12 @@ const Dashboard = (props) => {
     const handleShowMileage = () => setShowMileage(true);
 
 
-
-    const nocar = (
+   /* const nocar = (
 
         <div>
             <div className="h6 font-weight-normal text-secondary mt-2 mb-0">
                 Vous n'avez actuellement aucune voiture ajouté dans votre compte
-                </div>
+            </div>
             <div>
                 <Button variant="info">
                     Ajouter une voiture
@@ -48,19 +39,19 @@ const Dashboard = (props) => {
             </div>
         </div>
 
-    )
+    )*/
 
     return (
         <div>
-            <TopSection />
-            <AppointmentSection content="diagnostic" />
-            <CarSection car={props.car} showmodal={handleShowAddCar} />
-            <AddCarModal show={showAddCar} onHide={handleCloseAddCar} mileageModal={handleShowMileage} />
+            <TopSection/>
+            <AppointmentSection content="diagnostic"/>
+            <CarSection car={props.car} showmodal={handleShowAddCar}/>
+            <AddCarModal show={showAddCar} onHide={handleCloseAddCar} mileageModal={handleShowMileage}/>
 
-            <MileageModal show={showMileage} onHide={handleCloseMileage} />
+            <MileageModal show={showMileage} onHide={handleCloseMileage}/>
 
-            <ActiveAppointmentSection />
-            <ProgressionSection />
+            <ActiveAppointmentSection/>
+            <ProgressionSection/>
 
 
             { /* <Row className="mb-5">

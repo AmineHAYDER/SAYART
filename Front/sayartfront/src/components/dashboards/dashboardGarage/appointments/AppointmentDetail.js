@@ -1,13 +1,9 @@
-import React, { useContext,  useState} from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import React, {useContext} from 'react';
+import {Container, Row, Col} from 'react-bootstrap';
 
 import GarageContext from "../../../../contexts/Garage/garageContext";
 
 import '../../../../css/dashboard/clienDashboard/appointments/Appointments.css'
-
-
-
 
 
 const AppointmentDetail = (props) => {
@@ -15,14 +11,14 @@ const AppointmentDetail = (props) => {
     const garageContext = useContext(GarageContext)
 
 
-    return (<Container >
+    return (<Container>
             <Row>
                 {garageContext.appointments.map(appointment => {
 
                     if (appointment._id === props.Appointment) {
                         return (
                             <Container className="detail-container">
-                                <Row className="detail-Service" >
+                                <Row className="detail-Service">
                                     <Col>
                                         <h1> Service </h1>
                                         <h6>Name :{appointment.service.name}  </h6>
@@ -46,7 +42,7 @@ const AppointmentDetail = (props) => {
                                 </Row>
                             </Container>)
 
-                    }
+                    } else return null
                 })}
             </Row>
         </Container>

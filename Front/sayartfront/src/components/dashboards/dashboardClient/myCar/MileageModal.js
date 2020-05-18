@@ -1,9 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, {useState} from "react";
 
-import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
+import {Container, Form, Button, Modal} from 'react-bootstrap';
 
 import '../../../../css/authentification/Modal.css';
-
 
 
 const MileageModal = (props) => {
@@ -41,13 +40,14 @@ const MileageModal = (props) => {
                     <Container id="modal-container">
                         <Form>
                             <Form.Group controlId="formBasicEmail">
-                                <Form.Control type="number" placeholder="Kilométrage" name='mileage' value={mileage} onChange={onChangeMileage} />
+                                <Form.Control type="number" placeholder="Kilométrage" name='mileage' value={mileage}
+                                              onChange={onChangeMileage}/>
                             </Form.Group>
 
 
-
                             <Form.Group controlId="formBasicPassword">
-                                <Form.Control type="number" placeholder="Kilométrage par jour" name='dailyMileage' value={dailyMileage} onChange={onChangeDailyMileage} />
+                                <Form.Control type="number" placeholder="Kilométrage par jour" name='dailyMileage'
+                                              value={dailyMileage} onChange={onChangeDailyMileage}/>
                             </Form.Group>
                         </Form>
                     </Container>
@@ -58,7 +58,6 @@ const MileageModal = (props) => {
 
         </div>
     );
-
 
 
 }

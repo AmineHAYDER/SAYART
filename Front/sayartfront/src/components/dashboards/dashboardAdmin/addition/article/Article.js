@@ -10,7 +10,7 @@ const Garage = () => {
     const adminContext = useContext(AdminContext)
     useEffect(()=>{
         adminContext.getArticles()
-    },[])
+    },[adminContext])
     const [model,setModel] = useState("All")
 
     const renderSwitch = (page) => {

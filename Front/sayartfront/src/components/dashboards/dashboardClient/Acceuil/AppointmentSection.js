@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "../../../../css/dashboard/clienDashboard/Acceuil/AppointmentSection.css"
 
-import { Col, Row, Image, Button } from "react-bootstrap";
+import {Col, Row, Image, Button} from "react-bootstrap";
 
 import DiagnosticImage from "../../../../img/dashboard/mechanic.png";
 import LavageImage from "../../../../img/dashboard/lavage.png";
@@ -13,9 +13,13 @@ const AppointmentSection = (props) => {
     const SwitchContent = () => {
         switch (props.content) {
             case 'diagnostic':
-                return <Section image={DiagnosticImage} title='Reservez un controle' description="Faites inspecter votre voiture chez un de nos mecanicien partenaires" />
+                return <Section image={DiagnosticImage} title='Reservez un controle'
+                                description="Faites inspecter votre voiture chez un de nos mecanicien partenaires"/>
             case 'lavage':
-                return <Section image={LavageImage} title='Reservez un lavage' description="Nettoyez votre voiture à l\'un de nos lave-auto de confiance" />
+                return <Section image={LavageImage} title='Reservez un lavage'
+                                description="Nettoyez votre voiture à l\'un de nos lave-auto de confiance"/>
+            default:
+                return null
         }
     }
 
@@ -23,8 +27,8 @@ const AppointmentSection = (props) => {
         return (<Row>
             <Col lg={3}>
                 <Image fluid
-                    src={p.image}
-                    alt="mechanic image loading"
+                       src={p.image}
+                       alt="mechanic image loading"
                 />
             </Col>
             <Col className="appointment-section-text">

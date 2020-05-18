@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react';
-import { Container } from "react-bootstrap";
+import React, {useContext, useEffect} from 'react';
 
 import Navbar from './landingpage/TopNav';
 
@@ -21,7 +20,7 @@ import Dashboard from './dashboards/Dashboard';
 import TakeAppointment from "./appointment/TakeAppointment";
 import Car from './carIdentification/CarIdentfication'
 //routes
-import { Switch, Route } from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import PrivateRoute from '../routes/PrivateRoute';
 
 //states
@@ -46,30 +45,29 @@ const PageContainer = () => {
     return (
         <div className="App">
 
-            <Navbar context={authContext} />
+            <Navbar context={authContext}/>
 
             <Switch>
                 <div className="content">
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/CCM" component={CCM} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/register" component={Register} />
-                    <Route exact path="/car" component={Car} />
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/CCM" component={CCM}/>
+                    <Route exact path="/login" component={Login}/>
+                    <Route exact path="/register" component={Register}/>
+                    <Route exact path="/car" component={Car}/>
                     <AppointmentState>
                         <GarageState>
                             <UserState>
-                                <PrivateRoute exact path="/takeAppointment" component={TakeAppointment} />
-                                <PrivateRoute exact path="/dashboard/" component={Dashboard} />
-                                 <AdminState>
-                                    <PrivateRoute exact path="/dashboard/admin" component={AdminDashboard} />
-                                 </AdminState>
+                                <PrivateRoute exact path="/takeAppointment" component={TakeAppointment}/>
+                                <PrivateRoute exact path="/dashboard/" component={Dashboard}/>
+                                <AdminState>
+                                    <PrivateRoute exact path="/dashboard/admin" component={AdminDashboard}/>
+                                </AdminState>
                             </UserState>
                         </GarageState>
                     </AppointmentState>
 
                 </div>
             </Switch>
-
 
 
         </div>

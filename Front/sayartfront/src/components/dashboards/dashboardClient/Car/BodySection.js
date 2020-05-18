@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Tabs, Tab, Nav, Col, Row } from "react-bootstrap";
+import {Tab, Nav} from "react-bootstrap";
 
 import CarDetails from "./CarDetails";
 import CarHealth from "./CarHealth";
@@ -11,7 +11,7 @@ const BodySection = () => {
             <Tab.Container defaultActiveKey="health" id="tab">
 
 
-                <Nav justify variant="tabs" >
+                <Nav justify variant="tabs">
 
                     <Nav.Item>
                         <Nav.Link eventKey="health">Etat voiture</Nav.Link>

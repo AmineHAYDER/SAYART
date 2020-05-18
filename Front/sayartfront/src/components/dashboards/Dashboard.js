@@ -18,7 +18,7 @@ const Dashboard = () => {
             case 'admin':
                 return <ClientDashboard />
             default:
-                return null
+                return <ClientDashboard />
         }
     }
     return (

@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
-import { Nav, Image } from "react-bootstrap";
+import React, {useContext} from "react";
+import {Nav} from "react-bootstrap";
 
 import "../../css/dashboard/DashboardMenu.css";
-import PhotoUpload from'./PhotoUpload'
+import PhotoUpload from './PhotoUpload'
 import AuthContext from "../../contexts/Auth/authContext";
 
 const Menu = (props) => {
 
     const authContext = useContext(AuthContext);
-    const { user } = authContext;
+    const {user} = authContext;
 
     return (
         <div>
 
-            <aside >
+            <aside>
                 <Nav className="flex-column card menu">
                     <div className="profile-div">
                         <PhotoUpload/>
@@ -26,13 +26,21 @@ const Menu = (props) => {
                         </div>
                     </div>
 
-                    <Nav.Link className={(props.page === "dashboard") ? "active-link" : "non-active-link"} onClick={props.onChange} name="dashboard"><i class="uil uil-dashboard zicon"></i> <span className="ztext"> Dashboard</span></Nav.Link>
+                    <Nav.Link className={(props.page === "dashboard") ? "active-link" : "non-active-link"}
+                              onClick={props.onChange} name="dashboard"><i class="uil uil-dashboard zicon"></i> <span
+                        className="ztext"> Dashboard</span></Nav.Link>
 
-                    <Nav.Link className={(props.page === "MyCar") ? "active-link" : "non-active-link"} onClick={props.onChange} name="MyCar"><i className="uil uil-car zicon"> </i> <span className="ztext"> Ma voiture</span></Nav.Link>
+                    <Nav.Link className={(props.page === "MyCar") ? "active-link" : "non-active-link"}
+                              onClick={props.onChange} name="MyCar"><i className="uil uil-car zicon"> </i> <span
+                        className="ztext"> Ma voiture</span></Nav.Link>
 
-                    <Nav.Link className={(props.page === "appointments") ? "active-link" : "non-active-link"} onClick={props.onChange} name="appointments"><i class="uil uil-schedule zicon"></i> <span className="ztext"> Mes RDV</span></Nav.Link>
+                    <Nav.Link className={(props.page === "appointments") ? "active-link" : "non-active-link"}
+                              onClick={props.onChange} name="appointments"><i class="uil uil-schedule zicon"></i> <span
+                        className="ztext"> Mes RDV</span></Nav.Link>
 
-                    <Nav.Link className={(props.page === "analytics") ? "active-link" : "non-active-link"} onClick={props.onChange} name="analytics"><i class="uil uil-chart-line zicon"></i>   Analytique</Nav.Link>
+                    <Nav.Link className={(props.page === "analytics") ? "active-link" : "non-active-link"}
+                              onClick={props.onChange} name="analytics"><i
+                        class="uil uil-chart-line zicon"></i> Analytique</Nav.Link>
                 </Nav>
 
             </aside>

@@ -138,6 +138,7 @@ const UserState = props => {
                 updateCar,
                 setLocation,
                 uploadImage,
+                addCar
 
             }}
         >

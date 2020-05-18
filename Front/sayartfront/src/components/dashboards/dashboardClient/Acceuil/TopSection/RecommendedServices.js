@@ -1,11 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 
-
-
-import { Col, Row } from "react-bootstrap";
 
 const RecommendedService = () => {
-
 
 
     return (
@@ -13,7 +9,7 @@ const RecommendedService = () => {
             <h1 className="mb-0">0</h1>
             <p className="h6 font-weight-normal text-secondary mt-2 mb-0">
                 services recommandés
-           </p>
+            </p>
         </div>
     );
 }

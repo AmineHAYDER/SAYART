@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import { Container, Button, Row, Col, ButtonGroup, Alert } from 'react-bootstrap'
+import {Container, Button, Row, Col, ButtonGroup, Alert} from 'react-bootstrap'
 
 
 import '../../css/takeAppointment/TakeAppointment.css';
@@ -29,13 +29,13 @@ const TakeAppointment = () => {
     const renderSwitch = (page) => {
         switch (page) {
             case 'address':
-                return <Address setPage={setPage} />;
+                return <Address setPage={setPage}/>;
             case 'service':
-                return <Service setPage={setPage} />;
+                return <Service setPage={setPage}/>;
             case 'confirmation':
-                return <Confirmation setPage={setPage} />;
+                return <Confirmation setPage={setPage}/>;
             case 'timing':
-                return <Timing setPage={setPage} />;
+                return <Timing setPage={setPage}/>;
             default:
                 return page;
         }
@@ -48,12 +48,12 @@ const TakeAppointment = () => {
                 <Col>
 
                     <h3 className="purple">
-                        <span className="yellow">  Rendez-Vous</span><span >  خوذ</span>
+                        <span className="yellow">  Rendez-Vous</span><span>  خوذ</span>
                     </h3>
 
                     <hr></hr>
 
-                    <ButtonGroup  >
+                    <ButtonGroup>
                         <Button
                             className="buttonWithIcon"
                             variant="warning"
@@ -63,7 +63,7 @@ const TakeAppointment = () => {
                             active={appointmentContext.pages.address.state}
                         >
                             وين تسكن
-                                </Button>
+                        </Button>
                         <Button
                             className="buttonWithIcon"
                             variant="warning"
@@ -73,7 +73,7 @@ const TakeAppointment = () => {
                             active={appointmentContext.pages.service.state}
                         >
                             شنوة مستحق
-                                </Button>
+                        </Button>
                         <Button
                             className="buttonWithIcon"
                             variant="warning"
@@ -83,7 +83,7 @@ const TakeAppointment = () => {
                             active={appointmentContext.pages.timing.state}
                         >
                             وقتاش تنجم
-                                </Button>
+                        </Button>
                         <Button
                             className="buttonWithIcon"
                             variant="warning"
@@ -94,15 +94,16 @@ const TakeAppointment = () => {
                             active={appointmentContext.pages.timing.state}
                         >
                             Confirmi
-                                </Button>
+                        </Button>
                     </ButtonGroup>
 
                     <hr></hr>
                 </Col>
             </Row>
 
-            {car ? renderSwitch(appointmentContext.pages.active):<Alert>vous devez entrer les informations de votre voiture</Alert>}
-
+            {car ? renderSwitch(appointmentContext.pages.active) :
+                <Alert>vous devez entrer les informations de votre voiture</Alert>}
+            {page}
         </Container>
 
     );
