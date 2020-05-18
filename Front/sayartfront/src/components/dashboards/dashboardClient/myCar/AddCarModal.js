@@ -17,8 +17,8 @@ const AddCarModal = (props) => {
             version: 'het version'
         });
 
-    const click = (e) => {
-        setCar({...car, [e.target.name]: e.target.name})
+    const click = (e, value) => {
+        setCar({...car, [e.target.name]: value})
     }
 
     const addCar = () => {
@@ -42,7 +42,7 @@ const AddCarModal = (props) => {
                 <Modal.Body>
 
                     <Container id="modal-container">
-                        <h1 className="label-mark">a</h1>
+                        <h1 className="label-mark">karhabtek ya fraise</h1>
 
                         <Row>
                             <Col>
@@ -56,7 +56,7 @@ const AddCarModal = (props) => {
                                 >
                                     {carsData.map((item, i) => {
                                         if (item.mark) {
-                                            return <Dropdown.Item name={item.mark} onClick={click}
+                                            return <Dropdown.Item name={ "mark"} onClick={(e) => click(e, item.mark)}
                                                                   eventKey={i}>{item.mark}</Dropdown.Item>
                                         } else return null
                                     })}
@@ -79,7 +79,7 @@ const AddCarModal = (props) => {
                                     {carsData.map((item) => {
                                         if (item.mark === car.mark) {
                                             return item.models.map((model, i) => {
-                                                return <Dropdown.Item name={model.model} onClick={click}
+                                                return <Dropdown.Item name={ "model"} onClick={(e) => click(e, model.model)}
                                                                       eventKey={i}>{model.model}</Dropdown.Item>
                                             })
                                         } else return null
@@ -108,7 +108,8 @@ const AddCarModal = (props) => {
                                                     console.log('oui')
                                                     return models.versions.map((version, i) => {
                                                         console.log(version)
-                                                        return <Dropdown.Item name={version} onClick={()=>click(version)}
+                                                        return <Dropdown.Item name={"version"}
+                                                                              onClick={(e) => click(e, version)}
                                                                               eventKey={i}>{version}</Dropdown.Item>
                                                     })
                                                 } else return null

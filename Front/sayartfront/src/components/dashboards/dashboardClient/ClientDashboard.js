@@ -47,7 +47,6 @@ const ClientDashboard = () => {
     return (
         <div className="">
 
-            {appointmentContext.loading ? <Spinner animation="border" /> :
                 <Row>
                     <Col className="" lg={2}>
                         <Menu onChange={onChangePage} page={page} />
@@ -57,7 +56,7 @@ const ClientDashboard = () => {
                         {renderSwitch(page)}
 
                     </Col>
-                </Row>}
+                </Row>
         </div>);
 
 }
