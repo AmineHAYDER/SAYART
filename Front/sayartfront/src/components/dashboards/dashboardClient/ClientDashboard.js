@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Row, Col, Spinner } from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 
 import Menu from '../Menu'
 import Profile from './profile/Profile'
 import Appointments from './appointments/Appointments'
-import Dashboard from './Test/Dashboard';
+import MainDashboard from './mainDashboard/MainDashboard';
 
 import Car from './Car/Car'
 
@@ -34,7 +34,7 @@ const ClientDashboard = () => {
             case 'profile':
                 return <Profile />;
             case 'dashboard':
-                return <Dashboard car={userContext.car} />;
+                return <MainDashboard car={userContext.car} />;
             case 'appointments':
                 return <Appointments />;
             case 'MyCar':

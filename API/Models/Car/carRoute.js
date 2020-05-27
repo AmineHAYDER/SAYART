@@ -23,7 +23,7 @@ router.use(cors(corsOptions));
 router
     .route('/')
     .get(protect,carController.get)
-    .post(carController.store)
+    .post(protect,authorize('user','admin'),carController.store)
     .put(protect,carController.put)
     .delete(carController.delete)
 

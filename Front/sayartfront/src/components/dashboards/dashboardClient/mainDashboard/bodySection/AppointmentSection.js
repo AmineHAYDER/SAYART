@@ -1,11 +1,11 @@
 import React from "react";
 
-import "../../../../css/dashboard/clienDashboard/Acceuil/AppointmentSection.css"
+import "../../../../../css/dashboard/clienDashboard/Acceuil/AppointmentSection.css"
 
 import {Col, Row, Image, Button} from "react-bootstrap";
 
-import DiagnosticImage from "../../../../img/dashboard/mechanic.png";
-import LavageImage from "../../../../img/dashboard/lavage.png";
+import DiagnosticImage from "../../../../../img/dashboard/mechanic.png";
+import LavageImage from "../../../../../img/dashboard/lavage.png";
 
 const AppointmentSection = (props) => {
 

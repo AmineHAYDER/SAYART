@@ -1,10 +1,10 @@
 import React from "react";
 
-import "../../../../css/dashboard/clienDashboard/Acceuil/CarSection.css"
+import "../../../../../css/dashboard/clienDashboard/Acceuil/CarSection.css"
 
 import {Button} from "react-bootstrap";
 
-const CarSection = (props) => {
+const ActiveAppointmentSection = (props) => {
 
     const HasNoAppointment = (
         <div>
@@ -36,4 +36,4 @@ const CarSection = (props) => {
     );
 }
 
-export default CarSection;
+export default ActiveAppointmentSection;

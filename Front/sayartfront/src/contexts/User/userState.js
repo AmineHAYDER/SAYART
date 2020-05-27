@@ -53,7 +53,7 @@ const UserState = props => {
             type: LOADING
         })
         try {
-            await axios.post('http://localhost:5000/user/car', data);
+            await axios.post('http://localhost:5000/user/car', data, config);
             console.log(data);
             dispatch({
                 type: ADD_CAR

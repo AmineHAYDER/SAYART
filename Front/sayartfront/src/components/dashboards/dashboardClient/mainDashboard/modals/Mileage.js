@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
 import {Row, Col, Button, Form} from 'react-bootstrap';
 
-import RemainingTime from '../../../../utils/RemainingTime'
-import UserContext from "../../../../contexts/User/userContext";
+import RemainingTime from '../../../../../utils/RemainingTime'
+import UserContext from "../../../../../contexts/User/userContext";
 
-import '../../../../css/dashboard/clienDashboard/myCar/Mileage.css'
+import '../../../../../css/dashboard/clienDashboard/myCar/Mileage.css'
 
 const Mileage = () => {
 

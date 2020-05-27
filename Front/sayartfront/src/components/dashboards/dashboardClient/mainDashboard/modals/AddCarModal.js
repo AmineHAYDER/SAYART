@@ -1,20 +1,23 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 
 import {Container, DropdownButton, ButtonGroup, Dropdown, Row, Col, Button, Modal} from 'react-bootstrap';
 
-import '../../../../css/authentification/Modal.css';
-import data from "../../../carIdentification/data/_cars"
+import '../../../../../css/authentification/Modal.css';
+import UserContext from '../../../../../contexts/User/userContext'
+import data from "../../../../carIdentification/data/_cars"
 
 const carsData = data.cars;
 
 
 const AddCarModal = (props) => {
 
+    const userContext = useContext(UserContext)
+
     const [car, setCar] = useState(
         {
-            mark: 'het mark',
-            model: 'het model',
-            version: 'het version'
+            mark: '',
+            model: '',
+            version: ''
         });
 
     const click = (e, value) => {
@@ -24,6 +27,12 @@ const AddCarModal = (props) => {
     const addCar = () => {
         if (car.mark !== 'het mark' && car.model !== 'het model') {
             console.log("add car");
+            userContext.addCar({
+                mark:car.mark,
+                model:car.model,
+                version:car.version,
+                photo:car.version+'.jpg'
+            })
             props.onHide();
             props.mileageModal();
         }

@@ -21,14 +21,20 @@ class appointmentController {
         if (!req.user.isGarage) {
             const car = await carModel.findOne({user:req.user._id})
 
-            const appointments = await appointmentModel.find({car:car._id})
-                                                       .populate('garage')
-                                                       .populate('service')
+            if (car) {
+                const appointments = await appointmentModel.find({car: car._id})
+                    .populate('garage')
+                    .populate('service')
 
-            res.status(200)
+                res.status(200)
+                    .json({
+                        success: "True",
+                        data: appointments,
+                    })}
+            res.status(404)
                 .json({
-                    success: "True",
-                    data: appointments,
+                    success: "false",
+                    data: "car not found",
                 })
         }else {
             const garage = await garageModel.findOne({user:req.user._id})

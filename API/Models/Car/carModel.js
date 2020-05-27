@@ -32,6 +32,7 @@ const CarSchema = new mongoose.Schema({
         default: 'no-photo.jpg'
     },
     mileage: {
+        type : JSON,
         value :{
             type: String,
             default :""
@@ -45,7 +46,11 @@ const CarSchema = new mongoose.Schema({
     user:{
         type : mongoose.Schema.ObjectId,
         ref : 'User',
-    }
-});
+    }}
+    ,{
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+}
+);
 
 module.exports = mongoose.model('Car', CarSchema);

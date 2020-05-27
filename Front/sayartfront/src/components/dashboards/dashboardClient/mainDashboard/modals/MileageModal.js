@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import {Container, Form, Button, Modal} from 'react-bootstrap';
 
-import '../../../../css/authentification/Modal.css';
+import '../../../../../css/authentification/Modal.css';
 
 
 const MileageModal = (props) => {

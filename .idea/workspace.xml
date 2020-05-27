@@ -29,25 +29,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/API/Models/Article/Filter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardClient/mainDashboard" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\modals" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\bodySection" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\TopSection" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Oil" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\Service" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\Service" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\garage" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\utils" />
     </key>
   </component>
   <component name="RunManager">
@@ -104,7 +104,12 @@
       <workItem from="1589458874972" duration="1446000" />
       <workItem from="1589612584271" duration="2251000" />
       <workItem from="1589662063413" duration="3458000" />
-      <workItem from="1589795879376" duration="5158000" />
+      <workItem from="1589795879376" duration="6636000" />
+      <workItem from="1590105520172" duration="5327000" />
+      <workItem from="1590279249269" duration="1876000" />
+      <workItem from="1590284712532" duration="8455000" />
+      <workItem from="1590504957844" duration="1946000" />
+      <workItem from="1590585344777" duration="967000" />
     </task>
     <servers />
   </component>
@@ -144,10 +149,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="327" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.738@0.0.1366.738" timestamp="1588118729373" />
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1588041625090">
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1590368877825">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1588041625090" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1590368877825" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1589347400682">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

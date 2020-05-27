@@ -3,15 +3,15 @@ import React, {useState} from "react";
 import './Dashboard.css';
 
 
-import TopSection from "../../../dashboards/dashboardClient/Acceuil/TopSection";
-import AppointmentSection from "../../../dashboards/dashboardClient/Acceuil/AppointmentSection";
-import CarSection from "../../../dashboards/dashboardClient/Acceuil/CarSection";
-import ActiveAppointmentSection from "../../../dashboards/dashboardClient/Acceuil/ActiveAppointmentSection"
-import ProgressionSection from "../../../dashboards/dashboardClient/Acceuil/ProgressionSection"
+import TopSection from "../mainDashboard/TopSection";
+import AppointmentSection from "../mainDashboard/bodySection/AppointmentSection";
+import CarSection from "../mainDashboard/bodySection/CarSection";
+import ActiveAppointmentSection from "../mainDashboard/bodySection/ActiveAppointmentSection"
+import ProgressionSection from "../mainDashboard/bodySection/ProgressionSection"
 
 
-import AddCarModal from "../myCar/AddCarModal";
-import MileageModal from "../myCar/MileageModal";
+import AddCarModal from "../mainDashboard/modals/AddCarModal";
+import MileageModal from "../mainDashboard/modals/MileageModal";
 
 const Dashboard = (props) => {
 

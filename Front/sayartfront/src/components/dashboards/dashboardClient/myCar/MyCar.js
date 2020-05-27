@@ -3,11 +3,11 @@ import { Row, Container, Col, ProgressBar} from 'react-bootstrap';
 
 import '../../../../css/dashboard/clienDashboard/myCar/Counters.css'
 
-import Mileage from "./Mileage";
+import Mileage from "../mainDashboard/modals/Mileage";
 import FuelType from "./FuelType"
 import CarState from "./CarState"
 
-import CarSection from "./CarSection"
+import CarSection from "../mainDashboard/bodySection/CarSection"
 
 
 

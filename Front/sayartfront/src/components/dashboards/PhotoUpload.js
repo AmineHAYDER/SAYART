@@ -12,7 +12,6 @@ const PhotoUpload = (props) => {
     const [file, setFile] = useState("")
     const [model, setModel] = useState(false)
     const [alert, setAlert] = useState(false)
-       console.log(user.image)
     const handel = (e) => {
         setFile(e.target.files[0]);
         setModel(true)

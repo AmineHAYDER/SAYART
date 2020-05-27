@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../../../css/dashboard/clienDashboard/Acceuil/ProgressionSection.css"
+import "../../../../../css/dashboard/clienDashboard/Acceuil/ProgressionSection.css"
 
 import {Col, Row, ProgressBar} from "react-bootstrap";
 

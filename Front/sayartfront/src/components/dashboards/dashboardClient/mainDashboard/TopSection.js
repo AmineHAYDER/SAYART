@@ -4,9 +4,9 @@ import { Col, Row} from "react-bootstrap";
 
 import "../../../../css/dashboard/clienDashboard/Acceuil/TopSection.css"
 
-import Welcome from "../Acceuil/TopSection/Welcome";
-import RecommendedService from "../Acceuil/TopSection/RecommendedServices";
-import RecommendedGarage from "../Acceuil/TopSection/RecommendedGarage";
+import Welcome from "./TopSection/Welcome";
+import RecommendedService from "./TopSection/RecommendedServices";
+import RecommendedGarage from "./TopSection/RecommendedGarage";
 
 
 const TopSection = () => {
