@@ -24,6 +24,7 @@ const ClientDashboard = () => {
     useEffect(() => {
         appointmentContext.loadAppointments();
         userContext.loadCar();
+        userContext.getRecommendedGarages();
     }, [])
     const onChangePage = e => {
         e.preventDefault();

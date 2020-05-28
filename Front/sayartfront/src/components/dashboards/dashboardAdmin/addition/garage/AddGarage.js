@@ -27,6 +27,7 @@ const AddGarage = () => {
                 photo:garage.photo,
                 phone:garage.phone,
                 user:garage.user,
+                recommended:["service","wash","discount","20"],
                 address:{
                     formattedAddress:garage.address,
                     lat:garage.lat,
@@ -40,6 +41,7 @@ const AddGarage = () => {
              photo:garage.photo,
              phone:garage.phone,
              user:garage.user,
+             recommended:[{service:"wash",discount:20}],
              address:{
                  formattedAddress:garage.address,
                  lat:garage.lat,

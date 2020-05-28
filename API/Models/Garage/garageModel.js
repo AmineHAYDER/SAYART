@@ -69,6 +69,12 @@ const GarageSchema = new mongoose.Schema({
         type: String,
         default: 'no-photo.jpg'
     },
+    recommended: {
+        type: [{
+            service : {type : String},
+            discount : {type : Number}
+        }]
+    },
     createdAt: {
         type: Date,
         default: Date.now

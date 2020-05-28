@@ -18,8 +18,14 @@ const corsOptions = {
 router.use(express.json());
 router.use(cors(corsOptions));
 
+//decode address for user
 router.route('/decode/reverser')
     .post(garageController.decode);
+
+router
+    .route('/recommended')
+    .get(protect, authorize('admin'), garageController.getRecommendedGarages);
+
 
 router
     .route('/all')

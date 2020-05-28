@@ -14,7 +14,22 @@ class garageController {
         res.status(200)
             .json(res.advancedResults)
     }
+    getRecommendedGarages ( req , res, next) {
 
+        garageModel.find().exists('recommended')
+            .then(  (garage) =>  {
+                if (!garage){
+                    return next(new ErrorResponse(`can\'t find a garage with id :${req.params.id}`,404))
+                }
+                res.status(200)
+                    .json({
+                        success: "True",
+                        data: garage
+                    })
+            }).catch( (err) => {
+            next(err)
+        })
+    }
     myGarage ( req , res, next) {
 
         garageModel.findOne({user:req.user._id})

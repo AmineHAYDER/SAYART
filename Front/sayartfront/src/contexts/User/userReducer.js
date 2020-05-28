@@ -1,9 +1,11 @@
 import {
-    CAR_LOADED,
-    LOADING, LOCATION_SET,
-    NOT_LOADING,
     ADD_CAR,
-    IMAGE_LOADED
+    CAR_LOADED,
+    LOCATION_SET,
+    IMAGE_LOADED,
+    RECOMMENDED_GARAGES,
+    LOADING,
+    NOT_LOADING,
 
 } from '../types';
 
@@ -40,8 +42,14 @@ export default (state, action) => {
                 ...state,
                 image: action.payload
             }
+        case RECOMMENDED_GARAGES:
+            return {
+                ...state,
+                recommendedGarages: action.payload
+            }
 
 
-        default: return state;
+        default:
+            return state;
     }
 }

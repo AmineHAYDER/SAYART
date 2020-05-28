@@ -14,7 +14,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         adminContext.getGarages()
         adminContext.getServices()
-    }, [adminContext])
+    }, [])
 
     const onChangePage = e => {
         e.preventDefault();

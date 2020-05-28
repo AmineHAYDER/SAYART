@@ -19,6 +19,7 @@ export const CAR_LOADED = 'CAR_LOADED';
 export const LOCATION_SET = 'LOCATION_SET';
 export const ADD_CAR = 'ADD_CAR';
 export const IMAGE_LOADED = 'IMAGE_LOADED';
+export const RECOMMENDED_GARAGES = 'RECOMMENDED_GARAGES';
 
 //garage
 export const GARAGE_LOADED = 'GARAGE_LOADED';

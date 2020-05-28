@@ -4,6 +4,7 @@ import UserContext from './userContext';
 import userReducer from './userReducer';
 
 import {
+    RECOMMENDED_GARAGES,
     CAR_LOADED,
     LOADING,
     LOCATION_SET,
@@ -15,6 +16,7 @@ import {
 const UserState = props => {
     const initialState = {
         address: '',
+        recommendedGarages:'',
         car: '',
         mileage: '',
         image: '',
@@ -31,6 +33,22 @@ const UserState = props => {
     }
 
 
+    //get recommended garages
+    const getRecommendedGarages = async data => {
+        try {
+            var res = await axios.get('http://localhost:5000/garage/recommended', config);
+            console.log(res.data)
+            dispatch({
+                type: RECOMMENDED_GARAGES,
+                payload: res.data.data
+            });
+
+
+        } catch (err) {
+
+
+        }
+    }
     //decode back
     const setLocation = async data => {
         try {
@@ -69,12 +87,6 @@ const UserState = props => {
     //load car information
     const loadCar = async () => {
 
-        const config = {
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.token
-            }
-        }
 
         try {
             const res = await axios.get('http://localhost:5000/user/car/', config);
@@ -134,11 +146,13 @@ const UserState = props => {
                 error: state.error,
                 address: state.address,
                 image: state.image,
+                recommendedGarages:state.recommendedGarages,
+                getRecommendedGarages,
                 loadCar,
                 updateCar,
                 setLocation,
                 uploadImage,
-                addCar
+                addCar,
 
             }}
         >
