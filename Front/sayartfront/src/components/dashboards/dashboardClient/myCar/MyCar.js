@@ -4,7 +4,6 @@ import { Row, Container, Col, ProgressBar} from 'react-bootstrap';
 import '../../../../css/dashboard/clienDashboard/myCar/Counters.css'
 
 import Mileage from "../mainDashboard/modals/Mileage";
-import FuelType from "./FuelType"
 import CarState from "./CarState"
 
 import CarSection from "../mainDashboard/bodySection/CarSection"
@@ -16,7 +15,6 @@ const MyCar = () => {
     return (<Container >
                 <Row>
                     <Col lg={3}><Mileage/></Col>
-                    <Col lg={3}><FuelType/></Col>
                     <Col><CarState/></Col>
                 </Row>
                 <Row>

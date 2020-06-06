@@ -11,6 +11,7 @@ const CarSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: ['clean','warning','urgent'],
+        default:'clean'
     },
     mark: {
         type: String,
@@ -24,17 +25,30 @@ const CarSchema = new mongoose.Schema({
         type: String
     },
     fuel: {
-        type: String,
-        enum: ['Super sans plomb','Gasoil super','Gasoil']
+        type :{
+            type: String,
+            enum: ['Super sans plomb','Gasoil super','Gasoil']
+        },
+        fuelPerMonth: {
+            type: Number,
+        }
+    },
+    dates:{
+        oilChangeDate: Date,
+        washDate: Date,
+        visitDate: Date,
     },
     photo: {
         type: String,
         default: 'no-photo.jpg'
     },
     mileage: {
-        type : JSON,
         value :{
-            type: String,
+            type: Number,
+            default :""
+        },
+        mileagePerDay: {
+            type: Number,
             default :""
         },
         date: Date

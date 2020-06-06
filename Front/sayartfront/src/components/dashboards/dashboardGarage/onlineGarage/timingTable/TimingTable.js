@@ -1,31 +1,55 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Container, Col, Row} from 'react-bootstrap';
-import RowTable from "./RowTable";
-import '../../../../../css/dashboard/mechanicDashboard/onlineGarage/timingTable/Row-Table.css'
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
+import interactionPlugin from '@fullcalendar/interaction'
+
+import frLocale from '@fullcalendar/core/locales/fr';
+import './main.scss'
+import GarageContext from "../../../../../contexts/Garage/garageContext";
+
 
 const TimingTable = () => {
 
-    const date = new Date();
-    const hours = ["8 - 9", "9 - 10", "10 - 11", "11 - 12", "12 - 13", "13 - 14", "14 - 15", "15 - 16", "16 - 17", "17 - 18", "18 - 19", "19 - 20"]
+    const garageContext = useContext(GarageContext)
+    const apps = ()=>{
+        if (garageContext.appointments)  return garageContext.appointments.map(app => {return {
+                id: app._id,
+                title: app.service.name,
+                editable: true,
+                start: app.date ,
+            backgroundColor: "#ffd700",
+            borderColor:"#ffd700"
+        } })
+        else return [1,2]
 
-    return (
-        <Container>
-            <Row className={"row-label"}>
-                <Col className="box-label-table">
-                </Col>
-                {hours.map(hour => <Col className="box-label-table">
-                    <h7>{hour}</h7>
-                </Col>)}
-            </Row>
-            <RowTable day={(date.getDate())}/>
-            <RowTable day={(date.getDate() + 1)}/>
-            <RowTable day={(date.getDate() + 2)}/>
-            <RowTable day={(date.getDate() + 3)}/>
-            <RowTable day={(date.getDate() + 4)}/>
-            <RowTable day={(date.getDate() + 5)}/>
-            <RowTable day={(date.getDate() + 6)}/>
-        </Container>
+}
+    return (<div>
+        {garageContext.appointments ? <Container style={{backgroundColor:"#fffcef",marginLeft:"30px",borderRadius:"10px"}}>
+            <FullCalendar defaultView='dayGridMonth'
 
+                          locales={[frLocale]}
+
+                          selectable={true}
+                          local={frLocale}
+                          header={{
+                              left: 'dayGridMonth,timeGridWeek,timeGridDay custom1',
+                              center: 'title',
+                              right: 'prev,next'
+                          }}
+
+                          eventClick={(info) =>  {
+                              console.log(info.el)
+                              info.el.style.backgroundColor = "#154862"
+                          }
+                          }
+                          event
+                          dateFormatter={{month: 'long', year: 'numeric', day: 'numeric'}}
+                          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                          events={apps()}/>
+        </Container> : null
+}</div>
     );
 
 }

@@ -4,19 +4,18 @@ import {Col, Image} from 'react-bootstrap'
 const ServiceButton = (props) => {
 
     return (
-        <Col>
-            <hr></hr>
-            <h4 className="label-button"> {props.name} </h4>
-            <hr></hr>
+        <div>
+            <h4 className="label-button"
+                onClick={props.onClick}
+               > {props.label} </h4>
             <Image
-                className={props.state}
+                classname={{width: "200px", height: "200px",paddingTop:"20px"}}
                 onClick={props.onClick}
                 name={props.name}
                 src={props.image}
                 fluid
             />
-        </Col>
-    )
+        </div>)
 }
 
 export default ServiceButton;

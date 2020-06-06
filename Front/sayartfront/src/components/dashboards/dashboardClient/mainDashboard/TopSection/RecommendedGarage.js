@@ -9,7 +9,6 @@ import GarageLogo from "../../../../../img/dashboard/mechanic-Logo.jpg"
 const RecommendedGarage = () => {
  const userContext = useContext(UserContext)
     const {recommendedGarages} = userContext
-    console.log(recommendedGarages)
     const [i,setI] =useState(0)
     return (
         <div>
@@ -31,7 +30,7 @@ const RecommendedGarage = () => {
                     <a href="/">Prenez un rendez-vous</a>
                 </Col>
                 <button onClick={()=> setI((i+1)%(recommendedGarages.length))} />
-            </Row> :null}
+            </Row> :"no recommended"}
         </div>
     );
 }

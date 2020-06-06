@@ -12,8 +12,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="package.json" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,25 +29,27 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardClient/mainDashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car\bodySection" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\modals" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\bodySection" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\TopSection" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\utils" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Oil" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article" />
     </key>
   </component>
   <component name="RunManager">
@@ -109,7 +111,12 @@
       <workItem from="1590279249269" duration="1876000" />
       <workItem from="1590284712532" duration="8455000" />
       <workItem from="1590504957844" duration="1946000" />
-      <workItem from="1590585344777" duration="12957000" />
+      <workItem from="1590585344777" duration="13615000" />
+      <workItem from="1590766451317" duration="21520000" />
+      <workItem from="1591043985290" duration="14080000" />
+      <workItem from="1591128050045" duration="10575000" />
+      <workItem from="1591143469739" duration="31664000" />
+      <workItem from="1591334097491" duration="23085000" />
     </task>
     <servers />
   </component>
@@ -117,45 +124,57 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589346525866">
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591156368018">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1589346525866" />
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1591156368018" />
     <state x="441" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586965527804">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="441" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738@0.0.1366.738" timestamp="1586965527804" />
-    <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1585890325869">
+    <state x="317" y="148" key="EditFileWatcherDialog" timestamp="1591156964451">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1585890325869" />
-    <state width="1345" height="182" key="GridCell.Tab.0.center" timestamp="1585890325869">
+    <state x="317" y="148" key="EditFileWatcherDialog/0.0.1366.738@0.0.1366.738" timestamp="1591156964451" />
+    <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1590965408776">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1585890325869" />
-    <state width="1345" height="182" key="GridCell.Tab.0.left" timestamp="1585890325869">
+    <state width="1345" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1590965408776" />
+    <state width="1345" height="182" key="GridCell.Tab.0.center" timestamp="1590965408776">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1585890325869" />
-    <state width="1345" height="182" key="GridCell.Tab.0.right" timestamp="1585890325869">
+    <state width="1345" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1590965408776" />
+    <state width="1345" height="182" key="GridCell.Tab.0.left" timestamp="1590965408776">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1585890325869" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1588123826872">
+    <state width="1345" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1590965408776" />
+    <state width="1345" height="182" key="GridCell.Tab.0.right" timestamp="1590965408776">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1588123826872" />
+    <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1590965408776" />
+    <state x="184" y="12" key="SettingsEditor" timestamp="1591149364741">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1591149364741" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1590977357298">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1590977357298" />
     <state x="327" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588118729373">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="327" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.738@0.0.1366.738" timestamp="1588118729373" />
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1590368877825">
+    <state x="0" y="0" width="607" height="738" key="find.popup" timestamp="1590786372370">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1590368877825" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1589347400682">
+    <state x="0" y="0" width="607" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1590786372370" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1591317441506">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1589347400682" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1591317441506" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1591032983041">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1591032983041" />
   </component>
 </project>

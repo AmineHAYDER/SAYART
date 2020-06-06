@@ -50,6 +50,7 @@ const AppointmentsClosed = (props) => {
     })
     const doneAppointmentsLines = garageContext.appointments.map(appointment => {
         if (remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui")) {
+            console.log(appointment)
             return (
                 <LineApp
                     id={appointment._id}

@@ -12,31 +12,20 @@ const ServiceDetails = (props) => {
     const renderOptions = () => {
         switch (props.service) {
             case 'wheel':
-                return <Wheel/>
+                return <Wheel onClick={props.selectDetail}/>
             case 'mechanic':
-                return <Mechanic/>
+                return <Mechanic onClick={props.selectDetail}/>
             case 'wash':
-                return <Wash/>
+                return <Wash onClick={props.selectDetail}/>
             case 'oilChange':
-                return <OilChangeService/>
+                return <OilChangeService onClick={props.selectDetail}/>
             default:
                 return "";
         }
     }
 
 
-    return (
-        <Container>
-            <Row className="justify-content-md-center">
-
-                <ListGroup className="OptionList" defaultActiveKey="1">
-                    <Row lg={1} xs={2}>
-                        {renderOptions()}
-                    </Row>
-                </ListGroup>
-
-            </Row>
-        </Container>
+    return ( renderOptions()
     )
 
 };

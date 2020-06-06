@@ -5,7 +5,6 @@
     "name": "amine",
     "lastName": "hayder",
     "address": "Rue Ahmed Amine, Ariana, Ariana 2058, TN",
-    "image": "aziej6545.jpg",
     "number": "9495611",
     "email": "aminehayder@gmail.com",
     "password": "amine12*aa",
@@ -18,7 +17,6 @@
     "name": "wael",
     "lastName": "elechi",
     "address": "aoizjeâzke",
-    "image": "aziej6545.jpg",
     "number": "9495611",
     "email": "waelelechi@gmail.com",
     "password": "wael12*aa",
@@ -27,7 +25,6 @@
   },
   {
     "_id": "5e742fb64542bb39c0edd8d3",
-    "image": "aziej6545.jpg",
     "login": "HichemHayder",
     "name": "Hichem ibra",
     "lastName": "hayder",
@@ -39,7 +36,6 @@
     "password": "hichem1526"
   },
   {
-    "image": "aziej6545.jpg",
     "login": "MariemHayder",
     "name": "mariem",
     "lastName": "hayder",

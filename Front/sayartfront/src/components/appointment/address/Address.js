@@ -37,7 +37,7 @@ const Address = (props) => {
         <div>
             <Button variant="warning"
                 onClick={setHomeAddress}
-                style={{ "width": "200px", "margin-left": "40%" }} block>
+                style={{ width: "200px", marginLeft: "40%" }} block>
                 I'm Home
             </Button>
             <hr></hr>

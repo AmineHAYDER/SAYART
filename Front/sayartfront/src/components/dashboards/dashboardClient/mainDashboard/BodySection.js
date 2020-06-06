@@ -9,6 +9,7 @@ import ProgressionSection from "./bodySection/ProgressionSection"
 
 import AddCarModal from "./modals/AddCarModal";
 import MileageModal from "./modals/MileageModal";
+import {NotificationContainer} from "react-notifications";
 
 const BodySection = (props) => {
 
@@ -25,6 +26,7 @@ const BodySection = (props) => {
 
     return (
         <div>
+            <NotificationContainer/>
             <AppointmentSection content="diagnostic"/>
             <CarSection car={props.car} showModal={handleShowAddCar}/>
             <AddCarModal show={showAddCar} onHide={handleCloseAddCar} mileageModal={handleShowMileage}/>

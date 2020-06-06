@@ -44,14 +44,13 @@ const TakeAppointment = () => {
     return (
         <Container className="appointment">
 
-            <Row className="justify-content-md-center">
+            <Row className="justify-content-md-center" style={{marginBottom:"50px"}}>
                 <Col>
 
-                    <h3 className="purple">
+                    <h1 className="purple" style={{marginBottom:"30px",marginTop:"30px"}}>
                         <span className="yellow">  Rendez-Vous</span><span>  خوذ</span>
-                    </h3>
+                    </h1>
 
-                    <hr></hr>
 
                     <ButtonGroup>
                         <Button
@@ -97,13 +96,13 @@ const TakeAppointment = () => {
                         </Button>
                     </ButtonGroup>
 
-                    <hr></hr>
                 </Col>
             </Row>
 
             {car ? renderSwitch(appointmentContext.pages.active) :
-                <Alert>vous devez entrer les informations de votre voiture</Alert>}
-            {page}
+                <Alert>vous devez entrer les informations de votre voiture</Alert>
+            }
+
         </Container>
 
     );

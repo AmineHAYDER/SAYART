@@ -1,11 +1,27 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 
-import {Tab, Nav} from "react-bootstrap";
+import {Tab, Nav, Badge} from "react-bootstrap";
 
-import CarDetails from "./CarDetails";
-import CarHealth from "./CarHealth";
+import CarDetails from "./bodySection/CarDetails";
+import CarHealth from "./bodySection/CarHealth";
+import UserContext from "../../../../contexts/User/userContext";
 
 const BodySection = () => {
+    const userContext = useContext(UserContext)
+    const {car} = userContext
+    const BadgeValue = () => {
+        if (!car.dates && !car.mileage.value) {
+            return 5
+        }
+        if (!car.dates ) {
+            return 3
+        }
+
+        if (!car.mileage ) {
+            return 2
+        }
+      return 0
+    }
     return (
         <div>
             <Tab.Container defaultActiveKey="health" id="tab">
@@ -17,7 +33,8 @@ const BodySection = () => {
                         <Nav.Link eventKey="health">Etat voiture</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="details">Detailles voiture</Nav.Link>
+                        <Nav.Link eventKey="details">Detailles voiture <Badge
+                            variant="danger">{BadgeValue()}</Badge></Nav.Link>
                     </Nav.Item>
 
 

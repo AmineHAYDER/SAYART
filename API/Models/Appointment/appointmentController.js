@@ -15,6 +15,25 @@ class appointmentController {
             .json(res.advancedResults)
     }
 
+    async GarageDayXTimings(req, res, next) {
+        console.log(req.body)
+        let dates = []
+        const date = new Date(req.body.date)
+        const newDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
+        const app = await appointmentModel.find({
+            garage: req.body.garage,
+            date: {$gte: '2020-06-06', $lte: '2020-06-07'}
+        }).populate('service')
+        app.map(app => {
+            dates.push({date: app.date, duration: app.service.duration})
+        })
+        console.log(dates)
+        res.status(200)
+            .json({
+                success: "True",
+                data: dates,
+            })
+    }
 
     async myAppointments(req, res, next) {
 
@@ -23,7 +42,7 @@ class appointmentController {
 
             if (car) {
                 const appointments = await appointmentModel.find({car: car._id})
-                    .sort({date: -1})
+                    .sort({date: 1})
                     .populate('garage')
                     .populate('service')
 

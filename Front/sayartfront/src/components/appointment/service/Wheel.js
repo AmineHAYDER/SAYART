@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {Col, Row, Container, ListGroup} from "react-bootstrap";
+import {Col, Row, Button} from "react-bootstrap";
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
 import '../../../css/takeAppointment/service/ServiceDetails.css'
 
@@ -15,16 +15,16 @@ const ServiceDetails = (props) => {
     const setServiceDetails = (e) => {
         setSelectedDetail(e.target.name)
         pages.service.detail = e.target.name;
-        props.selectDetail(e.target.name)
+        props.onClick(e.target.name)
     }
 
     const OptionList = (props) => {
         return props.data.map((item, i) => {
             return (
                 <Col key={i}>
-                    <ListGroup.Item action className="button-detail" name={item.name} onClick={props.onClick}>
+                    <Button className="button-detail" name={item.name} onClick={props.onClick}>
                         {item.name}
-                    </ListGroup.Item>
+                    </Button>
                 </Col>
             );
         })
@@ -32,30 +32,21 @@ const ServiceDetails = (props) => {
 
 
     return (
-        <Container>
-            <Row className="justify-content-md-center">
-                <Col>
-                    <hr></hr>
-                    <h5>Choose one </h5>
-
-                    <ListGroup className="OptionList" defaultActiveKey="1">
-                        <Row lg={1} xs={2}>
-                            <OptionList className="OptionList" onClick={setServiceDetails} data={WheelArticles}/>
-                        </Row>
-                    </ListGroup>
-
+        <div>
+            <hr/>
+            <Row style={{marginTop:"40px"}}>
+                <Col >
+                    <div >
+                        <OptionList className="OptionList" onClick={setServiceDetails} data={WheelArticles}/>
+                    </div>
+                </Col>
+                <Col lg={8} >
+                    <h1>Service اختار </h1>
                 </Col>
             </Row>
-            <Row>
-                <Col>
-                    <hr></hr>
-                    <h6>{selectedDetail}</h6>
-                    <hr></hr>
-                </Col>
-            </Row>
-        </Container>
+
+        </div>
     )
-
 };
 
 export default ServiceDetails;

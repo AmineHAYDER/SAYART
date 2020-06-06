@@ -34,12 +34,12 @@ const AppointmentState = props => {
                       hour:false,},
                   date:''
               },
-              active:"service"
+              active:"confirmation"
               },
         car:'',
-        mileage:'',
         loading: false,
-        garage:'',
+        chosenService:'',
+        availableGarage:'',
         appointmentGarages:'',
         error: null
     };
@@ -72,11 +72,6 @@ const AppointmentState = props => {
                 type: APPOINTMENTS_LOADED,
                 payload: res.data.data,
             })
-            setTimeout(function() {
-                dispatch({
-                    type: NOT_LOADING
-                })
-            }, 500)
         } catch (err) {
             console.log(err + ' load user error');
         }
@@ -127,6 +122,40 @@ const AppointmentState = props => {
         })
     }
 
+    const CheckAvailableGarage = async (data) => {
+        const config = {
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.token
+            }
+        }
+
+        try {
+            const res = await axios.post('http://localhost:5000/appointment/available',data, config);
+            dispatch({
+                type: 'CheckAvailableGarage',
+                payload: res.data.data
+            })
+        } catch (err) {
+            console.log(err + ' load user error');
+        }
+
+    }
+    const setChosenService = (data) => {
+
+            dispatch({
+                type: 'setChosenService',
+                payload: data
+            })
+    }
+
+    const resetAvailableGarage = () => {
+
+        dispatch({
+            type: 'resetAvailableGarage',
+        })
+    }
+
     //take appointment request
     const takeAppointment = async (data) => {
 
@@ -154,14 +183,18 @@ const AppointmentState = props => {
                 pages: state.pages,
                 error: state.error,
                 car: state.car,
-                mileage :state.mileage,
                 appointments: state.appointments,
                 appointmentGarages: state.appointmentGarages,
                 garage:state.garage,
+                chosenService:state.chosenService,
+                availableGarage:state.availableGarage,
                 loadAppointments,
                 setLocation,
                 loadAppointmentGarages,
-                takeAppointment
+                takeAppointment,
+                CheckAvailableGarage,
+                setChosenService,
+                resetAvailableGarage
 
             }}
         >

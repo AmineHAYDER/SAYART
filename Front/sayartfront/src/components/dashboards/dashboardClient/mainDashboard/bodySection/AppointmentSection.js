@@ -3,10 +3,8 @@ import React from "react";
 import "../../../../../css/dashboard/clienDashboard/Acceuil/AppointmentSection.css"
 
 import {Col, Row, Image, Button} from "react-bootstrap";
-
 import DiagnosticImage from "../../../../../img/dashboard/mechanic.png";
 import LavageImage from "../../../../../img/dashboard/lavage.png";
-
 const AppointmentSection = (props) => {
 
 
@@ -37,13 +35,12 @@ const AppointmentSection = (props) => {
                     {p.description}
                 </p>
 
-                <Button className="appointment-button">
+                <Button className="appointment-button" >
                     Reservez maintenant
                 </Button>
             </Col>
         </Row>)
     }
-
 
     return (
         <div className="appointment-section">

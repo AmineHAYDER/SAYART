@@ -1,13 +1,14 @@
-import React from "react";
-
+import React, {useContext} from "react";
+import {Col, Row, ProgressBar} from "react-bootstrap";
+import AppointmentContext from '../../../../../contexts/Appointment/appointmentContext'
+import Counter from "../../../../../utils/Counter";
 import "../../../../../css/dashboard/clienDashboard/Acceuil/ProgressionSection.css"
 
-import {Col, Row, ProgressBar} from "react-bootstrap";
 
 
 const ProgressionSection = () => {
-
-
+    const appointmentContext = useContext(AppointmentContext)
+    const {appointments} = appointmentContext
     return (
         <div className="progression-section">
             <div>
@@ -28,7 +29,8 @@ const ProgressionSection = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <ProgressBar now={40}></ProgressBar>
+                                {Counter(appointments,"wash")}
+                                <ProgressBar now={(Counter(appointments,"wash")%5)*20}/>
                             </Col>
                         </Row>
                     </Col>
@@ -41,7 +43,8 @@ const ProgressionSection = () => {
 
                         <Row>
                             <Col>
-                                <ProgressBar now={60}></ProgressBar>
+                                {Counter(appointments,"oilChange")}
+                                <ProgressBar now={(Counter(appointments,"oilChange")%5)*20}/>
                             </Col>
                         </Row>
                     </Col>

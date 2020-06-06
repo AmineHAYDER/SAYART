@@ -26,7 +26,7 @@ class carController {
                                     mileage: car.mileage,
                                 })
                         } else {
-                            res.status(403)
+                            res.status(404)
                                 .json({
                                     success: "false",
                                     data: "car not found",
@@ -49,26 +49,28 @@ class carController {
             })
     }
 
-    async store(req, res, next) {
+    store(req, res, next) {
 
         userModel
-            .findById(req.params.userId)
+            .findById(req.user._id)
             .then((user) => {
                 if (user) {
-                    req.body.user = req.params.userId
+                    req.body.user = req.user._id
                     carModel.create(req.body).then((car) => {
-                        res.status(200)
+                        res.status(201)
                             .json({
                                 success: "True",
                                 data: car,
                             })
+                    }).catch((err) => {
+                        next(err)
                     })
                 } else {
                     res
-                        .status(200)
+                        .status(404)
                         .json({
-                            success: "True",
-                            data: "fammesh menou ",
+                            success: false,
+                            error: "fammesh menou ",
                         })
                 }
             })

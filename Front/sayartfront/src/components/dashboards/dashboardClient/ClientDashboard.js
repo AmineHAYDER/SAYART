@@ -18,7 +18,7 @@ const ClientDashboard = () => {
 
     const appointmentContext = useContext(AppointmentContext);
     const userContext = useContext(UserContext)
-    const [page, setPage] = useState("dashboard");
+    const [page, setPage] = useState("MyCar");
 
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const ClientDashboard = () => {
             case 'profile':
                 return <Profile />;
             case 'dashboard':
-                return <MainDashboard car={userContext.car} />;
+                return <MainDashboard car={userContext.car}  />;
             case 'appointments':
                 return <Appointments />;
             case 'MyCar':

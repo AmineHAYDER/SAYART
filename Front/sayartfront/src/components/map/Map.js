@@ -26,7 +26,7 @@ const  Map= (props) => {
         >
             {name}
             <svg width="100" height="100">
-                <circle cx="10" cy="10" r="10" stroke="yellow" stroke-width="1" fill="red" >
+                <circle cx="10" cy="10" r="10" stroke="yellow" strokeWidth="1" fill="red" >
 
                 </circle>
             </svg>

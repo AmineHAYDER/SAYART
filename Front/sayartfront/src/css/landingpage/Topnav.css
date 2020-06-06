@@ -2,9 +2,8 @@
     margin-right: 100px;
 }
 .navbar-shadow{
-    background: rgb(64,1,40);
-    background: linear-gradient(90deg, rgba(64,1,40,1) 11%, rgba(33,0,16,1) 29%, rgba(59,2,36,1) 45%, rgba(28,0,6,1) 85%);
-    box-shadow: 0 3px 1px #6e0063;
+    background: rgb(255, 170, 0);
+    box-shadow: 0 3px 1px #f0f000;
 }
 .links-items {
     margin-left: 10px;

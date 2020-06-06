@@ -21,6 +21,9 @@ router.use(cors(corsOptions));
 router.route('/all')
        .get(protect,authorize('admin'),advancedResults(Appointment),AppointmentController.all);
 
+router.route('/available')
+    .post(AppointmentController.GarageDayXTimings);
+
 
 
 router

@@ -67,22 +67,15 @@ const UserState = props => {
     }
     //add car
     const addCar = async data => {
-        dispatch({
-            type: LOADING
-        })
-        try {
-            await axios.post('http://localhost:5000/user/car', data, config);
-            console.log(data);
-            dispatch({
-                type: ADD_CAR
-            })
 
+        try {
+            const res = await axios.post('http://localhost:5000/user/car', data, config)
+            dispatch({
+                type: ADD_CAR,
+            })
         } catch (err) {
-            console.log("post doesn't work");
+            console.log('msg'+err);
         }
-        dispatch({
-            type: NOT_LOADING
-        })
     }
     //load car information
     const loadCar = async () => {

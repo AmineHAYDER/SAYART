@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router({mergeParams:true});
 const advancedResults = require('../../middelware/advancedResults')
+const errorHandler = require('../../middelware/errorHandler')
 const { protect, authorize } = require('../../middelware/auth');
 const car = require('./carModel')
 const carController = require('./carController');
@@ -13,6 +14,7 @@ const corsOptions = {
 };
 
 router.use(express.json());
+router.use(errorHandler);
 router.use(cors(corsOptions));
 
 

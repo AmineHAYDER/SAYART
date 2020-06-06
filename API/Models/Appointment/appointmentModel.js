@@ -21,6 +21,9 @@ const AppointmentSchema = new mongoose.Schema({
         type : Date ,
         required : true,
     },
+    endDate:{
+        type : Date ,
+    },
     state:{
         type : String,
         enum : ['AppointmentRequest','AppointmentGarageRequest','Confirmed','Done',''],

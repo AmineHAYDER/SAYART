@@ -8,26 +8,14 @@ const OnlineGarage = () => {
 
 
     const garageContext = useContext(GarageContext);
-    return (<div>
-            {garageContext.loading ? "loading" : <div>
+    return (
+            <div>
 
-                <Row>
-                    <Col lg={2}>
-                        <img alt={''} className={"logo-garage"}
-                             src={process.env.PUBLIC_URL + '/img/mechanic-Logo.jpg'}/>
-                    </Col>
-                    <Col>
-                        <h1>{garageContext.garage.name}</h1>
-                    </Col>
-                    <Col>
-                        <h1>{garageContext.garage.status}</h1>
-                    </Col>
-                </Row>
-                <hr></hr>
                 <Row>
                     <TimingTable/>
                 </Row>
-            </div>}</div>
+            </div>
+
 
     );
 }

@@ -1,16 +1,19 @@
 .button-detail{
-    color:whitesmoke;
-    display: block;
-    margin-right: auto;
-    margin-top: 10px;
-    border-radius: 10px ;
-    background-color: #fac300;
+    color: #4f4f4f;
+    border-radius: 2px ;
+    background-color: #ccc8cb;
+    border-color: transparent;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width:300px
 
 }
 .button-detail:hover{
 
+    background-color: #6d6c6b;
+    color: #d9d9d9;
+    border-color: transparent;
     transition:  background-color 1s;
-    box-shadow: 2px 3px 30px #ffd800;
 
 }
 .button-detail:active{

@@ -22,8 +22,10 @@ const Welcome = () => {
         }
         if (userContext.car) {
             num += 15
-            if (userContext.mileage.value) {
-                num += 5
+            if (userContext.mileage) {
+                if (userContext.mileage) {
+                    num += 5
+                }
             }
         }
         if (appointmentContext.appointments.length > 0) {
@@ -53,7 +55,6 @@ const Welcome = () => {
             </CircularProgressbarWithChildren>
             {!userContext.car ? "mafamech car" : null}
             {!authContext.user.location ? "mafamech location" : null}
-            {!userContext.mileage.value ? "mafamech mileage" : null}
             {!appointmentContext.appointments.length > 0 ? "khouth awel rendez vous" : null}
         </div>
     );

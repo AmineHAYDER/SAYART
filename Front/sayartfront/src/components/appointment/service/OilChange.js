@@ -15,7 +15,7 @@ const ServiceDetails = (props) => {
     const setServiceDetails = (e) => {
         setSelectedDetail(e.target.name)
         pages.service.detail = e.target.name;
-        props.selectDetail(e.target.name)
+        props.onClick(e.target.name)
     }
 
     const OptionList = (props) => {

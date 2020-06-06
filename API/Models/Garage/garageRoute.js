@@ -24,7 +24,7 @@ router.route('/decode/reverser')
 
 router
     .route('/recommended')
-    .get(protect, authorize('admin'), garageController.getRecommendedGarages);
+    .get(protect, authorize('admin','user'), garageController.getRecommendedGarages);
 
 
 router

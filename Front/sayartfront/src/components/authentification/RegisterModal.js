@@ -50,7 +50,7 @@ const RegisterModal = (props) => {
             "name": firstname,
             "lastName": lastname,
             "address": "aoizjeâzke",
-            "image": "aziej6545.jpg",
+            "image": "no-photo.jpg",
             "number": phone,
             "email": email,
             "password": password,

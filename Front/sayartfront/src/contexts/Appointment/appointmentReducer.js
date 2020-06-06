@@ -40,6 +40,22 @@ export default (state, action) => {
                 ...state,
                 appointmentGarages: action.payload,
             };
+        case 'CheckAvailableGarage' :
+
+            return {
+                ...state,
+                availableGarage: action.payload,
+            };
+        case 'setChosenService' :
+            return {
+                ...state,
+                chosenService: action.payload,
+            };
+        case 'resetAvailableGarage' :
+            return {
+                ...state,
+                availableGarage: '',
+            };
         case LOADING :
             return {
                 ...state,

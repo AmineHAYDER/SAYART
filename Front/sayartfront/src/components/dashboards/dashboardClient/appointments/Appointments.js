@@ -46,7 +46,8 @@ const Appointments = (props) => {
         }
     }
 
-    const waitingAppointments = appointmentContext.appointments.map(appointment => {
+    const waitingAppointments =
+        appointmentContext.appointments.map(appointment => {
         if (remaining(appointment.date).startsWith("dans")) {
             return <Col lg={3}>
                 <CardApp
@@ -61,9 +62,9 @@ const Appointments = (props) => {
         } else return null
 
     })
-    const doneAppointments = appointmentContext.appointments.map(appointment => {
+    const doneAppointments =()=>{ return appointmentContext.appointments.map(appointment => {
         if (remaining(appointment.date).startsWith("il y a") || remaining(appointment.date).startsWith("Aujourd'hui")) {
-            return <Col lg={3}>
+            return (<Col lg={3}>
                 <CardApp
                     id={appointment._id}
                     serviceName={appointment.service.name}
@@ -72,10 +73,10 @@ const Appointments = (props) => {
                     date={appointment.date}
                     onClick={setSectionDetail}
                 />
-            </Col>
-        } else return null
+            </Col>)
+        }
 
-    })
+    })}
 
     return (<Container>
             <Row>
@@ -91,10 +92,13 @@ const Appointments = (props) => {
                 <h4>Rendez vous passés </h4>
             </Row>
             <Row className={"waiting-appointments-container"}>
-                {doneAppointments}
+                {doneAppointments()}
+
+
             </Row>
+
             <Row>
-                {appointmentContext.appointments.map(appointment => {
+                {appointmentContext.appointments ? appointmentContext.appointments.map(appointment => {
 
                     if (appointment._id === Appointment) {
                         console.log(appointment)
@@ -127,8 +131,8 @@ const Appointments = (props) => {
                                 </Row>
                             </Container>)
 
-                    } else return null
-                })}
+                    }  }): null
+               }
             </Row>
         </Container>
     );

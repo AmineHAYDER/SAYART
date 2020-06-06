@@ -23,27 +23,26 @@ const CarSection = (props) => {
     )
 
 
-    const HasCar = (
-        <Row className="car-informations">
+    const HasCar = () => {
+        if (car) return <Row className="car-informations">
             <Col lg={4}>
                 <h1>Ma Voiture </h1>
                 <hr></hr>
                 <h6>Mark : {car.mark}</h6>
                 <h6>Model : {car.model}</h6>
-                <h6>mileage : {mileage.value}</h6>
             </Col>
             <Col lg={8}>
                 <img src={img}/>
             </Col>
         </Row>
-    )
+    }
         return (
         <div className="car-section">
             <div>
                 <h3>Ma voiture </h3>
             </div>
             <div>
-                {car ? HasCar : HasNoCar}
+                {car ? HasCar() : HasNoCar}
             </div>
         </div>
     );
