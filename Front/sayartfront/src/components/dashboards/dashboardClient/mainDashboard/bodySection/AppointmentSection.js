@@ -35,7 +35,7 @@ const AppointmentSection = (props) => {
                     {p.description}
                 </p>
 
-                <Button className="appointment-button" >
+                <Button variant={"secondary"} className="appointment-button" >
                     Reservez maintenant
                 </Button>
             </Col>

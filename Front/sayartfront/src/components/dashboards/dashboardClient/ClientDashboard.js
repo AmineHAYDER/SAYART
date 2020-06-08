@@ -5,7 +5,7 @@ import Menu from '../Menu'
 import Profile from './profile/Profile'
 import Appointments from './appointments/Appointments'
 import MainDashboard from './mainDashboard/MainDashboard';
-
+import Analytics from './analytics/Analytics'
 import Car from './Car/Car'
 
 import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
@@ -18,7 +18,7 @@ const ClientDashboard = () => {
 
     const appointmentContext = useContext(AppointmentContext);
     const userContext = useContext(UserContext)
-    const [page, setPage] = useState("MyCar");
+    const [page, setPage] = useState("analytics");
 
 
     useEffect(() => {
@@ -38,6 +38,8 @@ const ClientDashboard = () => {
                 return <MainDashboard car={userContext.car}  />;
             case 'appointments':
                 return <Appointments />;
+            case 'analytics':
+                return <Analytics />;
             case 'MyCar':
                 return <Car car={userContext.car} />
             default:

@@ -8,7 +8,7 @@ const AppointmentCard = (props) => {
 
     return(
         <Card style={{ width: '14rem' }} className={"appointment-card"}>
-            <Card.Img variant="button" className={"img-appointment "+props.serviceName } src={props.img} />
+            <Card.Img variant="button" className={"img-appointment " } src={props.img} />
             <Card.Body>
                 <Card.Title>{props.serviceName} </Card.Title>
                 <Card.Text>
@@ -18,7 +18,7 @@ const AppointmentCard = (props) => {
 
             </Card.Body>
             <Card.Footer>
-                <Button onClick={props.onClick} name={props.id} >Check details</Button>
+                <Button onClick={props.onClick} name={props.id} variant={"warning"}>Check details</Button>
             </Card.Footer>
         </Card> );
 }

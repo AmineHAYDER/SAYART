@@ -40,7 +40,7 @@ const Welcome = () => {
                 value={ProfilePercentage()}
                 styles={{
                     path: {
-                        stroke: `rgba(148, 0, 166, 0.71)`,
+                        stroke: `rgb(135, 0, 102)`,
                         strokeLinecap: 'butt',
                         transition: 'stroke-dashoffset 0.5s ease 0s',
                         transform: 'rotate(0.25turn)',

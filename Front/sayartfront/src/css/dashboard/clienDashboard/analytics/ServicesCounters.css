@@ -1,0 +1,24 @@
+.Counter{
+
+    background-color: #be48c0;
+    border-radius: 5px;
+    height:25px;
+    color: #fffaf1;
+    font-family: 'Cairo', sans-serif;
+}
+
+.services-counters{
+    background-color: #f1ebeb;
+    box-shadow: 5px 5px 10px #b0adab;
+    border-radius: 10px;
+    padding:15px;
+    color: #303030;
+    text-align: left;
+
+}
+.services-counters-label{
+    border-right: #fffaf1;
+    border-right-style: solid;
+    border-width: 2px;
+
+}

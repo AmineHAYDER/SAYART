@@ -42,7 +42,7 @@ class appointmentController {
 
             if (car) {
                 const appointments = await appointmentModel.find({car: car._id})
-                    .sort({date: 1})
+                    .sort({date: -1})
                     .populate('garage')
                     .populate('service')
 
@@ -58,7 +58,7 @@ class appointmentController {
                 })
         } else {
             const garage = await garageModel.findOne({user: req.user._id})
-            const appointments = await appointmentModel.find({garage: garage._id})
+            const appointments = await appointmentModel.find({garage: garage._id}).sort({date: 1})
                 .populate('car')
                 .populate('service')
             res

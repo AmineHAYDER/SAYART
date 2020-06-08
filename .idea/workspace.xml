@@ -10,10 +10,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="tsconfig.json" />
         <option value="package.json" />
-        <option value="CSS File" />
+        <option value="tsconfig.json" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -116,7 +116,10 @@
       <workItem from="1591043985290" duration="14080000" />
       <workItem from="1591128050045" duration="10575000" />
       <workItem from="1591143469739" duration="31664000" />
-      <workItem from="1591334097491" duration="23085000" />
+      <workItem from="1591334097491" duration="23419000" />
+      <workItem from="1591476648157" duration="4739000" />
+      <workItem from="1591567251634" duration="158000" />
+      <workItem from="1591577927346" duration="8226000" />
     </task>
     <servers />
   </component>
@@ -124,10 +127,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591156368018">
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591582922871">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1591156368018" />
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1591582922871" />
     <state x="441" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586965527804">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
