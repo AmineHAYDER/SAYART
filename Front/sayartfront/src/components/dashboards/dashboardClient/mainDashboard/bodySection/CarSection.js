@@ -16,7 +16,7 @@ const CarSection = (props) => {
             <h3 className="text-secondary">
                 Vous n'avez pas une voiture
             </h3>
-            <Button className="add-car-button" onClick={props.showModal}>
+            <Button variant={"secondary"} className="add-car-button" onClick={props.showModal}>
                 Entrer les informations de votre voiture
             </Button>
         </div>

@@ -1,4 +1,4 @@
-const articleModel = require('./filterModel');
+const filterModel = require('./filterModel');
 
 
 class filterController {
@@ -12,21 +12,12 @@ class filterController {
 
 
     async store ( req , res ,next) {
-        articleModel.create(req.body)
-            .then((createdGarage) => {
-                res.status(201)
-                    .json({
-                        success: "True",
-                        data: createdGarage,
-                    })
-            }).catch( (err) => {
-            next(err)
-        })
+
     }
 
     put ( req , res ,next ) {
 
-        articleModel.findByIdAndUpdate(req.params.id, req.body , {
+        filterModel.findByIdAndUpdate(req.params.id, req.body , {
             new : true ,
             runValidators: true
         })
@@ -41,7 +32,7 @@ class filterController {
         })
     }
     delete ( req, res , next ) {
-        articleModel.findByIdAndDelete(req.params.id)
+        filterModel.findByIdAndDelete(req.params.id)
             .then((updatedservice) => {
                 res.status(201)
                     .json({

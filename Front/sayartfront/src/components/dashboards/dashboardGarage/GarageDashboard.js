@@ -3,7 +3,7 @@ import {Col, Row, Spinner} from 'react-bootstrap';
 import Menu from "./Menu";
 import OnlineGarage from "./onlineGarage/OnlineGarage";
 import Appointments from "./appointments/Appointments";
-
+import Stock from "./stock/Stock";
 import MainDashboard from "./mainDashboard/MainDashboard";
 
 
@@ -13,9 +13,9 @@ const GarageDashboard = () => {
 
     const garageContext = useContext(GarageContext);
 
-    const [page, setPage] = useState("MyCar");
+    const [page, setPage] = useState("dashboard");
     useEffect(() => {
-        garageContext.loadAppointments();
+        garageContext.loadAppointments()
         garageContext.loadGarage();
     }, [])
     const onChangePage = e => {
@@ -28,6 +28,8 @@ const GarageDashboard = () => {
                 return <MainDashboard/>;
             case 'MyCar':
                 return <OnlineGarage/>;
+            case 'stock':
+                return <Stock/>;
             case 'appointments':
                 return <Appointments/>;
             default:

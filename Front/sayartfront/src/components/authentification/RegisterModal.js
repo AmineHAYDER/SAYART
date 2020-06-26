@@ -118,7 +118,7 @@ const RegisterModal = (props) => {
                         Adresse email deja utilisé
                     </Alert>
 
-                    <Button variant="primary" type="submit" block>
+                    <Button variant="outline-dark" type="submit"  className="buttonWithIcon" block>
                         S'INSCRIRE
                     </Button>
 
@@ -135,7 +135,7 @@ const RegisterModal = (props) => {
                 </div>
 
                 <Form>
-                    <Button variant="outline-dark" type="submit" className="buttonWithIcon" block>
+                    <Button variant="primary" type="submit" block>
                         Facebook sign up
                     </Button>
                 </Form>

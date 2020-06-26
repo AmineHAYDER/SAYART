@@ -26,7 +26,7 @@ const TimingTable = () => {
 
 }
     return (<div>
-        {garageContext.appointments ? <Container style={{backgroundColor:"#fffcef",marginLeft:"30px",borderRadius:"10px"}}>
+        {garageContext.appointments ? <Row style={{backgroundColor:"#fffcef",marginLeft:"30px",marginRight:"30px",borderRadius:"10px"}} className={"justify-content-center"}>
             <FullCalendar defaultView='dayGridMonth'
 
                           locales={[frLocale]}
@@ -48,7 +48,7 @@ const TimingTable = () => {
                           dateFormatter={{month: 'long', year: 'numeric', day: 'numeric'}}
                           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                           events={apps()}/>
-        </Container> : null
+        </Row> : null
 }</div>
     );
 

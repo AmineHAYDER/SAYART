@@ -4,7 +4,7 @@ import GetAllGarages from "./GetAllGarages";
 import AddGarage from "./AddGarage";
 
 
-const Garage = () => {
+const Garage = (props) => {
 
     const [model,setModel] = useState("All")
 

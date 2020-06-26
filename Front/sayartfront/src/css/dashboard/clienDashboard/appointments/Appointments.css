@@ -1,6 +1,6 @@
 .appointment-card{
     border-radius: 15px;
-    box-shadow: 4px 4px 15px #554f4f;
+    box-shadow: 4px 4px 15px #aca0a0;
     background: rgb(255, 250, 241);
     color: #000000;
     margin-bottom: 10px;
@@ -9,7 +9,7 @@
 .waiting-appointments-container{
     padding-top: 10px;
     padding-bottom: 10px;
-    box-shadow: 4px 4px 15px #292629;
+    box-shadow: 4px 4px 15px #cdc8c3;
     background: rgb(192, 190, 192);
 
 }
@@ -25,7 +25,7 @@
     margin-top: 20px;
     height:100%;
     border-radius: 5px;
-    box-shadow: 4px 4px 15px #292928;
+    box-shadow: 4px 4px 15px #dfdfda;
     background-color: #d8d5d5;
 
 }
@@ -47,7 +47,7 @@
     padding:9px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    box-shadow: 4px 4px 15px #262924;
+    box-shadow: 4px 4px 15px #aab7a1;
 }
 
 .nav-appointment{

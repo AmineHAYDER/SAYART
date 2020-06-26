@@ -1,9 +1,9 @@
 import React, {useContext, useState} from "react";
 
 import {Container, DropdownButton, ButtonGroup, Dropdown, Row, Col, Button, Modal} from 'react-bootstrap';
-import {NotificationContainer, NotificationManager} from "react-notifications";
+import {NotificationManager} from "react-notifications";
 import UserContext from '../../../../../contexts/User/userContext'
-
+import FormItem from "../../../../utils/FormItem";
 import 'react-notifications/lib/notifications.css';
 import '../../../../../css/authentification/Modal.css';
 
@@ -28,8 +28,9 @@ const AddCarModal = (props) => {
         setCar({...car, [e.target.name]: value})
     }
     const setIN = (e) => {
-        setCar({...car, [e.target.name]: e.target.name })
+        setCar({...car, [e.target.name]: e.target.value })
     }
+    console.log(car.vehicleIdentificationNumber)
     const addCar = () => {
         if (car.mark !== '' && car.model !== '') {
             userContext.addCar({
@@ -43,7 +44,7 @@ const AddCarModal = (props) => {
             props.mileageModal();*/
 
         userContext.loadCar()
-            .then(userContext.car ? NotificationManager.success('Success message', 'Voiture Ajoutée') : NotificationManager.error('non Success message', 'Voiture pas Ajoutée'))
+            .then((success) => success ? NotificationManager.success('Success message', 'Voiture Ajoutée') : NotificationManager.error('non Success message', 'Voiture pas Ajoutée'))
 
     }
     }
@@ -51,20 +52,16 @@ const AddCarModal = (props) => {
     return (
         <div>
 
-
-            <NotificationContainer/>
             <Modal show={props.show} onHide={props.onHide} className="modalz" dialogClassName="modal-width">
                 <Modal.Header closeButton className="modal-header">
                     <Modal.Title className="text-center w-100">
-                        <h2 className="font-weight-bolder modaltitle">نوع كرهبتك </h2>
+                        <h2 className="font-weight-bolder modaltitle"> كرهبتك </h2>
                     </Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
 
                     <Container id="modal-container">
-                        <h1 className="label-mark">karhabtek ya fraise</h1>
-
                         <Row>
                             <Col>
                                 <DropdownButton
@@ -72,8 +69,8 @@ const AddCarModal = (props) => {
                                     as={ButtonGroup}
                                     id={`dropdown-button-drop-down`}
                                     drop={"down"}
-                                    variant="secondary"
-                                    title={` Mark `}
+                                    variant="outline-dark"
+                                    title={` Marque `}
                                 >
                                     {carsData.map((item, i) => {
                                         if (item.mark) {
@@ -94,8 +91,8 @@ const AddCarModal = (props) => {
                                     as={ButtonGroup}
                                     id={`dropdown-button-drop-down`}
                                     drop={"down"}
-                                    variant="secondary"
-                                    title={` Model `}
+                                    variant="outline-dark"
+                                    title={`Modéle`}
                                 >
                                     {carsData.map((item) => {
                                         if (item.mark === car.mark) {
@@ -120,7 +117,7 @@ const AddCarModal = (props) => {
                                     as={ButtonGroup}
                                     id={`dropdown-button-drop-down`}
                                     drop={"down"}
-                                    variant="secondary"
+                                    variant="outline-dark"
                                     title={` Version `}
                                 >
                                     {carsData.map((item, i) => {
@@ -142,9 +139,9 @@ const AddCarModal = (props) => {
                                 <h4 className="car-modal-label">  {car.version} </h4>
                             </Col>
                         </Row>
-                        <input name={"vehicleIdentificationNumber"} onChange={setIN}/>
+                        <FormItem name={"vehicleIdentificationNumber"} value={car.vehicleIdentificationNumber} placeholder={"Numéro de chassis"} onChange={setIN}/>
                     </Container>
-                    <Button className="add-car-button" onClick={addCar}> Ajouter </Button>
+                    <Button className="add-car-button" variant={"secondary"} onClick={addCar}> Ajouter </Button>
                 </Modal.Body>
 
             </Modal>

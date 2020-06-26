@@ -29,7 +29,7 @@ router
 
 router
     .route('/create')
-    .post(FilterController.store)
+    .get(FilterController.store)
 
 
 module.exports = router ;

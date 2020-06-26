@@ -10,10 +10,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package.json" />
         <option value="tsconfig.json" />
-        <option value="JavaScript File" />
+        <option value="package.json" />
+        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -27,9 +28,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -38,18 +40,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage\appointments" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car\bodySection" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\modals" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\bodySection" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\utils" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article\Filter" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article\oil" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Stock" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article\filter" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,7 +121,12 @@
       <workItem from="1591334097491" duration="23419000" />
       <workItem from="1591476648157" duration="4739000" />
       <workItem from="1591567251634" duration="158000" />
-      <workItem from="1591577927346" duration="8226000" />
+      <workItem from="1591577927346" duration="35681000" />
+      <workItem from="1591746788112" duration="3878000" />
+      <workItem from="1592013220161" duration="25637000" />
+      <workItem from="1592215071289" duration="27334000" />
+      <workItem from="1592582741436" duration="16347000" />
+      <workItem from="1592750143345" duration="5378000" />
     </task>
     <servers />
   </component>
@@ -127,10 +134,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591582922871">
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592257338804">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1591582922871" />
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1592257338804" />
     <state x="441" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586965527804">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -167,17 +174,28 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="327" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.738@0.0.1366.738" timestamp="1588118729373" />
-    <state x="0" y="0" width="607" height="738" key="find.popup" timestamp="1590786372370">
+    <state x="0" y="0" width="607" height="738" key="find.popup" timestamp="1592525121332">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="0" y="0" width="607" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1590786372370" />
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1591317441506">
+    <state x="0" y="0" width="607" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1592525121332" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1592929761059">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1591317441506" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1592929761059" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1591032983041">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1591032983041" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage/stock/Stock.js</url>
+          <line>7</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

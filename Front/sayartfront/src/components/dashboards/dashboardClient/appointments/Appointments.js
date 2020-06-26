@@ -77,7 +77,6 @@ const Appointments = (props) => {
                         />
                     </Col>)
                 }
-
             })
         }
 

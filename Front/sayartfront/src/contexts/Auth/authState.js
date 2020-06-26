@@ -25,13 +25,11 @@ const AuthState = props => {
 
     const [state, dispatch] = useReducer(authReducer, initialState);
 
-
     //load user 
     const loadUser = async () => {
 
 
         //setAuthToken(localStorage.token);
-
         const config = {
             headers: {
                 'content-type': 'application/json',
@@ -41,7 +39,6 @@ const AuthState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/auth/me', config);
-            await console.log(res.data);
             dispatch({
                 type: USER_LOADED,
                 payload: res.data
@@ -50,9 +47,6 @@ const AuthState = props => {
             dispatch({
                 type: AUTH_ERROR
             })
-
-
-            console.log(err + ' load user error');
         }
     }
 

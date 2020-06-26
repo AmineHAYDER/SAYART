@@ -6,21 +6,21 @@ import remaining from "../../../../utils/RemainingTime";
 const AppointmentCard = (props) => {
 
 
-    return(
-        <Card style={{ width: '14rem' }} className={"appointment-card"}>
-            <Card.Img variant="button" className={"img-appointment "+props.serviceName } src={props.img} />
+    return (
+        <Card style={{width: '14rem'}} className={"appointment-card"}>
+            <Card.Img variant="button" className={"img-appointment"} src={props.img}/>
             <Card.Body>
                 <Card.Title>{props.serviceName} </Card.Title>
                 <Card.Text>
-                    <p>{props.garageName}</p>
+                    <h3>{props.car}</h3>
                 </Card.Text>
                 {remaining(props.date)}
 
             </Card.Body>
             <Card.Footer>
-                <Button onClick={props.onClick} name={props.id} >Check details</Button>
+                <Button onClick={props.onClick} variant={"secondary"}>Check details</Button>
             </Card.Footer>
-        </Card> );
+        </Card>);
 }
 
 export default AppointmentCard;

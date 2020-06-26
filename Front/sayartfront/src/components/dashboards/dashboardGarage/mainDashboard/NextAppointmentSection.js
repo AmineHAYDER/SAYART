@@ -7,7 +7,7 @@ const NextAppointmentSection = (props) => {
     const garageContext = useContext(GarageContext)
     const {appointments} = garageContext
     const last = appointments.length
-    const lastAppointment = appointments[last - 1]
+    const lastAppointment = appointments[0]
 
     const HasNoAppointment = (
         <div>
@@ -34,10 +34,10 @@ const NextAppointmentSection = (props) => {
                     {lastAppointment.garage.name}
                 </h1>
                 <h6>
-                    service : {lastAppointment.service.name}
+                    Service : {lastAppointment.service.name}
                 </h6>
                 <h6>
-                    duration ; {lastAppointment.service.duration}
+                    Durée : {lastAppointment.service.duration}
                 </h6>
                 {RemainingTime(lastAppointment.date)}
             </Col>

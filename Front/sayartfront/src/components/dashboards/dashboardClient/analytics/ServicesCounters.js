@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {Col,Row} from 'react-bootstrap'
-import chart from 'chart.js'
+import Chart from 'chart.js'
 import Counter from "./Counter";
 
 import AppointmentContext from '../../../../contexts/Appointment/appointmentContext';

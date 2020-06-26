@@ -24,9 +24,9 @@ const  Map= (props) => {
             longitude={coordinates[0]}
             key={i}
         >
-            <svg width="100" height="100">
-                <circle cx="10" cy="10" r="10" stroke="#154862" strokeWidth="1" fill="#198762" >
-
+            <h2 className={"marker-on-map"}>{name}</h2>
+            <svg width="100" height="100" >
+                <circle className={"marker-circle"} cx="10" cy="10" r="10" stroke="#154862" strokeWidth="1" fill="#198762" >
                 </circle>
             </svg>
         </Marker>

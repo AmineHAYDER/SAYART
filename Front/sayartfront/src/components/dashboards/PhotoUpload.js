@@ -48,7 +48,7 @@ const PhotoUpload = (props) => {
             </Modal>
 
             {!(user.image === 'no-photo.jpg') ?
-                <Image rounded style={{height: '80px'}} src={`./img/users/${user.image}`}/> :
+                <Image rounded style={{height: '100px'}} src={`../img/users/${user.image}`}/> :
                 <div>
                     <label htmlFor="myInput">
                         <i className="fas fa-camera"/>

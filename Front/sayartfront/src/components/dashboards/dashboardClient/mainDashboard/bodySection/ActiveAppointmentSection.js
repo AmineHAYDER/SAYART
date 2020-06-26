@@ -27,7 +27,7 @@ const ActiveAppointmentSection = (props) => {
             <h3 className="text-secondary">
                 Vous n'avez pris aucun rendez-vous
             </h3>
-            <Button className="add-car-button">
+            <Button variant={"secondary"} className="add-car-button">
                 Prenez un rendez-vous
             </Button>
         </div>

@@ -47,8 +47,9 @@ a>* {
 }
 
 .profile-div {
-    background-color: rgb(255, 219, 156);
-    color: rgb(168, 74, 142);
+    background: rgb(255, 236, 211);
+    box-shadow: 0 3px 1px #f0f000;
+    color: rgb(55, 53, 55);
     font-weight: bold;
     text-align: center;
     padding: 1.25rem;

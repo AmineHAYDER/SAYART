@@ -22,11 +22,12 @@ const SelectGarage = (props) => {
     const loadAppointmentGarages = (e) => {
         appointmentContext.loadAppointmentGarages({
             name: "oilChange"/* appointmentContext.pages.service.name*/,
-            lat: user.location.coordinates[1],
-            lng: user.location.coordinates[0]
+            lat: appointmentContext.address.latitude ,
+            lng: appointmentContext.address.longitude
         }, e.target.name)
 
     }
+    console.log(appointmentContext.address)
     const garages = () => {
         if (appointmentContext.appointmentGarages) {
             return appointmentContext.appointmentGarages.map((service, i) => {

@@ -24,6 +24,9 @@ router.route('/all')
 router.route('/available')
     .post(AppointmentController.GarageDayXTimings);
 
+router.route('/confirm')
+    .put(protect,authorize('garage'),AppointmentController.Confirm);
+
 
 
 router
@@ -33,7 +36,7 @@ router
 router
     .route('/')
     .post(AppointmentController.store)
-    .get(protect,AppointmentController.myAppointments)
+    .get(protect,authorize('garage','admin','user'),AppointmentController.myAppointments)
 
 
 module.exports = router ;

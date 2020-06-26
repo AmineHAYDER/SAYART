@@ -2,17 +2,21 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import GarageContext from './garageContext';
 import garageReducer from './garageReducer';
-
+import io from 'socket.io-client';
 import {
-    APPOINTMENTS_LOADED,
     GARAGE_LOADED,
+    WHEELS_LOADED,
+    APPOINTMENTS_LOADED,
+    NEW_APPOINTMENT,
     LOADING,
     NOT_LOADING,
 } from '../types';
 
+var socket = io.connect('http://localhost:4000');
 const GarageState = props => {
     const initialState = {
         appointments:'',
+        wheels:'',
         loading: false,
         garage:'',
         error: null,
@@ -51,53 +55,53 @@ const GarageState = props => {
     //load all user appointments
     const loadAppointments = async () => {
 
-        dispatch({
-            type: LOADING
-        })
-        const config = {
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.token
-            }
-        }
-
         try {
             const res = await axios.get('http://localhost:5000/user/appointment/', config);
-            console.log(res.data)
             dispatch({
                 type: APPOINTMENTS_LOADED,
                 payload: res.data.data,
             })
-            setTimeout(function() {
-                dispatch({
-                    type: NOT_LOADING
-                })
-            }, 1000)
+        } catch (err) {
+            console.log(err + ' load user error');
+        }
+        socket.on(state.garage._id, function(data){
+            console.log(data)
+            dispatch({
+                type: NEW_APPOINTMENT,
+                payload: data
+            })
+        });
+    }
+
+    //load all user appointments
+    const loadWheels = async () => {
+
+        try {
+            const res = await axios.get('http://localhost:5000/stock/wheel/', config);
+            dispatch({
+                type: WHEELS_LOADED,
+                payload: res.data.data,
+            })
         } catch (err) {
             console.log(err + ' load user error');
         }
     }
 
     //update car information
-    const updateCar = async data => {
-        dispatch({
-            type: LOADING
-        })
+    const ConfirmAppointment = async data => {
+
         try {
-            var res = await axios.put('http://localhost:5000/user/garage/myGarage', data,config);
-            console.log(res.data.results[0])
-            dispatch({
-                type: GARAGE_LOADED,
-                payload: res.data.data
+            var res = await axios.put('http://localhost:5000/appointment/confirm', data,config);
+            console.log(res.data)
+            if (res.data.success === "True") dispatch({
+                type: "APPOINTMENT_CONFIRMED",
+                payload: data.appointment._id,
             })
-
+            return (res.data.success)
         } catch (err) {
-
-
+            console.log(err)
         }
-        dispatch({
-            type: NOT_LOADING
-        })
+
     }
 
 
@@ -106,13 +110,15 @@ const GarageState = props => {
     return (
         <GarageContext.Provider
             value={{
+                garage:state.garage,
+                appointments: state.appointments,
+                wheels:state.wheels,
                 loading: state.loading,
                 error: state.error,
-                appointments: state.appointments,
-                garage:state.garage,
                 loadAppointments,
                 loadGarage,
-                updateCar,
+                ConfirmAppointment,
+                loadWheels
 
             }}
         >

@@ -5,7 +5,7 @@ import "../../../../css/dashboard/mechanicDashboard/mainDashboard/ArticleSection
 import articleImage from '../../../../img/dashboard/quartz_5000_20w50_4.png'
 const ArticleSection = (props) => {
     const garageContext = useContext(GarageContext)
-    const {appointments} = garageContext
+    const {articles} = garageContext
 
     const NoProblemArticle = (
         <div>
@@ -87,7 +87,7 @@ const ArticleSection = (props) => {
                     <h3>Articles Information</h3>
                 </div>
                 <div className={"article-table"}>
-                { HasArticles}
+                {articles? HasArticles:NoProblemArticle}
                 </div>
         </div>
     );

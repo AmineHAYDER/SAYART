@@ -11,3 +11,21 @@
     margin-left: 10px;
     margin-right: 30px;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #8d8d8d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #404040;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

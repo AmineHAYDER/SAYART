@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@feathersjs/express": "^4.5.4",
+    "@feathersjs/feathers": "^4.5.3",
+    "@feathersjs/socketio": "^4.5.4",
     "@fullcalendar/core": "^4.4.2",
     "@fullcalendar/daygrid": "^4.4.2",
     "@fullcalendar/interaction": "^4.4.2",
@@ -34,6 +37,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-spinners": "^0.8.3",
+    "socket.io-client": "^2.3.0",
     "typewriter-effect": "^2.13.0"
   },
   "scripts": {

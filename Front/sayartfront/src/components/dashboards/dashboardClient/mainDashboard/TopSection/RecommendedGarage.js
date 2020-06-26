@@ -1,6 +1,6 @@
 import React, {useContext, useState} from "react";
 
-import {Col, Row, Image} from "react-bootstrap";
+import {Col, Row, Image, Button} from "react-bootstrap";
 
 import "../../../../../css/dashboard/clienDashboard/Acceuil/TopSection.css"
 import UserContext from '../../../../../contexts/User/userContext'
@@ -25,11 +25,17 @@ const RecommendedGarage = () => {
                         {recommendedGarages[i].name}
                     </h5>
                     <p className="h6 font-weight-normal text-secondary mt-2 mb-0">
-                        Promotion chez  {recommendedGarages[i].name}, {recommendedGarages[i].recommended[0].discount}% remise 2012-2010
+                        Promotion chez  {recommendedGarages[i].name}, {recommendedGarages[i].recommended[0].discount}% remise 2020-2021
                     </p>
                     <a href="/">Prenez un rendez-vous</a>
+                    <hr/>
+                    <Button variant={"secondary"} onClick={()=> setI((i+1)%(recommendedGarages.length))} >
+                        {"<"}
+                    </Button>
+                    <Button variant={"secondary"} onClick={()=> setI((i+1)%(recommendedGarages.length))} >
+                        >
+                    </Button>
                 </Col>
-                <button onClick={()=> setI((i+1)%(recommendedGarages.length))} />
             </Row> :"no recommended"}
         </div>
     );

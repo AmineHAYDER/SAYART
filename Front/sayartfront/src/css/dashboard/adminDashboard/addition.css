@@ -1,0 +1,31 @@
+.active-garage-admin{
+
+
+    margin:15px;
+    border-radius: 5px;
+    background-color: #fac300;
+}
+.active-garage-section-admin{
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px #151515;
+    background-color: #fff8f8;
+}
+.active-page-admin{
+    margin:15px;
+    border-radius: 5px;
+    background-color: #979c94;
+
+}
+
+.row-admin{
+    text-align: left;
+    margin:15px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.row-admin:hover{
+    cursor: pointer;
+    background-color: #e2e2e2;
+    transition: background-color 0.8s;
+}

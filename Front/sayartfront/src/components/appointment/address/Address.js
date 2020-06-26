@@ -10,7 +10,7 @@ const Address = (props) => {
     const { pages } = appointmentContext
     const userContext = useContext(UserContext);
     const { user } = userContext
-    const [msg, setMsg] = useState("Click on the localisation button on the Map")
+    const [msg, setMsg] = useState("Map"+" إلي على "+"Bouton Locatisation" + " في الدار و إلا إنزل على  " + "Bouton " + " كانك فالدار إنزل على ")
 
 
 
@@ -38,7 +38,7 @@ const Address = (props) => {
             <Button variant="warning"
                 onClick={setHomeAddress}
                 style={{ width: "200px", marginLeft: "40%" }} block>
-                I'm Home
+                في الدار
             </Button>
             <hr></hr>
             <Alert variant={!pages.address.step.localisationStep ? "danger" : "success"}>

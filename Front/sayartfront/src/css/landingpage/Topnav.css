@@ -6,6 +6,7 @@
     box-shadow: 0 3px 1px #f0f000;
 }
 .links-items {
+    cursor :pointer;
     margin-left: 10px;
     margin-right: 10px;
     transition: color 0.5s;
@@ -15,7 +16,7 @@
 }
 
 .links-items:hover {
-    color: rgb(251, 180, 0) !important;
+    color: rgb(251, 249, 247) !important;
 }
 
 .NoUnder:hover {
@@ -32,11 +33,11 @@ ul li .underline   {
 
 ul li.active-link .underline {
     width: 90%;
-    background-color: rgb(251, 180, 0);
+    background-color: rgb(251, 235, 234);
 }
 
 ul li:hover .underline {
-    background-color: rgb(251, 180, 0);
+    background-color: rgb(246, 251, 233);
     width: 80%;
 }
 
@@ -47,7 +48,7 @@ ul li:active a {
 
 ul li:active .underline {
     transition: none;
-    background-color: rgba(251, 180, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .logo {

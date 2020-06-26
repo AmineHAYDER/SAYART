@@ -4,7 +4,7 @@ import {
     LOCATION_SET,
     LOADING,
     NOT_LOADING,
-    APPOINTMENTS_GARAGES_LOADED
+    APPOINTMENTS_GARAGES_LOADED,
 
 } from '../types';
 

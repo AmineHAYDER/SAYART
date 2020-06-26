@@ -33,7 +33,7 @@ const TopNav = (props) => {
 
         return <Nav.Item as="li">
             <Link className="NoUnder" to={props.path} >
-                <Nav.Link className="links-items" as="a" onClick={props.onClick} >{props.value}</Nav.Link>
+                <Nav.Link className="links-items" as="div" onClick={props.onClick} >{props.value}</Nav.Link>
                 <div className="underline"></div>
             </Link>
         </Nav.Item>
@@ -44,8 +44,10 @@ const TopNav = (props) => {
 
         < Nav className="ml-auto links" as="ul" >
             <NavItem path={"/dashboard"} value={props.context.user.name} />
-            <Nav.Link className="links-items" as="a" onClick={onLogout} >LOGOUT</Nav.Link>
-            <div className="underline"></div>
+            <Nav.Item as="li">
+                <Nav.Link className="links-items" as="div" onClick={onLogout} >LOGOUT</Nav.Link>
+                <div className="underline"></div>
+            </Nav.Item>
         </Nav >
     )
 
@@ -55,8 +57,8 @@ const TopNav = (props) => {
             <NavItem path={"/CCM"} value={"CÇM"} />
             <NavItem path={"/"} value={"CONTACT"} />
 
-            <Nav.Item><Button variant='info' onClick={handleShowLogin}>CONNECTER</Button></Nav.Item>
-            <Nav.Item><Button variant='info' onClick={handleShowRegister}>INSCRIPTION</Button></Nav.Item>
+            <Nav.Item><Button variant='secondary' onClick={handleShowLogin}>CONNECTER</Button></Nav.Item>
+            <Nav.Item><Button variant='secondary' onClick={handleShowRegister}>INSCRIPTION</Button></Nav.Item>
         </Nav>
 
     )

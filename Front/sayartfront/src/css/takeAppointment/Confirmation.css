@@ -7,3 +7,8 @@
     box-shadow: 4px 4px 15px #292729;
 
 }
+
+.marker-on-map{
+    background-color: #928f91;
+    border-radius: 2px;
+}

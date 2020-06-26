@@ -4,6 +4,7 @@ import AuthContext from '../../contexts/Auth/authContext';
 import GarageDashboard from "./dashboardGarage/GarageDashboard";
 import ClientDashboard from "./dashboardClient/ClientDashboard";
 
+import {NotificationContainer} from "react-notifications";
 
 const Dashboard = () => {
 
@@ -17,12 +18,11 @@ const Dashboard = () => {
                 return <GarageDashboard />
             case 'admin':
                 return <ClientDashboard />
-            default:
-                return <ClientDashboard />
         }
     }
     return (
         <div>
+            <NotificationContainer/>
             {renderSwitch()}
         </div>
     );

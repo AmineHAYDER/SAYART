@@ -1,8 +1,8 @@
 .appointment {
     padding-bottom: 50px;
     border-radius: 12px;
-    box-shadow: -5px -5px 30px 5px #928f91, 5px 5px 30px 5px #3a001e;
-    background-color: rgb(250, 231, 255);
+    box-shadow: -5px -5px 30px 5px #928f91, 5px 5px 30px 5px #3a2c00;
+    background-color: rgb(238, 236, 235);
 }
 .buttonWithIcon {
     background-color: #410034;

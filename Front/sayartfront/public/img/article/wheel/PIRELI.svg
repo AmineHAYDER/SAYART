@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50.01" height="13.04" viewBox="0 0 50.01 13.04">
+  <title>918</title>
+  <g>
+    <path d="M0,13H50V0H0Z" style="fill: #fee102"/>
+    <path d="M0,13H50V0H0Z" style="fill: none;stroke: #fee102;stroke-width: 0.007040876937476px"/>
+    <path d="M15.25,11h2.58V9.54h.64L19.26,11h3.1L21.21,9.42c1.3-.63,1.19-3.21-.79-3.14H15.25V11" style="fill: #ed1c24"/>
+    <path d="M5.12,11H9.61V5.56H44.06a1.62,1.62,0,0,0,0-3.24H5.12V11" style="fill: #ed1c24"/>
+    <path d="M9.61,3.53v.81H39.2a.42.42,0,0,0,0-.81H9.61" style="fill: #fee102"/>
+    <path d="M11.15,11h2.57V6.28H11.15Z" style="fill: #ed1c24"/>
+    <path d="M17.83,8.35V7.47h1c.93,0,.94.88,0,.88h-1" style="fill: #fee102"/>
+    <path d="M23.48,6.28V11H29.1V9.79h-3V9.17H28.8V8H26.13V7.47H28.9V6.28H23.48" style="fill: #ed1c24"/>
+    <path d="M30.48,6.28V11h5.07V9.78H33.13V6.28H30.48" style="fill: #ed1c24"/>
+    <path d="M36.21,6.28V11h5.07V9.78H38.86V6.28H36.21" style="fill: #ed1c24"/>
+    <path d="M42,11h2.58V6.28H42Z" style="fill: #ed1c24"/>
+  </g>
+</svg>

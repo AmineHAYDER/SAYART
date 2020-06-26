@@ -7,7 +7,7 @@ class CallForGarage extends React.Component {
     render() {
         return (
             <div className="divColor">
-                <Container class="align-content-center">
+                <Container className="align-content-center">
                     <div className="">
                         <h5>
                             Vous êtes un garage, un lavage ou un mécanicien et souhaitez  nous rejoindre?

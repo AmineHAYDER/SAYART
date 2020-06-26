@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect,Fragment} from 'react';
 
 import Navbar from './landingpage/TopNav';
 
@@ -48,6 +48,7 @@ const PageContainer = () => {
             <Navbar context={authContext}/>
 
             <Switch>
+                <Fragment>
                 <div className="content">
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/CCM" component={CCM}/>
@@ -67,6 +68,7 @@ const PageContainer = () => {
                     </AppointmentState>
 
                 </div>
+                </Fragment>
             </Switch>
 
 

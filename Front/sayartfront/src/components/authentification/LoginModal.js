@@ -103,7 +103,7 @@ const LoginModal = (props) => {
                         </div>
                     </div>
                     <Form>
-                        <Button variant="outline-dark" type="submit" className="buttonWithIcon" block>
+                        <Button type="submit" variant={"primary outline-dark"} block>
                             CONNEXION FACEBOOK
                         </Button>
                     </Form>

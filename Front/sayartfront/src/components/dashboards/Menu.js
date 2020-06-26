@@ -27,7 +27,7 @@ const Menu = (props) => {
                     </div>
 
                     <Nav.Link className={(props.page === "dashboard") ? "active-link" : "non-active-link"}
-                              onClick={props.onChange} name="dashboard"><i class="uil uil-dashboard zicon"></i> <span
+                              onClick={props.onChange} name="dashboard"><i className="uil uil-dashboard zicon"></i> <span
                         className="ztext"> Dashboard</span></Nav.Link>
 
                     <Nav.Link className={(props.page === "MyCar") ? "active-link" : "non-active-link"}
@@ -35,12 +35,12 @@ const Menu = (props) => {
                         className="ztext"> Ma voiture</span></Nav.Link>
 
                     <Nav.Link className={(props.page === "appointments") ? "active-link" : "non-active-link"}
-                              onClick={props.onChange} name="appointments"><i class="uil uil-schedule zicon"></i> <span
+                              onClick={props.onChange} name="appointments"><i className="uil uil-schedule zicon"></i> <span
                         className="ztext"> Mes RDV</span></Nav.Link>
 
                     <Nav.Link className={(props.page === "analytics") ? "active-link" : "non-active-link"}
                               onClick={props.onChange} name="analytics"><i
-                        class="uil uil-chart-line zicon"></i> Analytique</Nav.Link>
+                        className="uil uil-chart-line zicon"></i> Analytique</Nav.Link>
                 </Nav>
 
             </aside>

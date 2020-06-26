@@ -69,7 +69,7 @@ const UserState = props => {
     const addCar = async data => {
 
         try {
-            const res = await axios.post('http://localhost:5000/user/car', data, config)
+            await axios.post('http://localhost:5000/user/car', data, config)
             dispatch({
                 type: ADD_CAR,
             })
@@ -87,8 +87,10 @@ const UserState = props => {
                 type: CAR_LOADED,
                 payload: res.data.data
             })
+            return(true)
         } catch (err) {
             console.log(err + ' load user error');
+            return(false)
         }
     }
     //update car information

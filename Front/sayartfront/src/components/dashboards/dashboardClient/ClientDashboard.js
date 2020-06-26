@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Row, Col} from 'react-bootstrap';
+import {Row, Col, Container, Button} from 'react-bootstrap';
 
 import Menu from '../Menu'
 import Profile from './profile/Profile'
@@ -48,16 +48,14 @@ const ClientDashboard = () => {
     }
 
     return (
-        <div className="">
+        <div style={{width:"99%"}}>
 
                 <Row>
                     <Col className="" lg={2}>
                         <Menu onChange={onChangePage} page={page} />
                     </Col>
                     <Col className="">
-
                         {renderSwitch(page)}
-
                     </Col>
                 </Row>
         </div>);

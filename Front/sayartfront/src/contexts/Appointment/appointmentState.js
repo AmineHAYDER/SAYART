@@ -2,6 +2,8 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import AppointmentContext from './appointmentContext';
 import appointmentReducer from './appointmentReducer';
+import io from 'socket.io-client';
+
 
 import {
     APPOINTMENTS_LOADED,
@@ -11,6 +13,7 @@ import {
     APPOINTMENTS_GARAGES_LOADED
 } from '../types';
 
+var socket = io.connect('http://localhost:4000');
 const AppointmentState = props => {
     const initialState = {
         address:'',
@@ -159,22 +162,20 @@ const AppointmentState = props => {
     //take appointment request
     const takeAppointment = async (data) => {
 
-        const config = {
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.token
-            }
-        }
-
         try {
-            const res = await axios.post('http://localhost:5000/user/appointment/',data, config);
-            console.log(res.data)
+            await axios.post('http://localhost:5000/user/appointment/',data, config).then((res)=>{
+               console.log(res.data.data)
+                socket.emit('NewAppointmentCreated',res.data.data);
+            });
 
         } catch (err) {
             console.log(err + ' load user error');
         }
     }
+    const sendAppointment = async (data) => {
 
+
+    }
     return (
         <AppointmentContext.Provider
             value={{
@@ -194,7 +195,8 @@ const AppointmentState = props => {
                 takeAppointment,
                 CheckAvailableGarage,
                 setChosenService,
-                resetAvailableGarage
+                resetAvailableGarage,
+                sendAppointment
 
             }}
         >

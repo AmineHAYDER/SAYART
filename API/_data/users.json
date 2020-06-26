@@ -73,5 +73,18 @@
     "isGarage": true,
     "rib": "984132195654616",
     "password": "aliyah1526"
+  },
+  {
+    "role": "garage",
+    "image": "no-photo.jpg",
+    "login": "khaledhamdi",
+    "name": "khaled",
+    "lastName": "hamdi",
+    "address": "3 Rue Ahmed Amine, Ariana, Ariana",
+    "number": "22659874",
+    "email": "khaledhamdi@gmail.com",
+    "isGarage": true,
+    "rib": "984132195654616",
+    "password": "khaled1234"
   }
 ]

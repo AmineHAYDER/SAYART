@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Col, Row} from 'react-bootstrap';
 
+import {NotificationContainer} from "react-notifications";
 import Menu from "../Menu";
 import Addition from './addition/Addition'
 
@@ -14,6 +15,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         adminContext.getGarages()
         adminContext.getServices()
+
     }, [])
 
     const onChangePage = e => {
@@ -34,6 +36,7 @@ const AdminDashboard = () => {
         <div className="dashboard">
             <Row>
 
+                <NotificationContainer/>
                 <Col className="" lg={2}>
                     <Menu onChange={onChangePage} page={page}/>
                 </Col>

@@ -64,11 +64,6 @@ const UserSchema = mongoose.Schema({
     resetPasswordToken: String,
     resetPasswordExpire: Date
     ,
-    isGarage: {
-        type: Boolean,
-        required: true,
-        default: false,
-    },
     rib: {
         type: String,
         //  required: true

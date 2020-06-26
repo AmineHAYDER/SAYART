@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import {Row, Col, Container} from 'react-bootstrap'
+import {Row, Col, Container, Button} from 'react-bootstrap'
 import AppointmentContext from '../../../contexts/Appointment/appointmentContext';
 import UserContext from '../../../contexts/User/userContext'
 import garageLogo from "../../../img/dashboard/mechanic-Logo.jpg";
@@ -11,6 +11,8 @@ import checkEmpty from "@iconify/icons-el/check-empty";
 import check from "@iconify/icons-el/check";
 import lock from "@iconify/icons-el/lock";
 import AvailableGarage from "../../utils/AvailableGarage";
+import horlogeImage from '../../../img/takeAppointment/Horloge.png'
+import serviceImage from '../../../img/takeAppointment/Service.png'
 
 const AppointmentDetail = (props) => {
 
@@ -53,7 +55,7 @@ const AppointmentDetail = (props) => {
         }else return true
     }
     return (
-        <Container className={"appointment-garage"}>
+        <Container className={"appointment-garage"} >
             <Row>
                 <Col>
                     <img className={"appointment-garage-image"} alt={''} src={garageLogo}/>
@@ -61,7 +63,6 @@ const AppointmentDetail = (props) => {
                 <Col lg={6}>
                     <h3>{chosenService.garage.name}</h3>
                     <h5>{chosenService.garage.location.formattedAddress}</h5>
-                    <h5>Soum :{chosenService.price}</h5>
                 </Col>
                 <Col>
                     <Row>
@@ -98,27 +99,33 @@ const AppointmentDetail = (props) => {
             </Row>
             <hr/>
             <Row>
-                <Col lg={4}>
-                    <h1 style={{marginTop: "20px", marginLeft: "200px"}}>Timing</h1>
+                <Col lg={2}>
+                    <img src={horlogeImage} style={{height: "120px"}}/>
+                </Col>
+                <Col lg={1}>
+                    <h1 style={{marginTop: "20px"}}>Timing</h1>
                 </Col>
                 <hr/>
-                <Col lg={8}>
+                <Col lg={8} style={{marginTop: "20px"}}>
                     <h3 style={{marginLeft: "200px"}}> {pages.timing.date ?
-                        "day :" + pages.timing.date.getDate() : null}</h3>
+                        "date :" + pages.timing.date.getDate() +"/"+pages.timing.date.getMonth()+"/"+pages.timing.date.getFullYear(): null}</h3>
                     <h3 style={{marginLeft: "200px"}}> {pages.timing.date ?
-                        "Heure :" + pages.timing.date.getHours() : null}</h3>
+                        "Heure :" + pages.timing.date.getHours() +" Heure "+ pages.timing.date.getMinutes() +" Minutes ": null}</h3>
                 </Col>
             </Row>
             <hr/>
             <Row>
-                <Col lg={4}>
-                    <h1 style={{marginTop: "20px", marginLeft: "200px"}}>Service</h1>
+                <Col lg={2}>
+                    <img src={serviceImage} style={{height: "80px"}}/>
+                </Col>
+                <Col lg={1}>
+                    <h1 style={{marginTop: "20px"}}>Service</h1>
                 </Col>
                 <hr/>
                 <Col lg={8}>
-                    <h3 style={{marginLeft: "200px"}}> Vidange</h3>
-                    <h3 style={{marginLeft: "200px"}}> 30 mn </h3>
-                    <h3 style={{marginLeft: "200px"}}> 210 Dt </h3>
+                    <h3 style={{marginLeft: "200px"}}>Nom:  Vidange</h3>
+                    <h3 style={{marginLeft: "200px"}}>Durée: 30 mn </h3>
+                    <h3 style={{marginLeft: "200px"}}>Prix: 210 Dt </h3>
                 </Col>
             </Row>
             <hr/>
@@ -135,13 +142,14 @@ const AppointmentDetail = (props) => {
                 </Col>
             </Row>
             <hr/>
-            <Row>
-                <button onClick={() => {
+            <Row className={"justify-content-center"}>
+
+                <Button variant={"secondary"} onClick={() => {
                     props.onClick(false)
                      appointmentContext.resetAvailableGarage()
                 }}> retour
-                </button>
-                <button onClick={takeAppointment} disabled={confirm()}> confirmer</button>
+                </Button>
+                <Button variant={"secondary"} onClick={takeAppointment} disabled={confirm()}> confirmer</Button>
             </Row>
 
         </Container>

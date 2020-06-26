@@ -14,6 +14,6 @@ router.use(cors(corsOptions));
 
 
 
-router.use('/filter', filters);
+router.use('/oil', filters);
 
 module.exports = router ;

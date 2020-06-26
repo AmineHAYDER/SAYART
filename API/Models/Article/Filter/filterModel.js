@@ -1,24 +1,42 @@
 const mongoose = require('mongoose');
 
 
-const ArticleSchema = new mongoose.Schema({
+const FilterSchema = new mongoose.Schema({
 
     name: {
         type: String,
         required: true,
+        unique:true
     },
-    ref: {
+    reference: {
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
-    image: {
+    type: {
         type: String,
+        enum:['air','oil','fuel']
     },
-    characteristics: {
-        type: [JSON]
+    width: {
+        type: Number
     },
-    compatibility: {
-        type: [JSON]
+    height: {
+        type: Number
+    },
+    length: {
+        type: Number,
+    },
+    outerDiameter: {
+        type: Number
+    },
+    innerDiameter: {
+        type: Number,
+    },
+    threadSize: {
+        type: Number,
+    },
+    manufacture: {
+        type: String
     },
     createdAt: {
         type: Date,
@@ -26,4 +44,4 @@ const ArticleSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('Article', ArticleSchema);
+module.exports = mongoose.model('Filter', FilterSchema);

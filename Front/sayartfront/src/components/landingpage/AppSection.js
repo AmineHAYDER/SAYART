@@ -10,7 +10,7 @@ class AppSection extends React.Component {
     render() {
         return (
             <div className="background">
-                <Container class="align-content-center">
+                <Container className="align-content-center">
 
                     <Row>
 
