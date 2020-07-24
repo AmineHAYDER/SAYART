@@ -62,7 +62,7 @@ const Welcome = () => {
                 delay={{ show: 250, hide: 400 }}
                 overlay={renderTooltip}
             >
-                    <div style={{fontSize: 16, marginTop: 300,position:"relative"}}>
+                    <div style={{fontSize: 16, marginTop: 340,position:"relative"}}>
                         <h6>Profile</h6>
                         <strong>{ProfilePercentage()} %</strong>
                     </div>

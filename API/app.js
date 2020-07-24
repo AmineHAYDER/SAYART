@@ -41,18 +41,7 @@ app.listen(5000, () => {
             socket.emit('status', s);
         }
 
-        // Get chats from mongo collection
-        /*appointmentModel.find({garage: "5e7a8adfdf14bc31c86b8485"}).limit(100).sort({_id: 1}).then(data => {
-
-            // Emit the messages
-            socket.emit('5e7a8adfdf14bc31c86b8485', data);
-        });*/
-
-        // Handle input events
         socket.on('NewAppointmentCreated', async function (data) {
-            /*let name = data.name;
-            let message = data.message;*/
-
             console.log(data.garage)
             await serviceModel.findById(data.service).then((service) =>
                 data.service = service
@@ -63,7 +52,6 @@ app.listen(5000, () => {
                 }
             )
 
-            // Send status object
             sendStatus({
                 message: 'Message sent',
                 clear: true

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Col, Row, Container} from "react-bootstrap";
 import '../../../css/takeAppointment/selectGarage/SelectGarege.css'
-import {Icon, InlineIcon} from '@iconify/react';
+import {Icon} from '@iconify/react';
 import starEmpty from '@iconify/icons-el/star-empty';
 import star from '@iconify/icons-el/star';
 
@@ -15,7 +15,6 @@ const SelectGarage = (props) => {
 
     const appointmentContext = useContext(AppointmentContext);
     const authContext = useContext(AuthContext);
-    const {user} = authContext
     const [label, setlabel] = useState(false)
 
     let onMap = []

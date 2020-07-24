@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect} from 'react'
 import {Form, Button, Modal, Alert} from 'react-bootstrap';
 import AuthContext from '../../contexts/Auth/authContext';
 
+import {NotificationManager} from "react-notifications";
 
 import '../../css/authentification/Modal.css';
 
@@ -43,6 +44,7 @@ const RegisterModal = (props) => {
 
         let x = Math.floor(Math.random() * 100);
 
+        NotificationManager.success("Connecting...")
         clearErrors();
         await register({
             "login": firstname + lastname + x,
@@ -57,7 +59,6 @@ const RegisterModal = (props) => {
             "isGarage": false,
             "rib": "98413219516"
         })
-
         if (error !== "AUTH_ERROR" && error !== "REGISTER_FAIL") {
             props.onHide();
             console.log("pass");

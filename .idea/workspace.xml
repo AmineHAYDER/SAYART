@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89f8809c-5436-4458-94e0-cd8af00a3a31" name="Default Changelist" comment="" />
+    <list default="true" id="89f8809c-5436-4458-94e0-cd8af00a3a31" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Models/Auth/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/Models/Auth/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/middelware/errorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/middelware/errorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/utils/errorResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/utils/errorResponse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/PageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/PageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/appointment/confirmation/SelectGarage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/appointment/confirmation/SelectGarage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/LoginModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/LoginModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/RegisterModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/RegisterModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/oil/AddOil.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/oil/AddOil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/wheel/AddWheel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/wheel/AddWheel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardClient/mainDashboard/TopSection/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardClient/mainDashboard/TopSection/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage/mainDashboard/MainDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage/mainDashboard/MainDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/landingpage/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/landingpage/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Auth/authState.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Auth/authState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Garage/garageState.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Garage/garageState.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +50,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -39,19 +58,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage\appointments" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car\bodySection" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\modals" />
-      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\bodySection" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Article" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article\oil" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\API\Models\Stock" />
       <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardAdmin\addition\article\filter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardGarage\appointments" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\Car\bodySection" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\modals" />
+      <recent name="C:\Users\Hayder\Desktop\SAYART MERN\Front\sayartfront\src\components\dashboards\dashboardClient\mainDashboard\bodySection" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,6 +146,16 @@
       <workItem from="1592215071289" duration="27334000" />
       <workItem from="1592582741436" duration="16347000" />
       <workItem from="1592750143345" duration="5378000" />
+      <workItem from="1593288920743" duration="5358000" />
+      <workItem from="1593416003869" duration="1429000" />
+      <workItem from="1593555453182" duration="8293000" />
+      <workItem from="1594129604095" duration="1015000" />
+      <workItem from="1594247875189" duration="39000" />
+      <workItem from="1594259739995" duration="401000" />
+      <workItem from="1594264707946" duration="776000" />
+      <workItem from="1594267750060" duration="3149000" />
+      <workItem from="1594802177643" duration="227000" />
+      <workItem from="1595342527472" duration="1802000" />
     </task>
     <servers />
   </component>

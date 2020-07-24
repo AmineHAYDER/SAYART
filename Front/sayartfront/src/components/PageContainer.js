@@ -12,8 +12,6 @@ import AdminState from '../contexts/Admin/adminState';
 
 //pages
 import Home from './landingpage/Home';
-import Login from './authentification/Login';
-import Register from './authentification/Register';
 import CCM from './landingpage/Carousel';
 import AdminDashboard from './dashboards/dashboardAdmin/AdminDashboard';
 import Dashboard from './dashboards/Dashboard';
@@ -52,8 +50,6 @@ const PageContainer = () => {
                 <div className="content">
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/CCM" component={CCM}/>
-                    <Route exact path="/login" component={Login}/>
-                    <Route exact path="/register" component={Register}/>
                     <Route exact path="/car" component={Car}/>
                     <AppointmentState>
                         <GarageState>

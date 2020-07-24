@@ -17,7 +17,7 @@ class UserController {
         // Check for user
         const user = await User.findOne({ email }).select('+password');
         if (!user) {
-            return next(new ErrorResponse('User Not Found ! ', 401));
+            return next(new ErrorResponse('User Not Found ! ', 404));
         }
 
         // Check if password matches

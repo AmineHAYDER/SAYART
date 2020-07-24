@@ -8,8 +8,6 @@ import {
     WHEELS_LOADED,
     APPOINTMENTS_LOADED,
     NEW_APPOINTMENT,
-    LOADING,
-    NOT_LOADING,
 } from '../types';
 
 var socket = io.connect('http://localhost:4000');

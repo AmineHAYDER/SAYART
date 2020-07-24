@@ -5,11 +5,12 @@ import AuthContext from "../../contexts/Auth/authContext";
 
 
 import '../../css/authentification/Modal.css';
+import {NotificationManager} from "react-notifications";
 
 const LoginModal = (props) => {
 
     const authContext = useContext(AuthContext);
-    const {login, error, clearErrors, isAuthenticated} = authContext;
+    const {login} = authContext;
 
     const [user, setUser] = useState({
         email: '',
@@ -21,29 +22,19 @@ const LoginModal = (props) => {
         setUser({...user, [e.target.name]: e.target.value})
     };
 
-    useEffect(() => {
-        if (error === 'LOGIN_FAIL') {
-            showAlert();
-        }
-
-        if (isAuthenticated) {
-            if (!authContext.user.isGarage) {
-
-                /* history.push('/dashboard');*/
-            }
-            props.onHide();
-        }
-
-    }, [error, isAuthenticated,authContext.user.isGarage,props])
 
     const onSubmit = async e => {
         e.preventDefault();
-        clearErrors();
         await login({
             "email": email,
             "password": password
-        })
+        }).then ((success)=> {
 
+            console.log(success)
+            if (success === true ) NotificationManager.success("Connecting...","success")
+            else NotificationManager.error(success,"Error")
+
+        })
     }
 
     const NoAccount = () => {

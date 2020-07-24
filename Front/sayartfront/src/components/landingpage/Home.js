@@ -1,4 +1,5 @@
 import React from 'react';
+import {NotificationContainer} from "react-notifications";
 
 import CallToAction from './CallToAction';
 import CallForGarage from './CallForGarage';
@@ -12,6 +13,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
+                <NotificationContainer/>
                 <CallToAction></CallToAction>
 
                 <div className="div50px"></div>

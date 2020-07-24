@@ -18,6 +18,8 @@ const Dashboard = () => {
                 return <GarageDashboard />
             case 'admin':
                 return <ClientDashboard />
+            case 'user':
+                return <ClientDashboard />
         }
     }
     return (

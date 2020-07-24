@@ -66,9 +66,7 @@ const AddOil = () => {
             })
         } else NotificationManager.error(
             'Missing',
-            `${article.quantity ?"":"quantity " }`+ `${adminContext.article._id ? "" :"_id " }`+
-            `${article.price ?"" :"price " }`+
-            `${article.garage ?"" :"garage " }`)
+            `${article.quantity ?"":"quantity " } ${adminContext.article._id ? "" :"_id " } ${article.price ?"" :"price " } ${article.garage ?"" :"garage " }`)
     }
 
     return (

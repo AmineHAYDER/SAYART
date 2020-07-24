@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, {useReducer} from 'react';
 import axios from 'axios';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
@@ -6,7 +6,6 @@ import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
     LOGIN_SUCCESS,
-    LOGIN_FAIL,
     LOGOUT,
     USER_LOADED,
     AUTH_ERROR,
@@ -94,30 +93,36 @@ const AuthState = props => {
         }
 
         try {
-            await axios.post('http://localhost:5000/user/auth/login', data, config).then((res) => {
+            await axios
+                .post('http://localhost:5000/user/auth/login', data, config)
+                .then(async (res) => {
 
-                dispatch({
-                    type: LOGIN_SUCCESS,
-                    payload: res.data.token
-                });
 
-                loadUser();
-            }
-            )
+                    dispatch({
+                        type: LOGIN_SUCCESS,
+                        payload: res.data.token
+                    });
+
+                    await loadUser();
+                })
+            return true
         } catch (err) {
 
-            console.log(err.message);
-            dispatch({
-                type: LOGIN_FAIL,
-                payload: err
-            });
+            console.log(err.message.split(' ')[5])
+            switch (err.message.split(' ')[5]) {
+                case '404':
+                    return 'No user with this email'
+                case '401':
+                    return 'Invalid password'
+                default:
+                    break;
+            }
 
         }
-        console.log(state.isAuthenticated)
     }
 
 
-    const logout = () => dispatch({ type: LOGOUT });
+    const logout = () => dispatch({type: LOGOUT});
 
 
     const clearErrors = () => {
