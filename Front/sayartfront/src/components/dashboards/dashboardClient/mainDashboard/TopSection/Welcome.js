@@ -1,11 +1,11 @@
-import React, {useContext, useState} from "react";
-import {CircularProgressbarWithChildren} from 'react-circular-progressbar';
+import React, { useContext, useState } from "react";
+import { Col, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import AuthContext from "../../../../../contexts/Auth/authContext";
 import UserContext from "../../../../../contexts/User/userContext";
 import AppointmentContext from "../../../../../contexts/Appointment/appointmentContext";
 
-import {Col, Row, OverlayTrigger,Tooltip} from "react-bootstrap";
 
 import "../../../../../css/dashboard/clienDashboard/Acceuil/TopSection.css"
 
@@ -37,7 +37,7 @@ const Welcome = () => {
 
         return (
             <Tooltip id="button-tooltip" {...props}>
-               <h6>{!userContext.car ? "les informations كمل عمر   متاع كرهبتك" : null}</h6>
+                <h6>{!userContext.car ? "les informations كمل عمر   متاع كرهبتك" : null}</h6>
             </Tooltip>
         );
     }
@@ -58,15 +58,15 @@ const Welcome = () => {
                 className={"progress-bar-profile"}
             >
                 <OverlayTrigger
-                placement="right"
-                delay={{ show: 250, hide: 400 }}
-                overlay={renderTooltip}
-            >
-                    <div style={{fontSize: 16, marginTop: 340,position:"relative"}}>
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                >
+                    <div style={{ fontSize: 16, marginTop: 340, position: "relative" }}>
                         <h6>Profile</h6>
                         <strong>{ProfilePercentage()} %</strong>
                     </div>
-            </OverlayTrigger>
+                </OverlayTrigger>
             </CircularProgressbarWithChildren>
 
         </div>

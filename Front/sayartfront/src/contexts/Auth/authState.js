@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, { useReducer } from 'react';
 import axios from 'axios';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
@@ -122,7 +122,7 @@ const AuthState = props => {
     }
 
 
-    const logout = () => dispatch({type: LOGOUT});
+    const logout = () => dispatch({ type: LOGOUT });
 
 
     const clearErrors = () => {

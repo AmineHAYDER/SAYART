@@ -21,10 +21,10 @@ class appointmentController {
         const newDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
         const app = await appointmentModel.find({
             garage: req.body.garage,
-            date: {$gte: date, $lte: newDate}
+            date: { $gte: date, $lte: newDate }
         }).populate('service')
         app.map(app => {
-            dates.push({date: app.date, duration: app.service.duration})
+            dates.push({ date: app.date, duration: app.service.duration })
         })
         res.status(200)
             .json({
@@ -36,19 +36,19 @@ class appointmentController {
     async Confirm(req, res, next) {
         let dates = []
         const duration = req.body.appointment.duration
-        const garage = await garageModel.findOne({user: req.user._id})
+        const garage = await garageModel.findOne({ user: req.user._id })
         const dateApp = new Date(req.body.appointment.date)
         const dateBefore = new Date(dateApp.getFullYear(), dateApp.getMonth(), dateApp.getDate())
         const dateAfter = new Date(dateApp.getFullYear(), dateApp.getMonth(), dateApp.getDate() + 1)
         const appointments = await appointmentModel.find({
             garage: garage._id,
-            date: {$gte: dateBefore, $lte: dateAfter}
+            date: { $gte: dateBefore, $lte: dateAfter }
         })
         appointments.map(app => {
-            dates.push({date: app.date, duration: app.service.duration})
+            dates.push({ date: app.date, duration: app.service.duration })
         })
         if (IsAvailable(dates, dateApp, duration, 2) >= 0) {
-            await appointmentModel.findByIdAndUpdate(req.body.appointment._id, {state: "Confirmed"})
+            await appointmentModel.findByIdAndUpdate(req.body.appointment._id, { state: "Confirmed" })
             res.status(200).json({
                 success: "True",
                 data: "timing available ",
@@ -61,13 +61,12 @@ class appointmentController {
 
     async myAppointments(req, res, next) {
 
-        console.log('here')
-        if (req.user.role === 'user') {
-            const car = await carModel.findOne({user: req.user._id})
+        if (req.user.role === 'user' || req.user.role === 'admin') {
+            const car = await carModel.findOne({ user: req.user._id })
 
             if (car) {
-                const appointments = await appointmentModel.find({car: car._id})
-                    .sort({date: -1})
+                const appointments = await appointmentModel.find({ car: car._id })
+                    .sort({ date: -1 })
                     .populate('garage')
                     .populate('service')
 
@@ -82,11 +81,11 @@ class appointmentController {
                     data: "car not found",
                 })
         } else {
-            console.log('here')
-            const garage = await garageModel.findOne({user: req.user._id})
-            const appointments = await appointmentModel.find({garage: garage._id}).sort({date: -1})
+            const garage = await garageModel.findOne({ user: req.user._id })
+            const appointments = await appointmentModel.find({ garage: garage._id }).sort({ date: -1 })
                 .populate('car')
                 .populate('service')
+            console.log(appointments)
             res
                 .status(200)
                 .json({
@@ -100,7 +99,7 @@ class appointmentController {
 
     async store(req, res, next) {
 
-        await carModel.find({user: req.body.user}).then(() => {
+        await carModel.find({ user: req.body.user }).then(() => {
 
             appointmentModel
                 .create(req.body)
@@ -127,8 +126,8 @@ class appointmentController {
                         data: updatedservice,
                     })
             }).catch((err) => {
-            next(err)
-        })
+                next(err)
+            })
     }
 
 
