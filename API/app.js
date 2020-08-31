@@ -30,7 +30,7 @@ const app = express();
 
 
 app.use(mongoSanitize());
-app.use(cookieParser());
+app.use(cookieParser('deglawi'));
 connectDB();
 app.listen(5000, () => {
     console.log('Server started and listening on port :'.blue, 5000)

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a552ff0-6354-4270-b665-04a819e00119" name="Default Changelist" comment="" />
+    <list default="true" id="6a552ff0-6354-4270-b665-04a819e00119" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Appointment/appointmentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Appointment/appointmentController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Auth/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Auth/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Auth/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Auth/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User/userModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.env" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middelware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middelware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/sendTokenResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sendTokenResponse.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SvnConfiguration">
@@ -50,6 +63,8 @@
       <workItem from="1584817647056" duration="1031000" />
       <workItem from="1584909056738" duration="15000" />
       <workItem from="1584917621960" duration="28237000" />
+      <workItem from="1598485059768" duration="7972000" />
+      <workItem from="1598643776911" duration="572000" />
     </task>
     <servers />
   </component>
@@ -57,21 +72,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="32" key="#Inspections" timestamp="1584574291143">
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1598654391379">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="32" key="#Inspections/0.0.1366.738@0.0.1366.738" timestamp="1584574291143" />
-    <state x="98" y="176" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584761366196">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="98" y="176" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1584761366196" />
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584384205525">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1584384205525" />
-    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1585090829281">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1585090829281" />
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738/-1920.-316.1536.834@0.0.1366.738" timestamp="1598654391379" />
   </component>
 </project>
