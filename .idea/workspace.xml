@@ -3,19 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="89f8809c-5436-4458-94e0-cd8af00a3a31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Models/Appointment/appointmentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/Models/Appointment/appointmentController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/Models/Auth/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/Models/Auth/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Models/Auth/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/Models/Auth/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Models/User/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/Models/User/userModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Models/User/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/Models/User/userRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/config/config.env" beforeDir="false" afterPath="$PROJECT_DIR$/API/config/config.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/middelware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/middelware/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/utils/sendTokenResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/utils/sendTokenResponse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/middelware/errorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/middelware/errorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/utils/errorResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/utils/errorResponse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/PageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/PageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/appointment/confirmation/SelectGarage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/appointment/confirmation/SelectGarage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/LoginModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/LoginModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/RegisterModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/authentification/RegisterModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/oil/AddOil.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/oil/AddOil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/wheel/AddWheel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardAdmin/addition/article/wheel/AddWheel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardClient/mainDashboard/TopSection/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardClient/mainDashboard/TopSection/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage/mainDashboard/MainDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/dashboards/dashboardGarage/mainDashboard/MainDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/components/landingpage/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/components/landingpage/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Auth/authState.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Auth/authState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Garage/garageState.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sayartfront/src/contexts/Garage/garageState.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,9 +156,6 @@
       <workItem from="1594267750060" duration="3149000" />
       <workItem from="1594802177643" duration="227000" />
       <workItem from="1595342527472" duration="1802000" />
-      <workItem from="1598654399130" duration="603000" />
-      <workItem from="1598827506574" duration="562000" />
-      <workItem from="1598837031778" duration="1175000" />
     </task>
     <servers />
   </component>

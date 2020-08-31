@@ -2,7 +2,6 @@
 const User = require('../User/userModel');
 const ErrorResponse = require('../../utils/errorResponse')
 const sendTokenResponse = require('../../utils/sendTokenResponse')
-const jwt = require('jsonwebtoken');
 class UserController {
 
 
@@ -32,17 +31,6 @@ class UserController {
        console.log('user Logged : '+ user.name)
     }
 
-    async fake (req, res, next) {
-
-
-
-        // Check for user
-        const user = await User.findOne({ name:"amine" }).select('+password');
-        if (!user) {
-            return next(new ErrorResponse('User Not Found ! ', 404));
-        }
-        sendTokenResponse(user, 200, res)
-    }
     async logout(req, res, next) {
         res.cookie('token', 'none', {
             expires: new Date(Date.now() + 10 * 1000),
@@ -87,17 +75,5 @@ class UserController {
                 next(err)
             })
     }
-    sign(userId ) {
-        return jwt.sign(
-            { iat: Date.now() },
-            config.JWT_SIGN_KEY,
-            {
-                expiresIn: config.JWT_EXPIRATION,
-                issuer: config.JWT_ISSUER,
-                subject: String(userId)
-            }
-        )
-    }
-
 }
 module.exports = new UserController();

@@ -14,10 +14,6 @@ router
     .post(authController.login);
 
 router
-    .route('/fake')
-    .get(authController.fake);
-
-router
     .route('/logout')
     .get(authController.logout);
 

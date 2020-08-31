@@ -16,7 +16,7 @@ const authRouter = require('../Auth/authRoutes');
 const garageRouter = require('../Garage/garageRoute');
 const carRouter = require('../Car/carRoute');
 const appointmentRouter = require('../Appointment/appointmentRoute');
-const cookieParser = require('cookie-parser');
+
 
 const advancedResults = require('../../middelware/advancedResults')
 const user = require('./userModel');
@@ -33,8 +33,6 @@ router.use(mongoSanitize());
 router.use(helmet());
 router.use(xssClean());
 router.use(fileUpload());
-router.use(cookieParser('deglawi'));
-
 
 
 router.use(express.static(path.join(__dirname, 'public')));

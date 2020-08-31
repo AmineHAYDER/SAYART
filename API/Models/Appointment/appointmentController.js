@@ -61,7 +61,8 @@ class appointmentController {
 
     async myAppointments(req, res, next) {
 
-        if (req.user.role === 'user'||'admin') {
+        console.log('here')
+        if (req.user.role === 'user') {
             const car = await carModel.findOne({user: req.user._id})
 
             if (car) {
@@ -81,6 +82,7 @@ class appointmentController {
                     data: "car not found",
                 })
         } else {
+            console.log('here')
             const garage = await garageModel.findOne({user: req.user._id})
             const appointments = await appointmentModel.find({garage: garage._id}).sort({date: -1})
                 .populate('car')

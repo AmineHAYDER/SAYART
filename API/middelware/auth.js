@@ -5,8 +5,8 @@ const User = require('../Models/User/userModel.js');
 // Protect routes
 exports.protect = async (req, res, next) => {
     let token;
-    console.log(req.signedCookies)
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+        console.log('Bearer Token')
         // Set token from Bearer token in header
         token = req.headers.authorization.split(' ')[1];
     } else if (req.cookies.token) {

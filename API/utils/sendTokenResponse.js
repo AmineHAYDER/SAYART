@@ -1,5 +1,3 @@
-const ms = require('ms')
-
 const sendTokenResponse = (user, statusCode, res) => {
 
 
@@ -17,18 +15,12 @@ const sendTokenResponse = (user, statusCode, res) => {
     }
 
     res
-        .cookie(
-            process.env.JWT_COOKIE_NAME,
-            token,
-            {
-                httpOnly: true,
-                signed: true,
-                sameSite: true,
-                expires: new Date(Date.now() + ms('10y')),
-            })
         .status(statusCode)
+        .cookie('token', token, options)
         .json({
-            user
+            success: true,
+            token
+
         });
 };
 

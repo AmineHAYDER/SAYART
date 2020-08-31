@@ -38,7 +38,6 @@ const AuthState = props => {
 
         try {
             const res = await axios.get('http://localhost:5000/user/auth/me', config);
-            console.log(res)
             dispatch({
                 type: USER_LOADED,
                 payload: res.data
@@ -103,11 +102,9 @@ const AuthState = props => {
                         type: LOGIN_SUCCESS,
                         payload: res.data.token
                     });
-                    console.log(res)
 
                     await loadUser();
                 })
-            console.log("here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             return true
         } catch (err) {
 
