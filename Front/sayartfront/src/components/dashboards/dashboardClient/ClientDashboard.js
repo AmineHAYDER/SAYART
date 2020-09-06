@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {Row, Col, Container, Button} from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 
 import Menu from '../Menu'
 import Profile from './profile/Profile'
@@ -7,6 +7,8 @@ import Appointments from './appointments/Appointments'
 import MainDashboard from './mainDashboard/MainDashboard';
 import Analytics from './analytics/Analytics'
 import Car from './Car/Car'
+
+import Settings from "../settings/SettingsPage";
 
 import AppointmentContext from "../../../contexts/Appointment/appointmentContext";
 import UserContext from "../../../contexts/User/userContext";
@@ -35,29 +37,32 @@ const ClientDashboard = () => {
             case 'profile':
                 return <Profile />;
             case 'dashboard':
-                return <MainDashboard car={userContext.car}  />;
+                return <MainDashboard car={userContext.car} />;
             case 'appointments':
                 return <Appointments />;
             case 'analytics':
                 return <Analytics />;
             case 'MyCar':
                 return <Car car={userContext.car} />
+
+            case 'settings':
+                return <Settings />
             default:
                 return page;
         }
     }
 
     return (
-        <div style={{width:"99%"}}>
+        <div style={{ width: "99%" }}>
 
-                <Row>
-                    <Col className="" lg={2}>
-                        <Menu onChange={onChangePage} page={page} />
-                    </Col>
-                    <Col className="">
-                        {renderSwitch(page)}
-                    </Col>
-                </Row>
+            <Row>
+                <Col className="" lg={2}>
+                    <Menu onChange={onChangePage} page={page} />
+                </Col>
+                <Col className="">
+                    {renderSwitch(page)}
+                </Col>
+            </Row>
         </div>);
 
 }

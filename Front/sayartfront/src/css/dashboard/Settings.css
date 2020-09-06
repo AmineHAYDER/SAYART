@@ -1,0 +1,58 @@
+.settings-title {
+    text-align: left;
+    color: black;
+    font-weight: 600;
+}
+
+.settings-undertitle {
+    text-align: left;
+
+}
+
+.settings-section {
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    border: 0 solid rgba(0, 0, 0, .125);
+    box-shadow: 0 0 2px 0 rgba(22, 26, 33, .1), 0 2px 4px 0 rgba(22, 26, 33, .1);
+    border-radius: 3px;
+    margin-top: 20px;
+
+}
+
+.settings-input {
+    margin-top: 20px;
+
+}
+
+.settings-header {
+    padding-top: 15px;
+    padding-bottom: 12px;
+
+    text-align: left;
+    color: black;
+    font-weight: 600;
+    margin-left: 20px;
+
+}
+
+.settings-subheader {
+    color: black;
+    font-weight: 700;
+    margin-left: 20px;
+
+}
+
+.settings-inputgroup {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.settings-button {
+    margin-left: 40px;
+    margin-top: 10px;
+}
