@@ -10,7 +10,11 @@
     },
     "status": "Down",
     "photo":"no-photo.jpg",
-    "user": "5e742fb64542bb39c0edd8d5"
+    "user": "5e742fb64542bb39c0edd8d5",
+    "recommended":{  "type": [{
+      "service" : "wash",
+      "discount" : 30
+  }]}
 },
   {
     "_id": "5e7a8adfdf14bc31c86b8484",
@@ -23,7 +27,11 @@
   },
     "status": "Down",
     "photo":"no-photo.jpg",
-    "user": "5e742fb64542bb39c0edd8d4"
+    "user": "5e742fb64542bb39c0edd8d4",
+    "recommended":{  "type": [{
+      "service" : "oilchange",
+      "discount" : 30
+  }]}
 },
   {
     "_id": "5e7a8adfdf14bc31c86b8483",

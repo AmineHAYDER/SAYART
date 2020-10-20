@@ -33,7 +33,7 @@ const RecommendedGarage = () => {
                             {"<"}
                         </Button>
                         <Button variant={"secondary"} onClick={() => setI((i + 1) % (recommendedGarages.length))} >
-                            >
+                        {">"}
                     </Button>
                     </Col>
                 </Row> : "no recommended"}
